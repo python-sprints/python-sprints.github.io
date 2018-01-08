@@ -54,11 +54,32 @@
     <header id="site-header" class="site-header valign-center"> 
         <div class="intro">
 
-            <h2>10 March, 2017 / Worldwide</h2>
+            <h2>10 March, 2017</h2>
             
             <h1>Pandas documentation sprint</h1>
             
-            <a class="btn btn-white" data-scroll href="#registration">Join Now</a>
+			<p id="countdown"></p>
+			<script>
+			var countDownDate = new Date("Mar 10, 2018 10:00:00").getTime();
+
+			var x = setInterval(function() {
+			  var now = new Date().getTime();
+			  var distance = countDownDate - now;
+			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			  document.getElementById("countdown").innerHTML = "" + days + " DAYS " + hours + " HOURS "
+			  + minutes + " MINUTES " + seconds + " SECONDS ";
+
+			  if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "";
+			  }
+			}, 1000);
+			</script>
+
+            <a class="btn btn-white" data-scroll href="#location">Join Now</a>
         
         </div>
     </header>
@@ -149,7 +170,8 @@
                 <div class="col-sm-3">
                     <h3 class="section-title">Locations</h3>
                     <address>
-                        <p>Click on the markers in the map for exact times and locations</p>
+                        <p>Click on the markers in the map for exact times and locations.</p>
+                        <p>More locations will be added in the future. If you want to organize a chapter, please get in touch at <a href="py.sprints@gmail.com">py.sprints@gmail.com</a>.</p>
                     </address>
                 </div>
                 <div class="col-sm-9">
@@ -227,7 +249,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="section-title">Event FAQs</h3>
+                    <h3 class="section-title">FAQ</h3>
                 </div>
             </div>
             <div class="row">
@@ -237,14 +259,14 @@
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
-                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> What is the price of the ticket ?</a>
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Where is the sprint happening ?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
-                                    <h3>Hello</h3>
-                                    <p>Lorem Ipsum</p>
+                                    <p class="panel-body">There are many locations available, check the <a href="#location">locations</a> section.</p>
+                                    <p>If there is no location near you, please get in touch at <a href="mailto:py.sprints@gmail.com">py.sprints@gmail.com</a>, and we'll help you organize one.</p>
                                 </div>
                             </div>
                         </div>
@@ -252,50 +274,28 @@
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingTwo">
                                 <h4 class="panel-title">
-                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> What is included in my ticket ?</a>
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> When is the sprint ?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="panel-body">Hello</div>
+                                    <p class="panel-body">Sprints should start around 10am (in the location time zone). Check the <a href="#location">locations</a> section to see the exact hour in your chapter.</p>
                             </div>
                         </div>
   
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
-                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Office address ?</a>
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> I want to organize a chapter, how can I do it ?</a>
                                 </h4>
                             </div>
 
                             <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">Hello</div>
+                                <div class="panel-body"></div>
+                                    <p class="panel-body">Please get in touch at <a href="mailto:py.sprints@gmail.com">py.sprints@gmail.com</a>, and we'll help you and provide all the information you need.</p>
                             </div>
                         </div>
 
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFour">
-                                <h4 class="panel-title">
-                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> How should I dress ?</a>
-                                </h4>
-                            </div>
-
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="panel-body">Hello</div>
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingFive">
-                                <h4 class="panel-title">
-                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> I have specific questions that are not addressed here. Who can help me ?</a>
-                                </h4>
-                            </div>
-
-                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="panel-body">Hello</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
