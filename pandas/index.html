@@ -175,11 +175,11 @@
                     </address>
                 </div>
                 <div class="col-sm-9">
-					<div id="map"></div>
+					<div id="map" style="height: 450px; width: 100%;"></div>
 					<script>
 					  function initMap() {
 						var map = new google.maps.Map(document.getElementById('map'), {
-						  zoom: 4,
+						  zoom: 1,
 						  center: {lat: 0., lng: 0.}
 						});
 
@@ -188,6 +188,20 @@
                           html: "London Python Sprints at Bloomberg<br><a href=\"https://www.meetup.com/Python-Sprints/\">Website</a>",
 						  position: {lat: 51.520363,
                                      lng: -0.086270},
+						  map: map
+						});
+						var madrid_pydata = new google.maps.Marker({
+                          title: "Madrid",
+                          html: "PyData Madrid<br><a href=\"https://www.meetup.com/PyData-Madrid/\">Website</a>",
+						  position: {lat: 40.4168209,
+                                     lng: -3.7035725},
+						  map: map
+						});
+						var python_florence = new google.maps.Marker({
+                          title: "Florence",
+                          html: "Python Florence TBD",
+						  position: {lat: 43.7735238,
+                                     lng: 11.2572189},
 						  map: map
 						});
 					  }
