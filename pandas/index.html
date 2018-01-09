@@ -233,6 +233,22 @@
 							}
 						);
 
+						var pydata_delhi = new google.maps.Marker({
+                          title: "Delhi",
+                          html: "PyData Delhi<br><a href=\"https://www.meetup.com/PyDataDelhi/\">Website</a>",
+						  position: {lat: 28.617024,
+                                     lng: 77.2078168},
+						  map: map
+						});
+						google.maps.event.addListener(
+							pydata_delhi,
+							'click',
+							function(){
+								infowindow.setContent(this.html);
+								infowindow.open(map,this);
+							}
+						);
+
 					  }
 					</script>
                     <script async defer with="100%" height="450px"
