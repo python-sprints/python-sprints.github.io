@@ -178,8 +178,10 @@
 					<div id="map" style="height: 450px; width: 100%;"></div>
 					<script>
 					  function initMap() {
+                        var infowindow=new google.maps.InfoWindow();
+
 						var map = new google.maps.Map(document.getElementById('map'), {
-						  zoom: 1,
+						  zoom: 2,
 						  center: {lat: 0., lng: 0.}
 						});
 
@@ -190,6 +192,15 @@
                                      lng: -0.086270},
 						  map: map
 						});
+						google.maps.event.addListener(
+							london_bloomberg,
+							'click',
+							function(){
+								infowindow.setContent(this.html);
+								infowindow.open(map,this);
+							}
+						);
+
 						var madrid_pydata = new google.maps.Marker({
                           title: "Madrid",
                           html: "PyData Madrid<br><a href=\"https://www.meetup.com/PyData-Madrid/\">Website</a>",
@@ -197,6 +208,15 @@
                                      lng: -3.7035725},
 						  map: map
 						});
+						google.maps.event.addListener(
+							madrid_pydata,
+							'click',
+							function(){
+								infowindow.setContent(this.html);
+								infowindow.open(map,this);
+							}
+						);
+
 						var python_florence = new google.maps.Marker({
                           title: "Florence",
                           html: "Python Florence TBD",
@@ -204,6 +224,15 @@
                                      lng: 11.2572189},
 						  map: map
 						});
+						google.maps.event.addListener(
+							python_florence,
+							'click',
+							function(){
+								infowindow.setContent(this.html);
+								infowindow.open(map,this);
+							}
+						);
+
 					  }
 					</script>
                     <script async defer with="100%" height="450px"
