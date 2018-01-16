@@ -1,2 +1,2 @@
-table, tr, td {background: none; border: none;}
+.rendered_html table, .rendered_html tr, .rendered_html td {background: none; border: none;}
 .rendered_html code {background-color: #e0e0e0;}
