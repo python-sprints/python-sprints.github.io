@@ -95,7 +95,7 @@
                         Pandas is an open source Python library for data manipulation and analysis.
                         Its popularity is skyrocketing, and it is becoming the de-facto standard for data science and data engineering.
                         But the number of core developers and contributors did not grow as fast as its popularity, and things like the API documentation
-                        would benefit of some help.
+                        would benefit from some help.
                     </p>
 
                     <p>
@@ -185,69 +185,60 @@
 						  center: {lat: 20., lng: 0.}
 						});
 
-						var london_bloomberg = new google.maps.Marker({
-                          title: "London",
-                          html: "London Python Sprints at Bloomberg<br><a href=\"https://www.meetup.com/Python-Sprints/\">Website</a>",
-						  position: {lat: 51.520363,
-                                     lng: -0.086270},
-						  map: map
-						});
-						google.maps.event.addListener(
-							london_bloomberg,
-							'click',
-							function(){
-								infowindow.setContent(this.html);
-								infowindow.open(map,this);
-							}
-						);
-
-						var madrid_pydata = new google.maps.Marker({
-                          title: "Madrid",
-                          html: "PyData Madrid<br><a href=\"https://www.meetup.com/PyData-Madrid/\">Website</a>",
-						  position: {lat: 40.4168209,
-                                     lng: -3.7035725},
-						  map: map
-						});
-						google.maps.event.addListener(
-							madrid_pydata,
-							'click',
-							function(){
-								infowindow.setContent(this.html);
-								infowindow.open(map,this);
-							}
-						);
-
-						var python_florence = new google.maps.Marker({
-                          title: "Florence",
-                          html: "Python Florence TBD",
-						  position: {lat: 43.7735238,
-                                     lng: 11.2572189},
-						  map: map
-						});
-						google.maps.event.addListener(
-							python_florence,
-							'click',
-							function(){
-								infowindow.setContent(this.html);
-								infowindow.open(map,this);
-							}
-						);
-
-						var pydata_delhi = new google.maps.Marker({
-                          title: "Delhi",
-                          html: "PyData Delhi<br><a href=\"https://www.meetup.com/PyDataDelhi/\">Website</a>",
-						  position: {lat: 28.617024,
-                                     lng: 77.2078168},
-						  map: map
-						});
-						google.maps.event.addListener(
-							pydata_delhi,
-							'click',
-							function(){
-								infowindow.setContent(this.html);
-								infowindow.open(map,this);
-							}
-						);
+                        var chapters = [
+                            {"title": "London",
+                             "description": "London Python Sprints at Blomberg",
+                             "url": "https://www.meetup.com/Python-Sprints/",
+                             "lat": 51.520363,
+                             "lng": -0.086270},
+                            {"title": "Madrid",
+                             "description": "PyData Madrid",
+                             "url": "https://www.meetup.com/PyData-Madrid/",
+                             "lat": 40.4168209,
+                             "lng": -3.7035725},
+                            {"title": "Florence",
+                             "description": "Florence, TBC",
+                             "url": "#",
+                             "lat": 43.7735238,
+                             "lng": 11.2572189},
+                            {"title": "Delhi",
+                             "description": "PyData Delhi",
+                             "url": "https://www.meetup.com/PyDataDelhi/",
+                             "lat": 28.617024,
+                             "lng": 77.2078168},
+                            {"title": "Amsterdam",
+                             "description": "PyData Amsterdam",
+                             "url": "https://www.meetup.com/PyData-NL/",
+                             "lat": 52.3772272,
+                             "lng": 4.8979811},
+                            {"title": "Seattle",
+                             "description": "PyData Seattle",
+                             "url": "https://www.meetup.com/pydata_seattle/",
+                             "lat": 47.620508,
+                             "lng": -122.349252},
+                            {"title": "Mallorca",
+                             "description": "PyData Mallorca",
+                             "url": "https://www.meetup.com/PyData-Mallorca/",
+                             "lat": 39.567545,
+                             "lng": 2.648213},
+                        ];
+                        for (i=0; i < chapters.length; i++) {
+                            var marker = new google.maps.Marker({
+                              title: chapters[i]["title"],
+                              html: "<a href=\"" + chapters[i]["url"] + "\">" + chapters[i]["description"] + "</a>",
+                              position: {lat: chapters[i]["lat"],
+                                         lng: chapters[i]["lng"]},
+                              map: map
+                            });
+                            google.maps.event.addListener(
+                                marker,
+                                'click',
+                                function(){
+                                    infowindow.setContent(this.html);
+                                    infowindow.open(map,this);
+                                }
+                            );
+                        }
 
 					  }
 					</script>
@@ -275,22 +266,22 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-1"></a>
+                    <a class="partner-box partner-box-1" href="https://www.python.org/psf/"></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-2"></a>
+                    <a class="partner-box partner-box-2" href="https://www.numfocus.org/"></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-3"></a>
+                    <a class="partner-box partner-box-3" href="https://github.com/"></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-4"></a>
+                    <a class="partner-box partner-box-4" href="https://www.twosigma.com/"></a>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-5"></a>
+                    <a class="partner-box partner-box-5" href="https://www.bloomberg.com/"></a>
                 </div>
                 <div class="col-sm-3">
                     <a class="partner-box partner-box-6"></a>
@@ -316,6 +307,21 @@
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                         
                         <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingZero">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseZero" aria-expanded="true" aria-controls="collapseZero"> Is this sprint for me ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseZero" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingZero">
+                                <div class="panel-body">
+                                    <p class="panel-body">The sprints are open to everybody. Knowledge of Python, Pandas and Git is required to be able to contribute.</p>
+                                    <p class="panel-body">We want the sprints to be inclusive and diverse. If you think you are part of an underrepresented minority (because of gender, age, race...), please contact your organizer to have priority in getting a spot.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
                                     <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Where is the sprint happening ?</a>
@@ -325,7 +331,7 @@
                             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                 <div class="panel-body">
                                     <p class="panel-body">There are many locations available, check the <a href="#location">locations</a> section.</p>
-                                    <p>If there is no location near you, please get in touch at <a href="mailto:py.sprints@gmail.com">py.sprints@gmail.com</a>, and we'll help you organize one.</p>
+                                    <p class="panel-body">If there is no location near you, please get in touch at <a href="mailto:py.sprints@gmail.com">py.sprints@gmail.com</a>, and we'll help you organize one.</p>
                                 </div>
                             </div>
                         </div>
