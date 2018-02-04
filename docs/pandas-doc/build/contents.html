@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>How to write a good pandas docstring &#8212; Python  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-write-a-good-pandas-docstring">
+<h1>How to write a good pandas docstring<a class="headerlink" href="#how-to-write-a-good-pandas-docstring" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-docstrings-and-standards">
+<h2>About docstrings and standards<a class="headerlink" href="#about-docstrings-and-standards" title="Permalink to this headline">¶</a></h2>
+<p>A Python docstring is a string used to document a Python function or method,
+so programmers can understand what it does without having to read the details
+of the implementation.</p>
+<p>Also, it is a commonn practice to generate online (html) documentation
+automatically from docstrings. <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> serves
+this purpose.</p>
+<p>Next example gives an idea on how a docstring looks like:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;Add up to integer numbers.</span>
+
+<span class="sd">This function simply wraps the `+` operator, and does not</span>
+<span class="sd">do anything interesting, except for illustrating what is</span>
+<span class="sd">the docstring of a very simple function.</span>
+
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">num1 : int</span>
+<span class="sd">    First number to add</span>
+<span class="sd">num2 : int</span>
+<span class="sd">    Second number to add</span>
+
+<span class="sd">Returns</span>
+<span class="sd">-------</span>
+<span class="sd">int</span>
+<span class="sd">    The sum of `num1` and `num2`</span>
+
+<span class="sd">Examples</span>
+<span class="sd">--------</span>
+<span class="sd">&gt;&gt;&gt; add(2, 2)</span>
+<span class="sd">4</span>
+<span class="sd">&gt;&gt;&gt; add(25, 0)</span>
+<span class="sd">25</span>
+<span class="sd">&gt;&gt;&gt; add(10, -10)</span>
+<span class="sd">0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</pre></div>
+</div>
+<p>To make it easier to understand docstrings, and to make it possible to export
+them to html, some standards exist.</p>
+<p>The first conventions every Python docstring should follow are defined in
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP-257</a>.</p>
+<p>As PEP-257 is quite open, some other standards exist. In the case of pandas,
+the numpy docstring convention is followed. There are two main documents
+that explain this convention:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">Guide to NumPy/SciPy documentation</a></li>
+<li><a class="reference external" href="http://numpydoc.readthedocs.io/en/latest/format.html">numpydoc docstring guide</a></li>
+</ul>
+<p>numpydoc is a Sphinx extension to support the numpy docstring convention.</p>
+<p>The standard uses reStructuredText (reST). reStructuredText is a markup
+language that allows encoding styles in plain text files. Documentation
+about reStructuredText can be found in:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html">Sphinx reStructuredText primer</a></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">Quick reStructuredText reference</a></li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">Full reStructuredText specification</a></li>
+</ul>
+<p>The rest of this document will summarize all the above guides, and will
+provide additional convention specific to the pandas project.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to write a good pandas docstring</a><ul>
+<li><a class="reference internal" href="#about-docstrings-and-standards">About docstrings and standards</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/contents.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/contents.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
