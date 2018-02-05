@@ -284,6 +284,12 @@ For complex types, define the subtypes:
 - tuple of (str, int, int)
 - set of str
 
+In case there are just a set of values allowed, list them in curly brackets
+and separated by commas (followed by a space):
+
+- {0, 10, 25}
+- {'simple', 'advanced'}
+
 If the type is defined in a Python module, the module must be specified:
 
 - datetime.date
@@ -306,3 +312,6 @@ last two types, that need to be separated by the word 'or':
 - int or float
 - float, decimal.Decimal or None
 - str or list of str
+
+Section 4: Returns or Yield
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
