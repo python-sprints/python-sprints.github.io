@@ -1,1 +1,1 @@
-include: ["_test.html", "docs/_static", "docs/pandas-doc/build/_static"]
+include: ["pandas/guide/_static"]
