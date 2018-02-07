@@ -233,7 +233,7 @@ can have multiple lines. The description must start with a capital letter, and
 finish with a dot.</p>
 <p><strong>Good:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate a plot.</span>
 
 <span class="sd">        Render the data in the Series as a matplotlib plot of the</span>
@@ -247,11 +247,12 @@ finish with a dot.</p>
 <span class="sd">            These parameters will be passed to the matplotlib plotting</span>
 <span class="sd">            function.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate a plot.</span>
 
 <span class="sd">        Render the data in the Series as a matplotlib plot of the</span>
@@ -272,6 +273,7 @@ finish with a dot.</p>
 <span class="sd">        kind: str</span>
 <span class="sd">            kind of matplotlib plot</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
 <div class="section" id="parameter-types">
@@ -321,8 +323,51 @@ last two types, that need to be separated by the word ‘or’:</p>
 </ul>
 </div>
 </div>
-<div class="section" id="section-4-returns-or-yield">
-<h3>Section 4: Returns or Yield<a class="headerlink" href="#section-4-returns-or-yield" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="section-4-returns-or-yields">
+<h3>Section 4: Returns or Yields<a class="headerlink" href="#section-4-returns-or-yields" title="Permalink to this headline">¶</a></h3>
+<p>If the method returns a value, it will be documented in this section. Also
+if the method yields its output.</p>
+<p>The title of the section will be defined in the same way as the “Parameters”.
+With the names “Returns” or “Yields” followed by a line with as many hyphens
+as the letters in the preceding word.</p>
+<p>The documentation of the return is also similar to the parameters. But in this
+case, no name will be provided, unless the method returns or yields more than
+one value (a tuple of values).</p>
+<p>For example, with a single value:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Generate and return a random number.</span>
+
+<span class="sd">    The value is sampled from a continuos uniform distribution between</span>
+<span class="sd">    0 and 1.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    float</span>
+<span class="sd">        Random number generated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>With more than one value:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_letters</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Generate and return a sequence of random letters.</span>
+
+<span class="sd">    The length of the returned string is also random, and is also</span>
+<span class="sd">    returned.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    length : int</span>
+<span class="sd">        Length of the returned string.</span>
+<span class="sd">    letters : str</span>
+<span class="sd">        String of random letters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span>
+                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">length</span><span class="p">,</span> <span class="n">letters</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -348,7 +393,7 @@ last two types, that need to be separated by the word ‘or’:</p>
 <li><a class="reference internal" href="#parameter-types">Parameter types</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#section-4-returns-or-yield">Section 4: Returns or Yield</a></li>
+<li><a class="reference internal" href="#section-4-returns-or-yields">Section 4: Returns or Yields</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +431,7 @@ last two types, that need to be separated by the word ‘or’:</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

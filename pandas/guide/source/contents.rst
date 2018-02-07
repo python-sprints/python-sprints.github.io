@@ -225,7 +225,7 @@ finish with a dot.
 .. code-block:: python
 
     class Series:
-        def plot(kind, **kwargs):
+        def plot(self, kind, **kwargs):
             """Generate a plot.
 
             Render the data in the Series as a matplotlib plot of the
@@ -239,13 +239,14 @@ finish with a dot.
                 These parameters will be passed to the matplotlib plotting
                 function.
             """
+            pass
 
 **Bad:**
 
 .. code-block:: python
 
     class Series:
-        def plot(kind, **kwargs):
+        def plot(self, kind, **kwargs):
             """Generate a plot.
 
             Render the data in the Series as a matplotlib plot of the
@@ -266,6 +267,7 @@ finish with a dot.
             kind: str
                 kind of matplotlib plot
             """
+            pass
 
 Parameter types
 ^^^^^^^^^^^^^^^
@@ -313,5 +315,55 @@ last two types, that need to be separated by the word 'or':
 - float, decimal.Decimal or None
 - str or list of str
 
-Section 4: Returns or Yield
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Section 4: Returns or Yields
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the method returns a value, it will be documented in this section. Also
+if the method yields its output.
+
+The title of the section will be defined in the same way as the "Parameters".
+With the names "Returns" or "Yields" followed by a line with as many hyphens
+as the letters in the preceding word.
+
+The documentation of the return is also similar to the parameters. But in this
+case, no name will be provided, unless the method returns or yields more than
+one value (a tuple of values).
+
+For example, with a single value:
+
+.. code-block:: python
+
+    def sample():
+        """Generate and return a random number.
+
+        The value is sampled from a continuos uniform distribution between
+        0 and 1.
+
+        Returns
+        -------
+        float
+            Random number generated.
+        """
+        return random.random()
+
+With more than one value:
+
+.. code-block:: python
+
+    def random_letters():
+        """Generate and return a sequence of random letters.
+
+        The length of the returned string is also random, and is also
+        returned.
+
+        Returns
+        -------
+        length : int
+            Length of the returned string.
+        letters : str
+            String of random letters.
+        """
+        length = random.randint(1, 10)
+        letters = ''.join(random.choice(string.ascii_lowercase)
+                          for i in range(length))
+        return length, letters

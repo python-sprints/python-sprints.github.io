@@ -1,0 +1,1 @@
+include: ["_test.html", "_static", "pandas/guide/_static"]
