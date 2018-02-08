@@ -1,0 +1,4 @@
+.ipynb_checkpoints
+*.swp
+pandas/guide/.buildinfo
+pandas/guide/.doctrees
