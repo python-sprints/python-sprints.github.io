@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>How to write a good pandas docstring &#8212; Python  documentation</title>
+    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -30,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body>
+  <body role="document">
   
 
     <div class="document">
@@ -218,9 +221,9 @@ every paragraph in the extended summary is finished by a dot.</p>
 <div class="section" id="section-3-parameters">
 <h3>Section 3: Parameters<a class="headerlink" href="#section-3-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The details of the parameters will be added in this section. This section has
-the title “Parameters”, followed by a line with a hyphen under each letter of
-the word “Parameters”. A blank line is left before the section title, but not
-after, and not between the line with the word “Parameters” and the one with
+the title &#8220;Parameters&#8221;, followed by a line with a hyphen under each letter of
+the word &#8220;Parameters&#8221;. A blank line is left before the section title, but not
+after, and not between the line with the word &#8220;Parameters&#8221; and the one with
 the hyphens.</p>
 <p>After the title, each parameter in the signature must be documented, including
 <cite>*args</cite> and <cite>**kwargs</cite>, but not <cite>self</cite>.</p>
@@ -296,7 +299,7 @@ directly:</p>
 and separated by commas (followed by a space):</p>
 <ul class="simple">
 <li>{0, 10, 25}</li>
-<li>{‘simple’, ‘advanced’}</li>
+<li>{&#8216;simple&#8217;, &#8216;advanced&#8217;}</li>
 </ul>
 <p>If the type is defined in a Python module, the module must be specified:</p>
 <ul class="simple">
@@ -315,7 +318,7 @@ and separated by commas (followed by a space):</p>
 <li>pandas.DataFrame</li>
 </ul>
 <p>If more than one type is accepted, separate them by commas, except the
-last two types, that need to be separated by the word ‘or’:</p>
+last two types, that need to be separated by the word &#8216;or&#8217;:</p>
 <ul class="simple">
 <li>int or float</li>
 <li>float, decimal.Decimal or None</li>
@@ -327,8 +330,8 @@ last two types, that need to be separated by the word ‘or’:</p>
 <h3>Section 4: Returns or Yields<a class="headerlink" href="#section-4-returns-or-yields" title="Permalink to this headline">¶</a></h3>
 <p>If the method returns a value, it will be documented in this section. Also
 if the method yields its output.</p>
-<p>The title of the section will be defined in the same way as the “Parameters”.
-With the names “Returns” or “Yields” followed by a line with as many hyphens
+<p>The title of the section will be defined in the same way as the &#8220;Parameters&#8221;.
+With the names &#8220;Returns&#8221; or &#8220;Yields&#8221; followed by a line with as many hyphens
 as the letters in the preceding word.</p>
 <p>The documentation of the return is also similar to the parameters. But in this
 case, no name will be provided, unless the method returns or yields more than
@@ -431,7 +434,7 @@ one value (a tuple of values).</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Instructions for Pandas Sprints &#8212; Python  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="instructions-for-pandas-sprints">
+<h1>Instructions for Pandas Sprints<a class="headerlink" href="#instructions-for-pandas-sprints" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-project">
+<h2>The project<a class="headerlink" href="#the-project" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/">pandas</a> is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</p>
+<p>pandas is a <a class="reference external" href="https://www.numfocus.org/sponsored-projects/">NumFOCUS</a> sponsored project. This will help ensure the success of development of pandas as a world-class open-source project, and makes it possible to <a class="reference external" href="https://pandas.pydata.org/donate.html">donate</a> to the project.</p>
+</div>
+<div class="section" id="set-up-for-the-sprint">
+<h2>Set up for the sprint<a class="headerlink" href="#set-up-for-the-sprint" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you <strong>bring your own laptop</strong> to the sprint.</p>
+<p>You need the next softwares installed:</p>
+<ul class="simple">
+<li>Git</li>
+<li>An editor (vim, emacs, PyCharm,...)</li>
+</ul>
+<p>To <strong>set up the environment</strong>, you have detailed instructions in the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/contributing.html">pandas contributing guide</a>.</p>
+<p>Create an account on Github github.com</p>
+<p>Get the pandas source code:</p>
+<ul class="simple">
+<li>Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas project</a> on GitHub (click on the top-right fork button)</li>
+<li><dl class="first docutils">
+<dt>In the terminal, run:</dt>
+<dd><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></dd>
+</dl>
+</li>
+</ul>
+<p>A summary of it would be:</p>
+<ul>
+<li><p class="first">Download and install <a class="reference external" href="https://www.anaconda.com/download/#linux">Anaconda</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Activate conda by one of the next (or equivalent, if you know what you&#8217;re doing):</dt>
+<dd><div class="first last line-block">
+<div class="line">Restart your terminal</div>
+<div class="line"><code class="docutils literal"><span class="pre">.</span> <span class="pre">~/.bashrc</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create a conda environment:</dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Activate the new conda environment:</dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Install pandas development dependencies:</dt>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;path-to-pandas&gt;/ci/requirements-optional-conda.txt</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Compile C code in pandas:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
+<div class="line">Run the tests:</div>
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;path-to-pandas&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">pytest</span> <span class="pre">pandas</span></code></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="contents.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Instructions for Pandas Sprints</a><ul>
+<li><a class="reference internal" href="#the-project">The project</a></li>
+<li><a class="reference internal" href="#set-up-for-the-sprint">Set up for the sprint</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pandas_setup.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/pandas_setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
