@@ -75,6 +75,10 @@
     transition: all 0.5s;
 }
 
+.navigation__button-open-container:hover {
+    background-color: rgba(7, 41, 72, 0.7);
+}
+
 .navigation__title, .navigation__subtitle, .navigation__button-close {
     user-select: none;
     -moz-user-select: none;
