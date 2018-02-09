@@ -13,6 +13,16 @@
     overflow-x: hidden;
 }
 
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* Responsive background image handling*/
 [data-image-type="responsive"] {
   background-size: cover;
