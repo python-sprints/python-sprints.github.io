@@ -23,6 +23,29 @@
     padding-right: 0;
 }
 
+/* Classes to change order of collapsed columns on mobiles*/
+@media (max-width: 767px) {
+    .first-on-mobile {
+        -webkit-order: 1;
+        order: 1;
+    }
+
+    .second-on-mobile {
+        -webkit-order: 2;
+        order: 2;
+    }
+
+    .third-on-mobile {
+        -webkit-order: 3;
+        order: 3;
+    }
+
+    .fourth-on-mobile {
+        -webkit-order: 4;
+        order: 4;
+    }
+}
+
 /* Responsive background image handling*/
 [data-image-type="responsive"] {
   background-size: cover;
@@ -241,6 +264,7 @@
 
 .events__img {
     border: #072948 1px solid;
+    width: 100%;
 }
 
 .events__title-container {
@@ -338,29 +362,43 @@
 .services__divider-right {
     width: 50%;
     margin-right:5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .services__divider-left {
     width: 50%;
     margin-left:5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.services__img {
+    width: 100%;
+}
+
+@media (max-width: 767px) {
+    .services__img {
+        margin-bottom: 10%;
+    }
 }
 
 .services__title {
     font-family: 'Encode Sans Expanded', sans-serif;
     color: #072948;
-    font-size: 1.7em;
+    font-size: 1.65em;
     padding-left: 5%;
     padding-right: 5%;
-    margin-top: 5%;
+    margin-top: 1%;
     margin-bottom: 2.5%;
 }
 
 .services__content {
-    font-size: 1.0em;
+    font-size: 1em;
     text-align: center;
     font-family: 'Playfair Display', serif;
     padding-left: 5%;
@@ -369,11 +407,21 @@
 
 @media (min-width: 768px) {
     .services__title {
-        font-size: 1.4em;
+        margin-top: 2%;
+        font-size: 1.33em;
+    }
+    .services__content {
+        font-size: 0.95em;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
+    .services__title {
+        margin-top: 5%;
+    }
+}
+
+@media (min-width: 1228px) {
     .services__divider-left {
         margin-left: 10%;
     }
