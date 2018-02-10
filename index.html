@@ -17,20 +17,20 @@
 <!--Full screen navigation section-->
     <nav class="navigation navbar sticky-top navbar-light">
         <div class="navigation__brand">
-            <a class="navbar-brand" href="index.html">
+            <a class="navigation__brand-link navbar-brand" href="index.html">
                 <img class="navigation__brand-img" src="static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
                 <span class="navigation__brand-name">Python Sprints</span>
             </a>
         </div>
 
-        <div class="navigation__button-open-container" onclick="openNav()">
+        <div class="navigation__button-open-container">
             <div class="navigation__hamburger-bar"></div>
             <div class="navigation__hamburger-bar"></div>
             <div class="navigation__hamburger-bar"></div>
         </div>
 
         <div class="navigation__button-close-container">
-            <a href="javascript:void(0)" class="navigation__button-close" onclick="closeNav()">
+            <a href="javascript:void(0)" class="navigation__button-close">
                 <i class="navigation__button-close fas fa-times"></i>
             </a>
         </div>
@@ -39,11 +39,21 @@
     <div class="navigation__content container-fluid" data-image-type="responsive">
         <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg"
                      srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
+                            static/images/title_photo/title_glass_building_750x1334.jpg 750w,
                             static/images/title_photo/title_glass_building_960x540.jpg 960w,
+                            static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
+                            static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
+                            static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
+                            static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
                             static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,
                             static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"
                      sizes="(max-width: 480px) 100vw,
+                            (max-width: 750px) 100vw,
                             (max-width: 960px) 100vw,
+                            (max-width: 1080px) 100vw,
+                            (max-width: 1125px) 100vw,
+                            (max-width: 1242px) 100vw,
+                            (max-width: 1442px) 100vw,
                             (max-width: 1920px) 100vw,
                             (min-width: 2300px) 100vw"
                      alt="Python Sprints Title Image">
@@ -69,9 +79,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="section-title">Our Mission</h2>
-                    <p class="section-content">To improve code in open source projects and build a lasting relationship with the maintainers.</p>
-                    <p class="section-content">Grow the Python community all around the world and include people of all backgrounds and skills.</p>
-                    <p class="section-content">Provide mentorship and challenge for those who want to get better at coding.</p>
+                    <p class="section-content">Contribute to open source projects.</p>
+                    <p class="section-content">Grow the Python community.</p>
+                    <p class="section-content">Provide mentorship and challenge for people of all backgrounds and skills.</p>
                 </div>
             </div>
         </div>
@@ -166,10 +176,10 @@
 
 
         <div class="row">
-            <div class="no-gutters__col col-md-6">
+            <div class="second-on-mobile no-gutters__col col-md-6">
                 <img class="services__img img-fluid rounded" src="static/images/services/educating_devs_840x561px.jpg">
             </div>
-            <div class="no-gutters__col col-md-6">
+            <div class="first-on-mobile no-gutters__col col-md-6">
                 <h2 class="services__title text-right">Helping Beginners To Get Good</h2>
                 <hr class="services__divider-right">
                 <p class="services__content text-right">We are open to people who just started to program and need guidance and mentorship. We can help you become a better programmer by collaborating with others and reading loads of code. Come and try it - you will not be disappointed. We normally have a mixture of seasoned and new coders during every sprint so advice is literally at hands reach.</p>

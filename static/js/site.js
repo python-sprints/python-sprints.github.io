@@ -2,6 +2,8 @@ var buttonOpenContainer = $(".navigation__button-open-container");
 var hamburgerBar = $(".navigation__hamburger-bar");
 var navigationOverlay = $(".navigation__overlay");
 var buttonCloseContainer = $(".navigation__button-close-container");
+var navigationButtonClose = $(".navigation__button-close");
+
 
 function openNav() {
     buttonOpenContainer.css("pointer-events", "none");
@@ -23,6 +25,8 @@ function showCloseButton() {
     buttonCloseContainer.css("display", "inline");
 }
 
+buttonOpenContainer.on("click", openNav);
+navigationButtonClose.on("click", closeNav);
 
 // Responsive background image constructor.
 class ResponsiveBackgroundImage {
