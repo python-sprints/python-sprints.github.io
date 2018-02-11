@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
@@ -35,32 +35,28 @@
             </a>
         </div>
     </nav>
-<!--Title image will be set to display:none and used as a background image-->
+<!--Title image will be set to display:none and used as a background image on the div below-->
     <div class="navigation__content container-fluid" data-image-type="responsive">
-        <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg"
-                     srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
-                            static/images/title_photo/title_glass_building_750x1334.jpg 750w,
+        <picture>
+            <source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
                             static/images/title_photo/title_glass_building_960x540.jpg 960w,
-                            static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
-                            static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
-                            static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
                             static/images/title_photo/title_glass_building_1334x750.jpg 1334w,
-                            static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
                             static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,
                             static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,
                             static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"
-                     sizes="(max-width: 480px) and (orientation: landscape) 100vw,
-                            (max-width: 750px) and (orientation: portrait) 100vw,
-                            (max-width: 960px) and (orientation: landscape) 100vw,
-                            (max-width: 1080px) and (orientation: portrait) 100vw,
-                            (max-width: 1125px) and (orientation: portrait) 100vw,
-                            (max-width: 1242px) and (orientation: portrait) 100vw,
-                            (max-width: 1334px) and (orientation: landscape) 100vw,
-                            (max-width: 1442px) and (orientation: portrait) 100vw,
-                            (max-width: 1920px) and (orientation: landscape) 100vw,
-                            (max-width: 2562px) and (orientation: landscape) 100vw,
-                            (min-width: 2563px) and (orientation: landscape) 100vw"
-                     alt="Python Sprints Title Image">
+                    media="(orientation: landscape)"
+                    sizes="100vw">
+            <source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,
+                            static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
+                            static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
+                            static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
+                            static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
+                            "
+                    media="(orientation: portrait)"
+                    sizes="100vw">
+            <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg" alt="Python Sprints Title Image">
+        </picture>
+
         <div class="row">
             <div class="col-md-12">
                 <h1 class="navigation__title">Python Sprints</h1>
