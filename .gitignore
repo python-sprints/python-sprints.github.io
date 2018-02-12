@@ -110,3 +110,4 @@ venv.bak/
 .idea/
 pandas/bower_components/
 _site/
+/.jekyll-metadata

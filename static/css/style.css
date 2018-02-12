@@ -210,6 +210,7 @@
 
 .navigation__button-close-container {
     display: none;
+    z-index: 1010;
 }
 
 .navigation__button-close {
