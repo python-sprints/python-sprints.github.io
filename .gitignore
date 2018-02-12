@@ -109,3 +109,4 @@ venv.bak/
 .mypy_cache/
 .idea/
 pandas/bower_components/
+_site/
