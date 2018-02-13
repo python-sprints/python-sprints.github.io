@@ -29,3 +29,4 @@ pandas documentation sprint.
 
    pandas_setup
    pandas_docstring
+   pandas_pr

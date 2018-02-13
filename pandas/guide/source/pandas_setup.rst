@@ -46,6 +46,11 @@ This will create a directory named `pandas`, containing the latest version of
 the source code. We will name this directory `<pandas-dir>` in the rest of
 this document.
 
+Then, set the upstream remote, so you can fetch the updates from the pandas
+repository:
+
+    | ``git remote add upstream https://github.com/pandas-dev/pandas``
+
 3. Set up a Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
