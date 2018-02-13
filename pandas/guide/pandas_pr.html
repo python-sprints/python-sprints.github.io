@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Submitting your changes &#8212; Python  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="How to write a good pandas docstring" href="pandas_docstring.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="submitting-your-changes">
+<h1>Submitting your changes<a class="headerlink" href="#submitting-your-changes" title="Permalink to this headline">¶</a></h1>
+<p>Once you finished the changes to your assigned docstring, you can follow the
+instructions in this document in order to get your changes merged into pandas,
+and released in the next version.</p>
+<div class="section" id="validate-that-your-docstring-does-not-have-technical-errors">
+<h2>1. Validate that your docstring does not have technical errors<a class="headerlink" href="#validate-that-your-docstring-does-not-have-technical-errors" title="Permalink to this headline">¶</a></h2>
+<p>There is a script in pandas that validates whether a docstring follows the
+technical parts of the pandas docstring convention. To run the script,
+execute in your terminal:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">scripts/validate_docstring.py</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+</div>
+</div></blockquote>
+<p>where <cite>&lt;your-function-or-method&gt;</cite> is for example <cite>pandas.DataFrame.head</cite>,
+<cite>pandas.Series.tail</cite> or <cite>pandas.to_datetime</cite>.</p>
+</div>
+<div class="section" id="visual-validation-of-the-docstring">
+<h2>2. Visual validation of the docstring<a class="headerlink" href="#visual-validation-of-the-docstring" title="Permalink to this headline">¶</a></h2>
+<p>The previous sprint validates things like the names of the sections, or
+that there are dots, spaces, or blank lines in the right side. But does
+not validate for typos, unclear sentences, or other mistakes. To validate
+them, as well as the visualization of your docstring in the pandas website
+you need to generate the html version of the page you worked on.</p>
+<p>To build the documentation run:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;/doc</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">make.py</span> <span class="pre">html</span> <span class="pre">--single</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+</div>
+</div></blockquote>
+<p>where <cite>&lt;your-function-or-method&gt;</cite> follows the format described in the previous
+section.</p>
+<p>This will generate a file <cite>&lt;pandas-dir&gt;/doc/build/html/generated/&lt;your-function-or-method&gt;.html</cite>
+that can be opened with your web browser.</p>
+</div>
+<div class="section" id="validate-code-in-the-examples">
+<h2>3. Validate code in the examples<a class="headerlink" href="#validate-code-in-the-examples" title="Permalink to this headline">¶</a></h2>
+<p>Code in the <cite>Examples</cite> section of the docstring must be valid Python code, and
+return the exact output as presented. Besides illustrating the functionality
+in the documentation, this code is also part of the unit tests.</p>
+<p>To run the examples as unit tests, and validate that the code is correct and
+returns the expected output, execute the next in your terminal:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">pytest</span> <span class="pre">--doctest-modules</span> <span class="pre">&lt;file-of-your-docstring&gt;</span> <span class="pre">-k</span> <span class="pre">&lt;function-or-method-name&gt;</span></code></div>
+</div>
+</div></blockquote>
+<p>where <cite>&lt;file-of-your-docstring&gt;</cite> is the path to the file where you edited your docstring
+(e.g. <cite>pandas/core/frame.py</cite>) and <cite>&lt;function-or-method-name&gt;</cite> is the name of the function
+or method you edited (e.g. <cite>head</cite>).</p>
+</div>
+<div class="section" id="validate-that-the-docstring-is-clear-to-others">
+<h2>4. Validate that the docstring is clear to others<a class="headerlink" href="#validate-that-the-docstring-is-clear-to-others" title="Permalink to this headline">¶</a></h2>
+<p>As the last validation, please show the html version of your docstring to a
+person in the sprint not involved in the changes to the docstring, and make
+sure they are able to fully understand it.</p>
+</div>
+<div class="section" id="commit-your-changes">
+<h2>5. Commit your changes<a class="headerlink" href="#commit-your-changes" title="Permalink to this headline">¶</a></h2>
+<p>Once all the validations are successful, you can proceed to commit the changes
+into git.</p>
+<p>Before committing your changes, make sure you are in the branch of the feature
+you are going to commit with:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code></div>
+</div>
+</div></blockquote>
+<p>Then, follow the next steps:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstram/master</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;modified-file(s)&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;commit-message&gt;&quot;</span></code></div>
+</div>
+</div></blockquote>
+<p>where <cite>&lt;modified-file(s)&gt;</cite> is the file where you made your changes (in rare
+cases it could be more than one file). And <cite>&lt;commit-message&gt;</cite> is a short
+description of your changes, starting by “DOC:” (e.g. “DOC: Improved the
+docsting of DataFrame.head()”).</p>
+</div>
+<div class="section" id="push-your-changes-to-the-sprint-repository">
+<h2>6. Push your changes to the sprint repository<a class="headerlink" href="#push-your-changes-to-the-sprint-repository" title="Permalink to this headline">¶</a></h2>
+<p>Before sending the pull request to the pandas core developers, you will send
+it to the sprint repository. Where more experienced contributors will review
+it, and suggest changes if needed.</p>
+<p>First, push your changes to your GitHub fork:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;your-branch-name&gt;</span></code></div>
+</div>
+</div></blockquote>
+<p>Then, visit <a class="reference external" href="https://github.com/python-sprints/pandas">https://github.com/python-sprints/pandas</a> in your browser, and click
+on the “Compare &amp; pull request” button in the yellow box above the repository
+files.</p>
+<p>Once your changes are reviewed and approved, you will receive an email on how
+to send the final pull request to pandas.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="contents.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Submitting your changes</a><ul>
+<li><a class="reference internal" href="#validate-that-your-docstring-does-not-have-technical-errors">1. Validate that your docstring does not have technical errors</a></li>
+<li><a class="reference internal" href="#visual-validation-of-the-docstring">2. Visual validation of the docstring</a></li>
+<li><a class="reference internal" href="#validate-code-in-the-examples">3. Validate code in the examples</a></li>
+<li><a class="reference internal" href="#validate-that-the-docstring-is-clear-to-others">4. Validate that the docstring is clear to others</a></li>
+<li><a class="reference internal" href="#commit-your-changes">5. Commit your changes</a></li>
+<li><a class="reference internal" href="#push-your-changes-to-the-sprint-repository">6. Push your changes to the sprint repository</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="pandas_docstring.html" title="previous chapter">How to write a good pandas docstring</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pandas_pr.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/pandas_pr.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
