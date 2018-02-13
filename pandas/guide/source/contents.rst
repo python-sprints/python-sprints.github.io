@@ -2,9 +2,6 @@
 Pandas documentation sprint
 ===========================
 
-This document provides all the necessary information to participate to the
-pandas documentation sprint.
-
 The pandas documentation sprint is a worldwide event that will take place
 the 10th of March of 2018. During the sprint open source hackers will work
 on improving the `pandas API documentation
@@ -19,12 +16,16 @@ convention, they could benefit from some pandas specific convention.
 
 There are around 1,000 API pages in pandas, meaning that the effort to fix,
 standardize and improve all the API documentation is huge. But the pandas
-user base is also huge. And the Python community is known for being the most
-active of any programming language (citation needed, but you know it is true).
+user base is also huge. And Pythonistas are very active an well organized.
+So, we will work together from all around the world to take care of every
+single API, in a single day.
 
-So, Python/PyData user groups of all around the world 
+This document provides all the necessary information to participate to the
+pandas documentation sprint.
 
 
 .. toctree::
+   :maxdepth: 1
+
    pandas_setup
    pandas_docstring

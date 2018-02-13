@@ -1,36 +1,58 @@
-Instructions for Pandas Sprints
-*******************************
-
-The project
-===========
-`pandas <https://pandas.pydata.org/>`_ is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
-
-pandas is a `NumFOCUS <https://www.numfocus.org/sponsored-projects/>`_ sponsored project. This will help ensure the success of development of pandas as a world-class open-source project, and makes it possible to `donate <https://pandas.pydata.org/donate.html>`_ to the project.
-
-
-Set up for the sprint
-=====================
+======================================
+Before the sprint: Set up instructions
+======================================
 
 Make sure you **bring your own laptop** to the sprint.
 
-You need the next softwares installed:
+You need the next software installed:
 
 * Git
-* An editor (vim, emacs, PyCharm,...)
+* An editor (vim, emacs, PyCharm,...). Make sure the editor is set up to use 4 spaces for tabs.
 
-To **set up the environment**, you have detailed instructions in the `pandas contributing guide <https://pandas.pydata.org/pandas-docs/stable/contributing.html>`_.
+The `pandas contributing guide <https://pandas.pydata.org/pandas-docs/stable/contributing.html>`_
+contains detailed instructions on how to set up a pandas devlopment environemnt.
+This document is a short summary with some additional information specific to
+the sprint.
 
-Create an account on Github github.com
+.. note::
+    Next steps will download from the Internet around 900Mb for the pandas
+    repository, and around 600Mb for Anaconda. If you don't have access to
+    a fast Internet connection, contact your local chapter organizer, who will
+    try to get a copy of both in a usb key.
 
-Get the pandas source code:
+Instructions
+------------
 
-* Fork the `pandas project <https://github.com/pandas-dev/pandas>`_ on GitHub (click on the top-right fork button)
-* In the terminal, run:
-    ``git clone https://github.com/<your-github-username>/pandas``
+1. Create a GitHub account
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A summary of it would be:
+If you don't have a GitHub account yet, simply go to https://github.com/join,
+and provide your personal information (name, email...). Select the free plan.
 
-* Download and install `Anaconda <https://www.anaconda.com/download/#linux>`_
+2. Get the pandas source code
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All the changes during the sprints need to be made to the latest development
+version of pandas. Do not make them to a version downloaded from the Internet
+via pip, conda or a zip.
+
+To get the latest development version:
+* Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
+* In the terminal of your computer, in the directory where you want the copy of pandas source code, run:
+
+    | ``git clone https://github.com/<your-github-username>/pandas``
+
+This will create a directory named `pandas`, containing the latest version of
+the source code. We will name this directory `<pandas-dir>` in the rest of
+this document.
+
+3. Set up a Python environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3.a Python environment with Anaconda
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Download and install `Anaconda <https://www.anaconda.com/download/>`_
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
     | Restart your terminal
     | ``. ~/.bashrc``
@@ -40,9 +62,45 @@ A summary of it would be:
 * Activate the new conda environment:
     ``source activate pandas_dev``    
 * Install pandas development dependencies:
-    ``conda install -c defaults -c conda-forge --file=<path-to-pandas>/ci/requirements-optional-conda.txt``
-* Compile C code in pandas:
+    ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
+
+3.b Python environment with virtualenv and pip
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+4. Compile C code in pandas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Besides the Python `.py` files, pandas source code includes C/Cython files
+which need to be compiled in order to run the development version of pandas.
+
+To compile these files simply run:
+    | ``cd <pandas-dir>``
     | ``python setup.py build_ext --inplace``
-    | Run the tests:
-    | ``cd <path-to-pandas>``
-    | ``pytest pandas``
+
+The process will take several minutes.
+
+5. Create a branch and start coding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On the day of the sprint, you will get assigned one pandas function or method
+to work on. Once you know which, you need to create a git branch for your
+changes. This will be useful when you have finished your changes, and you want
+to submit a pull request, so they are included in pandas.
+
+You can create a git branch running:
+    | ``git checkout -b <new_branch_name>``
+
+The branch name should be descriptive of the feature you will work on. For
+example, if you will work on the docstring of the method `head`, you can
+name your branch `docstring_head`.
+
+If during the sprint you work in more than one docstring, you will need a
+branch for each.
+
+To check in which branch are you:
+    | ``git branch``
+
+To change to another branch:
+    | ``git checkout <branch_name>``

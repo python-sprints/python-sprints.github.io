@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Instructions for Pandas Sprints &#8212; Python  documentation</title>
-    
+    <title>Before the sprint: Set up instructions &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -26,6 +23,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to write a good pandas docstring" href="pandas_docstring.html" />
+    <link rel="prev" title="Pandas documentation sprint" href="contents.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -33,7 +32,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -41,38 +40,58 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="instructions-for-pandas-sprints">
-<h1>Instructions for Pandas Sprints<a class="headerlink" href="#instructions-for-pandas-sprints" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-project">
-<h2>The project<a class="headerlink" href="#the-project" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://pandas.pydata.org/">pandas</a> is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</p>
-<p>pandas is a <a class="reference external" href="https://www.numfocus.org/sponsored-projects/">NumFOCUS</a> sponsored project. This will help ensure the success of development of pandas as a world-class open-source project, and makes it possible to <a class="reference external" href="https://pandas.pydata.org/donate.html">donate</a> to the project.</p>
-</div>
-<div class="section" id="set-up-for-the-sprint">
-<h2>Set up for the sprint<a class="headerlink" href="#set-up-for-the-sprint" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="before-the-sprint-set-up-instructions">
+<h1>Before the sprint: Set up instructions<a class="headerlink" href="#before-the-sprint-set-up-instructions" title="Permalink to this headline">¶</a></h1>
 <p>Make sure you <strong>bring your own laptop</strong> to the sprint.</p>
-<p>You need the next softwares installed:</p>
+<p>You need the next software installed:</p>
 <ul class="simple">
 <li>Git</li>
-<li>An editor (vim, emacs, PyCharm,...)</li>
+<li>An editor (vim, emacs, PyCharm,…). Make sure the editor is set up to use 4 spaces for tabs.</li>
 </ul>
-<p>To <strong>set up the environment</strong>, you have detailed instructions in the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/contributing.html">pandas contributing guide</a>.</p>
-<p>Create an account on Github github.com</p>
-<p>Get the pandas source code:</p>
-<ul class="simple">
-<li>Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas project</a> on GitHub (click on the top-right fork button)</li>
-<li><dl class="first docutils">
-<dt>In the terminal, run:</dt>
-<dd><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></dd>
-</dl>
-</li>
-</ul>
-<p>A summary of it would be:</p>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/contributing.html">pandas contributing guide</a>
+contains detailed instructions on how to set up a pandas devlopment environemnt.
+This document is a short summary with some additional information specific to
+the sprint.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Next steps will download from the Internet around 900Mb for the pandas
+repository, and around 600Mb for Anaconda. If you don’t have access to
+a fast Internet connection, contact your local chapter organizer, who will
+try to get a copy of both in a usb key.</p>
+</div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-github-account">
+<h3>1. Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t have a GitHub account yet, simply go to <a class="reference external" href="https://github.com/join">https://github.com/join</a>,
+and provide your personal information (name, email…). Select the free plan.</p>
+</div>
+<div class="section" id="get-the-pandas-source-code">
+<h3>2. Get the pandas source code<a class="headerlink" href="#get-the-pandas-source-code" title="Permalink to this headline">¶</a></h3>
+<p>All the changes during the sprints need to be made to the latest development
+version of pandas. Do not make them to a version downloaded from the Internet
+via pip, conda or a zip.</p>
+<p>To get the latest development version:
+* Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas repository</a> on GitHub by click on the top-right <cite>Fork</cite> button
+* In the terminal of your computer, in the directory where you want the copy of pandas source code, run:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></div>
+</div>
+</div></blockquote>
+<p>This will create a directory named <cite>pandas</cite>, containing the latest version of
+the source code. We will name this directory <cite>&lt;pandas-dir&gt;</cite> in the rest of
+this document.</p>
+</div>
+<div class="section" id="set-up-a-python-environment">
+<h3>3. Set up a Python environment<a class="headerlink" href="#set-up-a-python-environment" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="a-python-environment-with-anaconda">
+<h4>3.a Python environment with Anaconda<a class="headerlink" href="#a-python-environment-with-anaconda" title="Permalink to this headline">¶</a></h4>
 <ul>
-<li><p class="first">Download and install <a class="reference external" href="https://www.anaconda.com/download/#linux">Anaconda</a></p>
+<li><p class="first">Download and install <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a></p>
 </li>
 <li><dl class="first docutils">
-<dt>Activate conda by one of the next (or equivalent, if you know what you&#8217;re doing):</dt>
+<dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
 <dd><div class="first last line-block">
 <div class="line">Restart your terminal</div>
 <div class="line"><code class="docutils literal"><span class="pre">.</span> <span class="pre">~/.bashrc</span></code></div>
@@ -95,22 +114,62 @@
 </li>
 <li><dl class="first docutils">
 <dt>Install pandas development dependencies:</dt>
-<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;path-to-pandas&gt;/ci/requirements-optional-conda.txt</span></code></p>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Compile C code in pandas:</dt>
-<dd><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
-<div class="line">Run the tests:</div>
-<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;path-to-pandas&gt;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">pytest</span> <span class="pre">pandas</span></code></div>
-</div>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></p>
 </dd>
 </dl>
 </li>
 </ul>
+</div>
+<div class="section" id="b-python-environment-with-virtualenv-and-pip">
+<h4>3.b Python environment with virtualenv and pip<a class="headerlink" href="#b-python-environment-with-virtualenv-and-pip" title="Permalink to this headline">¶</a></h4>
+<p>TODO</p>
+</div>
+</div>
+<div class="section" id="compile-c-code-in-pandas">
+<h3>4. Compile C code in pandas<a class="headerlink" href="#compile-c-code-in-pandas" title="Permalink to this headline">¶</a></h3>
+<p>Besides the Python <cite>.py</cite> files, pandas source code includes C/Cython files
+which need to be compiled in order to run the development version of pandas.</p>
+<dl class="docutils">
+<dt>To compile these files simply run:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
+</div>
+</dd>
+</dl>
+<p>The process will take several minutes.</p>
+</div>
+<div class="section" id="create-a-branch-and-start-coding">
+<h3>5. Create a branch and start coding<a class="headerlink" href="#create-a-branch-and-start-coding" title="Permalink to this headline">¶</a></h3>
+<p>On the day of the sprint, you will get assigned one pandas function or method
+to work on. Once you know which, you need to create a git branch for your
+changes. This will be useful when you have finished your changes, and you want
+to submit a pull request, so they are included in pandas.</p>
+<dl class="docutils">
+<dt>You can create a git branch running:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new_branch_name&gt;</span></code></div>
+</div>
+</dd>
+</dl>
+<p>The branch name should be descriptive of the feature you will work on. For
+example, if you will work on the docstring of the method <cite>head</cite>, you can
+name your branch <cite>docstring_head</cite>.</p>
+<p>If during the sprint you work in more than one docstring, you will need a
+branch for each.</p>
+<dl class="docutils">
+<dt>To check in which branch are you:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code></div>
+</div>
+</dd>
+<dt>To change to another branch:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch_name&gt;</span></code></div>
+</div>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 
@@ -125,9 +184,19 @@
             </a></p>
   <h3><a href="contents.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Instructions for Pandas Sprints</a><ul>
-<li><a class="reference internal" href="#the-project">The project</a></li>
-<li><a class="reference internal" href="#set-up-for-the-sprint">Set up for the sprint</a></li>
+<li><a class="reference internal" href="#">Before the sprint: Set up instructions</a><ul>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#create-a-github-account">1. Create a GitHub account</a></li>
+<li><a class="reference internal" href="#get-the-pandas-source-code">2. Get the pandas source code</a></li>
+<li><a class="reference internal" href="#set-up-a-python-environment">3. Set up a Python environment</a><ul>
+<li><a class="reference internal" href="#a-python-environment-with-anaconda">3.a Python environment with Anaconda</a></li>
+<li><a class="reference internal" href="#b-python-environment-with-virtualenv-and-pip">3.b Python environment with virtualenv and pip</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#compile-c-code-in-pandas">4. Compile C code in pandas</a></li>
+<li><a class="reference internal" href="#create-a-branch-and-start-coding">5. Create a branch and start coding</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -135,6 +204,8 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="contents.html" title="previous chapter">Pandas documentation sprint</a></li>
+      <li>Next: <a href="pandas_docstring.html" title="next chapter">How to write a good pandas docstring</a></li>
   </ul></li>
 </ul>
 </div>
@@ -163,7 +234,7 @@
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
