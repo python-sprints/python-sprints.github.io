@@ -1,43 +1,46 @@
-{% for post in site.posts %}
-		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-{% endfor %}
-{% for cupcake in site.cupcakes reversed limit: 3 offset: 3 %}
-
-{% assign my_array = "" | split: ',' %}
-Now you can push items into the array inside a for loop in the following way:
-
-{% for image in site.static_files %}
-  {% if image.path contains "assets/images/target-folder" %}
-     <!-- Push image into array -->
-     {% assign my_array = my_array | push: image %}
-  {% endif %}
-{% endfor %}
-{% for i in (1..5) %}
-<!--Create an array of last posts (from newest to oldest) to show in recent events section-->
-
-{% assign last_4_posts = "" | split: ',' %}
-{% for post in site.posts reversed limit: 4 %}
-    {% assign last_4_posts = last_4_posts | push: post %}
-{% endfor %}
-
-{% for i in (0..1) %}
-<div class="row">
-    {% for j in (0..1) %}
-    <div class="no-gutters__col col-sm-6">
-        <div class="events__spacer"></div>
-        <div class="events__img-container">
-            <div class="events__img-overlay">
-                <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244388482/" target="_blank">
-                    <i class="events__icon fas fa-external-link-square-alt"></i>
-                </a>
-                <div class="events__title-container">
-                    <h2 class="events__img-title">Project: {{ post.title}}</h2>
-                    <p class="events__img-subtitle">{{ post.venue }}, {{post.date}}</p>
-                </div>
+<section class="events">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">Recent Events</h2>
             </div>
-            <img class="events__img img-fluid" src="static/images/events_past/python_dot_org_part1_bloomberg_960x539px.jpeg">
         </div>
-    </div>
 
-</div>
+        {% comment %}
+            Create an array of last 4 posts (from newest to oldest) to show in recent events section.
+        {% endcomment %}
+
+        {% assign last_4_posts = "" | split: ',' %}
+        {% for post in site.posts reversed limit: 4 %}
+            {% assign last_4_posts = last_4_posts | push: post %}
+        {% endfor %}
+
+        {% comment %}
+            Create a 2 row by 2 column structure for 4 recent posts.
+        {% endcomment %}
+
+        {% for row in (0..1) %}
+            <div class="row">
+                {% for col in (0..1) %}
+                    {% assign post_index = row | times: 2 | plus: col %}
+                    {% assign post = last_4_posts[post_index] %}
+                    <div class="no-gutters__col col-sm-6">
+                        <div class="events__spacer"></div>
+                        <div class="events__img-container">
+                            <div class="events__img-overlay">
+                                <a class="events__link" href="{{ post.link }}" target="_blank">
+                                    <i class="events__icon fas fa-external-link-square-alt"></i>
+                                </a>
+                                <div class="events__title-container">
+                                    <h2 class="events__img-title">Project: {{ post.title }}</h2>
+                                    <p class="events__img-subtitle">{{ post.venue }}, {{ post.date | date: "%e %B %Y" }}</p>
+                                </div>
+                            </div>
+                            <img class="events__img img-fluid" src="{{ site.baseurl }}/{{ post.image }}">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</section>

@@ -31,6 +31,7 @@ layout: default
         </div>
     </div>
 </div>
+
 <!--Mission section-->
 <section class="mission">
     <div class="mission container-fluid">
@@ -44,89 +45,10 @@ layout: default
         </div>
     </div>
 </section>
+
 <!--Events in the past section-->
-<section class="events">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                    <h4>blog</h4>
-{% for post in site.posts %}
-    <time>{{ post.date | date: "%b %-d, %Y" }}</time>
-    <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-{% endfor %}
-                <h2 class="section-title">Recent Events</h2>
-            </div>
-        </div>
+{% include event.html %}
 
-        <div class="row">
-            <div class="no-gutters__col col-sm-6">
-                <div class="events__spacer"></div>
-                <div class="events__img-container">
-                    <div class="events__img-overlay">
-                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244388482/" target="_blank">
-                            <i class="events__icon fas fa-external-link-square-alt"></i>
-                        </a>
-                        <div class="events__title-container">
-                            <h2 class="events__img-title">Project: www.python.org (Part 1)</h2>
-                            <p class="events__img-subtitle">Bloomberg, November 1, 2017</p>
-                        </div>
-                    </div>
-                    <img class="events__img img-fluid" src="static/images/events_past/python_dot_org_part1_bloomberg_960x539px.jpeg">
-                </div>
-            </div>
-
-            <div class="no-gutters__col col-sm-6">
-                <div class="events__spacer"></div>
-                <div class="events__img-container">
-                    <div class="events__img-overlay">
-                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244062594/" target="_blank">
-                            <i class="events__icon fas fa-external-link-square-alt"></i>
-                        </a>
-                        <div class="events__title-container">
-                            <h2 class="events__img-title">Project: PyMC3</h2>
-                            <p class="events__img-subtitle">Zopa,  October 24, 2017</p>
-                        </div>
-                    </div>
-                    <img class="events__img img-fluid" src="static/images/events_past/pymc3_zopa_960x539px.jpeg">
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-0">
-            <div class="no-gutters__col col-sm-6">
-                <div class="events__spacer"></div>
-                <div class="events__img-container">
-                    <div class="events__img-overlay">
-                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/243422372/" target="_blank">
-                            <i class="events__icon fas fa-external-link-square-alt"></i>
-                        </a>
-                        <div class="events__title-container">
-                            <h2 class="events__img-title">Project: Bokeh as a backend for Pandas</h2>
-                            <p class="events__img-subtitle">Harvey Nash, October 4, 2017</p>
-                        </div>
-                    </div>
-                    <img class="events__img img-fluid" src="static/images/events_past/pandas_bokeh_backend_harvey_nash_960x539px.jpeg">
-                </div>
-            </div>
-
-            <div class="no-gutters__col col-sm-6">
-                <div class="events__spacer"></div>
-                <div class="events__img-container">
-                    <div class="events__img-overlay">
-                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/245317647/" target="_blank">
-                            <i class="events__icon fas fa-external-link-square-alt"></i>
-                        </a>
-                        <div class="events__title-container">
-                            <h2 class="events__img-title">Project: python-dateutil</h2>
-                            <p class="events__img-subtitle">Bloomberg,  December 6, 2017</p>
-                        </div>
-                    </div>
-                    <img class="events__img img-fluid" src="static/images/events_past/dateutil_bloomberg_960x539px.jpeg">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!--Services section-->
 <section class="services">
     <div class="container-fluid">
