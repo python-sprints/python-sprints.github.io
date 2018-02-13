@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/css/typography.css">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/static/css/typography.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/static/css/style.css">
 
     <title> {{ page.title }}</title>
 </head>
@@ -18,7 +18,7 @@
     <nav class="navigation navbar sticky-top navbar-light">
         <div class="navigation__brand">
             <a class="navigation__brand-link navbar-brand" href="index.html">
-                <img class="navigation__brand-img" src="static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
+                <img class="navigation__brand-img" src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
                 <span class="navigation__brand-name">Python Sprints</span>
             </a>
         </div>
@@ -36,7 +36,8 @@
         </div>
         <div class="navigation__overlay">
             <div class="navigation__overlay-content">
-                <a class="navigation__link" href="#">About</a>
+                <a class="navigation__link" href="{{ '/' | prepend: site.baseurl }}">Home</a>
+                <a class="navigation__link" href="{{ '/about' | prepend: site.baseurl }}">About</a>
                 <a class="navigation__link" href="#">Getting Started</a>
                 <a class="navigation__link" href="#">Projects</a>
                 <a class="navigation__link" href="#">Contact</a>
@@ -44,11 +45,9 @@
         </div>
     </nav>
 
-    <div class="container">
 
-        {{ content }}
+    {{ content }}
 
-    </div>
 
 <!--Footer-->
     <footer class="footer">
@@ -65,18 +64,18 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <a class="footer__sponsor-link" href="https://www.linkedin.com/in/hamishpitkeathly/">
-                            <img class="footer__img" src="static/images/sponsors/harvey_nash_130x90.png">
+                            <img class="footer__img" src="{{ site.baseurl }}/static/images/sponsors/harvey_nash_130x90.png">
                         </a>
                         <a class="footer__sponsor-link" href="https://www.python.org/psf/">
-                            <img class="footer__img" src="static/images/sponsors/python_software_foundation.jpeg">
+                            <img class="footer__img" src="{{ site.baseurl }}/static/images/sponsors/python_software_foundation.jpeg">
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="footer__sponsor-link" href="https://www.touchsurgery.com/jobs.html">
-                            <img class="footer__img" src="static/images/sponsors/touch_surgery.png">
+                            <img class="footer__img" src="{{ site.baseurl }}/static/images/sponsors/touch_surgery.png">
                         </a>
                         <a class="footer__sponsor-link" href="https://www.bloomberg.com/careers/">
-                            <img class="footer__img" src="static/images/sponsors/bloomberg.png">
+                            <img class="footer__img" src="{{ site.baseurl }}/static/images/sponsors/bloomberg.png">
                         </a>
                     </div>
                 </div>
@@ -98,7 +97,7 @@
                     © Copyright
                     <script>document.write(new Date().getFullYear())</script>
                     - Python Sprints
-                    <img class="footer__brand-img" src="static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
+                    <img class="footer__brand-img" src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
 
                 </p>
             </div>
@@ -108,6 +107,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="static/js/site.js"></script>
+<script src="{{ site.baseurl }}/static/js/site.js"></script>
 </body>
 </html>
