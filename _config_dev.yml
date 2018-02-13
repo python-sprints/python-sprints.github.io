@@ -19,6 +19,7 @@ include: ["_pages"]
 exclude:
   - Gemfile
   - Gemfile.lock
+future: true
 
 # command to run build locally:
 # bundle exec jekyll serve --config _config.yml,_config_dev.yml

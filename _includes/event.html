@@ -8,11 +8,21 @@
 
         {% comment %}
             Create an array of last 4 posts (from newest to oldest) to show in recent events section.
+            Since we also allow future posts to show upcoming event we have to eliminate the future once
+            from displaying in the past ones.
         {% endcomment %}
 
+        {% assign curDate = site.time | date: "%s" %}
         {% assign last_4_posts = "" | split: ',' %}
-        {% for post in site.posts reversed limit: 4 %}
-            {% assign last_4_posts = last_4_posts | push: post %}
+        {% for post in site.posts %}
+            {% assign postStartDate = post.date | date: "%s" %}
+            {% if postStartDate <= curDate %}
+                {% assign last_4_posts = last_4_posts | push: post %}
+                {% increment post_count %}
+            {% endif %}
+            {% if post_count == 4 %}
+                {% break %}
+            {% endif %}
         {% endfor %}
 
         {% comment %}

@@ -46,6 +46,32 @@ layout: default
     </div>
 </section>
 
+<section>
+    <div class="row container">
+        <div class="col-md-12">
+            <!--Upcoming Events section-->
+            <!--Create array of future events-->
+            {% assign upcoming_events = "" | split: ',' %}
+            {% assign curDate = site.time | date: "%s" %}
+            {% for post in site.posts %}
+                {% assign postStartDate = post.date | date: "%s" %}
+                {% if postStartDate >= curDate %}
+                    {% assign upcoming_events = upcoming_events | push: post %}
+                {% endif %}
+            {% endfor %}
+
+            <!--Test data passed from future posts/events-->
+            {% for post in upcoming_events %}
+                <h1>Event: {{ post.title }}</h1>
+                <h1>Venue: {{ post.venue }}</h1>
+                <h1>Date: {{ post.date | date: "%e %B %Y" }}</h1>
+                <a href="{{ post.link }}">test link</a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
 <!--Events in the past section-->
 {% include event.html %}
 
