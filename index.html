@@ -3,160 +3,160 @@ layout: default
 ---
 
 <!--Title image will be set to display:none and used as a background image on the div below-->
-    <div class="navigation__content container-fluid" data-image-type="responsive">
-        <picture>
-            <source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
-                            static/images/title_photo/title_glass_building_960x540.jpg 960w,
-                            static/images/title_photo/title_glass_building_1334x750.jpg 1334w,
-                            static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,
-                            static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,
-                            static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"
-                    media="(orientation: landscape)"
-                    sizes="100vw">
-            <source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,
-                            static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
-                            static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
-                            static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
-                            static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
-                            "
-                    media="(orientation: portrait)"
-                    sizes="100vw">
-            <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg" alt="Python Sprints Title Image">
-        </picture>
+<div class="navigation__content container-fluid" data-image-type="responsive">
+    <picture>
+        <source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
+                        static/images/title_photo/title_glass_building_960x540.jpg 960w,
+                        static/images/title_photo/title_glass_building_1334x750.jpg 1334w,
+                        static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,
+                        static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,
+                        static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"
+                media="(orientation: landscape)"
+                sizes="100vw">
+        <source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,
+                        static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
+                        static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
+                        static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
+                        static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
+                        "
+                media="(orientation: portrait)"
+                sizes="100vw">
+        <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg" alt="Python Sprints Title Image">
+    </picture>
 
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="navigation__title">Python Sprints</h1>
+            <h2 class="navigation__subtitle"><em>The World Is Waiting For Your Code</em></h2>
+        </div>
+    </div>
+</div>
+<!--Mission section-->
+<section class="mission">
+    <div class="mission container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="navigation__title">Python Sprints</h1>
-                <h2 class="navigation__subtitle"><em>The World Is Waiting For Your Code</em></h2>
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-content">Contribute to open source projects.</p>
+                <p class="section-content">Grow the Python community.</p>
+                <p class="section-content">Provide mentorship and challenge for people of all backgrounds and skills.</p>
             </div>
         </div>
     </div>
-<!--Mission section-->
-    <section class="mission">
-        <div class="mission container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title">Our Mission</h2>
-                    <p class="section-content">Contribute to open source projects.</p>
-                    <p class="section-content">Grow the Python community.</p>
-                    <p class="section-content">Provide mentorship and challenge for people of all backgrounds and skills.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</section>
 <!--Events in the past section-->
-    <section class="events">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                        <h4>blog</h4>
+<section class="events">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                    <h4>blog</h4>
 {% for post in site.posts %}
-		<time>{{ post.date | date: "%b %-d, %Y" }}</time>
-		<h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+    <time>{{ post.date | date: "%b %-d, %Y" }}</time>
+    <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
 {% endfor %}
-                    <h2 class="section-title">Recent Events</h2>
+                <h2 class="section-title">Recent Events</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="no-gutters__col col-sm-6">
+                <div class="events__spacer"></div>
+                <div class="events__img-container">
+                    <div class="events__img-overlay">
+                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244388482/" target="_blank">
+                            <i class="events__icon fas fa-external-link-square-alt"></i>
+                        </a>
+                        <div class="events__title-container">
+                            <h2 class="events__img-title">Project: www.python.org (Part 1)</h2>
+                            <p class="events__img-subtitle">Bloomberg, November 1, 2017</p>
+                        </div>
+                    </div>
+                    <img class="events__img img-fluid" src="static/images/events_past/python_dot_org_part1_bloomberg_960x539px.jpeg">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="no-gutters__col col-sm-6">
-                    <div class="events__spacer"></div>
-                    <div class="events__img-container">
-                        <div class="events__img-overlay">
-                            <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244388482/" target="_blank">
-                                <i class="events__icon fas fa-external-link-square-alt"></i>
-                            </a>
-                            <div class="events__title-container">
-                                <h2 class="events__img-title">Project: www.python.org (Part 1)</h2>
-                                <p class="events__img-subtitle">Bloomberg, November 1, 2017</p>
-                            </div>
+            <div class="no-gutters__col col-sm-6">
+                <div class="events__spacer"></div>
+                <div class="events__img-container">
+                    <div class="events__img-overlay">
+                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244062594/" target="_blank">
+                            <i class="events__icon fas fa-external-link-square-alt"></i>
+                        </a>
+                        <div class="events__title-container">
+                            <h2 class="events__img-title">Project: PyMC3</h2>
+                            <p class="events__img-subtitle">Zopa,  October 24, 2017</p>
                         </div>
-                        <img class="events__img img-fluid" src="static/images/events_past/python_dot_org_part1_bloomberg_960x539px.jpeg">
                     </div>
-                </div>
-
-                <div class="no-gutters__col col-sm-6">
-                    <div class="events__spacer"></div>
-                    <div class="events__img-container">
-                        <div class="events__img-overlay">
-                            <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244062594/" target="_blank">
-                                <i class="events__icon fas fa-external-link-square-alt"></i>
-                            </a>
-                            <div class="events__title-container">
-                                <h2 class="events__img-title">Project: PyMC3</h2>
-                                <p class="events__img-subtitle">Zopa,  October 24, 2017</p>
-                            </div>
-                        </div>
-                        <img class="events__img img-fluid" src="static/images/events_past/pymc3_zopa_960x539px.jpeg">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mt-0">
-                <div class="no-gutters__col col-sm-6">
-                    <div class="events__spacer"></div>
-                    <div class="events__img-container">
-                        <div class="events__img-overlay">
-                            <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/243422372/" target="_blank">
-                                <i class="events__icon fas fa-external-link-square-alt"></i>
-                            </a>
-                            <div class="events__title-container">
-                                <h2 class="events__img-title">Project: Bokeh as a backend for Pandas</h2>
-                                <p class="events__img-subtitle">Harvey Nash, October 4, 2017</p>
-                            </div>
-                        </div>
-                        <img class="events__img img-fluid" src="static/images/events_past/pandas_bokeh_backend_harvey_nash_960x539px.jpeg">
-                    </div>
-                </div>
-
-                <div class="no-gutters__col col-sm-6">
-                    <div class="events__spacer"></div>
-                    <div class="events__img-container">
-                        <div class="events__img-overlay">
-                            <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/245317647/" target="_blank">
-                                <i class="events__icon fas fa-external-link-square-alt"></i>
-                            </a>
-                            <div class="events__title-container">
-                                <h2 class="events__img-title">Project: python-dateutil</h2>
-                                <p class="events__img-subtitle">Bloomberg,  December 6, 2017</p>
-                            </div>
-                        </div>
-                        <img class="events__img img-fluid" src="static/images/events_past/dateutil_bloomberg_960x539px.jpeg">
-                    </div>
+                    <img class="events__img img-fluid" src="static/images/events_past/pymc3_zopa_960x539px.jpeg">
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="row mt-0">
+            <div class="no-gutters__col col-sm-6">
+                <div class="events__spacer"></div>
+                <div class="events__img-container">
+                    <div class="events__img-overlay">
+                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/243422372/" target="_blank">
+                            <i class="events__icon fas fa-external-link-square-alt"></i>
+                        </a>
+                        <div class="events__title-container">
+                            <h2 class="events__img-title">Project: Bokeh as a backend for Pandas</h2>
+                            <p class="events__img-subtitle">Harvey Nash, October 4, 2017</p>
+                        </div>
+                    </div>
+                    <img class="events__img img-fluid" src="static/images/events_past/pandas_bokeh_backend_harvey_nash_960x539px.jpeg">
+                </div>
+            </div>
+
+            <div class="no-gutters__col col-sm-6">
+                <div class="events__spacer"></div>
+                <div class="events__img-container">
+                    <div class="events__img-overlay">
+                        <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/245317647/" target="_blank">
+                            <i class="events__icon fas fa-external-link-square-alt"></i>
+                        </a>
+                        <div class="events__title-container">
+                            <h2 class="events__img-title">Project: python-dateutil</h2>
+                            <p class="events__img-subtitle">Bloomberg,  December 6, 2017</p>
+                        </div>
+                    </div>
+                    <img class="events__img img-fluid" src="static/images/events_past/dateutil_bloomberg_960x539px.jpeg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!--Services section-->
-    <section class="services">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title">What Do We Do?</h2>
-                </div>
-            </div>
-        </div>
-
-
+<section class="services">
+    <div class="container-fluid">
         <div class="row">
-            <div class="second-on-mobile no-gutters__col col-md-6">
-                <img class="services__img img-fluid rounded" src="static/images/services/educating_devs_840x561px.jpg">
-            </div>
-            <div class="first-on-mobile no-gutters__col col-md-6">
-                <h2 class="services__title text-right">Helping Beginners To Get Good</h2>
-                <hr class="services__divider-right">
-                <p class="services__content text-right">We are open to people who just started to program and need guidance and mentorship. We can help you become a better programmer by collaborating with others and reading loads of code. Come and try it - you will not be disappointed. We normally have a mixture of seasoned and new coders during every sprint so advice is literally at hands reach.</p>
+            <div class="col-md-12">
+                <h2 class="section-title">What Do We Do?</h2>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="no-gutters__col col-md-6">
-                <h2 class="services__title text-left">Engaging Core Developers</h2>
-                <hr class="services__divider-left">
-                <p class="services__content text-left">For those of you who are programming on the advanced level there are always new tasks to test your mettle. We fix bugs, we improve implementations and add features. No matter your style you will be able to find a ticket to your liking. The sprints are always advertised well ahead of the time so you can prepare yourself by checking on the issues that will be worked on early enough.</p>
-            </div>
-            <div class="no-gutters__col col-md-6">
-                <img class="services__img img-fluid rounded" src="static/images/services/advanced_lvl_840x560px.jpg">
-            </div>
+
+    <div class="row">
+        <div class="second-on-mobile no-gutters__col col-md-6">
+            <img class="services__img img-fluid rounded" src="static/images/services/educating_devs_840x561px.jpg">
         </div>
-    </section>
+        <div class="first-on-mobile no-gutters__col col-md-6">
+            <h2 class="services__title text-right">Helping Beginners To Get Good</h2>
+            <hr class="services__divider-right">
+            <p class="services__content text-right">We are open to people who just started to program and need guidance and mentorship. We can help you become a better programmer by collaborating with others and reading loads of code. Come and try it - you will not be disappointed. We normally have a mixture of seasoned and new coders during every sprint so advice is literally at hands reach.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="no-gutters__col col-md-6">
+            <h2 class="services__title text-left">Engaging Core Developers</h2>
+            <hr class="services__divider-left">
+            <p class="services__content text-left">For those of you who are programming on the advanced level there are always new tasks to test your mettle. We fix bugs, we improve implementations and add features. No matter your style you will be able to find a ticket to your liking. The sprints are always advertised well ahead of the time so you can prepare yourself by checking on the issues that will be worked on early enough.</p>
+        </div>
+        <div class="no-gutters__col col-md-6">
+            <img class="services__img img-fluid rounded" src="static/images/services/advanced_lvl_840x560px.jpg">
+        </div>
+    </div>
+</section>

@@ -23,6 +23,7 @@ Now you can push items into the array inside a for loop in the following way:
 
 {% for i in (0..1) %}
 <div class="row">
+    {% for j in (0..1) %}
     <div class="no-gutters__col col-sm-6">
         <div class="events__spacer"></div>
         <div class="events__img-container">
@@ -31,27 +32,12 @@ Now you can push items into the array inside a for loop in the following way:
                     <i class="events__icon fas fa-external-link-square-alt"></i>
                 </a>
                 <div class="events__title-container">
-                    <h2 class="events__img-title">Project: www.python.org (Part 1)</h2>
-                    <p class="events__img-subtitle">Bloomberg, November 1, 2017</p>
+                    <h2 class="events__img-title">Project: {{ post.title}}</h2>
+                    <p class="events__img-subtitle">{{ post.venue }}, {{post.date}}</p>
                 </div>
             </div>
             <img class="events__img img-fluid" src="static/images/events_past/python_dot_org_part1_bloomberg_960x539px.jpeg">
         </div>
     </div>
 
-    <div class="no-gutters__col col-sm-6">
-        <div class="events__spacer"></div>
-        <div class="events__img-container">
-            <div class="events__img-overlay">
-                <a class="events__link" href="https://www.meetup.com/Python-Sprints/events/244062594/" target="_blank">
-                    <i class="events__icon fas fa-external-link-square-alt"></i>
-                </a>
-                <div class="events__title-container">
-                    <h2 class="events__img-title">Project: PyMC3</h2>
-                    <p class="events__img-subtitle">Zopa,  October 24, 2017</p>
-                </div>
-            </div>
-            <img class="events__img img-fluid" src="static/images/events_past/pymc3_zopa_960x539px.jpeg">
-        </div>
-    </div>
 </div>
