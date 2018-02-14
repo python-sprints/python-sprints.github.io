@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Bokeh as a backend for Pandas
 date: 2017-10-04
 venue: Harvey Nash

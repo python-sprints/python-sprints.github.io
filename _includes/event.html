@@ -8,7 +8,7 @@
 
         {% comment %}
             Create an array of last 4 posts (from newest to oldest) to show in recent events section.
-            Since we also allow future posts to show upcoming event we have to eliminate the future once
+            Since we also allow future posts to show upcoming event we have to eliminate the future ones
             from displaying in the past ones.
         {% endcomment %}
 
@@ -38,7 +38,8 @@
                         <div class="events__spacer"></div>
                         <div class="events__img-container">
                             <div class="events__img-overlay">
-                                <a class="events__link" href="{{ post.link }}" target="_blank">
+                                <!--<a class="events__link" href="{{ post.link }}" target="_blank">-->
+                                <a class="events__link" href="{{ post.url }}">
                                     <i class="events__icon fas fa-external-link-square-alt"></i>
                                 </a>
                                 <div class="events__title-container">

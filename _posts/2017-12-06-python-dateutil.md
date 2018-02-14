@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: python-dateutil
 date: 2017-12-06
 venue: Bloomberg

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: This is test post in the future no 2 title
 date: 2022-10-04
 venue: Test venue 2

@@ -1,0 +1,11 @@
+.post {
+    margin-top: -66px;
+}
+
+.post__img {
+    width: 75vw;
+}
+
+.post__content {
+    margin: 5% 15%;
+}
