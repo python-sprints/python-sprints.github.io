@@ -1,3 +1,5 @@
+.. _pandas_pr:
+
 =======================
 Submitting your changes
 =======================

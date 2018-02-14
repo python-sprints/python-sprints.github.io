@@ -335,6 +335,8 @@ as the letters in the preceding word.</p>
 <p>The documentation of the return is also similar to the parameters. But in this
 case, no name will be provided, unless the method returns or yields more than
 one value (a tuple of values).</p>
+<p>The types for “Returns” and “Yields” are the same as the ones for the
+“Parameters”. Also, the description must finish with a dot.</p>
 <p>For example, with a single value:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Generate and return a random number.</span>
@@ -370,7 +372,227 @@ one value (a tuple of values).</p>
     <span class="k">return</span> <span class="n">length</span><span class="p">,</span> <span class="n">letters</span>
 </pre></div>
 </div>
+<p>If the method yields its value:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_values</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Generate an infinite sequence of random numbers.</span>
+
+<span class="sd">    The values are sampled from a continuos uniform distribution between</span>
+<span class="sd">    0 and 1.</span>
+
+<span class="sd">    Yields</span>
+<span class="sd">    ------</span>
+<span class="sd">    float</span>
+<span class="sd">        Random number generated.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+</pre></div>
 </div>
+</div>
+<div class="section" id="section-5-see-also">
+<h3>Section 5: See also<a class="headerlink" href="#section-5-see-also" title="Permalink to this headline">¶</a></h3>
+<p>This is an optional section, used to let users know about pandas functionality
+related to the one being documented.</p>
+<p>An obvious example would be the <cite>head()</cite> and <cite>tail()</cite> method. As <cite>tail()</cite> does
+the equivalent as <cite>head()</cite> but at the end of the <cite>Series</cite> or <cite>DataFrame</cite>
+instead of at the beginning, it is good to let the users know about it.</p>
+<p>To give an intuition on what can be considered related, here there are some
+examples:</p>
+<ul class="simple">
+<li><cite>loc</cite> and <cite>iloc</cite>, as they do the same, but in one case providing indices and
+int the other positions</li>
+<li><cite>max</cite> and <cite>min</cite>, as they do the opposite</li>
+<li><cite>iterrows</cite>, <cite>itertuples</cite> and <cite>iteritems</cite>, as it is easy that a user looking
+for the method to iterate over columns ends up in the method to iterate
+over rows, and vice-versa</li>
+<li><cite>fillna</cite> and <cite>dropna</cite>, as both methods are used to handle missing values</li>
+<li><cite>read_csv</cite> and <cite>to_csv</cite>, as they are complementary</li>
+<li><cite>merge</cite> and <cite>join</cite>, as one is a generalization of the other</li>
+<li><cite>astype</cite> and <cite>pandas.to_datetime</cite>, as users may be reading the documentation
+of <cite>astype</cite> to know how to cast as a date, and the way to do it is with
+<cite>pandas.to_datetime</cite></li>
+</ul>
+<p>But when deciding what is related, you should mainly use your common sense and
+think about what can be useful for the users reading the documentation,
+especially the less experienced ones.</p>
+<p>This section, as the previous, also has a header, “See Also” (note the capital
+S and A) in this case. Also followed by the line with hyphens, and preceded by
+a blank line.</p>
+<p>After the header, we will add a line for each related method or function,
+followed by a space, a colon, another space, and a short description that
+illustrated what this method or function does, and why is it relevant in
+this context. The description must also finish with a dot.</p>
+<p>Note that in “Returns” and “Yields”, the description is located in the
+following line than the type. But in this section it is located in the same
+line, with a colon in between.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the first 5 elements of the Series.</span>
+
+<span class="sd">        This function is mainly useful to preview the values of the</span>
+<span class="sd">        Series without displaying the whole of it.</span>
+
+<span class="sd">        Return</span>
+<span class="sd">        ------</span>
+<span class="sd">        pandas.Series</span>
+<span class="sd">            Subset of the original series with the 5 first values.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        tail : Return the last 5 elements of the Series.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="section-6-notes">
+<h3>Section 6: Notes<a class="headerlink" href="#section-6-notes" title="Permalink to this headline">¶</a></h3>
+<p>This is an optional section used for notes about the implementation of the
+algorithm.</p>
+<p>Feel free to skip it, unless you are familiar with the implementation of the
+algorithm, or you discover some counter-intuitive behavior while writing the
+examples for the function.</p>
+<p>This section follows the same format as the extended summary section.</p>
+</div>
+<div class="section" id="section-7-examples">
+<h3>Section 7: Examples<a class="headerlink" href="#section-7-examples" title="Permalink to this headline">¶</a></h3>
+<p>This is one of the most important sections of a docstring, even if it is
+placed in the last position. As often, people understand concepts better
+with examples, than with accurate explanations.</p>
+<p>Examples in docstrings are also unit tests, and besides illustrating the
+usage of the function or method, they need to be valid Python code, that in a
+deterministic way returns the presented output.</p>
+<p>They are presented as a session in the Python terminal. <cite>&gt;&gt;&gt;</cite> is used to
+present code. <cite>…</cite> is used for code continuing from the previous line.
+Output is presented immediately after the last line of code generating the
+output (no blank lines in between). Comments describing the examples can
+be added with blank lines before and after them.</p>
+<p>The way to present examples is as follows:
+1. Create the data required to demostrate the usage
+2. Show a very basic example that gives an idea of the most common use case
+3. Add examples that illustrate how the parameters can be used</p>
+<p>A simple example could be:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the first elements of the Series.</span>
+
+<span class="sd">        This function is mainly useful to preview the values of the</span>
+<span class="sd">        Series without displaying the whole of it.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        n : int</span>
+<span class="sd">            Number of values to return.</span>
+
+<span class="sd">        Return</span>
+<span class="sd">        ------</span>
+<span class="sd">        pandas.Series</span>
+<span class="sd">            Subset of the original series with the n first values.</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        tail : Return the last n elements of the Series.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; import pandas</span>
+<span class="sd">        &gt;&gt;&gt; s = pandas.Series([&#39;Ant&#39;, &#39;Bear&#39;, &#39;Cow&#39;, &#39;Dog&#39;, &#39;Falcon&#39;,</span>
+<span class="sd">        ...                    &#39;Lion&#39;, &#39;Monkey&#39;, &#39;Rabbit&#39;, &#39;Zebra&#39;])</span>
+<span class="sd">        &gt;&gt;&gt; s.head()</span>
+<span class="sd">        0   Ant</span>
+<span class="sd">        1   Bear</span>
+<span class="sd">        2   Cow</span>
+<span class="sd">        3   Dog</span>
+<span class="sd">        4   Falcon</span>
+<span class="sd">        dtype: object</span>
+
+<span class="sd">        With the `n` parameter, we can change the number of returned rows:</span>
+
+<span class="sd">        &gt;&gt;&gt; s.head(n=3)</span>
+<span class="sd">        0   Ant</span>
+<span class="sd">        1   Bear</span>
+<span class="sd">        2   Cow</span>
+<span class="sd">        dtype: object</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="section" id="conventions-for-the-examples">
+<h4>Conventions for the examples<a class="headerlink" href="#conventions-for-the-examples" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>numpydoc recommends avoiding “obvious” imports and importing them with
+aliases, so for example <cite>import numpy as np</cite>. While this is now an standard
+in the data ecosystem of Python, it doesn’t seem a good practise, for the
+next reasons:</p>
+<ul class="last simple">
+<li>The code is not executable anymore (as doctests for example)</li>
+<li>New users not familiar with the convention can’t simply copy and run it</li>
+<li>Users may use aliases (even if it is a bad Python practise except
+in rare cases), but if maintainers want to use <cite>pd</cite> instead of <cite>pandas</cite>,
+why do not name the module <cite>pd</cite> directly?</li>
+<li>As this is becoming more standard, there are an increasing number of
+aliases in scientific Python code, including <cite>np</cite>, <cite>pd</cite>, <cite>plt</cite>, <cite>sp</cite>,
+<cite>pm</cite>… which makes reading code harder</li>
+</ul>
+</div>
+<p>All examples must start with the required imports, one per line (as
+recommended in <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#imports">PEP-8</a>)
+and avoiding aliases. Avoid excessive imports, but if needed, imports from
+the standard library go first, followed by third-party libraries (like
+numpy) and importing pandas in the last place.</p>
+<p>When illustrating examples with a single <cite>Series</cite> use the name <cite>s</cite>, and if
+illustrating with a single <cite>DataFrame</cite> use the name <cite>df</cite>. If a set of
+homogeneous <cite>Series</cite> or <cite>DataFrame</cite> is used, name them <cite>s1</cite>, <cite>s2</cite>, <cite>s3</cite>…
+or <cite>df1</cite>, <cite>df2</cite>, <cite>df3</cite>… If the data is not homogeneous, and more than
+one structure is needed, name them with something meaningful, for example
+<cite>df_main</cite> and <cite>df_to_join</cite>.</p>
+<p>Data used in the example should be as compact as possible. The number of rows
+is recommended to be 4, unless the example requires a larger number. As for
+example in the head method, where it requires to be higher than 5, to show
+the example with the default values.</p>
+<p>Avoid using data without interpretation, like a matrix of random numbers
+with columns A, B, C, D… And instead use a meaningful example, which makes
+it easier to understand the concept. Unless required by the example, use
+names of animals, to keep examples consistent. And numerical properties of
+them.</p>
+<p><strong>Wrong:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;A sample DataFrame method.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy</span>
+<span class="sd">    &gt;&gt;&gt; import pandas</span>
+<span class="sd">    &gt;&gt;&gt; df = pandas.DataFrame(numpy.random.randn(3, 3),</span>
+<span class="sd">    ...                       columns=(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;))</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p><strong>Good:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;A sample DataFrame method.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; import numpy</span>
+<span class="sd">    &gt;&gt;&gt; import pandas</span>
+<span class="sd">    &gt;&gt;&gt; df = pandas.DataFrame([389., 24., 80.5, numpy.nan]</span>
+<span class="sd">    ...                       columns=(&#39;max_speed&#39;),</span>
+<span class="sd">    ...                       index=[&#39;falcon&#39;, &#39;parrot&#39;, &#39;lion&#39;, &#39;monkey&#39;])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="once-you-finished-the-docstring">
+<h2>Once you finished the docstring<a class="headerlink" href="#once-you-finished-the-docstring" title="Permalink to this headline">¶</a></h2>
+<p>When you finished the changes to the docstring, go to the
+<span class="xref std std-ref">instructions to submit your changes</span> to continue.</p>
 </div>
 </div>
 
@@ -396,8 +618,15 @@ one value (a tuple of values).</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#section-4-returns-or-yields">Section 4: Returns or Yields</a></li>
+<li><a class="reference internal" href="#section-5-see-also">Section 5: See also</a></li>
+<li><a class="reference internal" href="#section-6-notes">Section 6: Notes</a></li>
+<li><a class="reference internal" href="#section-7-examples">Section 7: Examples</a><ul>
+<li><a class="reference internal" href="#conventions-for-the-examples">Conventions for the examples</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#once-you-finished-the-docstring">Once you finished the docstring</a></li>
 </ul>
 </li>
 </ul>

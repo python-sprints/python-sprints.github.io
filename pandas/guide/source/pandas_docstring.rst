@@ -1,3 +1,5 @@
+.. _pandas_docstring:
+
 ====================================
 How to write a good pandas docstring
 ====================================
@@ -329,6 +331,9 @@ The documentation of the return is also similar to the parameters. But in this
 case, no name will be provided, unless the method returns or yields more than
 one value (a tuple of values).
 
+The types for "Returns" and "Yields" are the same as the ones for the
+"Parameters". Also, the description must finish with a dot.
+
 For example, with a single value:
 
 .. code-block:: python
@@ -367,3 +372,253 @@ With more than one value:
         letters = ''.join(random.choice(string.ascii_lowercase)
                           for i in range(length))
         return length, letters
+
+If the method yields its value:
+
+.. code-block:: python
+
+    def sample_values():
+        """Generate an infinite sequence of random numbers.
+
+        The values are sampled from a continuos uniform distribution between
+        0 and 1.
+
+        Yields
+        ------
+        float
+            Random number generated.
+        """
+        while True:
+            yield random.random()
+
+
+Section 5: See also
+~~~~~~~~~~~~~~~~~~~
+
+This is an optional section, used to let users know about pandas functionality
+related to the one being documented.
+
+An obvious example would be the `head()` and `tail()` method. As `tail()` does
+the equivalent as `head()` but at the end of the `Series` or `DataFrame`
+instead of at the beginning, it is good to let the users know about it.
+
+To give an intuition on what can be considered related, here there are some
+examples:
+
+* `loc` and `iloc`, as they do the same, but in one case providing indices and
+  int the other positions
+* `max` and `min`, as they do the opposite
+* `iterrows`, `itertuples` and `iteritems`, as it is easy that a user looking
+  for the method to iterate over columns ends up in the method to iterate
+  over rows, and vice-versa
+* `fillna` and `dropna`, as both methods are used to handle missing values
+* `read_csv` and `to_csv`, as they are complementary
+* `merge` and `join`, as one is a generalization of the other
+* `astype` and `pandas.to_datetime`, as users may be reading the documentation
+  of `astype` to know how to cast as a date, and the way to do it is with
+  `pandas.to_datetime`
+
+But when deciding what is related, you should mainly use your common sense and
+think about what can be useful for the users reading the documentation,
+especially the less experienced ones.
+
+This section, as the previous, also has a header, "See Also" (note the capital
+S and A) in this case. Also followed by the line with hyphens, and preceded by
+a blank line.
+
+After the header, we will add a line for each related method or function,
+followed by a space, a colon, another space, and a short description that
+illustrated what this method or function does, and why is it relevant in
+this context. The description must also finish with a dot.
+
+Note that in "Returns" and "Yields", the description is located in the
+following line than the type. But in this section it is located in the same
+line, with a colon in between.
+
+For example:
+
+.. code-block:: python
+
+    class Series:
+        def head(self):
+            """Return the first 5 elements of the Series.
+
+            This function is mainly useful to preview the values of the
+            Series without displaying the whole of it.
+
+            Return
+            ------
+            pandas.Series
+                Subset of the original series with the 5 first values.
+
+            See Also
+            --------
+            tail : Return the last 5 elements of the Series.
+            """
+            return self.iloc[:5]
+
+Section 6: Notes
+~~~~~~~~~~~~~~~~
+
+This is an optional section used for notes about the implementation of the
+algorithm.
+
+Feel free to skip it, unless you are familiar with the implementation of the
+algorithm, or you discover some counter-intuitive behavior while writing the
+examples for the function.
+
+This section follows the same format as the extended summary section.
+
+Section 7: Examples
+~~~~~~~~~~~~~~~~~~~
+
+This is one of the most important sections of a docstring, even if it is
+placed in the last position. As often, people understand concepts better
+with examples, than with accurate explanations.
+
+Examples in docstrings are also unit tests, and besides illustrating the
+usage of the function or method, they need to be valid Python code, that in a
+deterministic way returns the presented output.
+
+They are presented as a session in the Python terminal. `>>>` is used to
+present code. `...` is used for code continuing from the previous line.
+Output is presented immediately after the last line of code generating the
+output (no blank lines in between). Comments describing the examples can
+be added with blank lines before and after them.
+
+The way to present examples is as follows:
+1. Create the data required to demostrate the usage
+2. Show a very basic example that gives an idea of the most common use case
+3. Add examples that illustrate how the parameters can be used
+
+A simple example could be:
+
+.. code-block:: python
+
+    class Series:
+        def head(self, n=5):
+            """Return the first elements of the Series.
+
+            This function is mainly useful to preview the values of the
+            Series without displaying the whole of it.
+
+            Parameters
+            ----------
+            n : int
+                Number of values to return.
+
+            Return
+            ------
+            pandas.Series
+                Subset of the original series with the n first values.
+
+            See Also
+            --------
+            tail : Return the last n elements of the Series.
+
+            Examples
+            --------
+            >>> import pandas
+            >>> s = pandas.Series(['Ant', 'Bear', 'Cow', 'Dog', 'Falcon',
+            ...                    'Lion', 'Monkey', 'Rabbit', 'Zebra'])
+            >>> s.head()
+            0   Ant
+            1   Bear
+            2   Cow
+            3   Dog
+            4   Falcon
+            dtype: object
+
+            With the `n` parameter, we can change the number of returned rows:
+
+            >>> s.head(n=3)
+            0   Ant
+            1   Bear
+            2   Cow
+            dtype: object
+            """
+            return self.iloc[:n]
+
+Conventions for the examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   numpydoc recommends avoiding "obvious" imports and importing them with
+   aliases, so for example `import numpy as np`. While this is now an standard
+   in the data ecosystem of Python, it doesn't seem a good practise, for the
+   next reasons:
+
+   * The code is not executable anymore (as doctests for example)
+
+   * New users not familiar with the convention can't simply copy and run it
+
+   * Users may use aliases (even if it is a bad Python practise except
+     in rare cases), but if maintainers want to use `pd` instead of `pandas`,
+     why do not name the module `pd` directly?
+
+   * As this is becoming more standard, there are an increasing number of
+     aliases in scientific Python code, including `np`, `pd`, `plt`, `sp`,
+     `pm`... which makes reading code harder
+
+All examples must start with the required imports, one per line (as
+recommended in `PEP-8 <https://www.python.org/dev/peps/pep-0008/#imports>`_)
+and avoiding aliases. Avoid excessive imports, but if needed, imports from
+the standard library go first, followed by third-party libraries (like
+numpy) and importing pandas in the last place.
+
+When illustrating examples with a single `Series` use the name `s`, and if
+illustrating with a single `DataFrame` use the name `df`. If a set of
+homogeneous `Series` or `DataFrame` is used, name them `s1`, `s2`, `s3`...
+or `df1`, `df2`, `df3`... If the data is not homogeneous, and more than
+one structure is needed, name them with something meaningful, for example
+`df_main` and `df_to_join`.
+
+Data used in the example should be as compact as possible. The number of rows
+is recommended to be 4, unless the example requires a larger number. As for
+example in the head method, where it requires to be higher than 5, to show
+the example with the default values.
+
+Avoid using data without interpretation, like a matrix of random numbers
+with columns A, B, C, D... And instead use a meaningful example, which makes
+it easier to understand the concept. Unless required by the example, use
+names of animals, to keep examples consistent. And numerical properties of
+them.
+
+**Wrong:**
+
+.. code-block:: python
+
+    def method():
+        """A sample DataFrame method.
+
+        Examples
+        --------
+        >>> import numpy
+        >>> import pandas
+        >>> df = pandas.DataFrame(numpy.random.randn(3, 3),
+        ...                       columns=('a', 'b', 'c'))
+        """
+        pass
+
+**Good:**
+
+.. code-block:: python
+
+    def method():
+        """A sample DataFrame method.
+
+        Examples
+        --------
+        >>> import numpy
+        >>> import pandas
+        >>> df = pandas.DataFrame([389., 24., 80.5, numpy.nan]
+        ...                       columns=('max_speed'),
+        ...                       index=['falcon', 'parrot', 'lion', 'monkey'])
+        """
+        pass
+
+Once you finished the docstring
+-------------------------------
+
+When you finished the changes to the docstring, go to the
+:ref:`instructions to submit your changes <pandas_pr>` to continue.
