@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Bokeh as a backend for Pandas
+project: Pandas
+project_description: Powerful Python data analysis toolkit
 date: 2017-10-04
 venue: Harvey Nash
 link: https://www.meetup.com/Python-Sprints/events/243422372/

@@ -5,13 +5,21 @@
         {% include navigation.html %}
         <main>
             <article class="post">
-                <div class="container m-auto">
-                    <div class="col-md-12">
-                        <img class="post__img img-fluid" src="{{ site.baseurl }}/{{ page.image }}">
+                {% if page.image %}
+                <div class="row">
+                    <div class="no-gutters__col col-md-12">
+                        <div class="post_img-container container-fluid" style='background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("{{ site.baseurl }}/{{ page.image }}");'>
+                            <h1 class="post__title">{{ page.title }}</h1>
+                            <h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>
+                        </div>
                     </div>
                 </div>
-                <div class="post__content container-fluid">
+                {% endif %}
+                <div class="row post__content container-fluid">
                     <div class="col-md-12">
+                        <h2>Project: {{ page.project }}</h2>
+                        <h3>Venue: {{ page.venue }}, {{ page.date | date: "%e %B %Y" }}</h3>
+                        <h3><a href="{{ page.link }}">Meetup event</a> </h3>
                         {{ page.content }}
                     </div>
                 </div>
