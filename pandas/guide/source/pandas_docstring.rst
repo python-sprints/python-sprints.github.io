@@ -20,7 +20,7 @@ Next example gives an idea on how a docstring looks like:
 .. code-block:: python
 
     def add(num1, num2):
-    """Add up to integer numbers.
+    """Add up two integer numbers.
 
     This function simply wraps the `+` operator, and does not
     do anything interesting, except for illustrating what is
@@ -49,15 +49,15 @@ Next example gives an idea on how a docstring looks like:
     """
     return num1 + num2
 
-To make it easier to understand docstrings, and to make it possible to export
-them to html, some standards exist.
+Some standards exist about docstrings, so they are easier to read, and they can
+be exported to other formats such as html or pdf.
 
 The first conventions every Python docstring should follow are defined in
 `PEP-257 <https://www.python.org/dev/peps/pep-0257/>`_.
 
-As PEP-257 is quite open, some other standards exist. In the case of pandas,
-the numpy docstring convention is followed. There are two main documents
-that explain this convention:
+As PEP-257 is quite open, and some other standards exist on top of it. In the
+case of pandas, the numpy docstring convention is followed. There are two main
+documents that explain this convention:
 
 - `Guide to NumPy/SciPy documentation <https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt>`_
 - `numpydoc docstring guide <http://numpydoc.readthedocs.io/en/latest/format.html>`_
@@ -84,7 +84,7 @@ General rules
 Docstrings must be defined with three double-quotes. No blank lines should be
 left before or after the docstring. The text starts immediately after the
 opening quotes (not in the next line). The closing quotes have their own line
-(and are not added at the end of the last sentence).
+(meaning that they are not at the end of the last sentence).
 
 **Good:**
 
@@ -198,7 +198,8 @@ every paragraph in the extended summary is finished by a dot.
         is repeated for the main index, and data is easier to visualize as a
         pivot table.
 
-        The index level will be automatically when added as columns.
+        The index level will be automatically removed from the index when added
+        as columns.
         """
         pass
 
@@ -215,7 +216,7 @@ After the title, each parameter in the signature must be documented, including
 `*args` and `**kwargs`, but not `self`.
 
 The parameters are defined by their name, followed by a space, a colon, another
-space, and the type (or type). Note that the space between the name and the
+space, and the type (or types). Note that the space between the name and the
 colon is important. Types are not defined for `*args` and `**kwargs`, but must
 be defined for all other parameters. After the parameter definition, it is 
 required to have a line with the parameter description, which is indented, and
@@ -261,7 +262,7 @@ finish with a dot.
             Also, note that the parameter descriptions do not start with a
             capital letter, and do not finish with a dot.
 
-            Finally, the `**kwargs` is missing.
+            Finally, the `**kwargs` parameter is missing.
 
             Parameters
             ----------
@@ -283,10 +284,10 @@ directly:
 
 For complex types, define the subtypes:
 
-- list of int
-- dict of str : int
+- list of [int]
+- dict of {str : int}
 - tuple of (str, int, int)
-- set of str
+- set of {str}
 
 In case there are just a set of values allowed, list them in curly brackets
 and separated by commas (followed by a space):
@@ -300,7 +301,7 @@ If the type is defined in a Python module, the module must be specified:
 - datetime.datetime
 - decimal.Decimal
 
-If the type is in a package, the module must be equally specified:
+If the type is in a package, the module must be also specified:
 
 - numpy.ndarray
 - scipy.sparse.coo_matrix
@@ -316,6 +317,9 @@ last two types, that need to be separated by the word 'or':
 - int or float
 - float, decimal.Decimal or None
 - str or list of str
+
+If None is one of the accepted values, it always needs to be the last in
+the list.
 
 Section 4: Returns or Yields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,7 +402,7 @@ Section 5: See also
 This is an optional section, used to let users know about pandas functionality
 related to the one being documented.
 
-An obvious example would be the `head()` and `tail()` method. As `tail()` does
+An obvious example would be the `head()` and `tail()` methods. As `tail()` does
 the equivalent as `head()` but at the end of the `Series` or `DataFrame`
 instead of at the beginning, it is good to let the users know about it.
 
@@ -406,7 +410,7 @@ To give an intuition on what can be considered related, here there are some
 examples:
 
 * `loc` and `iloc`, as they do the same, but in one case providing indices and
-  int the other positions
+  in the other positions
 * `max` and `min`, as they do the opposite
 * `iterrows`, `itertuples` and `iteritems`, as it is easy that a user looking
   for the method to iterate over columns ends up in the method to iterate
@@ -418,13 +422,12 @@ examples:
   of `astype` to know how to cast as a date, and the way to do it is with
   `pandas.to_datetime`
 
-But when deciding what is related, you should mainly use your common sense and
+When deciding what is related, you should mainly use your common sense and
 think about what can be useful for the users reading the documentation,
 especially the less experienced ones.
 
 This section, as the previous, also has a header, "See Also" (note the capital
-S and A) in this case. Also followed by the line with hyphens, and preceded by
-a blank line.
+S and A). Also followed by the line with hyphens, and preceded by a blank line.
 
 After the header, we will add a line for each related method or function,
 followed by a space, a colon, another space, and a short description that
@@ -461,7 +464,7 @@ Section 6: Notes
 ~~~~~~~~~~~~~~~~
 
 This is an optional section used for notes about the implementation of the
-algorithm.
+algorithm. Or to document technical aspects of the function behavior.
 
 Feel free to skip it, unless you are familiar with the implementation of the
 algorithm, or you discover some counter-intuitive behavior while writing the
@@ -487,9 +490,15 @@ output (no blank lines in between). Comments describing the examples can
 be added with blank lines before and after them.
 
 The way to present examples is as follows:
-1. Create the data required to demostrate the usage
-2. Show a very basic example that gives an idea of the most common use case
-3. Add examples that illustrate how the parameters can be used
+
+1. Import required libraries
+
+2. Create the data required for the example
+
+3. Show a very basic example that gives an idea of the most common use case
+
+4. Add commented examples that illustrate how the parameters can be used for
+   extended functionality
 
 A simple example could be:
 
@@ -584,21 +593,8 @@ it easier to understand the concept. Unless required by the example, use
 names of animals, to keep examples consistent. And numerical properties of
 them.
 
-**Wrong:**
-
-.. code-block:: python
-
-    def method():
-        """A sample DataFrame method.
-
-        Examples
-        --------
-        >>> import numpy
-        >>> import pandas
-        >>> df = pandas.DataFrame(numpy.random.randn(3, 3),
-        ...                       columns=('a', 'b', 'c'))
-        """
-        pass
+When calling the method, keywords arguments `head(n=3)` are preferred to
+positional arguments `head(3)`.
 
 **Good:**
 
@@ -614,6 +610,22 @@ them.
         >>> df = pandas.DataFrame([389., 24., 80.5, numpy.nan]
         ...                       columns=('max_speed'),
         ...                       index=['falcon', 'parrot', 'lion', 'monkey'])
+        """
+        pass
+
+**Bad:**
+
+.. code-block:: python
+
+    def method():
+        """A sample DataFrame method.
+
+        Examples
+        --------
+        >>> import numpy
+        >>> import pandas
+        >>> df = pandas.DataFrame(numpy.random.randn(3, 3),
+        ...                       columns=('a', 'b', 'c'))
         """
         pass
 
