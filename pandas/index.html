@@ -21,6 +21,189 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript">
+        var chapters = [
+
+            // Europe
+            {"title": "London",
+             "description": "London Python Sprints at Blomberg",
+             "url": "https://www.meetup.com/Python-Sprints/events/247097848/",
+             "sponsor_image": "bloomberg.png",
+             "sponsor_url": "https://www.bloomberg.com/",
+             "time": "10am",
+             "address": "Bloomberg<br/>3 Queen Victoria St<br/>London, EC2R",
+             "lat": 51.520363,
+             "lng": -0.086270},
+            {"title": "Madrid",
+             "description": "PyData Madrid",
+             "url": "https://www.meetup.com/PyData-Madrid/events/247525766/",
+             "sponsor_image": "kernelanalytics.png",
+             "sponsor_url": "https://www.kernel-analytics.com/en/",
+             "time": "10am",
+             "address": "Kernel Analytics<br/>Joaquín Bau, 2. 1º C-D<br/>Madrid",
+             "lat": 40.4168209,
+             "lng": -3.7035725},
+            {"title": "Florence",
+             "description": "Florence, TBC",
+             "url": "#",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 43.7735238,
+             "lng": 11.2572189},
+            {"title": "Amsterdam",
+             "description": "PyData Amsterdam",
+             "url": "https://www.meetup.com/PyData-NL/",
+             "sponsor_image": "godatadriven.png",
+             "sponsor_url": "https://godatadriven.com/",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 52.3772272,
+             "lng": 4.8979811},
+            {"title": "Mallorca",
+             "description": "PyData Mallorca",
+             "url": "https://www.meetup.com/PyData-Mallorca/events/247783856/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 39.567545,
+             "lng": 2.648213},
+            {"title": "Mannheim",
+             "description": "Mannheim, TBC",
+             "url": "#",
+             "sponsor_image": "koenigsweg.png",
+             "sponsor_url": "http://www.koenigsweg.com/news",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 49.4982481,
+             "lng": 8.4573718},
+            {"title": "Barcelona",
+             "description": "Barcelona Python Meetup at Kernel Analytics",
+             "url": "https://www.meetup.com/python-185/events/247592204/",
+             "sponsor_image": "kernelanalytics.png",
+             "sponsor_url": "https://www.kernel-analytics.com/en/",
+             "time": "10am",
+             "address": "Kernel Analytics<br/>Carrer de Balmes 89, 6º 4ª<br/>Barcelona",
+             "lat": 41.391336,
+             "lng": 2.159867},
+            {"title": "Bratislava",
+             "description": "PyData Bratislava",
+             "url": "https://www.meetup.com/PyData-Bratislava/events/247773847/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "10am",
+             "address": "Kafe Nervosa<br/>Zámocká 30<br/>Bratislava",
+             "lat": 48.1447149,
+             "lng": 17.1014112},
+
+            // Asia / Oceania
+            {"title": "Delhi",
+             "description": "PyData Delhi",
+             "url": "https://www.meetup.com/PyDataDelhi/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 28.617024,
+             "lng": 77.2078168},
+            {"title": "ShenZhen",
+             "description": "ShenZhen, TBD",
+             "url": "#",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 22.541672,
+             "lng": 114.059691},
+            {"title": "Zhuhai",
+             "description": "Zhuhai, TBD",
+             "url": "#",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 22.270760,
+             "lng": 113.577165},
+
+            // Americas
+            {"title": "Seattle",
+             "description": "PyData Seattle",
+             "url": "https://www.meetup.com/pydata_seattle/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 47.620508,
+             "lng": -122.349252},
+            {"title": "San Diego",
+             "description": "San Diego Python Users Group",
+             "url": "https://www.meetup.com/pythonsd/events/247689031/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "10am",
+             "address": "Questionable Exchange<br/>925 B Street<br/>San Diego, CA",
+             "lat": 32.708697,
+             "lng": -117.154230},
+            {"title": "Córdova, Argentina",
+             "description": "Córdoba, TBD",
+             "url": "#",
+             "sponsor_image": "machinalis.svg",
+             "sponsor_url": "https://www.machinalis.com/",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": -31.4011257,
+             "lng": -64.182890},
+            {"title": "Knoxville",
+             "description": "Knoxdata",
+             "url": "https://www.meetup.com/knoxdata/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 35.960190,
+             "lng": -83.922619},
+            {"title": "Chicago",
+             "description": "ChiPy",
+             "url": "https://www.meetup.com/_ChiPy_/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 41.875766,
+             "lng": -87.618938},
+            {"title": "Toronto",
+             "description": "PyData Toronto",
+             "url": "https://www.meetup.com/pydatato/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 43.642792,
+             "lng": -79.387085},
+
+            // Africa
+            {"title": "Lagos",
+             "description": "PyData Lagos",
+             "url": "https://www.meetup.com/PyData-Lagos/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 6.476437,
+             "lng": 3.369318},
+            {"title": "Nairobi",
+             "description": "PyData Nairobi",
+             "url": "https://www.meetup.com/PyData-Nairobi/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": -1.286531,
+             "lng": 36.817345},
+         ];
+    </script>
 </head>
 <body data-spy="scroll" data-target="#site-nav">
     <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
@@ -149,19 +332,19 @@
                 <div class="col-sm-3">
 
                     <i class="ion-ios-book"></i>
-                    <h3>398<br>Documentation pages</h3>
+                    <h3>1000<br>Documentation pages</h3>
                 
                 </div>
                 <div class="col-sm-3">
 
                     <i class="ion-ios-location"></i>
-                    <h3>+10<br>Cities</h3>
+                    <h3>+20<br>Cities</h3>
                 
                 </div>
                 <div class="col-sm-3">
 
                     <i class="ion-person-stalker"></i>
-                    <h3>+150<br>Pythonistas</h3>
+                    <h3>+300<br>Pythonistas</h3>
                 
                 </div>
                 <div class="col-sm-3">
@@ -195,107 +378,18 @@
 						  center: {lat: 20., lng: 0.}
 						});
 
-                        var chapters = [
-                            {"title": "London",
-                             "description": "London Python Sprints at Blomberg",
-                             "url": "https://www.meetup.com/Python-Sprints/events/247097848/",
-                             "lat": 51.520363,
-                             "lng": -0.086270},
-                            {"title": "Madrid",
-                             "description": "PyData Madrid",
-                             "url": "https://www.meetup.com/PyData-Madrid/events/247525766/",
-                             "lat": 40.4168209,
-                             "lng": -3.7035725},
-                            {"title": "Florence",
-                             "description": "Florence, TBC",
-                             "url": "#",
-                             "lat": 43.7735238,
-                             "lng": 11.2572189},
-                            {"title": "Delhi",
-                             "description": "PyData Delhi",
-                             "url": "https://www.meetup.com/PyDataDelhi/",
-                             "lat": 28.617024,
-                             "lng": 77.2078168},
-                            {"title": "Amsterdam",
-                             "description": "PyData Amsterdam",
-                             "url": "https://www.meetup.com/PyData-NL/",
-                             "lat": 52.3772272,
-                             "lng": 4.8979811},
-                            {"title": "Seattle",
-                             "description": "PyData Seattle",
-                             "url": "https://www.meetup.com/pydata_seattle/",
-                             "lat": 47.620508,
-                             "lng": -122.349252},
-                            {"title": "Mallorca",
-                             "description": "PyData Mallorca",
-                             "url": "https://www.meetup.com/PyData-Mallorca/events/247783856/",
-                             "lat": 39.567545,
-                             "lng": 2.648213},
-                            {"title": "Mannheim",
-                             "description": "Mannheim, TBC",
-                             "url": "#",
-                             "lat": 49.4982481,
-                             "lng": 8.4573718},
-                            {"title": "San Diego",
-                             "description": "San Diego",
-                             "url": "https://www.meetup.com/pythonsd/events/247689031/",
-                             "lat": 32.708697,
-                             "lng": -117.154230},
-                            {"title": "Córdova, Argentina",
-                             "description": "Córdoba, TBD",
-                             "url": "#",
-                             "lat": -31.4011257,
-                             "lng": -64.182890},
-                            {"title": "Barcelona",
-                             "description": "Barcelona Python Meetup at Kernel Analytics",
-                             "url": "https://www.meetup.com/python-185/events/247592204/",
-                             "lat": 41.391336,
-                             "lng": 2.159867},
-                            {"title": "Lagos",
-                             "description": "PyData Lagos",
-                             "url": "https://www.meetup.com/PyData-Lagos/",
-                             "lat": 6.476437,
-                             "lng": 3.369318},
-                            {"title": "Nairobi",
-                             "description": "PyData Nairobi",
-                             "url": "https://www.meetup.com/PyData-Nairobi/",
-                             "lat": -1.286531,
-                             "lng": 36.817345},
-                            {"title": "ShenZhen",
-                             "description": "ShenZhen, TBD",
-                             "url": "#",
-                             "lat": 22.541672,
-                             "lng": 114.059691},
-                            {"title": "Zhuhai",
-                             "description": "Zhuhai, TBD",
-                             "url": "#",
-                             "lat": 22.270760,
-                             "lng": 113.577165},
-                            {"title": "Bratislava",
-                             "description": "PyData Bratislava",
-                             "url": "https://www.meetup.com/PyData-Bratislava/events/247773847/",
-                             "lat": 48.1447149,
-                             "lng": 17.1014112},
-                            {"title": "Knoxville, TN",
-                             "description": "Knoxdata",
-                             "url": "https://www.meetup.com/knoxdata/",
-                             "lat": 35.960190,
-                             "lng": -83.922619},
-                            {"title": "Chicago",
-                             "description": "ChiPy",
-                             "url": "https://www.meetup.com/_ChiPy_/",
-                             "lat": 41.875766,
-                             "lng": -87.618938},
-                            {"title": "Toronto",
-                             "description": "PyData Toronto",
-                             "url": "https://www.meetup.com/pydatato/",
-                             "lat": 43.642792,
-                             "lng": -79.387085},
-                        ];
                         for (i=0; i < chapters.length; i++) {
+                            var desc = '<b>' + chapters[i]['description'] + '</b><br/><br/>';
+                            desc += 'Starts at: ' + chapters[i]['time'] + ' (local time)</br>';
+                            desc += 'Address:<br/>' + chapters[i]['address'] + '</br>';
+                            if (chapters[i]['sponsor_image'] != '') {
+                                desc += '<br/>With the support of:<br/>';
+                                desc += '<a href="' + chapters[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + chapters[i]['sponsor_image'] + '"/></a><br/>';
+                            }
+                            desc += '<br/><a style="color: #800000;" href="' + chapters[i]['url'] + '">Go to event page</a><br/>';
                             var marker = new google.maps.Marker({
                               title: chapters[i]["title"],
-                              html: "<a href=\"" + chapters[i]["url"] + "\">" + chapters[i]["description"] + "</a>",
+                              html: desc,
                               position: {lat: chapters[i]["lat"],
                                          lng: chapters[i]["lng"]},
                               map: map
@@ -335,48 +429,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-1" href="https://www.python.org/psf/"></a>
+                <div class="col-sm-6">
+                    <a class="partner-box partner-box-big partner-box-1" href="https://www.python.org/psf/"></a>
                 </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-2" href="https://www.numfocus.org/"></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-3" href="https://github.com/"></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-4" href="https://www.twosigma.com/"></a>
+                <div class="col-sm-6">
+                    <a class="partner-box partner-box-big partner-box-2" href="https://www.numfocus.org/"></a>
                 </div>
             </div>
-
+            <!--
             <div class="row">
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-5" href="https://www.bloomberg.com/"></a>
+                    <a class="partner-box partner-box-5" href=""></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-6" href="http://www.koenigsweg.com/news"></a>
+                    <a class="partner-box partner-box-6" href=""></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-7" href="https://godatadriven.com/"></a>
+                    <a class="partner-box partner-box-7" href=""></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-8" href="https://www.machinalis.com/"></a>
+                    <a class="partner-box partner-box-8" href=""></a>
                 </div>
             </div>   
-
-            <div class="row">
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-9" href="https://www.kernel-analytics.com/en/"></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-10" href=""></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-11" href=""></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-12" href=""></a>
-                </div>
+            -->
             </div>   
     </section>
 

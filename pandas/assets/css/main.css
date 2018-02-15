@@ -454,15 +454,20 @@ ul li {
 }
 .partner .partner-box {
   display: block;
-  opacity: 0.3;
+  opacity: 0.6;
   height: 150px;
   width: 150px;
   margin: 25px auto;
   -webkit-transition: 0.5s all linear;
           transition: 0.5s all linear;
 }
+.partner .partner-box-big {
+  height: 300px !important;
+  width: 400px !important;
+}
 .partner .partner-box:hover {
   opacity: 1;
+  width: 420px !important;
 }
 .partner .partner-box-1 {
   background: url(../images/partner/partner-1.png) no-repeat center center/contain;
