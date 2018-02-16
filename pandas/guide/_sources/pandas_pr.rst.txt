@@ -79,7 +79,7 @@ you are going to commit with:
 Then, follow the next steps:
 
     | ``git fetch upstream``
-    | ``git merge upstram/master``
+    | ``git merge upstream/master``
     | ``git add <modified-file(s)>``
     | ``git commit -m "<commit-message>"``
 
