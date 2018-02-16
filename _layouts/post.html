@@ -16,6 +16,7 @@
         {% include navigation.html %}
         <main>
             <article class="post">
+                <!--HAve to move this IF statement to the background image style above and give and else with a standard background for events without the image yet-->
                 {% if page.image %}
                 <div class="row">
                     <div class="no-gutters__col col-md-12 container-fluid">
@@ -25,8 +26,6 @@
                                 <h1 class="post__title">{{ page.project }}</h1>
                                 <h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>
                             </div>
-
-
                             <div class="post__event-col col-md-5 col-12">
                                 <div class="row">
                                     <div class="no-gutters__col col-3">
@@ -60,30 +59,28 @@
                                         {{ page.date | date: "%e %B %Y" }}
                                     </div>
                                 </div>
-
-                                <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.link }}">
-                                    <i class="post__icon fab fa-meetup"></i>
-                                </a>
+                                <div class="row">
+                                    <div class="post__button-col col-12">
+                                        <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.link }}">
+                                            <i class="post__icon fab fa-meetup"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endif %}
-                <div class="row post__content container-fluid">
-                    <div class="no-gutters__col col-md-12">
-                        <div class="row">
-                            <div class="post__event-col col-md-3 col-12">
-                                <h2 class="post__event-title">{{ page.title }}</h2>
-                                <h3 class="post__venue">{{ page.venue }}</h3>
-                                <h3 class="post__date">{{ page.date | date: "%e %B %Y" }}</h3>
-                                <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.link }}">
-                                    <i class="post__icon fab fa-meetup"></i>
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                {{ page.content }}
-                            </div>
-                        </div>
+                <div class="row container-fluid">
+                    <div class="post__content col-md-12">
+                        <h1 class="post__content-title">{{ page.title }}</h1>
+                        <p class="post__paragraph">{{ page.content }}</p>
+                        <h1 class="post__content-title">Event's sponsors</h1>
+                        <ol>
+                            {% for sponsor in page.sponsors %}
+                                <li>sponsor: {{ sponsor }}</li>
+                            {% endfor %}
+                        </ol>
                     </div>
                 </div>
             </article>
