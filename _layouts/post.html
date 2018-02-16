@@ -1,26 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+<style>
+    .post__img-container {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ site.baseurl }}/{{ page.image }}");
+      }
+
+    @media (min-width: 769px) {
+        .post__img-container {
+            background-image: linear-gradient(75deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 80%, black 87%, black 100%), url("{{ site.baseurl }}/{{ page.image }}");
+        }
+    }
+</style>
     <body class="body">
         {% include navigation.html %}
         <main>
             <article class="post">
                 {% if page.image %}
                 <div class="row">
-                    <div class="no-gutters__col col-md-12">
-                        <div class="post_img-container container-fluid" style='background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url("{{ site.baseurl }}/{{ page.image }}");'>
-                            <h1 class="post__title">{{ page.title }}</h1>
-                            <h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>
+                    <div class="no-gutters__col col-md-12 container-fluid">
+                        <div class="row">
+
+                            <div class="post__img-container col-md-7 col-sm-12">
+                                <h1 class="post__title">{{ page.project }}</h1>
+                                <h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>
+                            </div>
+
+
+                            <div class="post__event-col col-md-5 col-12">
+                                <div class="row">
+                                    <div class="no-gutters__col col-12">
+                                        <h2 class="post__label">Event</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="post__event-title col-12">
+                                        {{ page.title }}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="no-gutters__col col-12">
+                                        <h2 class="post__label">Venue</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="post__event-title col-12">
+                                        {{ page.venue }}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="no-gutters__col col-12">
+                                        <h2 class="post__label">Date</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="post__event-title col-12">
+                                        {{ page.date | date: "%e %B %Y" }}
+                                    </div>
+                                </div>
+
+                                <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.link }}">
+                                    <i class="post__icon fab fa-meetup"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 {% endif %}
                 <div class="row post__content container-fluid">
-                    <div class="col-md-12">
-                        <h2>Project: {{ page.project }}</h2>
-                        <h3>Venue: {{ page.venue }}, {{ page.date | date: "%e %B %Y" }}</h3>
-                        <h3><a href="{{ page.link }}">Meetup event</a> </h3>
-                        {{ page.content }}
+                    <div class="no-gutters__col col-md-12">
+                        <div class="row">
+                            <div class="post__event-col col-md-3 col-12">
+                                <h2 class="post__event-title">{{ page.title }}</h2>
+                                <h3 class="post__venue">{{ page.venue }}</h3>
+                                <h3 class="post__date">{{ page.date | date: "%e %B %Y" }}</h3>
+                                <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.link }}">
+                                    <i class="post__icon fab fa-meetup"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-9">
+                                {{ page.content }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </article>
