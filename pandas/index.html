@@ -213,6 +213,87 @@
              "lng": 36.817345},
          ];
     </script>
+    <style type="text/css">
+        #bio_ep {
+            height: 300px;
+            padding: 30px 50px;
+        }
+        #bio_ep p {
+            margin-bottom: 10px;
+        }
+        #bio_ep .note {
+            color: #808080;
+        }
+        #bio_ep .main {
+            font-weight: bold;
+        }
+        #bio_ep .links {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        #bio_ep a.footnote {
+            color: #808080;
+        }
+		#bio_ep a.button {
+            margin-top: 30px;
+			-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+			box-shadow:inset 0px 1px 0px 0px #f5978e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+			background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+			background-color:#f24537;
+			-moz-border-radius:6px;
+			-webkit-border-radius:6px;
+			border-radius:6px;
+			border:1px solid #d02718;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:15px;
+			font-weight:bold;
+			padding:6px 24px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #810e05;
+		}
+		#bio_ep a.button:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+			background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+			background-color:#c62d1f;
+		}
+		#bio_ep a.button:active {
+			position:relative;
+			top:1px;
+		}
+        #bio_ep_close {
+            margin: -38px 0 0 -12px;
+        }
+    </style>
+    <script type="text/javascript" src="assets/js/bioep.min.js"></script>
+    <script type="text/javascript">
+        var popup = '<p class="note">before you leave...</p>';
+        popup += '<p><img alt="" src="assets/images/pandas_logo_donation.png"/>';
+        popup += '<p class="main">You can contribute to make pandas better, even if you can\'t join the sprint.</p>';
+        popup += '<p class="links"><a class="button" href="https://www.flipcause.com/secure/cause_pdetails/MzA3OA==">DONATE TO PANDAS NOW</a></p>';
+        popup += '<p class="links"><a class="footnote" href="http://pandas.pydata.org/donate.html">More info</a></p>';
+        bioEp.init({
+            html: popup,
+            css: '',
+            cookieExp: 0,
+            delay: 1
+        });
+    </script>
 </head>
 <body data-spy="scroll" data-target="#site-nav">
     <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
@@ -244,7 +325,7 @@
                     <!-- navigation menu -->
                     <li class="active"><a data-scroll href="#about">About</a></li>
                     <li><a data-scroll href="#location">Locations</a></li>
-                    <li><a data-scroll href="#partner">Supporters</a></li>                  
+                    <li><a data-scroll href="#partner">Supporters</a></li>
                     <li><a data-scroll href="#faq">FAQ</a></li>
                     <li><a data-scroll href="#photos">Photos</a></li>
                 
