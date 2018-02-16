@@ -30,55 +30,33 @@
 }
 
 .post__event-col {
-  padding-top: 4%;
+  padding-top: 2%;
   background: rgb(0, 0, 0);
   }
 
-.post__event-col .row:first-child .post__label {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.post__event-col .row:last-child .post__event-title {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
 .post__label {
   font-family: 'Encode Sans Expanded', sans-serif;
-  background: #818181;
+  background: linear-gradient(45deg, #818181, #818181 80%, transparent 80%,  transparent 100%);
   font-size: 1.25em;
   color: #072948;
-  //border-top-left-radius: 5px;
-  //border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   padding-left: 0.25em;
+  padding-right: 0.25em;
+  margin-top: 0.5em;
   margin-bottom: 0;
+  min-width: 5em;
 }
 
 .post__event-title {
   background: rgba(7, 41, 72, 0.52);
-  //border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
   border: #072948 2px ridge;
   font-size: 1.25em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: antiquewhite;
   padding-left: 0.25em;
+  border-radius: 0 5px 5px 5px;
   }
-
-
-
-//.post__meta {
-//  @extend .post__event-title;
-//}
-//
-//.post__venue {
-//  @extend .post__event-title;
-//  margin-top: 2%;
-//  }
-//
-//.post__date {
-//  @extend .post__venue;
-//  }
 
 .post__button {
   padding: 1% 5%;
