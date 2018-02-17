@@ -19,6 +19,7 @@ include: ["_pages"]
 exclude:
   - Gemfile
   - Gemfile.lock
+  - static/images/sources/
 future: true
 
 # command to run build locally:
