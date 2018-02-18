@@ -14,8 +14,8 @@ sass:
   sass_dir: _sass
 kramdown:
   input: GFM
-#include: ["_test.html", "_static", "pandas/guide/_static", "_pages"]
-include: ["_pages"]
+include: ["_test.html", "_static", "pandas/guide/_static", "_pages"]
+#include: ["_pages"]
 exclude:
   - Gemfile
   - Gemfile.lock

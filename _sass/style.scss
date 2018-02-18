@@ -455,6 +455,11 @@
     text-align: center;
 }
 
+.footer__sponsor-col {
+  text-align: center;
+}
+
+
 .footer__icon {
     font-size: 2em;
     margin: 1em;
@@ -473,21 +478,28 @@
 }
 
 .footer__sponsor-link {
+    position: relative;
     background: #041729;
     border-radius: 5px;
     border: #7fa0c2 1px solid;
     text-align: center;
-    display: block;
+    display: inline-block;
+    line-height: 102px;
+    vertical-align: middle;
     margin-top: 10%;
     width: 278px;
     height: 102px;
 }
 
 .footer__img {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  transition: filter, .8s ease-in-out;
+  &:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.05);
+  }
 }
 
 .footer__link {
