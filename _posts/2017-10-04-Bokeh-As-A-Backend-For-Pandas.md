@@ -8,7 +8,7 @@ venue: Harvey Nash
 link: https://www.meetup.com/Python-Sprints/events/243422372/
 image: static/images/events_past/pandas_bokeh_backend_harvey_nash_960x539px.jpeg
 sponsors: 
-    - Harvey Nash
+    - harvey_nash
 ---
 
 According to this recent blog post by [Stack Overflow](https://stackoverflow.com/), Python is declared as the fastest-growing major programming language.

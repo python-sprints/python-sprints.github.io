@@ -21,6 +21,8 @@ exclude:
   - Gemfile.lock
   - static/images/sources/
 future: true
+collections:
+  - sponsors
 
 # command to run build locally:
 # bundle exec jekyll serve --config _config.yml,_config_dev.yml

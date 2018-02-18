@@ -12,6 +12,15 @@
     overflow-x: hidden;
 }
 
+a {
+    color: #035E9A;
+    text-decoration: none!important;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+        color: #A55605;
+    }
+}
+
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -446,6 +455,7 @@
 
 .footer {
     margin-top: 10%;
+    padding-top: 2.5%;
     background: #072948;
     border-top: #7fa0c2 1px solid;
 }
@@ -461,24 +471,30 @@
 
 
 .footer__icon {
-    font-size: 2em;
-    margin: 1em;
+    font-size: 1.5em;
+    margin: 0.25em;
     color: #7fa0c2;
     transition: all 0.5s;
+    &:hover {
+        color: #A55605;
+    }
 }
 
-.footer__text, .footer__text-copyright {
+.footer__text-copyright {
     font-size: 1.5em;
     color: #7fa0c2;
+    font-family: 'Playfair Display', serif;
+
 }
 
-.section-content.footer__text {
-    margin-top: 5%;
+.footer__section-title {
     color: aliceblue;
+    font-size: 1.5em;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .footer__sponsor-link {
-    position: relative;
     background: #041729;
     border-radius: 5px;
     border: #7fa0c2 1px solid;
@@ -486,7 +502,7 @@
     display: inline-block;
     line-height: 102px;
     vertical-align: middle;
-    margin-top: 10%;
+    margin: 1%;
     width: 278px;
     height: 102px;
 }
@@ -509,12 +525,6 @@
     font-family: 'Playfair Display', serif;
     color: #7fa0c2;
     display: block;
-    text-decoration: none!important;
-    transition: all 0.5s;
-}
-
-.footer__link:hover, .footer__icon:hover {
-    color: #aa5555;
 }
 
 .footer__brand-img {

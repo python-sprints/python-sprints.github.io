@@ -9,7 +9,7 @@
   }
 
 .post__title {
-  padding-top: 10%;
+  padding-top: 25vh;
   text-align: center;
   font-size: 3em;
   font-family: 'Encode Sans Expanded', sans-serif;
@@ -85,16 +85,56 @@
 }
 
 .post__content {
-  margin-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
 }
 
 .post__content-title {
+  margin-top: 5%;
+  margin-bottom: 2.5%;
   font-size: 2em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: #072948;
 }
 
+.post__sponsor-col {
+  padding-left: 10%;
+  padding-right: 10%;
+
+}
+
 .post__paragraph {
+}
+
+.post__divider {
+  margin-top: 5%;
+  border-top: #072948 2px ridge;
+  width: 10%;
+}
+
+.post__sponsor-container {
+  background: #041729;
+  border-radius: 5px;
+  border: #7fa0c2 1px solid;
+  text-align: center;
+}
+
+.post__sponsor-link {
+  //text-align: center;
+  line-height: 102px;
+  width: 278px;
+  height: 102px;
+}
+
+.post__sponsor-img {
+  vertical-align: middle;
+}
+
+.post__sponsor-name {
+  margin-top: 0.25em;
+  line-height: 1em;
+  text-align: center;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-size: 1.25em;
+  color: #072948;
 }
