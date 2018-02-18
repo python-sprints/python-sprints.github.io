@@ -9,7 +9,7 @@
   }
 
 .post__title {
-  padding-top: 25vh;
+  padding-top: 10%;
   text-align: center;
   font-size: 3em;
   font-family: 'Encode Sans Expanded', sans-serif;
@@ -18,7 +18,7 @@
 .post__subtitle {
   padding-top: 1%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.25em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: #818181;
   }
@@ -100,7 +100,9 @@
 .post__sponsor-col {
   padding-left: 10%;
   padding-right: 10%;
+}
 
+.post__logo-col {
 }
 
 .post__paragraph {
@@ -112,6 +114,15 @@
   width: 10%;
 }
 
+.post__sponsor-name {
+  margin-top: 0.25em;
+  line-height: 1em;
+  text-align: center;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-size: 1.25em;
+  color: #072948;
+}
+
 .post__sponsor-container {
   background: #041729;
   border-radius: 5px;
@@ -120,20 +131,15 @@
 }
 
 .post__sponsor-link {
+  text-align: center;
   line-height: 102px;
-  width: 278px;
-  height: 102px;
 }
 
 .post__sponsor-img {
   vertical-align: middle;
+  padding: 10px;
 }
 
-.post__sponsor-name {
-  margin-top: 0.25em;
-  line-height: 1em;
-  text-align: center;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  font-size: 1.25em;
-  color: #072948;
+.post__sponsor-content {
+  margin-top: 1.6em;
 }
