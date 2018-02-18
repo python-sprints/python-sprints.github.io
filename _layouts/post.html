@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+{% if page.image %}
+    {% assign image = page.image %}
+{% else %}
+    {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
+{% endif %}
 <style>
     .post__img-container {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ site.baseurl }}/{{ page.image }}");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{{ site.baseurl }}/{{ image }}");
       }
 
     @media (min-width: 769px) {
         .post__img-container {
-            background-image: linear-gradient(75deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 80%, black 87%, black 100%), url("{{ site.baseurl }}/{{ page.image }}");
+            background-image: linear-gradient(75deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.5) 80%, black 87%, black 100%), url("{{ site.baseurl }}/{{ image }}");
         }
     }
 </style>
@@ -16,8 +21,6 @@
         {% include navigation.html %}
         <main>
             <article class="post">
-                <!--HAve to move this IF statement to the background image style above and give and else with a standard background for events without the image yet-->
-                {% if page.image %}
                 <div class="row">
                     <div class="no-gutters__col col-md-12 container-fluid">
                         <div class="row">
@@ -70,7 +73,6 @@
                         </div>
                     </div>
                 </div>
-                {% endif %}
                 <div class="container-fluid">
                     <div class="row">
                         <div class="post__content col-md-12">
