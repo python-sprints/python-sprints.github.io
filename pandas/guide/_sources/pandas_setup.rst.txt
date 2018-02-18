@@ -59,9 +59,8 @@ repository:
 
 * Download and install `Anaconda <https://www.anaconda.com/download/>`_
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
-    | Restart your terminal
-    | ``. ~/.bashrc``
-    | ``export PATH="<path-to-anaconda>/bin:$PATH"``
+    * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
+    * Otherwise, run ``export PATH="<path-to-anaconda>/bin:$PATH"`` in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.
 * Create a conda environment:
     ``conda create -n pandas_dev -f <path-to-pandas>/ci/environment-dev.yaml``
 * Activate the new conda environment:

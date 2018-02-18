@@ -85,35 +85,30 @@ repository:</p>
 <h3>3. Set up a Python environment<a class="headerlink" href="#set-up-a-python-environment" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="a-python-environment-with-anaconda">
 <h4>3.a Python environment with Anaconda<a class="headerlink" href="#a-python-environment-with-anaconda" title="Permalink to this headline">¶</a></h4>
-<ul>
-<li><p class="first">Download and install <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a></p>
-</li>
+<ul class="simple">
+<li>Download and install <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a></li>
 <li><dl class="first docutils">
 <dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
-<dd><div class="first last line-block">
-<div class="line">Restart your terminal</div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">.</span> <span class="pre">~/.bashrc</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code></div>
-</div>
+<dd><ul class="first last">
+<li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
+<li>Otherwise, run <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
+</ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Create a conda environment:</dt>
-<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></p>
-</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Activate the new conda environment:</dt>
-<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></p>
-</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Install pandas development dependencies:</dt>
-<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></p>
-</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></dd>
 </dl>
 </li>
 </ul>
