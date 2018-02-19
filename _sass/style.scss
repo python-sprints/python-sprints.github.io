@@ -503,7 +503,7 @@ a {
   line-height: 102px;
   vertical-align: middle;
   margin: 1%;
-  width: 278px;
+  width: 75%;
   height: 102px;
   &:hover > .footer__img  {
     filter: none;
@@ -513,6 +513,8 @@ a {
 }
 
 .footer__img {
+  padding: 10px;
+  max-width: 100%;
   filter: gray;
   -webkit-filter: grayscale(1);
   transition: filter, .8s ease-in-out;
