@@ -7,17 +7,7 @@ var navigationButtonClose = $(".navigation__button-close");
 $(document).ready(function () {
     buttonOpenContainer.on("click", openNav);
     navigationButtonClose.on("click", closeNav);
-    buttonHover();
-    
 });
-
-function buttonHover () {
-    $(".post__button").hover(function () {
-        $(".post__icon").css("color", "antiquewhite")
-    }, function () {
-        $(".post__icon").css("color", "#7FA0C2")
-    });
-}
 
 function openNav() {
     buttonOpenContainer.css("pointer-events", "none");

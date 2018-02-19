@@ -10,6 +10,9 @@ image: static/images/events/pandas_bokeh_backend_harvey_nash_960x539px.jpeg
 sponsors: 
     - harvey_nash
     - bloomberg
+    - python_software_foundation
+    - zopa
+    - touch_surgery
 ---
 
 According to this recent blog post by [Stack Overflow](https://stackoverflow.com/), Python is declared as the fastest-growing major programming language.

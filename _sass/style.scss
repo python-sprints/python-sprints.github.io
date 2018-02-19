@@ -26,11 +26,6 @@ a {
   margin-right: 0;
 }
 
-.center-block {
-  display: table;
-  margin: auto;
-}
-
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
@@ -500,27 +495,27 @@ a {
 }
 
 .footer__sponsor-link {
-    background: #041729;
-    border-radius: 5px;
-    border: #7fa0c2 1px solid;
-    text-align: center;
-    display: inline-block;
-    line-height: 102px;
-    vertical-align: middle;
-    margin: 1%;
-    width: 278px;
-    height: 102px;
+  background: #041729;
+  border-radius: 5px;
+  border: #7fa0c2 1px solid;
+  text-align: center;
+  display: inline-block;
+  line-height: 102px;
+  vertical-align: middle;
+  margin: 1%;
+  width: 278px;
+  height: 102px;
+  &:hover > .footer__img  {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.05);
+  }
 }
 
 .footer__img {
   filter: gray;
   -webkit-filter: grayscale(1);
   transition: filter, .8s ease-in-out;
-  &:hover {
-    filter: none;
-    -webkit-filter: grayscale(0);
-    -webkit-transform: scale(1.05);
-  }
 }
 
 .footer__link {

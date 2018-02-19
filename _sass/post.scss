@@ -73,6 +73,9 @@
     background: rgba(7, 41, 72, 0.53);
     border: #A55605 2px ridge;
   }
+  &:hover > .post__icon {
+    color: antiquewhite;
+  }
 }
 
 .post__icon {
