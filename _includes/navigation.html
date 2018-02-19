@@ -1,0 +1,30 @@
+<nav class="navigation navbar sticky-top navbar-light">
+    <div class="navigation__brand">
+        <a class="navigation__brand-link navbar-brand" href="{{ '/' | prepend: site.baseurl }}">
+            <img class="navigation__brand-img" src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
+            <span class="navigation__brand-name">Python Sprints</span>
+        </a>
+    </div>
+
+    <div class="navigation__button-open-container">
+        <div class="navigation__hamburger-bar"></div>
+        <div class="navigation__hamburger-bar"></div>
+        <div class="navigation__hamburger-bar"></div>
+    </div>
+
+    <div class="navigation__button-close-container">
+        <a href="javascript:void(0)" class="navigation__button-close">
+            <i class="navigation__button-close fas fa-times"></i>
+        </a>
+    </div>
+    <div class="navigation__overlay">
+        <div class="navigation__overlay-content">
+            <a class="navigation__link" href="{{ '/' | prepend: site.baseurl }}">Home</a>
+            {% for page in site.pages %}
+                {% if page.title %}
+                    <a class="navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</nav>
