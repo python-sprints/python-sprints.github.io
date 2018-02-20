@@ -1,0 +1,28 @@
+# Site settings
+title: Python-Sprints
+# email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Python-Sprints is a non profit organisation gathering Python programmers and helping improve code in open source projects.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://localhost:4000"
+# twitter_username:
+# github_username:  python-sprints
+
+# Build settings
+include: ['_pages']
+sass:
+  sass_dir: _sass
+kramdown:
+  input: GFM
+include: ["_test.html", "_static", "pandas/guide/_static", "_pages"]
+#include: ["_pages"]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - static/images/sources/
+future: true
+collections:
+  - sponsors
+
+# command to run build locally:
+# bundle exec jekyll serve --config _config.yml,_config_dev.yml

@@ -1,0 +1,57 @@
+<section class="events">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">Recent Events</h2>
+            </div>
+        </div>
+
+        {% comment %}
+            Create an array of last 4 posts (from newest to oldest) to show in recent events section.
+            Since we also allow future posts to show upcoming event we have to eliminate the future ones
+            from displaying in the past ones.
+        {% endcomment %}
+
+        {% assign curDate = site.time | date: "%s" %}
+        {% assign last_4_posts = "" | split: ',' %}
+        {% for post in site.posts %}
+            {% assign postStartDate = post.date | date: "%s" %}
+            {% if postStartDate <= curDate %}
+                {% assign last_4_posts = last_4_posts | push: post %}
+                {% increment post_count %}
+            {% endif %}
+            {% if post_count == 4 %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+
+        {% comment %}
+            Create a 2 row by 2 column structure for 4 recent posts.
+        {% endcomment %}
+
+        {% for row in (0..1) %}
+            <div class="row">
+                {% for col in (0..1) %}
+                    {% assign post_index = row | times: 2 | plus: col %}
+                    {% assign post = last_4_posts[post_index] %}
+                    <div class="no-gutters__col col-sm-6">
+                        <div class="events__spacer"></div>
+                        <div class="events__img-container">
+                            <div class="events__img-overlay">
+                                <!--<a class="events__link" href="{{ post.link }}" target="_blank">-->
+                                <a class="events__link" href="{{ post.url }}">
+                                    <i class="events__icon fas fa-external-link-square-alt"></i>
+                                </a>
+                                <div class="events__title-container">
+                                    <h2 class="events__img-title">Event: {{ post.title }}</h2>
+                                    <p class="events__img-subtitle">{{ post.venue }}, {{ post.date | date: "%e %B %Y" }}</p>
+                                </div>
+                            </div>
+                            <img class="events__img img-fluid" src="{{ site.baseurl }}/{{ post.image }}">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</section>

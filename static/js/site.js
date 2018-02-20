@@ -4,6 +4,20 @@ var navigationOverlay = $(".navigation__overlay");
 var buttonCloseContainer = $(".navigation__button-close-container");
 var navigationButtonClose = $(".navigation__button-close");
 
+$(document).ready(function () {
+    buttonOpenContainer.on("click", openNav);
+    navigationButtonClose.on("click", closeNav);
+    buttonHover();
+    
+});
+
+function buttonHover () {
+    $(".post__button").hover(function () {
+        $(".post__icon").css("color", "antiquewhite")
+    }, function () {
+        $(".post__icon").css("color", "#7FA0C2")
+    });
+}
 
 function openNav() {
     buttonOpenContainer.css("pointer-events", "none");
@@ -25,8 +39,8 @@ function showCloseButton() {
     buttonCloseContainer.css("display", "inline");
 }
 
-buttonOpenContainer.on("click", openNav);
-navigationButtonClose.on("click", closeNav);
+// buttonOpenContainer.on("click", openNav);
+// navigationButtonClose.on("click", closeNav);
 
 // Responsive background image constructor.
 class ResponsiveBackgroundImage {

@@ -108,4 +108,5 @@ venv.bak/
 # mypy
 .mypy_cache/
 .idea/
-pandas/bower_components/
+_site/
+/.jekyll-metadata
