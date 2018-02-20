@@ -61,12 +61,11 @@ layout: default
             {% endfor %}
 
             <!--Test data passed from future posts/events-->
-            {% for post in upcoming_events %}
+            {% assign post = upcoming_events | last %}
                 <h1>Event: {{ post.title }}</h1>
                 <h1>Venue: {{ post.venue }}</h1>
                 <h1>Date: {{ post.date | date: "%e %B %Y" }}</h1>
                 <a href="{{ post.link }}">test link</a>
-            {% endfor %}
         </div>
     </div>
 </section>
