@@ -50,9 +50,8 @@ layout: default
 {% if upcoming_event == true %}
     <section class="upcoming">
         <div class="row container-fluid">
-            <div class="col-md-12">
-                <hr class="upcoming-divider">
-
+            <hr class="upcoming-divider">
+            <div class="upcoming__img-container col-md-12">
                 <div class="row">
                     <div class="upcoming__col col-md-5 col-12">
                         <h2 class="upcoming-title">Upcoming Event</h2>
@@ -89,29 +88,23 @@ layout: default
                             </div>
                         </div>
                     </div>
-                    <div class="upcoming__img-container col-md-7">
-                        <div class="row">
-                            <div class="col-12">
-                                <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ post.project_logo }}">
-                            </div>
-                        </div>
-                        <!--Fix vertical alignment of this row-->
-                        <div class="button_row row">
-                            <div class="col-12 text-center">
-                                <a class="upcoming__link" href="{{ post.event_link }}">
-                                    <button class="btn btn-outline-primary btn-lg">
-                                        Learn More
-                                    </button>
-                                </a>
-                            </div>
-                        </div>
+                    <div class="upcoming__logo-col col-auto">
+                        <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ post.project_logo }}">
+                    </div>
+                </div>
+                <div class="upcoming__button-row row">
+                    <div class="col-md-12 text-center">
+                        <a class="upcoming__link" href="{{ post.event_link }}">
+                            <button class="upcoming__button btn btn-outline-primary btn-lg">
+                                Learn More
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 {% endif %}
-
 
 <!--Events in the past section-->
 {% include event.html %}
@@ -125,7 +118,6 @@ layout: default
             </div>
         </div>
     </div>
-
 
     <div class="row">
         <div class="second-on-mobile no-gutters__col col-md-6">
