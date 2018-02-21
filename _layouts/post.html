@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="post__button-col col-12">
-                                        <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.link }}">
+                                        <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">
                                             <i class="post__icon fab fa-meetup"></i>
                                         </a>
                                     </div>
@@ -85,18 +85,16 @@
 
                     {% for sponsor in page.sponsors %}
                         {% assign sponsor_obj = site.sponsors | where:"sponsor_id", sponsor | first %}
-                         <div class="row">
+                         <div class="row flex-nowrap">
                             <div class="post__sponsor-col col-md-12">
                                 <div class="row">
-                                    <div class="post__logo-col col-sm-12 col-lg-3">
+                                    <div class="post__logo-col col-sm-3 col-12">
                                         <h3 class="post__sponsor-name">{{ sponsor_obj.sponsor_name }}</h3>
-                                        <div class="post__sponsor-container">
-                                            <a class="post__sponsor-link" href="{{ sponsor_obj.sponsor_link }}">
+                                            <a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.sponsor_link }}">
                                                 <img class="post__sponsor-img" src="{{ site.baseurl }}/{{ sponsor_obj.sponsor_logo }}">
                                             </a>
-                                        </div>
                                     </div >
-                                    <div class="col-sm-12 col-lg-9 col-xl-8">
+                                    <div class="post__sponsor-info-col col-12 col-sm-auto col-xl-7 ">
                                         <p class="post__sponsor-content">{{ sponsor_obj.content}}</p>
                                     </div>
                                 </div>

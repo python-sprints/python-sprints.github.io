@@ -1,0 +1,28 @@
+<!--Create array of future events-->
+{% assign upcoming_events = "" | split: ',' %}
+{% assign curDate = site.time | date: "%s" %}
+{% for post in site.posts %}
+    {% assign postStartDate = post.date | date: "%s" %}
+    {% if postStartDate >= curDate %}
+        {% assign upcoming_events = upcoming_events | push: post %}
+    {% endif %}
+{% endfor %}
+{% if upcoming_events.size > 0 %}
+    {% assign upcoming_event = true %}
+    {% assign post = upcoming_events | last %}
+
+    {% if post.image %}
+        {% assign image = post.image %}
+    {% else %}
+        {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
+    {% endif %}
+{% endif %}
+<style>
+.upcoming__img-container {
+    background-image: linear-gradient(to bottom right,
+    rgba(7, 41, 72, 0.7),
+    rgba(0, 0, 0, 0.7) 70%,
+    rgba(0, 0, 0, 0.7) 100%),
+    url("{{ site.baseurl }}/{{ image }}");
+      }
+</style>
