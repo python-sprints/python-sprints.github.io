@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+{% include inline_style_index.html %}
 <!--Title image will be set to display:none and used as a background image on the div below-->
 <div class="navigation__content container-fluid" data-image-type="responsive">
     <picture>
@@ -46,29 +46,70 @@ layout: default
     </div>
 </section>
 
-<section>
-    <div class="row container">
-        <div class="col-md-12">
-            <!--Upcoming Events section-->
-            <!--Create array of future events-->
-            {% assign upcoming_events = "" | split: ',' %}
-            {% assign curDate = site.time | date: "%s" %}
-            {% for post in site.posts %}
-                {% assign postStartDate = post.date | date: "%s" %}
-                {% if postStartDate >= curDate %}
-                    {% assign upcoming_events = upcoming_events | push: post %}
-                {% endif %}
-            {% endfor %}
+<!--Upcoming Events section-->
+{% if upcoming_event == true %}
+    <section class="upcoming">
+        <div class="row container-fluid">
+            <div class="col-md-12">
+                <hr class="upcoming-divider">
 
-            <!--Test data passed from future posts/events-->
-            {% assign post = upcoming_events | last %}
-                <h1>Event: {{ post.title }}</h1>
-                <h1>Venue: {{ post.venue }}</h1>
-                <h1>Date: {{ post.date | date: "%e %B %Y" }}</h1>
-                <a href="{{ post.link }}">test link</a>
+                <div class="row">
+                    <div class="upcoming__col col-md-5 col-12">
+                        <h2 class="upcoming-title">Upcoming Event</h2>
+                        <div class="row">
+                            <div class="no-gutters__col col-3">
+                                <h2 class="post__label">Event</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="upcoming__event-title col-12">
+                                {{ post.title }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="no-gutters__col col-3">
+                                <h2 class="post__label">Venue</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="upcoming__event-title col-12">
+                                {{ post.venue }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="no-gutters__col col-3">
+                                <h2 class="post__label">Date</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="upcoming__event-title col-12">
+                                {{ post.date | date: "%e %B %Y" }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="upcoming__img-container col-md-7">
+                        <div class="row">
+                            <div class="col-12">
+                                <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ post.project_logo }}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <a class="upcoming__link" href="{{ post.event_link }}">
+                                    <button class="btn btn-outline-primary btn-lg">
+                                        Learn More
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+{% endif %}
 
 
 <!--Events in the past section-->
