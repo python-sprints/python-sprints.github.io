@@ -359,14 +359,14 @@ a {
 .upcoming__button {
   font-size: 1.5em;
   font-family: 'Playfair Display', serif;
-  color: antiquewhite;
-  background: rgba(0, 0, 0, 0.4);
-  border: antiquewhite 1px solid;
+  background: rgba(7, 41, 72, 0.6);
+  color: #7fa0c2;
+  border: #035E9A 1px solid;
   min-width: 30%;
   &:hover {
-    background: rgba(7, 41, 72, 0.6);
-    color: #7fa0c2;
-    border: #035E9A 1px solid;
+    color: antiquewhite;
+    background: rgba(0, 0, 0, 0.4);
+    border: antiquewhite 1px solid;
   }
 }
 
