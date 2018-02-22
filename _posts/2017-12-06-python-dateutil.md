@@ -5,7 +5,7 @@ project: date-util
 project_description: Powerful extensions to datetime
 date: 2017-12-06
 venue: Bloomberg
-link: https://www.meetup.com/Python-Sprints/events/245317647/
+meetup_link: https://www.meetup.com/Python-Sprints/events/245317647/
 image: static/images/events/dateutil_bloomberg_960x539px.jpeg
 sponsors: 
     - bloomberg
