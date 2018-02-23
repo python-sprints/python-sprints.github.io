@@ -197,20 +197,29 @@ a {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 850px) and (orientation: landscape) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   .navigation__overlay-content {
     top: 15%;
   }
 }
 
 .navigation__overlay .navigation__link {
-  padding: 0.25em;
   text-decoration: none;
   font-size: 2em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: #818181;
   display: block;
-  transition: 0.4s;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  padding: 0;
+}
+
+@media (min-width: 768px), (orientation: portrait) {
+  .navigation__overlay .navigation__link {
+  padding: 0.25em;
+  }
 }
 
 .navigation__link:hover {
@@ -363,6 +372,7 @@ a {
   color: #7fa0c2;
   border: #035E9A 1px solid;
   min-width: 30%;
+  transition: all 0.5s ease-in-out;
   &:hover {
     color: antiquewhite;
     background: rgba(0, 0, 0, 0.4);
