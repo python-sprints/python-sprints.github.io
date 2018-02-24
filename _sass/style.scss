@@ -274,8 +274,15 @@ a {
 }
 
 .upcoming {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+@media (min-width: 768px) {
+  .upcoming {
   margin-left: 10%;
   margin-right: 10%;
+  }
 }
 
 .upcoming-divider {

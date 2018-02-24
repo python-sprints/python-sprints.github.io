@@ -5,66 +5,55 @@ permalink: /contact/
 ---
 
 <style>
-    .contact {
+    .contact__background-img {
         background-size: cover;
         background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.5)),
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)),
             url("{{ site.baseurl }}/static/images/contact/contact_top_1920x600px.jpg") top center no-repeat;
     }
 </style>
 
 
 <section class="contact">
-    <div class="row container-fluid">
-        <!--<img class="img-fluid" src="{{ site.baseurl }}/static/images/contact/contact_top_1920x600px.jpg">-->
-        <div class="col-sm-12">
-                <h2 class="section-title">Contact</h2>
+    <div class="contact__background-img">
+        <div class="row container-fluid">
+            <div class="col-sm-12">
+                <h2 class="section-title contact__title">Contact</h2>
+                <h3 class="contact__subtitle">Let us know about your ideas and concerns</h3>
             </div>
         </div>
+    </div>
     <!--Contact form-->
-        <form class="contact__form container" method="post" action="#" role="form">
+        <form class="contact__form container" method="POST" action="//formspree.io/tomaszk1@hotmail.co.uk" role="form">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="contact__label" for="form_name">Firstname *</label>
-                        <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="contact__label" for="form_lastname">Lastname *</label>
-                        <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                        <label class="contact__label" for="contact__form-name">Full Name *</label>
+                        <input id="contact__form-name" type="text" name="name" class="form-control" placeholder="Please enter your full name *" required="required" data-error="Full name is required.">
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="contact__label" for="form_email">Email *</label>
-                        <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label class="contact__label" for="form_phone">Phone</label>
-                        <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
-                        <div class="help-block with-errors"></div>
+                        <label class="contact__label" for="contact__form-email">Email *</label>
+                        <input id="contact__form-email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="contact__label" for="form_message">Message *</label>
-                        <textarea id="form_message" name="message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                        <label class="contact__label" for="contact__form-message">Message *</label>
+                        <textarea id="contact__form-message" name="message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button type="button" class="contact__submit-button btn btn-success btn-send btn-lg">Send Message<span class="contact__icon"><i class="fas fa-envelope"></i></span></button>
-                    <!--<input type="submit" class="contact__submit-button btn btn-success btn-send btn-lg" value="Send message">-->
+                    <input type="text" name="_gotcha" style="display: none">
+                    <input type="hidden" name="_subject" value="Message from Python Sprints">
+                    <button type="submit" class="contact__submit-button btn btn-success btn-send btn-lg">Send Message<span class="contact__icon"><i class="fas fa-envelope"></i></span></button>
                 </div>
             </div>
             <div class="row">
