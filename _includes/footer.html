@@ -46,11 +46,12 @@
         <div class="col-md-3">
             <h2 class="footer__section-title">Python Sprints</h2>
             <hr class="footer__divider">
-            <a class="footer__link" href="#" target="_blank">About</a>
-            <a class="footer__link" href="#" target="_blank">Getting Started</a>
-            <a class="footer__link" href="#" target="_blank">Projects</a>
-            <a class="footer__link" href="#" target="_blank">Contact</a>
-            <a class="footer__link" href="#" target="_blank">Credits</a>
+            <a class="footer__link" href="{{ '/' | prepend: site.baseurl }}">Home</a>
+            {% for page in site.pages %}
+                {% if page.title %}
+                    <a class="footer__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 
