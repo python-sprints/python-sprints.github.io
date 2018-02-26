@@ -83,7 +83,7 @@ a {
 
 .navigation__brand-name {
   font-size: 0.8em;
-  color: #ffffff;
+  color: antiquewhite;
   font-family: 'Share Tech Mono', monospace;
 }
 
@@ -120,7 +120,7 @@ a {
 
 .navigation__title {
   font-family: 'Share Tech Mono', monospace;
-  color: #ffffff;
+  color: antiquewhite;
   font-size: 3.5em;
   margin-top: 40vh;
   text-align: center;
@@ -129,7 +129,7 @@ a {
 .navigation__subtitle {
   font-size: 1.16em;
   font-family: 'Share Tech Mono', monospace;
-  color: #818181;
+  color: #A55605;
   text-align: center;
   margin-bottom: 50%;
 }
@@ -585,8 +585,7 @@ a {
 }
 
 .footer {
-  margin-top: 10%;
-  padding-top: 2.5%;
+  margin-top: 5%;
   background: #072948;
   border-top: #7fa0c2 1px solid;
 }
@@ -618,6 +617,7 @@ a {
 }
 
 .footer__section-title {
+  margin-top: 1em;
   color: aliceblue;
   font-size: 1.5em;
   text-align: center;
