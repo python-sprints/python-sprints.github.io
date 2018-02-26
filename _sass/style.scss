@@ -83,7 +83,7 @@ a {
 
 .navigation__brand-name {
   font-size: 0.8em;
-  color: #ffffff;
+  color: antiquewhite;
   font-family: 'Share Tech Mono', monospace;
 }
 
@@ -120,7 +120,7 @@ a {
 
 .navigation__title {
   font-family: 'Share Tech Mono', monospace;
-  color: #ffffff;
+  color: antiquewhite;
   font-size: 3.5em;
   margin-top: 40vh;
   text-align: center;
@@ -129,7 +129,7 @@ a {
 .navigation__subtitle {
   font-size: 1.16em;
   font-family: 'Share Tech Mono', monospace;
-  color: #818181;
+  color: #A55605;
   text-align: center;
   margin-bottom: 50%;
 }
@@ -197,20 +197,29 @@ a {
   margin-top: 30px;
 }
 
-@media screen and (max-width: 850px) and (orientation: landscape) {
+@media screen and (max-width: 767px) and (orientation: landscape) {
   .navigation__overlay-content {
     top: 15%;
   }
 }
 
 .navigation__overlay .navigation__link {
-  padding: 0.25em;
   text-decoration: none;
   font-size: 2em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: #818181;
   display: block;
-  transition: 0.4s;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+  padding: 0;
+}
+
+@media (min-width: 768px), (orientation: portrait) {
+  .navigation__overlay .navigation__link {
+  padding: 0.25em;
+  }
 }
 
 .navigation__link:hover {
@@ -265,8 +274,15 @@ a {
 }
 
 .upcoming {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+@media (min-width: 768px) {
+  .upcoming {
   margin-left: 10%;
   margin-right: 10%;
+  }
 }
 
 .upcoming-divider {
@@ -363,6 +379,7 @@ a {
   color: #7fa0c2;
   border: #035E9A 1px solid;
   min-width: 30%;
+  transition: all 0.5s ease-in-out;
   &:hover {
     color: antiquewhite;
     background: rgba(0, 0, 0, 0.4);
@@ -568,8 +585,7 @@ a {
 }
 
 .footer {
-  margin-top: 10%;
-  padding-top: 2.5%;
+  margin-top: 5%;
   background: #072948;
   border-top: #7fa0c2 1px solid;
 }
@@ -601,6 +617,7 @@ a {
 }
 
 .footer__section-title {
+  margin-top: 1em;
   color: aliceblue;
   font-size: 1.5em;
   text-align: center;

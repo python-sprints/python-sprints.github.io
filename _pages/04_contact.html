@@ -4,5 +4,62 @@ title: Contact
 permalink: /contact/
 ---
 
-<h1>This is the content of the Contact page</h1>
-<h2>Fill it in !!!!</h2>
+<style>
+    .contact__background-img {
+        background-size: contain;
+        background: linear-gradient(90deg,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)),
+            url("{{ site.baseurl }}/static/images/contact/contact_top_1920x600px.jpg") top center no-repeat;
+    }
+</style>
+
+
+<section class="contact">
+    <div class="contact__background-img">
+        <div class="row container-fluid">
+            <div class="col-sm-12">
+                <h2 class="section-title contact__title">Contact Us</h2>
+                <h3 class="contact__subtitle">Got an idea? Can you or your company support us? Let us know.</h3>
+            </div>
+        </div>
+    </div>
+    <!--Contact form-->
+        <form class="contact__form container" method="POST" action="//formspree.io/py.sprints@gmail.com" role="form">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="contact__label" for="contact__form-name">Full Name *</label>
+                        <input id="contact__form-name" type="text" name="name" class="form-control" placeholder="Please enter your full name *" required="required" data-error="Full name is required.">
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                 <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="contact__label" for="contact__form-email">Email *</label>
+                        <input id="contact__form-email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="contact__label" for="contact__form-message">Message *</label>
+                        <textarea id="contact__form-message" name="message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <input type="text" name="_gotcha" style="display: none">
+                    <input type="hidden" name="_subject" value="Message from Python Sprints">
+                    <button type="submit" class="contact__submit-button btn btn-success btn-send btn-lg">Send Message<span class="contact__icon"><i class="fas fa-envelope"></i></span></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-muted"><strong>*</strong> Required fields</p>
+                </div>
+            </div>
+        </form>
+    </section>
