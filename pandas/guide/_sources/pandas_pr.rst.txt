@@ -16,7 +16,7 @@ technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:
 
     | ``cd <pandas-dir>``
-    | ``scripts/validate_docstring.py <your-function-or-method>``
+    | ``scripts/validate_docstrings.py <your-function-or-method>``
 
 where `<your-function-or-method>` is for example `pandas.DataFrame.head`,
 `pandas.Series.tail` or `pandas.to_datetime`.
@@ -41,31 +41,14 @@ section.
 This will generate a file `<pandas-dir>/doc/build/html/generated/<your-function-or-method>.html`
 that can be opened with your web browser.
 
-3. Validate code in the examples
---------------------------------
-
-Code in the `Examples` section of the docstring must be valid Python code, and
-return the exact output as presented. Besides illustrating the functionality
-in the documentation, this code is also part of the unit tests.
-
-To run the examples as unit tests, and validate that the code is correct and
-returns the expected output, execute the next in your terminal:
-
-    | ``cd <pandas-dir>``
-    | ``pytest --doctest-modules <file-of-your-docstring> -k <function-or-method-name>``
-
-where `<file-of-your-docstring>` is the path to the file where you edited your docstring
-(e.g. `pandas/core/frame.py`) and `<function-or-method-name>` is the name of the function
-or method you edited (e.g. `head`).
-
-4. Validate that the docstring is clear to others
+3. Validate that the docstring is clear to others
 -------------------------------------------------
 
 As the last validation, please show the html version of your docstring to a
 person in the sprint not involved in the changes to the docstring, and make
 sure they are able to fully understand it.
 
-5. Commit your changes
+4. Commit your changes
 ----------------------
 
 Once all the validations are successful, you can proceed to commit the changes
@@ -88,7 +71,7 @@ cases it could be more than one file). And `<commit-message>` is a short
 description of your changes, starting by "DOC:" (e.g. "DOC: Improved the
 docsting of DataFrame.head()").
 
-6. Push your changes to the sprint repository
+5. Push your changes to the sprint repository
 ---------------------------------------------
 
 Before sending the pull request to the pandas core developers, you will send

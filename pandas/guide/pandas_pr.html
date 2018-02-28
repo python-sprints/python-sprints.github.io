@@ -52,7 +52,7 @@ execute in your terminal:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">scripts/validate_docstring.py</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">scripts/validate_docstrings.py</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
 </div>
 </div></blockquote>
 <p>where <cite>&lt;your-function-or-method&gt;</cite> is for example <cite>pandas.DataFrame.head</cite>,
@@ -77,31 +77,14 @@ section.</p>
 <p>This will generate a file <cite>&lt;pandas-dir&gt;/doc/build/html/generated/&lt;your-function-or-method&gt;.html</cite>
 that can be opened with your web browser.</p>
 </div>
-<div class="section" id="validate-code-in-the-examples">
-<h2>3. Validate code in the examples<a class="headerlink" href="#validate-code-in-the-examples" title="Permalink to this headline">¶</a></h2>
-<p>Code in the <cite>Examples</cite> section of the docstring must be valid Python code, and
-return the exact output as presented. Besides illustrating the functionality
-in the documentation, this code is also part of the unit tests.</p>
-<p>To run the examples as unit tests, and validate that the code is correct and
-returns the expected output, execute the next in your terminal:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">pytest</span> <span class="pre">--doctest-modules</span> <span class="pre">&lt;file-of-your-docstring&gt;</span> <span class="pre">-k</span> <span class="pre">&lt;function-or-method-name&gt;</span></code></div>
-</div>
-</div></blockquote>
-<p>where <cite>&lt;file-of-your-docstring&gt;</cite> is the path to the file where you edited your docstring
-(e.g. <cite>pandas/core/frame.py</cite>) and <cite>&lt;function-or-method-name&gt;</cite> is the name of the function
-or method you edited (e.g. <cite>head</cite>).</p>
-</div>
 <div class="section" id="validate-that-the-docstring-is-clear-to-others">
-<h2>4. Validate that the docstring is clear to others<a class="headerlink" href="#validate-that-the-docstring-is-clear-to-others" title="Permalink to this headline">¶</a></h2>
+<h2>3. Validate that the docstring is clear to others<a class="headerlink" href="#validate-that-the-docstring-is-clear-to-others" title="Permalink to this headline">¶</a></h2>
 <p>As the last validation, please show the html version of your docstring to a
 person in the sprint not involved in the changes to the docstring, and make
 sure they are able to fully understand it.</p>
 </div>
 <div class="section" id="commit-your-changes">
-<h2>5. Commit your changes<a class="headerlink" href="#commit-your-changes" title="Permalink to this headline">¶</a></h2>
+<h2>4. Commit your changes<a class="headerlink" href="#commit-your-changes" title="Permalink to this headline">¶</a></h2>
 <p>Once all the validations are successful, you can proceed to commit the changes
 into git.</p>
 <p>Before committing your changes, make sure you are in the branch of the feature
@@ -126,7 +109,7 @@ description of your changes, starting by “DOC:” (e.g. “DOC: Improved the
 docsting of DataFrame.head()”).</p>
 </div>
 <div class="section" id="push-your-changes-to-the-sprint-repository">
-<h2>6. Push your changes to the sprint repository<a class="headerlink" href="#push-your-changes-to-the-sprint-repository" title="Permalink to this headline">¶</a></h2>
+<h2>5. Push your changes to the sprint repository<a class="headerlink" href="#push-your-changes-to-the-sprint-repository" title="Permalink to this headline">¶</a></h2>
 <p>Before sending the pull request to the pandas core developers, you will send
 it to the sprint repository. Where more experienced contributors will review
 it, and suggest changes if needed.</p>
@@ -158,10 +141,9 @@ to send the final pull request to pandas.</p>
 <li><a class="reference internal" href="#">Submitting your changes</a><ul>
 <li><a class="reference internal" href="#validate-that-your-docstring-does-not-have-technical-errors">1. Validate that your docstring does not have technical errors</a></li>
 <li><a class="reference internal" href="#visual-validation-of-the-docstring">2. Visual validation of the docstring</a></li>
-<li><a class="reference internal" href="#validate-code-in-the-examples">3. Validate code in the examples</a></li>
-<li><a class="reference internal" href="#validate-that-the-docstring-is-clear-to-others">4. Validate that the docstring is clear to others</a></li>
-<li><a class="reference internal" href="#commit-your-changes">5. Commit your changes</a></li>
-<li><a class="reference internal" href="#push-your-changes-to-the-sprint-repository">6. Push your changes to the sprint repository</a></li>
+<li><a class="reference internal" href="#validate-that-the-docstring-is-clear-to-others">3. Validate that the docstring is clear to others</a></li>
+<li><a class="reference internal" href="#commit-your-changes">4. Commit your changes</a></li>
+<li><a class="reference internal" href="#push-your-changes-to-the-sprint-repository">5. Push your changes to the sprint repository</a></li>
 </ul>
 </li>
 </ul>
