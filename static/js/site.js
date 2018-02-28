@@ -29,9 +29,6 @@ function showCloseButton() {
     buttonCloseContainer.css("display", "inline");
 }
 
-// buttonOpenContainer.on("click", openNav);
-// navigationButtonClose.on("click", closeNav);
-
 // Responsive background image constructor.
 class ResponsiveBackgroundImage {
 
@@ -64,4 +61,15 @@ for (let i=0; i<elements.length; i++) {
     new ResponsiveBackgroundImage(elements[i]);
 }
 
+// Add active class to navigation elements in the navigation overlay and
+// footer on page load.
+$(setActiveLink());
 
+function setActiveLink() {
+    var currentURL = window.location.href;
+    $('.navigation__link, .footer__link').each(function () {
+        if (this.href === currentURL) {
+            $(this).addClass('active');
+        }
+    });
+}
