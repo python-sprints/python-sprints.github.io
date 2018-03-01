@@ -3,13 +3,31 @@ var hamburgerBar = $(".navigation__hamburger-bar");
 var navigationOverlay = $(".navigation__overlay");
 var buttonCloseContainer = $(".navigation__button-close-container");
 var navigationButtonClose = $(".navigation__button-close");
+var scrollPosition = 0;
+var scrollBarWidth = 0;
+
 
 $(document).ready(function () {
     buttonOpenContainer.on("click", openNav);
     navigationButtonClose.on("click", closeNav);
 });
 
+function setActiveLink() {
+    var currentURL = window.location.href;
+    $('.navigation__link, .footer__link').each(function () {
+        if (this.href === currentURL) {
+            $(this).addClass('active');
+        }
+    });
+}
+
 function openNav() {
+    scrollPosition = $(window).scrollTop();
+    scrollBarWidth = (window.innerWidth - $(window).width());
+    $("body").addClass("no-scroll");
+    // To prevent content from jumping when scrollbar disappears.
+    $(window).scrollTop(scrollPosition);
+    $("body").css("padding-right", scrollBarWidth + "px");
     buttonOpenContainer.css("pointer-events", "none");
     buttonOpenContainer.toggle(500, showCloseButton);
     hamburgerBar.css("background-color", "transparent");
@@ -18,6 +36,9 @@ function openNav() {
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
+    $("body").removeClass("no-scroll");
+    // To stop content jerking left-right when scrollbar is restored.
+    $("body").css("padding-right", "");
     hamburgerBar.css("background-color", "#ffffff");
     navigationOverlay.css("width", "0%");
     buttonOpenContainer.css("display", "inline");
@@ -65,11 +86,5 @@ for (let i=0; i<elements.length; i++) {
 // footer on page load.
 $(setActiveLink());
 
-function setActiveLink() {
-    var currentURL = window.location.href;
-    $('.navigation__link, .footer__link').each(function () {
-        if (this.href === currentURL) {
-            $(this).addClass('active');
-        }
-    });
-}
+
+
