@@ -37,6 +37,7 @@ version of pandas. Do not make them to a version downloaded from the Internet
 via pip, conda or a zip.
 
 To get the latest development version:
+
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
 * In the terminal of your computer, in the directory where you want the copy of pandas source code, run:
 
@@ -49,6 +50,7 @@ this document.
 Then, set the upstream remote, so you can fetch the updates from the pandas
 repository:
 
+    | ``cd <pandas-dir>``
     | ``git remote add upstream https://github.com/pandas-dev/pandas``
 
 3. Set up a Python environment
