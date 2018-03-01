@@ -4,18 +4,26 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Before the sprint: Set up instructions &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="How to write a good pandas docstring" href="pandas_docstring.html" />
+    <link rel="next" title="pandas docstring guide" href="pandas_docstring.html" />
     <link rel="prev" title="Pandas documentation sprint" href="contents.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -23,7 +31,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body>
   
 
     <div class="document">
@@ -67,7 +76,7 @@ via pip, conda or a zip.</p>
 * In the terminal of your computer, in the directory where you want the copy of pandas source code, run:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></div>
 </div>
 </div></blockquote>
 <p>This will create a directory named <cite>pandas</cite>, containing the latest version of
@@ -77,7 +86,7 @@ this document.</p>
 repository:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">https://github.com/pandas-dev/pandas</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">https://github.com/pandas-dev/pandas</span></code></div>
 </div>
 </div></blockquote>
 </div>
@@ -90,25 +99,25 @@ repository:</p>
 <li><dl class="first docutils">
 <dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
 <dd><ul class="first last">
-<li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
-<li>Otherwise, run <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
+<li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
+<li>Otherwise, run <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Create a conda environment:</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Activate the new conda environment:</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Install pandas development dependencies:</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></dd>
+<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></dd>
 </dl>
 </li>
 </ul>
@@ -125,8 +134,8 @@ which need to be compiled in order to run the development version of pandas.</p>
 <dl class="docutils">
 <dt>To compile these files simply run:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
 </div>
 </dd>
 </dl>
@@ -141,7 +150,7 @@ to submit a pull request, so they are included in pandas.</p>
 <dl class="docutils">
 <dt>You can create a git branch running:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new_branch_name&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new_branch_name&gt;</span></code></div>
 </div>
 </dd>
 </dl>
@@ -153,12 +162,12 @@ branch for each.</p>
 <dl class="docutils">
 <dt>To check in which branch are you:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code></div>
 </div>
 </dd>
 <dt>To change to another branch:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch_name&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch_name&gt;</span></code></div>
 </div>
 </dd>
 </dl>
@@ -198,7 +207,7 @@ branch for each.</p>
 <ul>
   <li><a href="contents.html">Documentation overview</a><ul>
       <li>Previous: <a href="contents.html" title="previous chapter">Pandas documentation sprint</a></li>
-      <li>Next: <a href="pandas_docstring.html" title="next chapter">How to write a good pandas docstring</a></li>
+      <li>Next: <a href="pandas_docstring.html" title="next chapter">pandas docstring guide</a></li>
   </ul></li>
 </ul>
 </div>
@@ -211,14 +220,12 @@ branch for each.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -229,7 +236,7 @@ branch for each.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
