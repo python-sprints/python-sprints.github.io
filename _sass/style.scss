@@ -297,22 +297,22 @@ a {
 }
 
 .upcoming__col {
-  margin-top: 1%;
+  margin-top: 1em;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 20px 5px 20px 5px;
+  border-radius: 5px;
   box-shadow: black 5px 5px 5px 0;
 }
 
 @media (min-width: 768px) {
   .upcoming__col {
-    margin-left: 0.5%;
+    margin-left: 5.5%;
   }
 }
 
-.upcoming-title {
+.upcoming__title {
   font-size: 2.5em;
   color: antiquewhite;
-  text-align: left;
+  text-align: center;
   font-family: 'Encode Sans Expanded', sans-serif;
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -344,22 +344,39 @@ a {
 }
 
 .upcoming__logo-col {
+  padding-right: 0;
+  padding-left: 0;
   flex: 1;
 }
 
+@media (min-width: 768px) {
+  .upcoming__logo-col {
+    margin-right: 5.5%;
+  }
+}
+
+
 .upcoming__project-logo {
-  margin-top: 5%;
+  margin: 0.5em;
   border: #A55605 3px double;
   border-radius: 5px;
   max-width: 50%;
-  ;
 }
 
-@media (min-width: 768px) {
-  .upcoming__project-logo {
-    margin-top: 2.5%;
-    margin-left: 2.5%;
-  }
+.upcoming__sponsor-list {
+  background: rgba(7, 41, 72, 0.7);
+  border: #072948 2px ridge;
+  margin-top: 1em;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
+}
+
+.upcoming__sponsor-title {
+  color: antiquewhite;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-size: 2.5em;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 .upcoming__button-row {
@@ -388,7 +405,7 @@ a {
   &:hover {
     color: antiquewhite;
     background: rgba(0, 0, 0, 0.4);
-    border: antiquewhite 1px solid;
+    border: #A55605 1px solid;
   }
 }
 
@@ -602,6 +619,8 @@ a {
 
 .footer__sponsor-col {
   text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer__icon {

@@ -3,12 +3,13 @@ layout: post
 title: Pandas documentation sprint (worldwide)
 project: Pandas
 project_description: Powerful Python data analysis toolkit
+project_logo: static/images/events/pandas_logo_donation.png
+project_link: http://pandas.pydata.org/index.html
 date: 2018-03-10
 venue: Bloomberg (London)
 meetup_link: https://www.meetup.com/Python-Sprints/events/247097848/
 event_link: https://python-sprints.github.io/pandas/
 image: static/images/events/pandas_documentation_sprint_1280_720px.jpg
-project_logo: static/images/events/pandas_logo_donation.png
 
 sponsors: 
     - bloomberg
