@@ -52,7 +52,7 @@ layout: default
         <div class="row container-fluid">
             <hr class="upcoming-divider">
             <div class="upcoming__img-container col-md-12">
-                <div class="row">
+                <div class="upcoming__content row">
                     <div class="upcoming__col col-md-5 col-12 mr-auto">
                         <h2 class="upcoming__title">Upcoming Event</h2>
                         <div class="row">
@@ -102,83 +102,55 @@ layout: default
                         {% endif %}
                     </div>
                     <div class="upcoming__logo-col col-md-5 text-center">
-                        <div class="upcoming__sponsor-list">
+                        <div class="upcoming__sponsor-list h-100">
                             <h2 class="upcoming__sponsor-title">Supported By</h2>
+                            <!--HERE feed event sponsors only - we need sponsor objects not just the name.-->
+                            <!--Build an array of site sponsors (all).-->
+                            {% assign site_sponsors_all = "" | split: ',' %}
+                            {% for sponsor in site.sponsors %}
+                            {% assign site_sponsors_all = site_sponsors_all | push: sponsor %}
+                            {% endfor %}
 
+                            <!--Build an array of sponsors for the event.-->
+                            {% assign event_sponsors = "" | split: ',' %}
+                            {% for sponsor in post.sponsors %}
+                                {% for site_sponsor in site_sponsors_all %}
+                                    {% if site_sponsor.sponsor_id == sponsor %}
+                                        {% assign event_sponsors = event_sponsors | push: site_sponsor %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
 
-            {% comment %}
-                Assume number of sponsors is even. We are going to create rows of 2 sponsors in each.
-                If not even the last row must contain 1 sponsor and be terminated with appropriate tags.
-            {% endcomment %}
+                            {% assign num_of_sponsors = event_sponsors | size %}
+                            {% assign sponsors_remainder = num_of_sponsors | modulo: 2 %}
 
-            {% assign sponsors = "" | split: ',' %}
-            {% for sponsor in site.sponsors %}
-                            <!--HEre select item that maches the sponsor_id - the object
-                            instead of just the string sponsor name.-->
-            {% assign sponsors = sponsors | push: sponsor %}
-            {% endfor %}
-            {% assign num_of_sponsors = sponsors | size %}
-            {% assign sponsors_remainder = num_of_sponsors | modulo: 2 %}
+                            {% if sponsors_remainder == 0 %}
+                                {% assign num_of_sponsors_even = true %}
+                                {% assign row_num_modifier = 1 %}
+                            {% else %}
+                                {% assign num_of_sponsors_even = false %}
+                                {% assign row_num_modifier = 0 %}
+                            {% endif %}
 
-            {% if sponsors_remainder == 0 %}
-                {% assign num_of_sponsors_even = true %}
-                {% assign row_num_modifier = 1 %}
-            {% else %}
-                {% assign num_of_sponsors_even = false %}
-                {% assign row_num_modifier = 0 %}
-            {% endif %}
+                            {% assign num_of_rows = num_of_sponsors | divided_by: 2 | floor | minus: row_num_modifier %}
+                            {% assign items_per_row = 1 %}
 
-            {% assign num_of_rows = num_of_sponsors | divided_by: 2 | floor | minus: row_num_modifier %}
-            {% assign items_per_row = 1 %}
-
-            {% for row in (0..num_of_rows) %}
-                {% if forloop.last and num_of_sponsors_even == false %}
-                    {% assign items_per_row = 0 %}
-                {% endif %}
-                <div class="row">
-                    {% for col in (0..items_per_row) %}
-                        {% assign sponsor_index = row | times: 2 | plus: col %}
-                        {% assign sponsor = sponsors[sponsor_index] %}
-                        <div class="footer__sponsor-col col-md-12 col-lg-6">
-                            <a class="footer__sponsor-link" href="{{ sponsor.sponsor_link }}">
-                                <img class="footer__img" src="{{ site.baseurl }}/{{ sponsor.sponsor_logo }}">
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            {% for row in (0..num_of_rows) %}
+                                {% if forloop.last and num_of_sponsors_even == false %}
+                                    {% assign items_per_row = 0 %}
+                                {% endif %}
+                                <div class="row">
+                                    {% for col in (0..items_per_row) %}
+                                        {% assign sponsor_index = row | times: 2 | plus: col %}
+                                        {% assign sponsor = event_sponsors[sponsor_index] %}
+                                        <div class="footer__sponsor-col col-md-12 col-lg-6">
+                                            <a class="footer__sponsor-link" href="{{ sponsor.sponsor_link }}">
+                                                <img class="footer__img" src="{{ site.baseurl }}/{{ sponsor.sponsor_logo }}">
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
