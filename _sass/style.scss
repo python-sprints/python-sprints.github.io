@@ -297,22 +297,22 @@ a {
 }
 
 .upcoming__col {
-  margin-top: 1%;
   background: rgba(0, 0, 0, 0.7);
-  border-radius: 20px 5px 20px 5px;
-  box-shadow: black 5px 5px 5px 0;
+  border-radius: 5px;
+  border: #000000 2px ridge;
+  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
 }
 
 @media (min-width: 768px) {
   .upcoming__col {
-    margin-left: 0.5%;
+    margin-left: 5.5%;
   }
 }
 
-.upcoming-title {
+.upcoming__title {
   font-size: 2.5em;
   color: antiquewhite;
-  text-align: left;
+  text-align: center;
   font-family: 'Encode Sans Expanded', sans-serif;
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -333,43 +333,60 @@ a {
 .upcoming__img-container {
   background-size: cover;
   background-position: center center;
-  border-radius: 20px 5px 20px 5px;
+  border-radius: 20px;
   border-top: #A55605 3px solid;
   border-bottom: #A55605 3px solid;
   min-height: 50vh;
 }
 
-@media (min-width: 768px) {
-  min-height: 60vh;
+.upcoming__content {
+  margin-top: 5.5%;
 }
 
 .upcoming__logo-col {
-  flex: 1;
-}
-
-.upcoming__project-logo {
-  margin-top: 5%;
-  border: #A55605 3px double;
-  border-radius: 5px;
-  max-width: 50%;
-  ;
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 1em;
+  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
 }
 
 @media (min-width: 768px) {
-  .upcoming__project-logo {
-    margin-top: 2.5%;
-    margin-left: 2.5%;
+  .upcoming__logo-col {
+    margin-top: 0;
+    margin-right: 5.5%;
   }
+}
+
+
+.upcoming__project-logo {
+  margin: 0.5em;
+  border: #A55605 3px double;
+  border-radius: 5px;
+  max-width: 50%;
+}
+
+.upcoming__sponsor-list {
+  background: rgba(7, 41, 72, 0.7);
+  border: #072948 2px ridge;
+  border-radius: 5px;
+}
+
+.upcoming__sponsor-title {
+  color: antiquewhite;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  font-size: 2.5em;
+  padding-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 .upcoming__button-row {
   margin-top: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 5.5%;
 }
 
 @media (min-width: 768px) {
   .upcoming__button-row {
-    margin-top: 5%;
+    margin-top: 5.5%;
   }
 }
 
@@ -388,7 +405,7 @@ a {
   &:hover {
     color: antiquewhite;
     background: rgba(0, 0, 0, 0.4);
-    border: antiquewhite 1px solid;
+    border: #A55605 1px solid;
   }
 }
 
@@ -602,6 +619,8 @@ a {
 
 .footer__sponsor-col {
   text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer__icon {
@@ -637,7 +656,7 @@ a {
   display: inline-block;
   line-height: 102px;
   vertical-align: middle;
-  margin: 1%;
+  margin: 0.5em 1% 0.5em 1%;
   width: 75%;
   height: 102px;
   &:hover > .footer__img {
