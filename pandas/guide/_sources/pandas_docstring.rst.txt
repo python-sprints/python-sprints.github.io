@@ -1,8 +1,8 @@
-.. _pandas_docstring:
+.. _docstring:
 
-====================================
-How to write a good pandas docstring
-====================================
+======================
+pandas docstring guide
+======================
 
 About docstrings and standards
 ------------------------------
@@ -38,6 +38,10 @@ Next example gives an idea on how a docstring looks like:
     int
         The sum of `num1` and `num2`
 
+    See Also
+    --------
+    subtract : Subtract one integer from another
+
     Examples
     --------
     >>> add(2, 2)
@@ -56,11 +60,12 @@ The first conventions every Python docstring should follow are defined in
 `PEP-257 <https://www.python.org/dev/peps/pep-0257/>`_.
 
 As PEP-257 is quite open, and some other standards exist on top of it. In the
-case of pandas, the numpy docstring convention is followed. There are two main
-documents that explain this convention:
+case of pandas, the numpy docstring convention is followed. The conventions is
+explained in this document:
 
-- `Guide to NumPy/SciPy documentation <https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt>`_
 - `numpydoc docstring guide <http://numpydoc.readthedocs.io/en/latest/format.html>`_
+  (which is based in the original `Guide to NumPy/SciPy documentation
+  <https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt>`_)
 
 numpydoc is a Sphinx extension to support the numpy docstring convention.
 
@@ -75,8 +80,12 @@ about reStructuredText can be found in:
 The rest of this document will summarize all the above guides, and will
 provide additional convention specific to the pandas project.
 
+.. _docstring.tutorial:
+
 Writing a docstring
 -------------------
+
+.. _docstring.general:
 
 General rules
 ~~~~~~~~~~~~~
@@ -123,6 +132,8 @@ opening quotes (not in the next line). The closing quotes have their own line
         foo = 1
         bar = 2
         return foo + bar
+
+.. _docstring.short_summary:
 
 Section 1: Short summary
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,6 +189,8 @@ details.
         """
         pass
 
+.. _docstring.extended_summary:
+
 Section 2: Extended summary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -203,6 +216,8 @@ every paragraph in the extended summary is finished by a dot.
         """
         pass
 
+.. _docstring.parameters:
+
 Section 3: Parameters
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -223,12 +238,19 @@ required to have a line with the parameter description, which is indented, and
 can have multiple lines. The description must start with a capital letter, and
 finish with a dot.
 
+Keyword arguments with a default value, the default will be listed in brackets
+at the end of the description (before the dot). The exact form of the
+description in this case would be "Description of the arg (default is X).". In
+some cases it may be useful to explain what the default argument means, which
+can be added after a comma "Description of the arg (default is -1, which means
+all cpus).".
+
 **Good:**
 
 .. code-block:: python
 
     class Series:
-        def plot(self, kind, **kwargs):
+        def plot(self, kind, color='blue', **kwargs):
             """Generate a plot.
 
             Render the data in the Series as a matplotlib plot of the
@@ -238,6 +260,8 @@ finish with a dot.
             ----------
             kind : str
                 Kind of matplotlib plot.
+            color : str
+                Color name or rgb code (default is 'blue').
             **kwargs
                 These parameters will be passed to the matplotlib plotting
                 function.
@@ -272,6 +296,8 @@ finish with a dot.
             """
             pass
 
+.. _docstring.parameter_types:
+
 Parameter types
 ^^^^^^^^^^^^^^^
 
@@ -281,6 +307,7 @@ directly:
 - int
 - float
 - str
+- bool
 
 For complex types, define the subtypes:
 
@@ -290,7 +317,8 @@ For complex types, define the subtypes:
 - set of {str}
 
 In case there are just a set of values allowed, list them in curly brackets
-and separated by commas (followed by a space):
+and separated by commas (followed by a space). If one of them is the default
+value of a keyword argument, it should be listed first.:
 
 - {0, 10, 25}
 - {'simple', 'advanced'}
@@ -306,10 +334,21 @@ If the type is in a package, the module must be also specified:
 - numpy.ndarray
 - scipy.sparse.coo_matrix
 
-If the type is a pandas type, also specify pandas:
+If the type is a pandas type, also specify pandas except for Series and
+DataFrame:
 
-- pandas.Series
-- pandas.DataFrame
+- Series
+- DataFrame
+- pandas.Index
+- pandas.Categorical
+- pandas.SparseArray
+
+If the exact type is not relevant, but must be compatible with a numpy
+array, array-like can be specified. If Any type that can be iterated is
+accepted, iterable can be used:
+
+- array-like
+- iterable
 
 If more than one type is accepted, separate them by commas, except the
 last two types, that need to be separated by the word 'or':
@@ -320,6 +359,8 @@ last two types, that need to be separated by the word 'or':
 
 If None is one of the accepted values, it always needs to be the last in
 the list.
+
+.. _docstring.returns:
 
 Section 4: Returns or Yields
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -395,12 +436,14 @@ If the method yields its value:
         while True:
             yield random.random()
 
+.. _docstring.see_also:
 
-Section 5: See also
+Section 5: See Also
 ~~~~~~~~~~~~~~~~~~~
 
 This is an optional section, used to let users know about pandas functionality
-related to the one being documented.
+related to the one being documented. While optional, this section should exist
+in most cases, unless no related methods or functions can be found at all.
 
 An obvious example would be the `head()` and `tail()` methods. As `tail()` does
 the equivalent as `head()` but at the end of the `Series` or `DataFrame`
@@ -421,22 +464,30 @@ examples:
 * `astype` and `pandas.to_datetime`, as users may be reading the documentation
   of `astype` to know how to cast as a date, and the way to do it is with
   `pandas.to_datetime`
+* `where` is related to `numpy.where`, as its functionality is based on it
 
 When deciding what is related, you should mainly use your common sense and
 think about what can be useful for the users reading the documentation,
 especially the less experienced ones.
+
+When relating to other libraries (mainly `numpy`), use the name of the module
+first (not an alias like `np`). If the function is in a module which is not
+the main one, like `scipy.sparse`, list the full module (e.g.
+`scipy.sparse.coo_matrix`).
 
 This section, as the previous, also has a header, "See Also" (note the capital
 S and A). Also followed by the line with hyphens, and preceded by a blank line.
 
 After the header, we will add a line for each related method or function,
 followed by a space, a colon, another space, and a short description that
-illustrated what this method or function does, and why is it relevant in
-this context. The description must also finish with a dot.
+illustrated what this method or function does, why is it relevant in this
+context, and what are the key differences between the documented function and
+the one referencing. The description must also finish with a dot.
 
 Note that in "Returns" and "Yields", the description is located in the
 following line than the type. But in this section it is located in the same
-line, with a colon in between.
+line, with a colon in between. If the description does not fit in the same
+line, it can continue in the next ones, but it has to be indenteted in them.
 
 For example:
 
@@ -449,9 +500,9 @@ For example:
             This function is mainly useful to preview the values of the
             Series without displaying the whole of it.
 
-            Return
-            ------
-            pandas.Series
+            Returns
+            -------
+            Series
                 Subset of the original series with the 5 first values.
 
             See Also
@@ -459,6 +510,8 @@ For example:
             tail : Return the last 5 elements of the Series.
             """
             return self.iloc[:5]
+
+.. _docstring.notes:
 
 Section 6: Notes
 ~~~~~~~~~~~~~~~~
@@ -472,6 +525,8 @@ examples for the function.
 
 This section follows the same format as the extended summary section.
 
+.. _docstring.examples:
+
 Section 7: Examples
 ~~~~~~~~~~~~~~~~~~~
 
@@ -479,9 +534,9 @@ This is one of the most important sections of a docstring, even if it is
 placed in the last position. As often, people understand concepts better
 with examples, than with accurate explanations.
 
-Examples in docstrings are also unit tests, and besides illustrating the
-usage of the function or method, they need to be valid Python code, that in a
-deterministic way returns the presented output.
+Examples in docstrings, besides illustrating the usage of the function or
+method, they must be valid Python code, that in a deterministic way returns
+the presented output, and that can be copied and run by users.
 
 They are presented as a session in the Python terminal. `>>>` is used to
 present code. `...` is used for code continuing from the previous line.
@@ -491,14 +546,21 @@ be added with blank lines before and after them.
 
 The way to present examples is as follows:
 
-1. Import required libraries
+1. Import required libraries (except `numpy` and `pandas`)
 
 2. Create the data required for the example
 
 3. Show a very basic example that gives an idea of the most common use case
 
-4. Add commented examples that illustrate how the parameters can be used for
-   extended functionality
+4. Add examples with explanations that illustrate how the parameters can be
+   used for extended functionality
+
+.. note::
+   Which data should be used in examples is a topic still under discussion.
+   We'll likely be importing a standard dataset from `pandas.io.samples`, but
+   this still needs confirmation. You can work with the data from this pull
+   request: https://github.com/pandas-dev/pandas/pull/19933/files but
+   consider this could still change.
 
 A simple example could be:
 
@@ -527,9 +589,8 @@ A simple example could be:
 
             Examples
             --------
-            >>> import pandas
-            >>> s = pandas.Series(['Ant', 'Bear', 'Cow', 'Dog', 'Falcon',
-            ...                    'Lion', 'Monkey', 'Rabbit', 'Zebra'])
+            >>> s = pd.Series(['Ant', 'Bear', 'Cow', 'Dog', 'Falcon',
+            ...                'Lion', 'Monkey', 'Rabbit', 'Zebra'])
             >>> s.head()
             0   Ant
             1   Bear
@@ -548,32 +609,25 @@ A simple example could be:
             """
             return self.iloc[:n]
 
+.. _docstring.example_conventions:
+
 Conventions for the examples
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note::
-   numpydoc recommends avoiding "obvious" imports and importing them with
-   aliases, so for example `import numpy as np`. While this is now an standard
-   in the data ecosystem of Python, it doesn't seem a good practise, for the
-   next reasons:
+Code in examples is assumed to always start with these two lines which are not
+shown:
 
-   * The code is not executable anymore (as doctests for example)
+.. code-block:: python
 
-   * New users not familiar with the convention can't simply copy and run it
+    import numpy as np
+    import pandas as pd
 
-   * Users may use aliases (even if it is a bad Python practise except
-     in rare cases), but if maintainers want to use `pd` instead of `pandas`,
-     why do not name the module `pd` directly?
 
-   * As this is becoming more standard, there are an increasing number of
-     aliases in scientific Python code, including `np`, `pd`, `plt`, `sp`,
-     `pm`... which makes reading code harder
-
-All examples must start with the required imports, one per line (as
+Any other module used in the examples must be explicitly imported, one per line (as
 recommended in `PEP-8 <https://www.python.org/dev/peps/pep-0008/#imports>`_)
 and avoiding aliases. Avoid excessive imports, but if needed, imports from
 the standard library go first, followed by third-party libraries (like
-numpy) and importing pandas in the last place.
+matplotlib).
 
 When illustrating examples with a single `Series` use the name `s`, and if
 illustrating with a single `DataFrame` use the name `df`. If a set of
@@ -605,11 +659,9 @@ positional arguments `head(3)`.
 
         Examples
         --------
-        >>> import numpy
-        >>> import pandas
-        >>> df = pandas.DataFrame([389., 24., 80.5, numpy.nan]
-        ...                       columns=('max_speed'),
-        ...                       index=['falcon', 'parrot', 'lion', 'monkey'])
+        >>> df = pd.DataFrame([389., 24., 80.5, numpy.nan]
+        ...                   columns=('max_speed'),
+        ...                   index=['falcon', 'parrot', 'lion', 'monkey'])
         """
         pass
 
@@ -622,15 +674,9 @@ positional arguments `head(3)`.
 
         Examples
         --------
-        >>> import numpy
-        >>> import pandas
-        >>> df = pandas.DataFrame(numpy.random.randn(3, 3),
-        ...                       columns=('a', 'b', 'c'))
+        >>> import numpy as np
+        >>> import pandas as pd
+        >>> df = pd.DataFrame(numpy.random.randn(3, 3),
+        ...                   columns=('a', 'b', 'c'))
         """
         pass
-
-Once you finished the docstring
--------------------------------
-
-When you finished the changes to the docstring, go to the
-:ref:`instructions to submit your changes <pandas_pr>` to continue.

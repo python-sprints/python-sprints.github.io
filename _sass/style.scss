@@ -12,12 +12,16 @@
   overflow-x: hidden;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 a {
   color: #035E9A;
   text-decoration: none !important;
   transition: all 0.5s ease-in-out;
   &:hover {
-    color: #A55605;
+    color: #A55605!important;
   }
 }
 
@@ -69,8 +73,8 @@ a {
 /*Here I need to move the background image to slide under the navigation*/
 /*Any smarter solutions are welcome!*/
 .navigation__content {
-  margin-top: -66px;
   background-size: cover;
+  margin-top: -66px;
   max-width: 100vw;
   height: 101vh;
 }
@@ -203,7 +207,8 @@ a {
   }
 }
 
-.navigation__overlay .navigation__link {
+
+.navigation__link {
   text-decoration: none;
   font-size: 2em;
   font-family: 'Encode Sans Expanded', sans-serif;
@@ -217,17 +222,17 @@ a {
 }
 
 @media (min-width: 768px), (orientation: portrait) {
-  .navigation__overlay .navigation__link {
-  padding: 0.25em;
+  .navigation__link {
+    padding: 0.25em;
   }
 }
 
 .navigation__link:hover {
-  color: #f1f1f1;
+  color: #f1f1f1!important;
 }
 
-.navigation__link:focus {
-  color: #035e9a;
+.active {
+  color: #035e9a!important;
 }
 
 .navigation__button-close-container {
@@ -585,7 +590,7 @@ a {
 }
 
 .footer {
-  margin-top: 5%;
+  margin-top: 5em;
   background: #072948;
   border-top: #7fa0c2 1px solid;
 }
@@ -652,11 +657,9 @@ a {
 
 .footer__link {
   margin-top: 2%;
-  text-align: center;
   font-size: 1.25em;
   font-family: 'Playfair Display', serif;
   color: #7fa0c2;
-  display: block;
 }
 
 .footer__brand-img {
