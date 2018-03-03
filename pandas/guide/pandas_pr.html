@@ -57,6 +57,15 @@ execute in your terminal:</p>
 </div></blockquote>
 <p>where <cite>&lt;your-function-or-method&gt;</cite> is for example <cite>pandas.DataFrame.head</cite>,
 <cite>pandas.Series.tail</cite> or <cite>pandas.to_datetime</cite>.</p>
+<p>The output of the script will show the final docstring. In many cases just a
+verbatim copy, but in some cases the docstring is implemented as a template,
+and reused by more than one method or function, and this is useful to see
+the final result.</p>
+<p>The output will also contain a list of issues with the docstring. Mainly style
+errors, where the docstring does not respect the convention. For example, a
+missing dot at the end of a sentence, a blank line where it should not be, etc.</p>
+<p>Finally, the output will also contain errors from running the examples.</p>
+<p>With few exceptions, you should fix all the errors before continuing.</p>
 </div>
 <div class="section" id="visual-validation-of-the-docstring">
 <h2>2. Visual validation of the docstring<a class="headerlink" href="#visual-validation-of-the-docstring" title="Permalink to this headline">¶</a></h2>
@@ -80,8 +89,8 @@ that can be opened with your web browser.</p>
 <div class="section" id="validate-that-the-docstring-is-clear-to-others">
 <h2>3. Validate that the docstring is clear to others<a class="headerlink" href="#validate-that-the-docstring-is-clear-to-others" title="Permalink to this headline">¶</a></h2>
 <p>As the last validation, please show the html version of your docstring to a
-person in the sprint not involved in the changes to the docstring, and make
-sure they are able to fully understand it.</p>
+person in the sprint not involved in the changes to that specific docstring,
+and make sure they are able to fully understand it.</p>
 </div>
 <div class="section" id="commit-your-changes">
 <h2>4. Commit your changes<a class="headerlink" href="#commit-your-changes" title="Permalink to this headline">¶</a></h2>
@@ -94,6 +103,9 @@ you are going to commit with:</p>
 <div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code></div>
 </div>
 </div></blockquote>
+<p>If the current branch is <cite>master</cite>, do not commit your changes, as you can get
+into a situation where you need to undo your history in git, which is not
+straight forward.</p>
 <p>Then, follow the next steps:</p>
 <blockquote>
 <div><div class="line-block">
@@ -108,12 +120,12 @@ cases it could be more than one file). And <cite>&lt;commit-message&gt;</cite> i
 description of your changes, starting by “DOC:” (e.g. “DOC: Improved the
 docsting of DataFrame.head()”).</p>
 </div>
-<div class="section" id="push-your-changes-to-the-sprint-repository">
-<h2>5. Push your changes to the sprint repository<a class="headerlink" href="#push-your-changes-to-the-sprint-repository" title="Permalink to this headline">¶</a></h2>
-<p>Before sending the pull request to the pandas core developers, you will send
-it to the sprint repository. Where more experienced contributors will review
-it, and suggest changes if needed.</p>
-<p>First, push your changes to your GitHub fork:</p>
+<div class="section" id="push-your-changes-to-pandas">
+<h2>5. Push your changes to pandas<a class="headerlink" href="#push-your-changes-to-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Once you committed your changes locally, you need to make them available to
+pandas maintainers, so they can add them to the main pandas repository.</p>
+<p>The first step is to push your local changes to your own fork, so they are
+available online:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;your-branch-name&gt;</span></code></div>
@@ -122,8 +134,31 @@ it, and suggest changes if needed.</p>
 <p>Then, visit <a class="reference external" href="https://github.com/python-sprints/pandas">https://github.com/python-sprints/pandas</a> in your browser, and click
 on the “Compare &amp; pull request” button in the yellow box above the repository
 files.</p>
-<p>Once your changes are reviewed and approved, you will receive an email on how
-to send the final pull request to pandas.</p>
+<p>This will create a pull request, will be reviewed by other developers. It is
+unlikely that a pull request is accepted in its first version, so expect some
+comments on things that can be improved, from more senior pandas contributors.</p>
+<p>For comments in your review, you can make new changes in your local branch for
+that pull request. And once you addressed all the comments, you can commit them
+and push again to your local branch. As you used the parameter <cite>-u</cite> in your
+first push, you can simply run:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code></div>
+</div>
+</div></blockquote>
+<p>from your local branch, and the changes will be pushed to your remote branch.</p>
+<p>Updating your remote branch automatically updates the pull request, so you do
+not need to create a new pull request, or make any other changes in the one
+already created.</p>
+<p>If you want to add any clarification to your changes, or you think the reviewer
+misunderstood something, you can add a comment to the pull request.</p>
+<p>Do not feel discouraged by having more than one review requesting changes for
+the same pull request. While in the first contributions is normal to feel
+frustrated for getting feedback requesting changes, it is actually because of
+reviews that the open source software quality is very high. And also, it is
+probably the part of contributing to open source projects in which you will
+learn more. So, be patient and enjoy. And feel free to provide constructive
+feedback in other contributors pull requests too.</p>
 </div>
 </div>
 
@@ -143,7 +178,7 @@ to send the final pull request to pandas.</p>
 <li><a class="reference internal" href="#visual-validation-of-the-docstring">2. Visual validation of the docstring</a></li>
 <li><a class="reference internal" href="#validate-that-the-docstring-is-clear-to-others">3. Validate that the docstring is clear to others</a></li>
 <li><a class="reference internal" href="#commit-your-changes">4. Commit your changes</a></li>
-<li><a class="reference internal" href="#push-your-changes-to-the-sprint-repository">5. Push your changes to the sprint repository</a></li>
+<li><a class="reference internal" href="#push-your-changes-to-pandas">5. Push your changes to pandas</a></li>
 </ul>
 </li>
 </ul>
