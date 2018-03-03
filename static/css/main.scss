@@ -1,0 +1,12 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+$baseurl: "{{ site.url }}";
+$postimage: "{{ page.image }}";
+
+
+@import
+  "typography",
+	"post",
+  "contact",
+  "style";

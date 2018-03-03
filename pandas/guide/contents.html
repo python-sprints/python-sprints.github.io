@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>How to write a good pandas docstring &#8212; Python  documentation</title>
+    <title>Pandas documentation sprint &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,6 +23,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Before the sprint: Set up instructions" href="pandas_setup.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -38,337 +39,30 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-write-a-good-pandas-docstring">
-<h1>How to write a good pandas docstring<a class="headerlink" href="#how-to-write-a-good-pandas-docstring" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-docstrings-and-standards">
-<h2>About docstrings and standards<a class="headerlink" href="#about-docstrings-and-standards" title="Permalink to this headline">¶</a></h2>
-<p>A Python docstring is a string used to document a Python function or method,
-so programmers can understand what it does without having to read the details
-of the implementation.</p>
-<p>Also, it is a commonn practice to generate online (html) documentation
-automatically from docstrings. <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> serves
-this purpose.</p>
-<p>Next example gives an idea on how a docstring looks like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot;Add up to integer numbers.</span>
-
-<span class="sd">This function simply wraps the `+` operator, and does not</span>
-<span class="sd">do anything interesting, except for illustrating what is</span>
-<span class="sd">the docstring of a very simple function.</span>
-
-<span class="sd">Parameters</span>
-<span class="sd">----------</span>
-<span class="sd">num1 : int</span>
-<span class="sd">    First number to add</span>
-<span class="sd">num2 : int</span>
-<span class="sd">    Second number to add</span>
-
-<span class="sd">Returns</span>
-<span class="sd">-------</span>
-<span class="sd">int</span>
-<span class="sd">    The sum of `num1` and `num2`</span>
-
-<span class="sd">Examples</span>
-<span class="sd">--------</span>
-<span class="sd">&gt;&gt;&gt; add(2, 2)</span>
-<span class="sd">4</span>
-<span class="sd">&gt;&gt;&gt; add(25, 0)</span>
-<span class="sd">25</span>
-<span class="sd">&gt;&gt;&gt; add(10, -10)</span>
-<span class="sd">0</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
-</pre></div>
-</div>
-<p>To make it easier to understand docstrings, and to make it possible to export
-them to html, some standards exist.</p>
-<p>The first conventions every Python docstring should follow are defined in
-<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP-257</a>.</p>
-<p>As PEP-257 is quite open, some other standards exist. In the case of pandas,
-the numpy docstring convention is followed. There are two main documents
-that explain this convention:</p>
-<ul class="simple">
-<li><a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">Guide to NumPy/SciPy documentation</a></li>
-<li><a class="reference external" href="http://numpydoc.readthedocs.io/en/latest/format.html">numpydoc docstring guide</a></li>
+  <div class="section" id="pandas-documentation-sprint">
+<h1>Pandas documentation sprint<a class="headerlink" href="#pandas-documentation-sprint" title="Permalink to this headline">¶</a></h1>
+<p>The pandas documentation sprint is a worldwide event that will take place
+the 10th of March of 2018. During the sprint open source hackers will work
+on improving the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/api.html">pandas API documentation</a>.</p>
+<p>While most of pandas documentation is great, very extense, and easy to follow,
+the API documentation could in many cases be better. Many of the <cite>DataFrame</cite>
+or <cite>Series</cite> methods for example, are documented with simply a one liner
+summary. In some cases, the documented parameters are not up to date with
+the actual method parameters. And while docstrings use the numpy docstring
+convention, they could benefit from some pandas specific convention.</p>
+<p>There are around 1,000 API pages in pandas, meaning that the effort to fix,
+standardize and improve all the API documentation is huge. But the pandas
+user base is also huge. And Pythonistas are very active an well organized.
+So, we will work together from all around the world to take care of every
+single API, in a single day.</p>
+<p>This document provides all the necessary information to participate to the
+pandas documentation sprint.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pandas_setup.html">Before the sprint: Set up instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas_docstring.html">pandas docstring guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas_pr.html">Submitting your changes</a></li>
 </ul>
-<p>numpydoc is a Sphinx extension to support the numpy docstring convention.</p>
-<p>The standard uses reStructuredText (reST). reStructuredText is a markup
-language that allows encoding styles in plain text files. Documentation
-about reStructuredText can be found in:</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.sphinx-doc.org/en/stable/rest.html">Sphinx reStructuredText primer</a></li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">Quick reStructuredText reference</a></li>
-<li><a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html">Full reStructuredText specification</a></li>
-</ul>
-<p>The rest of this document will summarize all the above guides, and will
-provide additional convention specific to the pandas project.</p>
-</div>
-<div class="section" id="writing-a-docstring">
-<h2>Writing a docstring<a class="headerlink" href="#writing-a-docstring" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="general-rules">
-<h3>General rules<a class="headerlink" href="#general-rules" title="Permalink to this headline">¶</a></h3>
-<p>Docstrings must be defined with three double-quotes. No blank lines should be
-left before or after the docstring. The text starts immediately after the
-opening quotes (not in the next line). The closing quotes have their own line
-(and are not added at the end of the last sentence).</p>
-<p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Some function.</span>
-
-<span class="sd">    With a good docstring.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">foo</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">bar</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">foo</span> <span class="o">+</span> <span class="n">bar</span>
-</pre></div>
-</div>
-<p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
-
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Some function.</span>
-
-<span class="sd">    With several mistakes in the docstring.</span>
-
-<span class="sd">    It has a blank like after the signature `def func():`.</span>
-
-<span class="sd">    The text &#39;Some function&#39; should go in the same line as the</span>
-<span class="sd">    opening quotes of the docstring, not in the next line.</span>
-
-<span class="sd">    There is a blank line between the docstring and the first line</span>
-<span class="sd">    of code `foo = 1`.</span>
-
-<span class="sd">    The closing quotes should be in the next line, not in this one.&quot;&quot;&quot;</span>
-
-    <span class="n">foo</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">bar</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">foo</span> <span class="o">+</span> <span class="n">bar</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="section-1-short-summary">
-<h3>Section 1: Short summary<a class="headerlink" href="#section-1-short-summary" title="Permalink to this headline">¶</a></h3>
-<p>The short summary is a single sentence that express what the function does in a
-concise way.</p>
-<p>The short summary must start with a verb infinitive, end with a dot, and fit in
-a single line. It needs to express what the function does without providing
-details.</p>
-<p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Cast Series type.</span>
-
-<span class="sd">    This section will provide further details.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-<p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Casts Series type.</span>
-
-<span class="sd">    Verb in third-person of the present simple, should be infinitive.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Method to cast Series type.</span>
-
-<span class="sd">    Does not start with verb.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Cast Series type</span>
-
-<span class="sd">    Missing dot at the end.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Cast Series type from its current type to the new type defined in</span>
-<span class="sd">    the parameter dtype.</span>
-
-<span class="sd">    Summary is too verbose and doesn&#39;t fit in a single line.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="section-2-extended-summary">
-<h3>Section 2: Extended summary<a class="headerlink" href="#section-2-extended-summary" title="Permalink to this headline">¶</a></h3>
-<p>The extended summary provides details on what the function does. It should not
-go into the details of the parameters, or discuss implementation notes, which
-go in other sections.</p>
-<p>A blank line is left between the short summary and the extended summary. And
-every paragraph in the extended summary is finished by a dot.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Pivot a row index to columns.</span>
-
-<span class="sd">    When using a multi-index, a level can be pivoted so each value in</span>
-<span class="sd">    the index becomes a column. This is especially useful when a subindex</span>
-<span class="sd">    is repeated for the main index, and data is easier to visualize as a</span>
-<span class="sd">    pivot table.</span>
-
-<span class="sd">    The index level will be automatically when added as columns.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">pass</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="section-3-parameters">
-<h3>Section 3: Parameters<a class="headerlink" href="#section-3-parameters" title="Permalink to this headline">¶</a></h3>
-<p>The details of the parameters will be added in this section. This section has
-the title “Parameters”, followed by a line with a hyphen under each letter of
-the word “Parameters”. A blank line is left before the section title, but not
-after, and not between the line with the word “Parameters” and the one with
-the hyphens.</p>
-<p>After the title, each parameter in the signature must be documented, including
-<cite>*args</cite> and <cite>**kwargs</cite>, but not <cite>self</cite>.</p>
-<p>The parameters are defined by their name, followed by a space, a colon, another
-space, and the type (or type). Note that the space between the name and the
-colon is important. Types are not defined for <cite>*args</cite> and <cite>**kwargs</cite>, but must
-be defined for all other parameters. After the parameter definition, it is
-required to have a line with the parameter description, which is indented, and
-can have multiple lines. The description must start with a capital letter, and
-finish with a dot.</p>
-<p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Generate a plot.</span>
-
-<span class="sd">        Render the data in the Series as a matplotlib plot of the</span>
-<span class="sd">        specified kind.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        kind : str</span>
-<span class="sd">            Kind of matplotlib plot.</span>
-<span class="sd">        **kwargs</span>
-<span class="sd">            These parameters will be passed to the matplotlib plotting</span>
-<span class="sd">            function.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
-</pre></div>
-</div>
-<p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Generate a plot.</span>
-
-<span class="sd">        Render the data in the Series as a matplotlib plot of the</span>
-<span class="sd">        specified kind.</span>
-
-<span class="sd">        Note the blank line between the parameters title and the first</span>
-<span class="sd">        parameter. Also, not that after the name of the parameter `kind`</span>
-<span class="sd">        and before the colo, a space is missing.</span>
-
-<span class="sd">        Also, note that the parameter descriptions do not start with a</span>
-<span class="sd">        capital letter, and do not finish with a dot.</span>
-
-<span class="sd">        Finally, the `**kwargs` is missing.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-
-<span class="sd">        kind: str</span>
-<span class="sd">            kind of matplotlib plot</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">pass</span>
-</pre></div>
-</div>
-<div class="section" id="parameter-types">
-<h4>Parameter types<a class="headerlink" href="#parameter-types" title="Permalink to this headline">¶</a></h4>
-<p>When specifying the parameter types, Python built-in data types can be used
-directly:</p>
-<ul class="simple">
-<li>int</li>
-<li>float</li>
-<li>str</li>
-</ul>
-<p>For complex types, define the subtypes:</p>
-<ul class="simple">
-<li>list of int</li>
-<li>dict of str : int</li>
-<li>tuple of (str, int, int)</li>
-<li>set of str</li>
-</ul>
-<p>In case there are just a set of values allowed, list them in curly brackets
-and separated by commas (followed by a space):</p>
-<ul class="simple">
-<li>{0, 10, 25}</li>
-<li>{‘simple’, ‘advanced’}</li>
-</ul>
-<p>If the type is defined in a Python module, the module must be specified:</p>
-<ul class="simple">
-<li>datetime.date</li>
-<li>datetime.datetime</li>
-<li>decimal.Decimal</li>
-</ul>
-<p>If the type is in a package, the module must be equally specified:</p>
-<ul class="simple">
-<li>numpy.ndarray</li>
-<li>scipy.sparse.coo_matrix</li>
-</ul>
-<p>If the type is a pandas type, also specify pandas:</p>
-<ul class="simple">
-<li>pandas.Series</li>
-<li>pandas.DataFrame</li>
-</ul>
-<p>If more than one type is accepted, separate them by commas, except the
-last two types, that need to be separated by the word ‘or’:</p>
-<ul class="simple">
-<li>int or float</li>
-<li>float, decimal.Decimal or None</li>
-<li>str or list of str</li>
-</ul>
-</div>
-</div>
-<div class="section" id="section-4-returns-or-yields">
-<h3>Section 4: Returns or Yields<a class="headerlink" href="#section-4-returns-or-yields" title="Permalink to this headline">¶</a></h3>
-<p>If the method returns a value, it will be documented in this section. Also
-if the method yields its output.</p>
-<p>The title of the section will be defined in the same way as the “Parameters”.
-With the names “Returns” or “Yields” followed by a line with as many hyphens
-as the letters in the preceding word.</p>
-<p>The documentation of the return is also similar to the parameters. But in this
-case, no name will be provided, unless the method returns or yields more than
-one value (a tuple of values).</p>
-<p>For example, with a single value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Generate and return a random number.</span>
-
-<span class="sd">    The value is sampled from a continuos uniform distribution between</span>
-<span class="sd">    0 and 1.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    float</span>
-<span class="sd">        Random number generated.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>With more than one value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_letters</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Generate and return a sequence of random letters.</span>
-
-<span class="sd">    The length of the returned string is also random, and is also</span>
-<span class="sd">    returned.</span>
-
-<span class="sd">    Returns</span>
-<span class="sd">    -------</span>
-<span class="sd">    length : int</span>
-<span class="sd">        Length of the returned string.</span>
-<span class="sd">    letters : str</span>
-<span class="sd">        String of random letters.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">length</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-    <span class="n">letters</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">ascii_lowercase</span><span class="p">)</span>
-                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">length</span><span class="p">,</span> <span class="n">letters</span>
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 
@@ -380,29 +74,11 @@ one value (a tuple of values).</p>
         <div class="sphinxsidebarwrapper">
             <p class="logo"><a href="#">
               <img class="logo" src="_static/logo.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">How to write a good pandas docstring</a><ul>
-<li><a class="reference internal" href="#about-docstrings-and-standards">About docstrings and standards</a></li>
-<li><a class="reference internal" href="#writing-a-docstring">Writing a docstring</a><ul>
-<li><a class="reference internal" href="#general-rules">General rules</a></li>
-<li><a class="reference internal" href="#section-1-short-summary">Section 1: Short summary</a></li>
-<li><a class="reference internal" href="#section-2-extended-summary">Section 2: Extended summary</a></li>
-<li><a class="reference internal" href="#section-3-parameters">Section 3: Parameters</a><ul>
-<li><a class="reference internal" href="#parameter-types">Parameter types</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#section-4-returns-or-yields">Section 4: Returns or Yields</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="relations">
+            </a></p><div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="pandas_setup.html" title="next chapter">Before the sprint: Set up instructions</a></li>
   </ul></li>
 </ul>
 </div>
@@ -431,7 +107,7 @@ one value (a tuple of values).</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |

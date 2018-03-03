@@ -21,6 +21,405 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript">
+        var chapters = [
+
+            // Europe
+            {"title": "London",
+             "description": "London Python Sprints at Bloomberg",
+             "url": "https://www.meetup.com/Python-Sprints/events/247097848/",
+             "sponsor_image": "bloomberg.png",
+             "sponsor_url": "https://www.bloomberg.com/",
+             "time": "10am",
+             "address": "Bloomberg<br/>3 Queen Victoria St<br/>London, EC2R",
+             "lat": 51.520363,
+             "lng": -0.086270},
+            {"title": "Paris",
+             "description": "Open-source Sprint at Capital Fund Management",
+             "url": "https://www.meetup.com/PyData-Paris/events/248226799/",
+             "sponsor_image": "cfm.png",
+             "sponsor_url": "https://www.cfm.fr/",
+             "time": "9:30am",
+             "address": "Capital Fund Management<br/>23 rue de l'Université<br/>75007 Paris",
+             "lat": 48.857462,
+             "lng": 2.328475},
+            {"title": "Madrid",
+             "description": "PyData Madrid",
+             "url": "https://www.meetup.com/PyData-Madrid/events/247525766/",
+             "sponsor_image": "kernelanalytics.png",
+             "sponsor_url": "https://www.kernel-analytics.com/en/",
+             "time": "10am",
+             "address": "Kernel Analytics<br/>Joaquín Bau, 2. 1º C-D<br/>Madrid",
+             "lat": 40.4168209,
+             "lng": -3.7035725},
+            {"title": "Milan",
+             "description": "Data Science Milan & PyMI",
+             "url": "https://www.meetup.com/it-IT/Data-Science-Milan/events/248336395/",
+             "sponsor_image": "mikamai.png",
+             "sponsor_url": "http://mikamai.com",
+             "time": "10am",
+             "address": "via Giulio e Corrado Venini, 42<br/>20127 Milan",
+             "lat": 45.490564,
+             "lng": 9.215508},
+            {"title": "Amsterdam",
+             "description": "PyData Amsterdam",
+             "url": "https://www.meetup.com/PyData-NL/events/247702845/",
+             "sponsor_image": "godatadriven.png",
+             "sponsor_url": "https://godatadriven.com/",
+             "time": "10am",
+             "address": "Wibaustraat 200-202<br/>Amsterdam",
+             "lat": 52.3772272,
+             "lng": 4.8979811},
+            {"title": "Mallorca",
+             "description": "PyData Mallorca",
+             "url": "https://www.meetup.com/PyData-Mallorca/events/247783856/",
+             "sponsor_image": "bluekiri.png",
+             "sponsor_url": "https://bluekiri.com",
+             "time": "10am",
+             "address": "ParcBit - Sala de Premsa<br/>Centre Empresarial Son Espanyol, ParcBit<br/>07121, Palma, Spain",
+             "lat": 39.634263,
+             "lng": 2.631568},
+            {"title": "Mannheim",
+             "description": "Mannheim, TBC",
+             "url": "#",
+             "sponsor_image": "koenigsweg.png",
+             "sponsor_url": "http://www.koenigsweg.com/news",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 49.4982481,
+             "lng": 8.4573718},
+            {"title": "Barcelona",
+             "description": "Barcelona Python Meetup at Kernel Analytics",
+             "url": "https://www.meetup.com/python-185/events/247592204/",
+             "sponsor_image": "kernelanalytics.png",
+             "sponsor_url": "https://www.kernel-analytics.com/en/",
+             "time": "10am",
+             "address": "Kernel Analytics<br/>Carrer de Balmes 89, 6º 4ª<br/>Barcelona",
+             "lat": 41.391336,
+             "lng": 2.159867},
+            {"title": "Bratislava",
+             "description": "PyData Bratislava",
+             "url": "https://www.meetup.com/PyData-Bratislava/events/247773847/",
+             "sponsor_image": "gapdata.png",
+             "sponsor_url": "https://www.gapdata.org",
+             "time": "10am",
+             "address": "PyCon SK 2018 @ FIIT STU<br/>Faculty of Informatics and Information Technologies<br/>Slovak Technical University<br/>Ilkovičova 2<br/>Bratislava, Slovakia",
+             "lat": 48.1538657,
+             "lng": 17.0696869},
+            {"title": "Ghent",
+             "description": "Ghent Python user group",
+             "url": "https://stijnvanhoey.github.io/2018-pandas-documentation-sprint-Ghent/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "10am",
+             "address": "atelier",
+             "lat": 51.032086,
+             "lng": 3.726648},
+            {"title": "Sofia",
+             "description": "tekom Bulgaria Meetup, Sofia",
+             "url": "https://www.meetup.com/tekom-Bulgaria-Meetup/events/247732949/",
+             "sponsor_image": "tekom_bulgaria.png",
+             "sponsor_url": "http://www.technical-communication.org/bg/technical-communication-bulgaria.html",
+             "time": "10am",
+             "address": "Telerik Academy<br/>Alexander Malinov Blvd, 31<br/>Sofia",
+             "lat": 42.6507748,
+             "lng": 23.3793578},
+            {"title": "Budapest",
+             "description": "PyData Budapest",
+             "url": "https://www.meetup.com/PyData-Budapest/events/248026751/",
+             "sponsor_image": "balabit.png",
+             "sponsor_url": "https://www.balabit.com",
+             "time": "3pm",
+             "address": "Balabit, Alíz street 2. H-1117, Budapest",
+             "lat": 47.461032,
+             "lng": 19.049633},
+            {"title": "Linz",
+             "description": "PyLinz, Austria",
+             "url": "https://www.meetup.com/PyLinz/events/248109468/",
+             "sponsor_image": "7lytix.png",
+             "sponsor_url": "https://www.7lytix.com/",
+             "time": "10am",
+             "address": "7LYTIX, Am Winterhafen 11, 3.Stock, A-4020 Linz",
+             "lat": 48.3188188,
+             "lng": 14.2998662},
+
+            // Asia / Oceania
+            {"title": "Delhi",
+             "description": "PyData Delhi",
+             "url": "https://www.meetup.com/PyDataDelhi/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 28.617024,
+             "lng": 77.2078168},
+            {"title": "ShenZhen",
+             "description": "ShenZhen, TBD",
+             "url": "#",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 22.541672,
+             "lng": 114.059691},
+            {"title": "Zhuhai",
+             "description": "Zhuhai, TBD",
+             "url": "#",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 22.270760,
+             "lng": 113.577165},
+            {"title": "Ankara",
+             "description": "PyData Ankara",
+             "url": "https://www.meetup.com/PyData-Ankara/events/247965522/",
+             "sponsor_image": "YBU_logo.png",
+             "sponsor_url": "www.ybu.edu.tr/engineering/",
+             "time": "10:00am",
+             "address": "Yildirim Beyazit University Engineering Department",
+             "lat": 39.936867,
+             "lng": 32.850644},
+            {"title": "Mumbai",
+             "description": "PyData Mumbai",
+             "url": "https://www.meetup.com/PyData-Mumbai/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 19.076004,
+             "lng": 72.877371},
+            {"title": "Kanpur",
+             "description": "PyData Kanpur",
+             "url": "https://www.meetup.com/PyDataKanpur/events/248266945/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time" : "1pm",
+             "address": "Allies Interactive<br/>The Mall",
+             "lat": 26.4672319,
+             "lng": 80.3600952},
+            {"title": "Hong Kong",
+             "description": "Hong Kong",
+             "url": "https://www.meetup.com/pythonhk/events/248331658/",
+             "sponsor_image": "spectrum.png",
+             "sponsor_url": "https://spectrum.hk/",
+             "time" : "11am",
+             "address": "Spectrum Saloon, 11C Golden Sun Centre,<br> 59 Bonham Strand West, Sheung Wan, HKSAR",
+             "lat": 22.287408,
+             "lng": 114.148381},
+
+            // Americas
+            {"title": "Seattle",
+             "description": "PyData Seattle",
+             "url": "https://www.meetup.com/pydata_seattle/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 47.620508,
+             "lng": -122.349252},
+            {"title": "San Diego",
+             "description": "San Diego Python Users Group",
+             "url": "https://www.meetup.com/pythonsd/events/247689031/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "10am",
+             "address": "Questionable Exchange<br/>925 B Street<br/>San Diego, CA",
+             "lat": 32.708697,
+             "lng": -117.154230},
+            {"title": "Córdoba, Argentina",
+             "description": "Córdoba",
+             "url": "https://www.eventbrite.com.ar/e/pandas-documentation-sprint-cordoba-tickets-42878190823",
+             "sponsor_image": "machinalis.svg",
+             "sponsor_url": "https://www.machinalis.com/",
+             "time": "9:30am",
+             "address": "Av. Roque Saenz Peña 1357 - X5000JFI<br/>Córdoba",
+             "lat": -31.4011257,
+             "lng": -64.182890},
+            {"title": "Knoxville",
+             "description": "Knoxdata",
+             "url": "https://www.meetup.com/knoxdata/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 35.960190,
+             "lng": -83.922619},
+            {"title": "Chicago",
+             "description": "ChiPy",
+             "url": "https://www.meetup.com/_ChiPy_/events/248233686/",
+             "sponsor_image": "spothero.png",
+             "sponsor_url": "https://spothero.com/",
+             "time": "10am",
+             "address": "125 S Clark St Suite 1300<br />Chicago, IL 60603",
+             "lat": 41.879659,
+             "lng": -87.630322},
+            {"title": "Toronto",
+             "description": "PyData Toronto",
+             "url": "https://www.meetup.com/pydatato/events/247810545/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "9am",
+             "address": "HackLab.TO<br/>1266 Queen Street West Suite #6<br/>Toronto, ON",
+             "lat": 43.642792,
+             "lng": -79.387085},
+            {"title": "Belo Horizonte",
+             "description": "PyData Belo Horizonte",
+             "url": "https://www.meetup.com/PyData-Belo-Horizonte/",
+             "sponsor_image": "una-logo.jpg",
+             "sponsor_url": "https://www.una.br/",
+             "time": "9:30 AM",
+             "address": "UNA Campus Barro Preto - Rua dos Goitacazes, 1159",
+             "lat": -19.919126,
+             "lng": -43.938628},
+            {"title": "Brasília",
+             "description": "PyData Brasília",
+             "url": "https://www.meetup.com/pt-BR/PyData-Brasilia/events/248338341/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "9:00 AM",
+             "address": "TBC",
+             "lat": -15.793962,
+             "lng": -47.882927},
+            {"title": "São Paulo",
+             "description": "São Paulo",
+             "url": "https://www.meetup.com/machine-learning-big-data-engenharia/events/248304467/",
+             "sponsor_image": "nubank.png",
+             "sponsor_url": "https://nubank.com.br/",
+             "time": "10:00 AM",
+             "address": "Rua Capote Valente, 39 - Pinheiros, São Paulo - SP",
+             "lat": -23.560693,
+             "lng": -46.673519},
+            {"title": "Mexico City",
+             "description": "Mexico City",
+             "url": "#",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": 19.432626,
+             "lng": -99.133203},
+            {"title": "Buenos Aires, Argentina",
+             "description": "Buenos Aires",
+             "url": "https://www.meetup.com/es-ES/DigitalAnalyticsBA/events/248300335/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "10:00am",
+             "address": "Monroe 860, Belgrano, CABA",
+             "lat":-34.5489267,
+             "lng":-58.4437257},
+            {"title": "Austin",
+             "description": "Austin",
+             "url": "https://www.meetup.com/PyData-Austin/events/248348976/",
+             "sponsor_image":"",
+             "sponsor_url":"",
+             "time": "10:00am",
+             "address": "11501 Burnet Rd, Bldg 904, Austin TX, 78758",
+             "lat":30.401405,
+             "lng":-97.714727},
+
+            // Africa
+            {"title": "Lagos",
+             "description": "PyData Lagos",
+             "url": "https://www.meetup.com/PyData-Lagos/events/248337266/",
+             "sponsor_image": "univelcity.png",
+             "sponsor_url": "http://univelcity.com/",
+             "time": "10:00AM",
+             "address": "42 Montgomery Road, Yaba, Lagos, Nigeria",
+             "lat": 6.510231,
+             "lng": 3.376844},
+            {"title": "Nairobi",
+             "description": "PyData Nairobi",
+             "url": "https://www.meetup.com/PyData-Nairobi/",
+             "sponsor_image": "",
+             "sponsor_url": "",
+             "time": "TBC",
+             "address": "TBC",
+             "lat": -1.286531,
+             "lng": 36.817345},
+         ];
+    </script>
+    <style type="text/css">
+        #bio_ep {
+            height: 300px;
+            padding: 30px 50px;
+        }
+        #bio_ep p {
+            margin-bottom: 10px;
+        }
+        #bio_ep .note {
+            color: #808080;
+        }
+        #bio_ep .main {
+            font-weight: bold;
+        }
+        #bio_ep .links {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        #bio_ep a.footnote {
+            color: #808080;
+        }
+		#bio_ep a.button {
+            margin-top: 30px;
+			-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+			box-shadow:inset 0px 1px 0px 0px #f5978e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+			background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+			background-color:#f24537;
+			-moz-border-radius:6px;
+			-webkit-border-radius:6px;
+			border-radius:6px;
+			border:1px solid #d02718;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:15px;
+			font-weight:bold;
+			padding:6px 24px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #810e05;
+		}
+		#bio_ep a.button:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+			background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+			background-color:#c62d1f;
+		}
+		#bio_ep a.button:active {
+			position:relative;
+			top:1px;
+		}
+        #bio_ep_close {
+            margin: -38px 0 0 -12px;
+        }
+    </style>
+    <script type="text/javascript" src="assets/js/bioep.min.js"></script>
+    <script type="text/javascript">
+        var popup = '<p class="note">before you leave...</p>';
+        popup += '<p><img alt="" src="assets/images/pandas_logo_donation.png"/>';
+        popup += '<p class="main">You can contribute to make pandas better, even if you can\'t join the sprint.</p>';
+        popup += '<p class="links"><a class="button" href="https://www.flipcause.com/secure/cause_pdetails/MzA3OA==">DONATE TO PANDAS NOW</a></p>';
+        popup += '<p class="links"><a class="footnote" href="http://pandas.pydata.org/donate.html">More info</a></p>';
+        bioEp.init({
+            html: popup,
+            css: '',
+            cookieExp: 0,
+            delay: 1
+        });
+    </script>
 </head>
 <body data-spy="scroll" data-target="#site-nav">
     <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
@@ -30,7 +429,7 @@
                 <!-- logo -->
                 <div class="site-branding">
                     <a class="logo" href="index.html">
-                        
+
                         <!-- logo image  -->
                         <img src="assets/images/pandas_logo.png" alt="Logo">
 
@@ -52,22 +451,22 @@
                     <!-- navigation menu -->
                     <li class="active"><a data-scroll href="#about">About</a></li>
                     <li><a data-scroll href="#location">Locations</a></li>
-                    <li><a data-scroll href="#partner">Supporters</a></li>                  
+                    <li><a data-scroll href="#partner">Supporters</a></li>
                     <li><a data-scroll href="#faq">FAQ</a></li>
                     <li><a data-scroll href="#photos">Photos</a></li>
-                
+
                 </ul>
             </div>
         </div><!-- /.container -->
     </nav>
 
-    <header id="site-header" class="site-header valign-center"> 
+    <header id="site-header" class="site-header valign-center">
         <div class="intro">
 
             <h2>10 March, 2018</h2>
-            
+
             <h1 style="font-size: 48px;">Pandas documentation sprint</h1>
-            
+
 			<p id="countdown"></p>
 			<script>
 			var countDownDate = new Date("Mar 10, 2018 10:00:00").getTime();
@@ -90,7 +489,7 @@
 			</script>
 
             <a class="btn btn-white" data-scroll href="#location">Join Now</a>
-        
+
         </div>
     </header>
 
@@ -149,26 +548,26 @@
                 <div class="col-sm-3">
 
                     <i class="ion-ios-book"></i>
-                    <h3>398<br>Documentation pages</h3>
-                
+                    <h3>1000<br>Documentation pages</h3>
+
                 </div>
                 <div class="col-sm-3">
 
                     <i class="ion-ios-location"></i>
-                    <h3>+10<br>Cities</h3>
-                
+                    <h3>+20<br>Cities</h3>
+
                 </div>
                 <div class="col-sm-3">
 
                     <i class="ion-person-stalker"></i>
-                    <h3>+150<br>Pythonistas</h3>
-                
+                    <h3>+300<br>Pythonistas</h3>
+
                 </div>
                 <div class="col-sm-3">
-                
+
                     <i class="ion-ios-clock"></i>
                     <h3>6<br>Hours</h3>
-                
+
                 </div>
             </div><!-- row -->
         </div><!-- container -->
@@ -195,77 +594,18 @@
 						  center: {lat: 20., lng: 0.}
 						});
 
-                        var chapters = [
-                            {"title": "London",
-                             "description": "London Python Sprints at Blomberg",
-                             "url": "https://www.meetup.com/Python-Sprints/events/247097848/",
-                             "lat": 51.520363,
-                             "lng": -0.086270},
-                            {"title": "Madrid",
-                             "description": "PyData Madrid",
-                             "url": "https://www.meetup.com/PyData-Madrid/events/247525766/",
-                             "lat": 40.4168209,
-                             "lng": -3.7035725},
-                            {"title": "Florence",
-                             "description": "Florence, TBC",
-                             "url": "#",
-                             "lat": 43.7735238,
-                             "lng": 11.2572189},
-                            {"title": "Delhi",
-                             "description": "PyData Delhi",
-                             "url": "https://www.meetup.com/PyDataDelhi/",
-                             "lat": 28.617024,
-                             "lng": 77.2078168},
-                            {"title": "Amsterdam",
-                             "description": "PyData Amsterdam",
-                             "url": "https://www.meetup.com/PyData-NL/",
-                             "lat": 52.3772272,
-                             "lng": 4.8979811},
-                            {"title": "Seattle",
-                             "description": "PyData Seattle",
-                             "url": "https://www.meetup.com/pydata_seattle/",
-                             "lat": 47.620508,
-                             "lng": -122.349252},
-                            {"title": "Mallorca",
-                             "description": "PyData Mallorca",
-                             "url": "https://www.meetup.com/PyData-Mallorca/",
-                             "lat": 39.567545,
-                             "lng": 2.648213},
-                            {"title": "Mannheim",
-                             "description": "Mannheim, TBC",
-                             "url": "#",
-                             "lat": 49.4982481,
-                             "lng": 8.4573718},
-                            {"title": "San Diego",
-                             "description": "San Diego, TBC",
-                             "url": "#",
-                             "lat": 32.708697,
-                             "lng": -117.154230},
-                            {"title": "Córdova, Argentina",
-                             "description": "Córdoba, TBD",
-                             "url": "#",
-                             "lat": -31.4011257,
-                             "lng": -64.182890},
-                            {"title": "Barcelona",
-                             "description": "Barcelona Python Meetup at Kernel Analytics",
-                             "url": "https://www.meetup.com/python-185/events/247592204/",
-                             "lat": 41.391336,
-                             "lng": 2.159867},
-                            {"title": "Lagos",
-                             "description": "PyData Lagos",
-                             "url": "https://www.meetup.com/PyData-Lagos/",
-                             "lat": 6.476437,
-                             "lng": 3.369318},
-                            {"title": "Nairobi",
-                             "description": "PyData Nairobi",
-                             "url": "https://www.meetup.com/PyData-Nairobi/",
-                             "lat": -1.286531,
-                             "lng": 36.817345},
-                        ];
                         for (i=0; i < chapters.length; i++) {
+                            var desc = '<b>' + chapters[i]['description'] + '</b><br/><br/>';
+                            desc += 'Starts at: ' + chapters[i]['time'] + ' (local time)</br>';
+                            desc += 'Address:<br/>' + chapters[i]['address'] + '</br>';
+                            if (chapters[i]['sponsor_image'] != '') {
+                                desc += '<br/>With the support of:<br/>';
+                                desc += '<a href="' + chapters[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + chapters[i]['sponsor_image'] + '"/></a><br/>';
+                            }
+                            desc += '<br/><a style="color: #800000;" href="' + chapters[i]['url'] + '">Go to event page</a><br/>';
                             var marker = new google.maps.Marker({
                               title: chapters[i]["title"],
-                              html: "<a href=\"" + chapters[i]["url"] + "\">" + chapters[i]["description"] + "</a>",
+                              html: desc,
                               position: {lat: chapters[i]["lat"],
                                          lng: chapters[i]["lng"]},
                               map: map
@@ -305,49 +645,30 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-1" href="https://www.python.org/psf/"></a>
+                <div class="col-sm-6">
+                    <a class="partner-box partner-box-big partner-box-1" href="https://www.python.org/psf/"></a>
                 </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-2" href="https://www.numfocus.org/"></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-3" href="https://github.com/"></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-4" href="https://www.twosigma.com/"></a>
+                <div class="col-sm-6">
+                    <a class="partner-box partner-box-big partner-box-2" href="https://www.numfocus.org/"></a>
                 </div>
             </div>
-
+            <!--
             <div class="row">
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-5" href="https://www.bloomberg.com/"></a>
+                    <a class="partner-box partner-box-5" href=""></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-6" href="http://www.koenigsweg.com/news"></a>
+                    <a class="partner-box partner-box-6" href=""></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-7" href="https://godatadriven.com/"></a>
+                    <a class="partner-box partner-box-7" href=""></a>
                 </div>
                 <div class="col-sm-3">
-                    <a class="partner-box partner-box-8" href="https://www.machinalis.com/"></a>
+                    <a class="partner-box partner-box-8" href=""></a>
                 </div>
-            </div>   
-
-            <div class="row">
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-9" href="https://www.kernel-analytics.com/en/"></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-10" href=""></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-11" href=""></a>
-                </div>
-                <div class="col-sm-3">
-                    <a class="partner-box partner-box-12" href=""></a>
-                </div>
-            </div>   
+            </div>
+            -->
+            </div>
     </section>
 
     <section id="faq" class="section faq">
@@ -360,7 +681,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                        
+
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingZero">
                                 <h4 class="panel-title">
@@ -399,10 +720,10 @@
                             </div>
 
                             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                    <p class="panel-body">Sprints should start around 10am (in the location time zone). Check the <a href="#location">locations</a> section to see the exact hour in your chapter.</p>
+                                    <p class="panel-body">Most sprints will start around 10am (in location time). Check the <a href="#location">locations</a> section to see the exact hour in your chapter.</p>
                             </div>
                         </div>
-  
+
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingThree">
                                 <h4 class="panel-title">
@@ -431,7 +752,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul class="grid">
-                        
+
                         <li class="grid-item grid-item-sm-6">
                             <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-1.jpg">
                         </li>
@@ -443,7 +764,7 @@
                         <li class="grid-item grid-item-sm-3">
                             <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-3.jpg">
                         </li>
-                    
+
                         <li class="grid-item grid-item-sm-3">
                             <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-4.jpg">
                         </li>
@@ -469,7 +790,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>            
+            </div>
         </div>
     </section>
 
