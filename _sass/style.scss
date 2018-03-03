@@ -35,6 +35,16 @@ a {
   padding-right: 0;
 }
 
+.no-padding-x {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.with-padding-x {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /* Classes to change order of collapsed columns on mobiles*/
 @media (max-width: 767px) {
   .first-on-mobile {
@@ -299,28 +309,37 @@ a {
 .upcoming__col {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
-  border: #000000 2px ridge;
+  border: #000000 2px groove;
   box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
   .upcoming__col {
-    margin-left: 5.5%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .upcoming__title {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
   font-size: 2.5em;
   color: antiquewhite;
   text-align: center;
   font-family: 'Encode Sans Expanded', sans-serif;
-  margin-top: 2.5%;
+  margin-top: 0;
   margin-bottom: 2.5%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom: rgba(250, 235, 215, 0.85) 1px solid;
 }
 
 .upcoming__event-title {
   background: rgba(7, 41, 72, 0.7);
-  border: #072948 2px ridge;
+  border: #072948 2px groove;
   font-size: 1.25em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: antiquewhite;
@@ -347,6 +366,8 @@ a {
   padding-right: 0;
   padding-left: 0;
   margin-top: 1em;
+  border: #072948 2px groove;
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
 }
 
@@ -357,7 +378,6 @@ a {
   }
 }
 
-
 .upcoming__project-logo {
   margin: 0.5em;
   border: #A55605 3px double;
@@ -367,15 +387,12 @@ a {
 
 .upcoming__sponsor-list {
   background: rgba(7, 41, 72, 0.7);
-  border: #072948 2px ridge;
-  border-radius: 5px;
 }
 
 .upcoming__sponsor-title {
   color: antiquewhite;
   font-family: 'Encode Sans Expanded', sans-serif;
-  font-size: 2.5em;
-  padding-top: 2.5%;
+  font-size: 1.25em;
   margin-bottom: 2.5%;
 }
 

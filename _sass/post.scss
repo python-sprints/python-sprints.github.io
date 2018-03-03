@@ -34,10 +34,10 @@
   font-family: 'Encode Sans Expanded', sans-serif;
   background: linear-gradient(45deg, #818181, #818181 80%, transparent 80%,  transparent 100%);
   font-size: 1.25em;
+  text-align: left;
   color: #072948;
   border-top-left-radius: 5px;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
+  padding: 0.15em 0.25em;
   margin-top: 0.5em;
   margin-bottom: 0;
   min-width: 5em;
@@ -45,7 +45,7 @@
 
 .post__event-title {
   background: rgba(7, 41, 72, 0.52);
-  border: #072948 2px ridge;
+  border: #072948 2px groove;
   font-size: 1.25em;
   font-family: 'Encode Sans Expanded', sans-serif;
   color: antiquewhite;
