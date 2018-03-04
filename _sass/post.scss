@@ -9,18 +9,16 @@
   }
 
 .post__title {
+  @extend .title-light;
   padding-top: 25vh;
   text-align: center;
   font-size: 3em;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  color: antiquewhite;
   }
 .post__subtitle {
+  @extend .subtitle;
   padding-top: 1%;
   text-align: center;
   font-size: 1.25em;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  color: #818181;
   }
 
 .post__event-col {
@@ -31,27 +29,11 @@
   }
 
 .post__label {
-  font-family: 'Encode Sans Expanded', sans-serif;
-  background: linear-gradient(45deg, #818181, #818181 80%, transparent 80%,  transparent 100%);
-  font-size: 1.25em;
-  color: #072948;
-  border-top-left-radius: 5px;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  margin-top: 0.5em;
-  margin-bottom: 0;
-  min-width: 5em;
+  @extend .event-label;
 }
 
 .post__event-title {
-  background: rgba(7, 41, 72, 0.52);
-  border: #072948 2px ridge;
-  font-size: 1.25em;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  color: antiquewhite;
-  padding-left: 0.25em;
-  margin-right: 0.25em;
-  border-radius: 0 5px 5px 5px;
+  @extend .event-title;
   }
 
 .post__button-col {
@@ -61,26 +43,19 @@
 }
 
 .post__button {
-  min-width: 10em;
+  @extend .button-standard;
+  min-width: 50%;
   font-size: 1.25em;
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  background: #072948;
-  border: #035E9A 2px ridge;
-  transition: all 0.5s ease-in;
-  &:hover {
-    text-align: center;
-    background: rgba(7, 41, 72, 0.53);
-    border: #A55605 2px ridge;
-  }
+  margin-top: 0.5em;
+  margin-bottom: 1em;
   &:hover > .post__icon {
-    color: antiquewhite;
+    color: $button-text-hover;
   }
 }
 
 .post__icon {
   text-align: center;
-  color: #7FA0C2;
+  color: $button-text;
   font-size: 1.5em;
   transition: all 0.5s ease-in;
   min-width: 100%;
@@ -93,11 +68,10 @@
 }
 
 .post__content-title {
+  @extend .title-dark;
   margin-top: 5%;
   margin-bottom: 2.5%;
   font-size: 2em;
-  font-family: 'Encode Sans Expanded', sans-serif;
-  color: #072948;
 }
 
 .post__sponsor-col {
@@ -136,25 +110,24 @@
 
 .post__divider {
   margin-top: 5%;
-  border-top: #072948 2px ridge;
+  border-top: $dark-blue 2px ridge;
   width: 10%;
 }
 
 .post__sponsor-name {
+  @extend .title-dark;
   margin-top: 0.5em;
   line-height: 1em;
   text-align: center;
-  font-family: 'Encode Sans Expanded', sans-serif;
   font-size: 1.25em;
-  color: #072948;
 }
 
 .post__sponsor-link {
   display: inline-block;
   width: 100%;
-  background: #041729;
+  background: $very-dark-blue;
   border-radius: 5px;
-  border: #7fa0c2 1px solid;
+  border: $light-blue 1px solid;
   text-align: center;
   line-height: 102px;
 }

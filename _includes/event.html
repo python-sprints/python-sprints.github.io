@@ -12,13 +12,14 @@
             from displaying in the past ones.
         {% endcomment %}
 
+        {% assign post_count = 0 %}
         {% assign curDate = site.time | date: "%s" %}
         {% assign last_4_posts = "" | split: ',' %}
         {% for post in site.posts %}
             {% assign postStartDate = post.date | date: "%s" %}
             {% if postStartDate <= curDate %}
                 {% assign last_4_posts = last_4_posts | push: post %}
-                {% increment post_count %}
+                {% assign post_count = post_count | plus: 1 %}
             {% endif %}
             {% if post_count == 4 %}
                 {% break %}

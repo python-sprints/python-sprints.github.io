@@ -1,0 +1,15 @@
+.events-page {
+  margin-top: -66px;
+}
+
+.events-page__background-img {
+  @extend .contact__background-img
+}
+
+.events-page__page-title {
+  @extend .page-title-light;
+}
+
+.events-page__page-subtitle {
+  @extend .page-subtitle
+}
