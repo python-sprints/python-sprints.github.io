@@ -60,6 +60,20 @@
   color: $section-title-light;
 }
 
+.page-title-light {
+  @extend .section-title;
+  margin-top: 20vh;
+  color: $page-title;
+}
+
+.page-subtitle {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $subtitle;
+  font-size: 1.75em;
+  text-align: center;
+  margin-bottom: 10vh;
+}
+
 .event-label {
   font-family: 'Encode Sans Expanded', sans-serif;
   background: linear-gradient(45deg, $grey, $grey 80%, transparent 80%,  transparent 100%);

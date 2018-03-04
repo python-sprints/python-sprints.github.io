@@ -14,17 +14,12 @@
   }
 }
 
-.contact__section-title {
-  @extend .section-title-light;
-  margin-top: 20vh;
-  color: $page-title;
+.contact__page-title {
+  @extend .page-title-light;
 }
 
-.contact__section-subtitle {
-  @extend .subtitle;
-  font-size: 1.75em;
-  text-align: center;
-  margin-bottom: 10vh;
+.contact__page-subtitle {
+  @extend .page-subtitle;
 }
 
 .contact__form {
