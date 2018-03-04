@@ -164,7 +164,12 @@ layout: default
                 </div>
                 <div class="upcoming__button-row row">
                     <div class="col-md-12 text-center">
-                        <a class="upcoming__link" href="{{ post.event_link }}">
+                        {% if post.event_link %}
+                            {% assign upcoming_event_link = post.event_link %}
+                        {% else %}
+                            {% assign upcoming_event_link = post.meetup_link %}
+                        {% endif %}
+                        <a class="upcoming__link" href="{{ upcoming_event_link }}">
                             <button class="button-standard btn btn-lg">
                                 Learn More
                             </button>

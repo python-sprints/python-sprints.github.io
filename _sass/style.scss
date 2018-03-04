@@ -281,6 +281,7 @@ a {
   border: #000000 2px groove;
   box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
   min-height: 100%;
+  margin-top: 1em;
 }
 
 @media (min-width: 768px) {
@@ -336,7 +337,7 @@ a {
 
 .upcoming__button-row {
   margin-top: 10%;
-  margin-bottom: 5.5%;
+  margin-bottom: 10%;
 }
 
 @media (min-width: 768px) {

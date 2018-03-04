@@ -46,6 +46,8 @@
   @extend .button-standard;
   min-width: 50%;
   font-size: 1.25em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
   &:hover > .post__icon {
     color: $button-text-hover;
   }
