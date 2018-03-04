@@ -51,6 +51,8 @@ repository:
 
     | ``git remote add upstream https://github.com/pandas-dev/pandas``
 
+(For Window Users: download git for Windows <https://gitforwindows.org/> and run Git Bash in the directory where you want the copy of pandas source code with the same commends as above.)
+
 3. Set up a Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -68,6 +70,8 @@ repository:
 * Install pandas development dependencies:
     ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
 
+(For Window users: run the above commends in Anaconda Prompt)
+
 3.b Python environment with virtualenv and pip
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -79,11 +83,30 @@ TODO
 Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
+For Window Users: you'll need to install the compiler toolset. Depending on which version of Python you care about, you will need to choose a different download.
+
++----------------+------------------------------------------------------------+
+|   Python       |                       You will need                        |
+|   Version      |                                                            |
++================+============================================================+
+| 3.5 and later  | Install Visual Studio 2017, select the Python development  |
+|                | workload and the Native development tools option           |
+|                | <https://www.visualstudio.com/>                            |
++----------------+------------------------------------------------------------+
+| 3.3 and 3.4    | Windows SDK for Windows 7 and .NET 4.0                     |
+|                | <https://www.microsoft.com/download/details.aspx?id=8279>  |
++----------------+------------------------------------------------------------+
+| 2.6 to 3.2     | Microsoft Visual C++ Compiler for Python 2.7               |
+|                | <https://www.microsoft.com/download/details.aspx?id=44266> |
++----------------+------------------------------------------------------------+
+
 To compile these files simply run:
     | ``cd <pandas-dir>``
     | ``python setup.py build_ext --inplace``
 
 The process will take several minutes.
+
+(For Window users: run the above commends in Anaconda Prompt)
 
 5. Create a branch and start coding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -108,3 +131,5 @@ To check in which branch are you:
 
 To change to another branch:
     | ``git checkout <branch_name>``
+
+(for Window users run above comments with Git Bash)
