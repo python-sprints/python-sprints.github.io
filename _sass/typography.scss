@@ -1,31 +1,113 @@
+// Settings for global font sizes and classes related strictly to text.
+
 .body {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /* Mobiles 576px and up */
 @media (min-width: 576px) {
-    .body {
-        font-size: 90%;
-    }
+  .body {
+    font-size: 90%;
+  }
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-    .body {
-        font-size: 100%;
-    }
+  .body {
+    font-size: 100%;
+  }
 }
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-    .body {
+  .body {
     font-size: 120%;
   }
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    .body {
-        font-size: 140%;
-    }
+  .body {
+    font-size: 140%;
+  }
+}
+
+// Text styles below.
+
+.section-title {
+  font-size: 2.5em;
+  color: $section-title-dark;
+  text-align: center;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+}
+
+@media (min-width: 376px) {
+  .section-title {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 500px) {
+  .section-title {
+    font-size: 4em;
+  }
+}
+
+.section-title-light {
+  @extend .section-title;
+  color: $section-title-light;
+}
+
+.event-label {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  background: linear-gradient(45deg, $grey, $grey 80%, transparent 80%,  transparent 100%);
+  font-size: 1.25em;
+  text-align: left;
+  color: $title-dark;
+  border-top-left-radius: 5px;
+  padding: 0.15em 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  min-width: 5em;
+}
+
+.event-title {
+  background: rgba(7, 41, 72, 0.52);
+  border: $dark-blue 2px groove;
+  font-size: 1.25em;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $title-light;
+  padding-left: 0.25em;
+  margin-right: 0.25em;
+  border-radius: 0 5px 5px 5px;
+  }
+
+.title-dark {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $title-dark;
+}
+
+.title-light {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $title-light;
+}
+
+.subtitle {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $subtitle;
+}
+
+.paragraph-dark {
+  font-size: 1em;
+  color: $paragraph-dark;
+  font-family: 'Playfair Display', serif;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.footer-font {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
 }
