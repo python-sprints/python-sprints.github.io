@@ -16,6 +16,11 @@ $(document).ready(function () {
 });
 
 
+function readDeviceOrientation() {
+
+    return window.matchMedia("(orientation: portrait)").matches;
+}
+
 function stopBodyScrolling (bool) {
     /**
      * Required to stop body scrolling on iOS devices (safari ignores
@@ -87,9 +92,16 @@ class ResponsiveBackgroundImage {
 
     update() {
         let src = typeof this.img.currentSrc !== 'undefined' ? this.img.currentSrc : this.img.src;
+        let image = this.img;
+        let overlay = image.getAttribute("data-overlay");
+        if (overlay === null || overlay === undefined) {
+            overlay = "";
+        }
+
         if (this.src !== src) {
             this.src = src;
-            this.element.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("' + this.src + '")';
+
+            this.element.style.backgroundImage = overlay + ', url("' + this.src + '")';
         }
     }
 }

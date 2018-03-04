@@ -22,6 +22,12 @@
   @extend .page-subtitle;
 }
 
+@media (max-width: 576px) {
+  .contact__form {
+      max-width: 96%;
+  }
+}
+
 .contact__form {
   margin-top: 5em;
   border-radius: 5px;
