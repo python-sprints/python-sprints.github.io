@@ -3,27 +3,31 @@ layout: default
 title: Events
 permalink: /events/
 ---
-
-<style>
-    .events-page__background-img {
-        background-size: contain;
-        background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.75)),
-            url("{{ site.baseurl }}/static/images/contact/contact_top_1920x600px.jpg") top center no-repeat;
-    }
-</style>
-
-
 <section class="events-page">
-    <div class="events-page__background-img">
+    <div class="events-page__background-img" data-image-type="responsive">
+        <picture>
+            <source srcset="../static/images/events_page/events_page_top_480x150px.jpg 480w,
+                            ../static/images/events_page/events_page_top_960x300px.jpg 960w,
+                            ../static/images/events_page/events_page_top_1920x600px.jpg 1920w"
+                    media="(orientation: landscape)"
+                    sizes="100vw">
+            <source srcset="../static/images/events_page/events_page_top_750x650px.jpg 750w,
+                            ../static/images/events_page/events_page_top_1650x1100px.jpg 1650w"
+                    media="(orientation: portrait)"
+                    sizes="100vw">
+            <img class="responsive"
+                 src="../static/images/events_page/events_page_top_960x300px.jpg"
+                 alt="Events"
+                 data-overlay="linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%)">
+        </picture>
         <div class="row container-fluid">
             <div class="col-sm-12">
                 <h2 class="events-page__page-title">Events</h2>
-                <h3 class="events-page__page-subtitle">See what's coming up. Check what we did recently.</h3>
+                <h3 class="events-page__page-subtitle">See what's coming up and what we did recently.</h3>
             </div>
         </div>
     </div>
+
     <!--Contact form-->
         <form class="contact__form container" method="POST" action="//formspree.io/py.sprints@gmail.com" role="form">
             <div class="row">
