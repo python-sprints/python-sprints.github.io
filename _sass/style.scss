@@ -132,7 +132,7 @@ a {
 }
 
 .navigation__subtitle {
-  font-size: 1.16em;
+  font-size: 1.75em;
   font-family: 'Share Tech Mono', monospace;
   color: $page-subtitle;
   text-align: center;
@@ -145,7 +145,7 @@ a {
     margin-top: 40vh;
   }
   .navigation__subtitle {
-    font-size: 1.43em;
+    font-size: 1.9em;
   }
 }
 
@@ -155,7 +155,7 @@ a {
     margin-top: 40vh;
   }
   .navigation__subtitle {
-    font-size: 1.66em;
+    font-size: 2em;
   }
 }
 
@@ -165,7 +165,7 @@ a {
     margin-top: 40vh;
   }
   .navigation__subtitle {
-    font-size: 2em;
+    font-size: 2.25em;
   }
 }
 
@@ -286,6 +286,7 @@ a {
 
 @media (min-width: 768px) {
   .upcoming__col {
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
   }
@@ -298,6 +299,7 @@ a {
   font-size: 2.5em;
   color: $title-light;
   margin-top: 0;
+  margin-bottom: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-top-left-radius: 20px;
@@ -343,6 +345,7 @@ a {
 @media (min-width: 768px) {
   .upcoming__button-row {
     margin-top: 5.5%;
+    margin-bottom: 5.5%;
   }
 }
 

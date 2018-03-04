@@ -3,20 +3,23 @@ layout: default
 title: Contact
 permalink: /contact/
 ---
-
-<style>
-    .contact__background-img {
-        background-size: contain;
-        background: linear-gradient(90deg,
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.75)),
-            url("{{ site.baseurl }}/static/images/contact/contact_top_1920x600px.jpg") top center no-repeat;
-    }
-</style>
-
-
 <section class="contact">
-    <div class="contact__background-img">
+    <div class="contact__background-img" data-image-type="responsive">
+        <picture>
+            <source srcset="../static/images/contact/contact_top_450x150px.jpg 450w,
+                            ../static/images/contact/contact_top_960x300px.jpg 960w,
+                            ../static/images/contact/contact_top_1920x600px.jpg 1920w"
+                    media="(orientation: landscape)"
+                    sizes="100vw">
+            <source srcset="../static/images/contact/contact_top_750x650px.jpg 750w,
+                            ../static/images/contact/contact_top_1650x1100px.jpg 1650w"
+                    media="(orientation: portrait)"
+                    sizes="100vw">
+            <img class="responsive"
+                 src="../static/images/contact/contact_top_960x300px.jpg"
+                 alt="Contact Us"
+                 data-overlay="linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%)">
+        </picture>
         <div class="row container-fluid">
             <div class="col-sm-12">
                 <h2 class="contact__page-title">Contact Us</h2>
@@ -24,6 +27,7 @@ permalink: /contact/
             </div>
         </div>
     </div>
+
     <!--Contact form-->
         <form class="contact__form container" method="POST" action="//formspree.io/py.sprints@gmail.com" role="form">
             <div class="row">
