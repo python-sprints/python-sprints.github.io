@@ -6,7 +6,10 @@ $postimage: "{{ page.image }}";
 
 
 @import
+  "base",
   "typography",
+  "buttons",
 	"post",
   "contact",
+  "events",
   "style";
