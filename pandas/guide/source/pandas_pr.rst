@@ -99,7 +99,7 @@ available online:
 
     | ``git push -u origin <your-branch-name>``
 
-Then, visit https://github.com/python-sprints/pandas in your browser, and click
+Then, visit https://github.com/pandas-dev/pandas in your browser, and click
 on the "Compare & pull request" button in the yellow box above the repository
 files.
 
