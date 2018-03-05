@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>pandas docstring guide &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -31,8 +23,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -47,11 +38,11 @@
 <p>A Python docstring is a string used to document a Python function or method,
 so programmers can understand what it does without having to read the details
 of the implementation.</p>
-<p>Also, it is a commonn practice to generate online (html) documentation
+<p>Also, it is a common practice to generate online (html) documentation
 automatically from docstrings. <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> serves
 this purpose.</p>
 <p>Next example gives an idea on how a docstring looks like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot;Add up two integer numbers.</span>
 
 <span class="sd">This function simply wraps the `+` operator, and does not</span>
@@ -118,7 +109,7 @@ left before or after the docstring. The text starts immediately after the
 opening quotes (not in the next line). The closing quotes have their own line
 (meaning that they are not at the end of the last sentence).</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Some function.</span>
 
 <span class="sd">    With a good docstring.</span>
@@ -129,7 +120,7 @@ opening quotes (not in the next line). The closing quotes have their own line
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Some function.</span>
@@ -160,7 +151,7 @@ concise way.</p>
 a single line. It needs to express what the function does without providing
 details.</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Cast Series type.</span>
 
 <span class="sd">    This section will provide further details.</span>
@@ -169,7 +160,7 @@ details.</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Casts Series type.</span>
 
 <span class="sd">    Verb in third-person of the present simple, should be infinitive.</span>
@@ -207,7 +198,7 @@ go into the details of the parameters, or discuss implementation notes, which
 go in other sections.</p>
 <p>A blank line is left between the short summary and the extended summary. And
 every paragraph in the extended summary is finished by a dot.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Pivot a row index to columns.</span>
 
 <span class="sd">    When using a multi-index, a level can be pivoted so each value in</span>
@@ -245,7 +236,7 @@ some cases it may be useful to explain what the default argument means, which
 can be added after a comma “Description of the arg (default is -1, which means
 all cpus).”.</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate a plot.</span>
 
@@ -266,7 +257,7 @@ all cpus).”.</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Generate a plot.</span>
 
@@ -274,8 +265,8 @@ all cpus).”.</p>
 <span class="sd">        specified kind.</span>
 
 <span class="sd">        Note the blank line between the parameters title and the first</span>
-<span class="sd">        parameter. Also, not that after the name of the parameter `kind`</span>
-<span class="sd">        and before the colo, a space is missing.</span>
+<span class="sd">        parameter. Also, note that after the name of the parameter `kind`</span>
+<span class="sd">        and before the colon, a space is missing.</span>
 
 <span class="sd">        Also, note that the parameter descriptions do not start with a</span>
 <span class="sd">        capital letter, and do not finish with a dot.</span>
@@ -366,10 +357,10 @@ one value (a tuple of values).</p>
 <p>The types for “Returns” and “Yields” are the same as the ones for the
 “Parameters”. Also, the description must finish with a dot.</p>
 <p>For example, with a single value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Generate and return a random number.</span>
 
-<span class="sd">    The value is sampled from a continuos uniform distribution between</span>
+<span class="sd">    The value is sampled from a continuous uniform distribution between</span>
 <span class="sd">    0 and 1.</span>
 
 <span class="sd">    Returns</span>
@@ -381,7 +372,7 @@ one value (a tuple of values).</p>
 </pre></div>
 </div>
 <p>With more than one value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_letters</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_letters</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Generate and return a sequence of random letters.</span>
 
 <span class="sd">    The length of the returned string is also random, and is also</span>
@@ -401,10 +392,10 @@ one value (a tuple of values).</p>
 </pre></div>
 </div>
 <p>If the method yields its value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_values</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_values</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Generate an infinite sequence of random numbers.</span>
 
-<span class="sd">    The values are sampled from a continuos uniform distribution between</span>
+<span class="sd">    The values are sampled from a continuous uniform distribution between</span>
 <span class="sd">    0 and 1.</span>
 
 <span class="sd">    Yields</span>
@@ -459,9 +450,9 @@ the one referencing. The description must also finish with a dot.</p>
 <p>Note that in “Returns” and “Yields”, the description is located in the
 following line than the type. But in this section it is located in the same
 line, with a colon in between. If the description does not fit in the same
-line, it can continue in the next ones, but it has to be indenteted in them.</p>
+line, it can continue in the next ones, but it has to be indented in them.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the first 5 elements of the Series.</span>
 
@@ -520,7 +511,7 @@ request: <a class="reference external" href="https://github.com/pandas-dev/panda
 consider this could still change.</p>
 </div>
 <p>A simple example could be:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the first elements of the Series.</span>
 
@@ -568,7 +559,7 @@ consider this could still change.</p>
 <span id="docstring-example-conventions"></span><h4>Conventions for the examples<a class="headerlink" href="#conventions-for-the-examples" title="Permalink to this headline">¶</a></h4>
 <p>Code in examples is assumed to always start with these two lines which are not
 shown:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
@@ -595,7 +586,7 @@ them.</p>
 <p>When calling the method, keywords arguments <cite>head(n=3)</cite> are preferred to
 positional arguments <cite>head(3)</cite>.</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;A sample DataFrame method.</span>
 
 <span class="sd">    Examples</span>
@@ -608,7 +599,7 @@ positional arguments <cite>head(3)</cite>.</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;A sample DataFrame method.</span>
 
 <span class="sd">    Examples</span>
@@ -677,12 +668,14 @@ positional arguments <cite>head(3)</cite>.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -693,7 +686,7 @@ positional arguments <cite>head(3)</cite>.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
