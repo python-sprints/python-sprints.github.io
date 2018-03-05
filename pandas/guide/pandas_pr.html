@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Submitting your changes &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -30,8 +22,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -51,8 +42,8 @@ technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">scripts/validate_docstrings.py</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">scripts/validate_docstrings.py</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
 </div>
 </div></blockquote>
 <p>where <cite>&lt;your-function-or-method&gt;</cite> is for example <cite>pandas.DataFrame.head</cite>,
@@ -69,7 +60,7 @@ missing dot at the end of a sentence, a blank line where it should not be, etc.<
 </div>
 <div class="section" id="visual-validation-of-the-docstring">
 <h2>2. Visual validation of the docstring<a class="headerlink" href="#visual-validation-of-the-docstring" title="Permalink to this headline">¶</a></h2>
-<p>The previous sprint validates things like the names of the sections, or
+<p>The previous script validates things like the names of the sections, or
 that there are dots, spaces, or blank lines in the right side. But does
 not validate for typos, unclear sentences, or other mistakes. To validate
 them, as well as the visualization of your docstring in the pandas website
@@ -77,8 +68,8 @@ you need to generate the html version of the page you worked on.</p>
 <p>To build the documentation run:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;/doc</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">make.py</span> <span class="pre">html</span> <span class="pre">--single</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;/doc</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">make.py</span> <span class="pre">html</span> <span class="pre">--single</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
 </div>
 </div></blockquote>
 <p>where <cite>&lt;your-function-or-method&gt;</cite> follows the format described in the previous
@@ -100,25 +91,25 @@ into git.</p>
 you are going to commit with:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code></div>
 </div>
 </div></blockquote>
 <p>If the current branch is <cite>master</cite>, do not commit your changes, as you can get
 into a situation where you need to undo your history in git, which is not
-straight forward.</p>
+straightforward.</p>
 <p>Then, follow the next steps:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;modified-file(s)&gt;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;commit-message&gt;&quot;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;modified-file(s)&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;commit-message&gt;&quot;</span></code></div>
 </div>
 </div></blockquote>
 <p>where <cite>&lt;modified-file(s)&gt;</cite> is the file where you made your changes (in rare
 cases it could be more than one file). And <cite>&lt;commit-message&gt;</cite> is a short
 description of your changes, starting by “DOC:” (e.g. “DOC: Improved the
-docsting of DataFrame.head()”).</p>
+docstring of DataFrame.head()”).</p>
 </div>
 <div class="section" id="push-your-changes-to-pandas">
 <h2>5. Push your changes to pandas<a class="headerlink" href="#push-your-changes-to-pandas" title="Permalink to this headline">¶</a></h2>
@@ -128,7 +119,7 @@ pandas maintainers, so they can add them to the main pandas repository.</p>
 available online:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;your-branch-name&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;your-branch-name&gt;</span></code></div>
 </div>
 </div></blockquote>
 <p>Then, visit <a class="reference external" href="https://github.com/python-sprints/pandas">https://github.com/python-sprints/pandas</a> in your browser, and click
@@ -143,7 +134,7 @@ and push again to your local branch. As you used the parameter <cite>-u</cite> i
 first push, you can simply run:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></div>
 </div>
 </div></blockquote>
 <p>from your local branch, and the changes will be pushed to your remote branch.</p>
@@ -199,12 +190,14 @@ feedback in other contributors pull requests too.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -215,7 +208,7 @@ feedback in other contributors pull requests too.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
