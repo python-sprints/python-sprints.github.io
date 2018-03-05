@@ -10,7 +10,7 @@ You need the next software installed:
 * An editor (vim, emacs, PyCharm,...). Make sure the editor is set up to use 4 spaces for tabs.
 
 The `pandas contributing guide <https://pandas.pydata.org/pandas-docs/stable/contributing.html>`_
-contains detailed instructions on how to set up a pandas devlopment environemnt.
+contains detailed instructions on how to set up a pandas development environment.
 This document is a short summary with some additional information specific to
 the sprint.
 
