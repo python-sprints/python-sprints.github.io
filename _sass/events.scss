@@ -13,3 +13,11 @@
 .events-page__page-subtitle {
   @extend .page-subtitle
 }
+
+.events-page__upcoming-title {
+  @extend .section-title;
+}
+
+.events-page__recent-title {
+  @extend .section-title;
+}
