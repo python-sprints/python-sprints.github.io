@@ -34,7 +34,7 @@ it again. If that is not the case, they can mail the members of the community,
 and surely one of them works in a company happy to offer the venue.
 
 If that does not work for you, universities, local government agencies
-supporting employment and enterpreneurship, startup incubators, and
+supporting employment and entrepreneurship, startup incubators, and
 co-working spaces, could be interested in offering you a venue. In general,
 it is easier to get a positive answer by trying to directly contact someone
 there, than by filling a form or sending an email to info@whatever.
@@ -50,7 +50,7 @@ Python programmers and data scientists are hard to find, and it can be a great
 opportunity for them, to get their company promoted.
 
 If nothing else works, you can find a bar, pub, restaurant... with some quiet
-area for the spint. And if you do not even find that, please contact us, and
+area for the sprint. And if you do not even find that, please contact us, and
 we will find a solution.
 
 The local community and publishing the event
@@ -109,7 +109,7 @@ consider:
 
 * Non male (which does not necessarily mean female)
 * People over an age (50 year old?)
-* Ethnical background depending on where you are
+* Ethnic background depending on where you are
 
 We do not recommend asking people for their race, sexual orientation,
 religion... in order to find people from underrepresented minorities. We find
@@ -142,7 +142,7 @@ In short:
 * Inside your local copy of the repo (`cd python-sprints.github.io`)...
 * Create a branch for your changes: `git checkout -b adding_<your-city>_chapter`
 * Edit the file with the chapter info: `vim pandas/index.html` and add an entry with the same fields as the rest
-* Add your changed to be commited: `git add pandas/index.html`
+* Add your changed to be committed: `git add pandas/index.html`
 * Commit your changes: `git commit -m "Adding <your-city> to the pandas sprint page"`
 * Push your changes to your fork: `git push -u origin adding_<your-city>_chapter`
 * Create a pull request by clicking on the "Compare & pull request" button in the yellow box at https://github.com/python-sprints/python-sprints.github.io
@@ -212,7 +212,7 @@ One important thing to consider, is that **quality is much more important
 than quantity**. For pandas, it will be much more productive if we send
 50 excellent pull requests, than if we send 500 not so good pull requests.
 
-Core developers are usually the bottle neck of open source projects. And
+Core developers are usually the bottleneck of open source projects. And
 while with their experience they will surely provide great reviews to
 enrich our contributions, we surely do not want to waste their time by reviewing
 code that doesn't work, spelling mistakes, bad grammar, incorrect text, or

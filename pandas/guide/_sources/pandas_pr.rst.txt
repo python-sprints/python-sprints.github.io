@@ -37,7 +37,7 @@ With few exceptions, you should fix all the errors before continuing.
 2. Visual validation of the docstring
 -------------------------------------
 
-The previous sprint validates things like the names of the sections, or
+The previous script validates things like the names of the sections, or
 that there are dots, spaces, or blank lines in the right side. But does
 not validate for typos, unclear sentences, or other mistakes. To validate
 them, as well as the visualization of your docstring in the pandas website
@@ -74,7 +74,7 @@ you are going to commit with:
 
 If the current branch is `master`, do not commit your changes, as you can get
 into a situation where you need to undo your history in git, which is not
-straight forward.
+straightforward.
 
 Then, follow the next steps:
 
@@ -86,7 +86,7 @@ Then, follow the next steps:
 where `<modified-file(s)>` is the file where you made your changes (in rare
 cases it could be more than one file). And `<commit-message>` is a short
 description of your changes, starting by "DOC:" (e.g. "DOC: Improved the
-docsting of DataFrame.head()").
+docstring of DataFrame.head()").
 
 5. Push your changes to pandas
 ------------------------------
