@@ -27,12 +27,10 @@
 {% for post in site.posts %}
     {% assign postStartDate = post.date | date: "%s" %}
     {% if future_events %}
-<!--Add only future post-->
         {% if postStartDate >= curDate %}
             {% assign posts = posts | push: post %}
             {% assign post_count = post_count | plus: 1 %}
         {% endif %}
-<!--Add only past post-->
     {% else %}
         {% if postStartDate < curDate %}
             {% assign posts = posts | push: post %}

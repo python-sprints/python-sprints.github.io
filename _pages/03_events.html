@@ -28,25 +28,25 @@ permalink: /events/
         </div>
     </div>
 
-    <div class="container">
+    <div class="events-page__outer-container container-fluid">
         <div class="row">
             <div class="col-12">
-                <h2 class="events-page__upcoming-title">Upcoming Events</h2>
+                <h2 class="events-page__upcoming-section-title">Upcoming Events</h2>
                 {% include events_array_generator.html future_events = true %}
                 {% for post in posts %}
-                    <p>{{ post.title }}</p>
+                    {% include event_layout.html post = post %}
                 {% endfor %}
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="events-page__outer-container container-fluid">
         <div class="row">
             <div class="col-12">
-                <h2 class="events-page__recent-title">Recent Events</h2>
+                <h2 class="events-page__recent-section-title">Recent Events</h2>
                 {% include events_array_generator.html %}
                 {% for post in posts %}
-                    <p>{{ post.title }}</p>
+                    {% include event_layout.html post = post %}
                 {% endfor %}
             </div>
         </div>
