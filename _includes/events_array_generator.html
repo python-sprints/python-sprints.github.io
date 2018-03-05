@@ -1,0 +1,47 @@
+{% comment %}
+    This include is to generate a list of posts for use in views.
+    The array posts is to be used then in the view.
+    Parameters:
+        - future_events:   (bool) Include future events in the array?
+            If future_events is true, no past events will be added.
+            If it is false, only past events are added.
+            Default: false.
+        - limit:    (int) How many events to add to the array.
+            Default: 0 (no limit).
+    Creates variable for use in the outer scope:
+        - posts (array) Array of post objects.
+{% endcomment %}
+
+{% if include.future_events %}
+    {% assign future_events = include.future_events %}
+{% else %}
+    {% assign future_events = false %}
+{% endif %}
+{% if include.limit %}
+    {% assign limit = include.limit %}
+{% endif %}
+
+{% assign post_count = 0 %}
+{% assign curDate = site.time | date: "%s" %}
+{% assign posts = "" | split: ',' %}
+{% for post in site.posts %}
+    {% assign postStartDate = post.date | date: "%s" %}
+    {% if future_events %}
+<!--Add only future post-->
+        {% if postStartDate >= curDate %}
+            {% assign posts = posts | push: post %}
+            {% assign post_count = post_count | plus: 1 %}
+        {% endif %}
+<!--Add only past post-->
+    {% else %}
+        {% if postStartDate < curDate %}
+            {% assign posts = posts | push: post %}
+            {% assign post_count = post_count | plus: 1 %}
+        {% endif %}
+    {% endif %}
+
+    {% if post_count == limit | default: 0 %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+

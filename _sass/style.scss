@@ -317,6 +317,12 @@ a {
   margin-bottom: 0.5em;
 }
 
+.upcoming__sponsor-col {
+  background: rgba(7, 41, 72, 0.52);
+  border: $dark-blue 2px groove;
+  border-radius: 0 5px 5px 5px;
+}
+
 .upcoming__img-container {
   background-size: cover;
   background-position: center center;
