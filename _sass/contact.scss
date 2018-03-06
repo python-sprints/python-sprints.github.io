@@ -14,17 +14,18 @@
   }
 }
 
-.contact .contact__title {
-  margin-top: 20vh;
-  color: antiquewhite;
+.contact__page-title {
+  @extend .page-title-light;
 }
 
-.contact__subtitle {
-  font-size: 1.75em;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: #A55605;
-  margin-bottom: 10vh;
+.contact__page-subtitle {
+  @extend .page-subtitle;
+}
+
+@media (max-width: 576px) {
+  .contact__form {
+      max-width: 96%;
+  }
 }
 
 .contact__form {
@@ -33,12 +34,12 @@
   background: linear-gradient(180deg,
   rgba(0, 0, 0, 0.75),
   rgba(7, 41, 72, 0.85) 50%,
-  #072948 100%);
+  $dark-blue 100%);
   height: 100%;
 }
 
 .contact__label {
-  color: antiquewhite;
+  color: $form-label-text;
 }
 
 .form-group {
@@ -55,29 +56,16 @@
 }
 
 .contact__submit-button {
+  @extend .button-standard;
   margin-top: 2em;
-  min-width: 10em;
   font-size: 1.25em;
-  font-family: 'Playfair Display', serif;
-  text-align: center;
-  background: #072948;
-  border: #035E9A 2px ridge;
-  transition: all 0.5s ease-in;
-  color: #7FA0C2;
-  &:hover {
-    text-align: center;
-    background: rgba(7, 41, 72, 0.53);
-    border: #A55605 2px ridge;
-    color: antiquewhite;
-
-  }
   &:hover > .contact__icon {
-    color: antiquewhite;
+    color: $old-white;
   }
 }
 
 .contact__icon {
   transition: all 0.5s ease-in;
   margin-left: 5%;
-  color: #7FA0C2;
+  color: $light-blue;
 }

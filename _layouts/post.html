@@ -24,14 +24,13 @@
                 <div class="row">
                     <div class="no-gutters__col col-md-12 container-fluid">
                         <div class="row">
-
                             <div class="post__img-container col-md-7 col-sm-12">
                                 <h1 class="post__title">{{ page.project }}</h1>
                                 <h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>
                             </div>
                             <div class="post__event-col col-md-5 col-12">
                                 <div class="row">
-                                    <div class="no-gutters__col col-3">
+                                    <div class="no-gutters__col col-6">
                                         <h2 class="post__label">Event</h2>
                                     </div>
                                 </div>
@@ -42,7 +41,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="no-gutters__col col-3">
+                                    <div class="no-gutters__col col-6">
                                         <h2 class="post__label">Venue</h2>
                                     </div>
                                 </div>
@@ -53,7 +52,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="no-gutters__col col-3">
+                                    <div class="no-gutters__col col-6">
                                         <h2 class="post__label">Date</h2>
                                     </div>
                                 </div>
@@ -67,6 +66,11 @@
                                         <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">
                                             <i class="post__icon fab fa-meetup"></i>
                                         </a>
+                                        {% if page.event_link %}
+                                            <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.event_link }}">
+                                                <i class="post__icon  fas fa-external-link-square-alt"></i>
+                                            </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +86,6 @@
                             <h1 class="post__content-title">Event's sponsors</h1>
                         </div>
                     </div>
-
                     {% for sponsor in page.sponsors %}
                         {% assign sponsor_obj = site.sponsors | where:"sponsor_id", sponsor | first %}
                          <div class="row flex-nowrap">
@@ -91,7 +94,9 @@
                                     <div class="post__logo-col col-sm-3 col-12">
                                         <h3 class="post__sponsor-name">{{ sponsor_obj.sponsor_name }}</h3>
                                             <a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.sponsor_link }}">
-                                                <img class="post__sponsor-img" src="{{ site.baseurl }}/{{ sponsor_obj.sponsor_logo }}">
+                                                <img class="post__sponsor-img"
+                                                     src="{{ site.baseurl }}/{{ sponsor_obj.sponsor_logo }}"
+                                                     alt="Sponsor logo">
                                             </a>
                                     </div >
                                     <div class="post__sponsor-info-col col-12 col-sm-auto col-xl-7 ">

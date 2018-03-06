@@ -11,7 +11,7 @@ A Python docstring is a string used to document a Python function or method,
 so programmers can understand what it does without having to read the details
 of the implementation.
 
-Also, it is a commonn practice to generate online (html) documentation
+Also, it is a common practice to generate online (html) documentation
 automatically from docstrings. `Sphinx <http://www.sphinx-doc.org>`_ serves
 this purpose.
 
@@ -280,8 +280,8 @@ all cpus).".
             specified kind.
 
             Note the blank line between the parameters title and the first
-            parameter. Also, not that after the name of the parameter `kind`
-            and before the colo, a space is missing.
+            parameter. Also, note that after the name of the parameter `kind`
+            and before the colon, a space is missing.
 
             Also, note that the parameter descriptions do not start with a
             capital letter, and do not finish with a dot.
@@ -386,7 +386,7 @@ For example, with a single value:
     def sample():
         """Generate and return a random number.
 
-        The value is sampled from a continuos uniform distribution between
+        The value is sampled from a continuous uniform distribution between
         0 and 1.
 
         Returns
@@ -425,7 +425,7 @@ If the method yields its value:
     def sample_values():
         """Generate an infinite sequence of random numbers.
 
-        The values are sampled from a continuos uniform distribution between
+        The values are sampled from a continuous uniform distribution between
         0 and 1.
 
         Yields
@@ -487,7 +487,7 @@ the one referencing. The description must also finish with a dot.
 Note that in "Returns" and "Yields", the description is located in the
 following line than the type. But in this section it is located in the same
 line, with a colon in between. If the description does not fit in the same
-line, it can continue in the next ones, but it has to be indenteted in them.
+line, it can continue in the next ones, but it has to be indented in them.
 
 For example:
 

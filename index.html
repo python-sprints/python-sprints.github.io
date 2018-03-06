@@ -17,17 +17,19 @@ layout: default
                         static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
                         static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
                         static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
-                        static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
-                        "
+                        static/images/title_photo/title_glass_building_1442x2562.jpg 1442w"
                 media="(orientation: portrait)"
                 sizes="100vw">
-        <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg" alt="Python Sprints Title Image">
+        <img class="responsive"
+             src="static/images/title_photo/title_glass_building_960x540.jpg"
+             alt="Python Sprints Title Image"
+             data-overlay="linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%)">
     </picture>
 
     <div class="row">
         <div class="col-md-12">
             <h1 class="navigation__title">Python Sprints</h1>
-            <h2 class="navigation__subtitle"><em>The World Is Waiting For Your Code</em></h2>
+            <h2 class="navigation__subtitle"><em>The World Needs Your Code</em></h2>
         </div>
     </div>
 </div>
@@ -51,13 +53,17 @@ layout: default
     <section class="upcoming">
         <div class="row container-fluid">
             <hr class="upcoming-divider">
-            <div class="upcoming__img-container col-md-12">
+            <div class="upcoming__img-container col-md-12 no-padding-x">
                 <div class="row">
-                    <div class="upcoming__col col-md-5 col-12">
-                        <h2 class="upcoming-title">Upcoming Event</h2>
+                    <div class="col-12 no-padding-x">
+                        <h2 class="upcoming__title">Upcoming Event</h2>
+                    </div>
+                </div>
+                <div class="upcoming__content row with-padding-x">
+                    <div class="upcoming__col col-md-5 col-12 mr-auto">
                         <div class="row">
-                            <div class="no-gutters__col col-3">
-                                <h2 class="post__label">Event</h2>
+                            <div class="no-gutters__col col-6">
+                                <h2 class="upcoming__event-label">Event</h2>
                             </div>
                         </div>
                         <div class="row">
@@ -65,10 +71,9 @@ layout: default
                                 {{ post.title }}
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="no-gutters__col col-3">
-                                <h2 class="post__label">Venue</h2>
+                            <div class="no-gutters__col col-6">
+                                <h2 class="upcoming__event-label">Venue</h2>
                             </div>
                         </div>
                         <div class="row">
@@ -76,10 +81,9 @@ layout: default
                                 {{ post.venue }}
                             </div>
                         </div>
-
                         <div class="row">
-                            <div class="no-gutters__col col-3">
-                                <h2 class="post__label">Date</h2>
+                            <div class="no-gutters__col col-6">
+                                <h2 class="upcoming__event-label">Date</h2>
                             </div>
                         </div>
                         <div class="row">
@@ -87,17 +91,63 @@ layout: default
                                 {{ post.date | date: "%e %B %Y" }}
                             </div>
                         </div>
+                        {% if post.project_logo %}
+                            <div class="row">
+                                <div class="no-gutters__col col-6">
+                                    <h2 class="upcoming__event-label">Project</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="upcoming__event-title col-12 text-center">
+                                    <a href="{{ post.project_link }}">
+                                        <img class="upcoming__project-logo"
+                                             src="{{ site.baseurl }}/{{ post.project_logo }}"
+                                             alt="Upcoming project logo">
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
-                    <div class="upcoming__logo-col col-auto text-center">
-                        <a href="http://pandas.pydata.org/index.html">
-                            <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ post.project_logo }}">
-                        </a>
+                    <div class="upcoming__col col-md-5 text-center">
+
+                         <div class="row">
+                            <div class="no-gutters__col col-6">
+                                <h2 class="upcoming__event-label">Sponsors</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="upcoming__sponsor-col col-12">
+                                {% assign site_sponsors_all = "" | split: ',' %}
+                                {% for sponsor in site.sponsors %}
+                                    {% assign site_sponsors_all = site_sponsors_all | push: sponsor %}
+                                {% endfor %}
+                                <!--Build an array of sponsors for the event.-->
+                                {% assign event_sponsors = "" | split: ',' %}
+                                {% for sponsor in post.sponsors %}
+                                    {% for site_sponsor in site_sponsors_all %}
+                                        {% if site_sponsor.sponsor_id == sponsor %}
+                                            {% assign event_sponsors = event_sponsors | push: site_sponsor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                                {%
+                                    include row_display_outer_loop.html
+                                    items_array = event_sponsors
+                                    inner_layout = "sponsors_inner_layout.html"
+                                %}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="upcoming__button-row row">
                     <div class="col-md-12 text-center">
-                        <a class="upcoming__link" href="{{ post.event_link }}">
-                            <button class="upcoming__button btn btn-outline-primary btn-lg">
+                        {% if post.event_link %}
+                            {% assign upcoming_event_link = post.event_link %}
+                        {% else %}
+                            {% assign upcoming_event_link = post.meetup_link %}
+                        {% endif %}
+                        <a class="upcoming__link" href="{{ upcoming_event_link }}">
+                            <button class="button-standard btn btn-lg">
                                 Learn More
                             </button>
                         </a>
@@ -109,21 +159,23 @@ layout: default
 {% endif %}
 
 <!--Events in the past section-->
-{% include event.html %}
+{% include recent_events_section.html %}
 
 <!--Services section-->
 <section class="services">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="section-title">What Do We Do?</h2>
+                <h2 class="services__section-title">What Do We Do?</h2>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="second-on-mobile no-gutters__col col-md-6">
-            <img class="services__img img-fluid rounded" src="static/images/services/educating_devs_840x561px.jpg">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/services/educating_devs_840x561px.jpg"
+                 alt="Educating developers">
         </div>
         <div class="first-on-mobile no-gutters__col col-md-6">
             <h2 class="services__title text-right">Helping Beginners To Get Good</h2>
@@ -139,7 +191,9 @@ layout: default
             <p class="services__content text-left">For those of you who are programming on the advanced level there are always new tasks to test your mettle. We fix bugs, we improve implementations and add features. No matter your style you will be able to find a ticket to your liking. The sprints are always advertised well ahead of the time so you can prepare yourself by checking on the issues that will be worked on early enough.</p>
         </div>
         <div class="no-gutters__col col-md-6">
-            <img class="services__img img-fluid rounded" src="static/images/services/advanced_lvl_840x560px.jpg">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/services/advanced_lvl_840x560px.jpg"
+                 alt="Core developers in action">
         </div>
     </div>
 </section>
