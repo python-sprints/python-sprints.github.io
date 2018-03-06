@@ -40,9 +40,8 @@ To get the latest development version:
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
 
 .. note::
-    For **Window Users**: download git for Windows <https://gitforwindows.org/>
-    and run Git Bash in the directory where you want the copy of pandas source
-    code with the following commends.
+    **Window Users**: run the next commands in a Git Bash session in the directory where you want
+    to download pandas source code (download git for Windows <https://gitforwindows.org/> if needed).
 
 * In the terminal of your computer, in the directory where you want the copy of pandas source code, run:
 
@@ -60,14 +59,11 @@ repository:
 3. Set up a Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3.a Python environment with Anaconda
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 * Download and install `Anaconda <https://www.anaconda.com/download/>`
 
 .. note::
-    For **Window users**, go to the start menu, find Anaconda Prompt inside the Anaconda floder
-    and run the above commends in Anaconda Prompt
+    **Window users**: run the next commands in the Anaconda Prompt (found in the Anaconda
+    folder of the Start menu.
 
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
     * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
@@ -79,12 +75,6 @@ repository:
 * Install pandas development dependencies:
     ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
 
-
-3.b Python environment with virtualenv and pip
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-TODO
-
 4. Compile C code in pandas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -92,15 +82,15 @@ Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
 .. note::
-    For **Window Users**, you'll need to install the compiler toolset:
+    **Window Users**: you need to install the compiler toolset:
     
     For Python 3.6 - Install Visual Studio 2017, select the Python development workload
-    and the Native development tools option <https://www.visualstudio.com/>
+    and the Native development tools option <https://www.visualstudio.com/>.
     
     For Python 2.7 - Microsoft Visual C++ Compiler for Python 2.7
-    <https://www.microsoft.com/download/details.aspx?id=44266>
+    <https://www.microsoft.com/download/details.aspx?id=44266>.
     
-    After the installation, run the following commends in Anaconda Prompt
+    After the installation, run the following commands in Anaconda Prompt.
 
 To compile these files simply run:
     | ``cd <pandas-dir>``
@@ -117,7 +107,8 @@ changes. This will be useful when you have finished your changes, and you want
 to submit a pull request, so they are included in pandas.
 
 .. note::
-   For **Window users** run above commends with Git Bash at the cloned pandas floder
+   **Window users**: run the next commands with Git Bash started at the cloned
+   pandas folder
 
 You can create a git branch running:
     | ``git checkout -b <new_branch_name>``

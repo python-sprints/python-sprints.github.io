@@ -72,13 +72,21 @@ and provide your personal information (name, email…). Select the free plan.</p
 version of pandas. Do not make them to a version downloaded from the Internet
 via pip, conda or a zip.</p>
 <p>To get the latest development version:
-* Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas repository</a> on GitHub by click on the top-right <cite>Fork</cite> button
-* In the terminal of your computer, in the directory where you want the copy of pandas source code, run:</p>
+* Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas repository</a> on GitHub by click on the top-right <cite>Fork</cite> button</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Window Users</strong>: run the next commands in a Git Bash session in the directory where you want
+to download pandas source code (download git for Windows &lt;<a class="reference external" href="https://gitforwindows.org/">https://gitforwindows.org/</a>&gt; if needed).</p>
+</div>
+<ul>
+<li><p class="first">In the terminal of your computer, in the directory where you want the copy of pandas source code, run:</p>
 <blockquote>
 <div><div class="line-block">
 <div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></div>
 </div>
 </div></blockquote>
+</li>
+</ul>
 <p>This will create a directory named <cite>pandas</cite>, containing the latest version of
 the source code. We will name this directory <cite>&lt;pandas-dir&gt;</cite> in the rest of
 this document.</p>
@@ -92,10 +100,15 @@ repository:</p>
 </div>
 <div class="section" id="set-up-a-python-environment">
 <h3>3. Set up a Python environment<a class="headerlink" href="#set-up-a-python-environment" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="a-python-environment-with-anaconda">
-<h4>3.a Python environment with Anaconda<a class="headerlink" href="#a-python-environment-with-anaconda" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
-<li>Download and install <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a></li>
+<li>Download and install <cite>Anaconda &lt;https://www.anaconda.com/download/&gt;</cite></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Window users</strong>: run the next commands in the Anaconda Prompt (found in the Anaconda
+folder of the Start menu.</p>
+</div>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
 <dd><ul class="first last">
@@ -122,15 +135,19 @@ repository:</p>
 </li>
 </ul>
 </div>
-<div class="section" id="b-python-environment-with-virtualenv-and-pip">
-<h4>3.b Python environment with virtualenv and pip<a class="headerlink" href="#b-python-environment-with-virtualenv-and-pip" title="Permalink to this headline">¶</a></h4>
-<p>TODO</p>
-</div>
-</div>
 <div class="section" id="compile-c-code-in-pandas">
 <h3>4. Compile C code in pandas<a class="headerlink" href="#compile-c-code-in-pandas" title="Permalink to this headline">¶</a></h3>
 <p>Besides the Python <cite>.py</cite> files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Window Users</strong>: you need to install the compiler toolset:</p>
+<p>For Python 3.6 - Install Visual Studio 2017, select the Python development workload
+and the Native development tools option &lt;<a class="reference external" href="https://www.visualstudio.com/">https://www.visualstudio.com/</a>&gt;.</p>
+<p>For Python 2.7 - Microsoft Visual C++ Compiler for Python 2.7
+&lt;<a class="reference external" href="https://www.microsoft.com/download/details.aspx?id=44266">https://www.microsoft.com/download/details.aspx?id=44266</a>&gt;.</p>
+<p class="last">After the installation, run the following commands in Anaconda Prompt.</p>
+</div>
 <dl class="docutils">
 <dt>To compile these files simply run:</dt>
 <dd><div class="first last line-block">
@@ -147,6 +164,11 @@ which need to be compiled in order to run the development version of pandas.</p>
 to work on. Once you know which, you need to create a git branch for your
 changes. This will be useful when you have finished your changes, and you want
 to submit a pull request, so they are included in pandas.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Window users</strong>: run the next commands with Git Bash started at the cloned
+pandas folder</p>
+</div>
 <dl class="docutils">
 <dt>You can create a git branch running:</dt>
 <dd><div class="first last line-block">
@@ -190,11 +212,7 @@ branch for each.</p>
 <li><a class="reference internal" href="#instructions">Instructions</a><ul>
 <li><a class="reference internal" href="#create-a-github-account">1. Create a GitHub account</a></li>
 <li><a class="reference internal" href="#get-the-pandas-source-code">2. Get the pandas source code</a></li>
-<li><a class="reference internal" href="#set-up-a-python-environment">3. Set up a Python environment</a><ul>
-<li><a class="reference internal" href="#a-python-environment-with-anaconda">3.a Python environment with Anaconda</a></li>
-<li><a class="reference internal" href="#b-python-environment-with-virtualenv-and-pip">3.b Python environment with virtualenv and pip</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#set-up-a-python-environment">3. Set up a Python environment</a></li>
 <li><a class="reference internal" href="#compile-c-code-in-pandas">4. Compile C code in pandas</a></li>
 <li><a class="reference internal" href="#create-a-branch-and-start-coding">5. Create a branch and start coding</a></li>
 </ul>
@@ -236,7 +254,7 @@ branch for each.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
