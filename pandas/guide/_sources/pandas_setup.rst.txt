@@ -41,7 +41,7 @@ To get the latest development version:
 
 .. note::
     **Window Users**: run the next commands in a Git Bash session in the directory where you want
-    to download pandas source code (download git for Windows <https://gitforwindows.org/> if needed).
+    to download pandas source code (download `Git for Windows <https://gitforwindows.org/>`_ if needed).
 
 * In the terminal of your computer, in the directory where you want the copy of pandas source code, run:
 
@@ -82,13 +82,10 @@ Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
 .. note::
-    **Window Users**: you need to install the compiler toolset:
-    
-    For Python 3.6 - Install Visual Studio 2017, select the Python development workload
-    and the Native development tools option <https://www.visualstudio.com/>.
-    
-    For Python 2.7 - Microsoft Visual C++ Compiler for Python 2.7
-    <https://www.microsoft.com/download/details.aspx?id=44266>.
+    **Window Users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_.
+    Select the Python development workload and the Native development tools option.
+
+    (Users of legacy Python 2.7 should install `Microsoft Visual C++ Compiler for Python 2.7 <https://www.microsoft.com/download/details.aspx?id=44266>`_ instead).
     
     After the installation, run the following commands in Anaconda Prompt.
 
@@ -108,7 +105,7 @@ to submit a pull request, so they are included in pandas.
 
 .. note::
    **Window users**: run the next commands with Git Bash started at the cloned
-   pandas folder
+   pandas folder.
 
 You can create a git branch running:
     | ``git checkout -b <new_branch_name>``
