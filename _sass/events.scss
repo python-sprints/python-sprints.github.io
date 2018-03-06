@@ -16,10 +16,12 @@
 
 .events-page__upcoming-section-title {
   @extend .section-title;
+  margin-top: 10%;
 }
 
 .events-page__recent-section-title {
   @extend .section-title;
+  margin-top: 10%;
 }
 
 @media (min-width: 768px) {
@@ -29,8 +31,8 @@
 }
 
 .events-page__event-container {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .events-page__img-container {
