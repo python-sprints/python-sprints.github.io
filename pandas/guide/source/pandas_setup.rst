@@ -38,6 +38,12 @@ via pip, conda or a zip.
 
 To get the latest development version:
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
+
+.. note::
+    For **Window Users**: download git for Windows <https://gitforwindows.org/>
+    and run Git Bash in the directory where you want the copy of pandas source
+    code with the following commends.
+
 * In the terminal of your computer, in the directory where you want the copy of pandas source code, run:
 
     | ``git clone https://github.com/<your-github-username>/pandas``
@@ -57,7 +63,12 @@ repository:
 3.a Python environment with Anaconda
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Download and install `Anaconda <https://www.anaconda.com/download/>`_
+* Download and install `Anaconda <https://www.anaconda.com/download/>`
+
+.. note::
+    For **Window users**, go to the start menu, find Anaconda Prompt inside the Anaconda floder
+    and run the above commends in Anaconda Prompt
+
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
     * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
     * Otherwise, run ``export PATH="<path-to-anaconda>/bin:$PATH"`` in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.
@@ -67,6 +78,7 @@ repository:
     ``source activate pandas_dev``    
 * Install pandas development dependencies:
     ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
+
 
 3.b Python environment with virtualenv and pip
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,6 +90,17 @@ TODO
 
 Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
+
+.. note::
+    For **Window Users**, you'll need to install the compiler toolset:
+    
+    For Python 3.6 - Install Visual Studio 2017, select the Python development workload
+    and the Native development tools option <https://www.visualstudio.com/>
+    
+    For Python 2.7 - Microsoft Visual C++ Compiler for Python 2.7
+    <https://www.microsoft.com/download/details.aspx?id=44266>
+    
+    After the installation, run the following commends in Anaconda Prompt
 
 To compile these files simply run:
     | ``cd <pandas-dir>``
@@ -92,6 +115,9 @@ On the day of the sprint, you will get assigned one pandas function or method
 to work on. Once you know which, you need to create a git branch for your
 changes. This will be useful when you have finished your changes, and you want
 to submit a pull request, so they are included in pandas.
+
+.. note::
+   For **Window users** run above commends with Git Bash at the cloned pandas floder
 
 You can create a git branch running:
     | ``git checkout -b <new_branch_name>``
