@@ -1,15 +1,22 @@
+{% comment %}
+Please note that css will not accept an id starting with a number which is
+what post.id starts with (date) or containing "."
+I also remove "/" to make the id more readable.
+{% endcomment %}
+
+{% assign post_id = include.post.id | remove: "/" | remove: "." | prepend: "_" %}
+{% assign post_id_selector = post_id | prepend: "#" %}
 {% if include.post.image %}
     {% assign image = include.post.image %}
 {% else %}
-    {% assign image = "{{ site.baseurl }}/static/images/events/default_image_800x800px.jpeg" %}
+    {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
 {% endif %}
 <style>
-    .events-page__img-container {
+    {{ post_id_selector }} {
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{{ site.baseurl }}/{{ image }}");
       }
-
     @media (min-width: 769px) {
-        .events-page__img-container {
+        {{ post_id_selector }} {
             background-image: linear-gradient(75deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.6) 80%, black 87%, black 100%), url("{{ site.baseurl }}/{{ image }}");
         }
     }
@@ -17,7 +24,7 @@
 <div class="row">
     <div class="no-gutters__col col-md-12 container-fluid">
         <div class="events-page__event-container row">
-            <div class="events-page__img-container col-md-7 col-sm-12">
+            <div id="{{ post_id }}" class="events-page__img-container col-md-7 col-sm-12">
                 <h1 class="post__title">{{ include.post.project }}</h1>
                 <h2 class="post__subtitle"><em>{{ include.post.project_description }}</em></h2>
             </div>
@@ -55,13 +62,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="post__button-col col-12">
-                        <a class="post__button btn btn-primary btn-lg text-center" href="{{ include.post.meetup_link }}">
-                            <i class="post__icon fab fa-meetup"></i>
-                        </a>
-                        <a class="post__button btn btn-primary btn-lg text-center" href="{{ include.post.url }}">
-                            <i class="post__icon fas fa-info-circle"></i>
-                        </a>
+                    <div class="events-page__button-col col-12 no-padding-x">
+                        <div class="row">
+                            <div class="col-lg-6 text-center">
+                                <a class="post__button btn btn-primary btn-lg text-center" href="{{ include.post.meetup_link }}">
+                                    <i class="post__icon fab fa-meetup"></i>
+                                 </a>
+                            </div>
+                            <div class="col-lg-6 text-center">
+                                <a class="post__button btn btn-primary btn-lg text-center" href="{{ include.post.url }}">
+                                    <i class="post__icon fas fa-info-circle"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

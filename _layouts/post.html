@@ -61,18 +61,54 @@
                                         {{ page.date | date: "%e %B %Y" }}
                                     </div>
                                 </div>
+
                                 <div class="row">
-                                    <div class="post__button-col col-12">
-                                        <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">
-                                            <i class="post__icon fab fa-meetup"></i>
-                                        </a>
-                                        {% if page.event_link %}
-                                            <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.event_link }}">
-                                                <i class="post__icon  fas fa-external-link-square-alt"></i>
-                                            </a>
-                                        {% endif %}
+                                    <div class="post__button-col col-12 no-padding-x">
+                                        <div class="row">
+                                            {% if page.event_link %}
+                                                {% assign meetup_col_class = "col-lg-6" %}
+                                                {% assign meetup_button_class = "post__button" %}
+                                            {% else %}
+                                                {% assign meetup_col_class = "col-12" %}
+                                                {% assign meetup_button_class = "post__button-solo" %}
+                                            {% endif %}
+                                            <div class="{{ meetup_col_class }} text-center">
+                                                <a class="{{ meetup_button_class }} btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">
+                                                    <i class="post__icon fab fa-meetup"></i>
+                                                 </a>
+                                            </div>
+                                            {% if page.event_link %}
+                                                <div class="col-lg-6 text-center">
+                                                    <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.event_link }}">
+                                                        <i class="post__icon fas fa-external-link-square-alt"></i>
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </div>
+
+
+
+                                <!--<div class="row">-->
+                                    <!--<div class="post__button-col col-12">-->
+                                        <!--<a class="post__button btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">-->
+                                            <!--<i class="post__icon fab fa-meetup"></i>-->
+                                        <!--</a>-->
+                                        <!--{% if page.event_link %}-->
+                                            <!--<a class="post__button btn btn-primary btn-lg text-center" href="{{ page.event_link }}">-->
+                                                <!--<i class="post__icon  fas fa-external-link-square-alt"></i>-->
+                                            <!--</a>-->
+                                        <!--{% endif %}-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>

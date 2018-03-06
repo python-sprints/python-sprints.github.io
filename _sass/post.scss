@@ -11,7 +11,7 @@
 .post__title {
   @extend .title-light;
   word-break: break-all;
-  padding-top: 20vh;
+  padding-top: 15vh;
   text-align: center;
   font-size: 3em;
   }
@@ -38,18 +38,25 @@
   }
 
 .post__button-col {
-  margin-top: 4%;
-  margin-bottom: 2%;
+  margin-bottom: 1em;
   text-align: center;
 }
 
 .post__button {
   @extend .button-standard;
-  min-width: 40%;
-  font-size: 1.25em;
-  //margin-top: 0.5em;
-  //margin-bottom: 1em;
-  margin: 0.5em 0.5em 1em 0.5em;
+  min-width: 75%;
+  font-size: 1.5em;
+  margin: 1em auto 0 auto;
+  &:hover > .post__icon {
+    color: $button-text-hover;
+  }
+}
+
+.post__button-solo {
+  @extend .button-standard;
+  min-width: 50%;
+  font-size: 1.5em;
+  margin: 1em auto 0 auto;
   &:hover > .post__icon {
     color: $button-text-hover;
   }
@@ -58,10 +65,20 @@
 .post__icon {
   text-align: center;
   color: $button-text;
-  font-size: 1.25em;
+  font-size: 1.5em;
   transition: all 0.5s ease-in;
   min-width: 100%;
   min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  .post__button {
+    font-size: 1.25em;
+    min-width: 100%;
+  }
+  .post__icon {
+    font-size: 1.25em;
+  }
 }
 
 .post__content {
