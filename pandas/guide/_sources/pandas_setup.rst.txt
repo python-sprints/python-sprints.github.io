@@ -40,7 +40,7 @@ To get the latest development version:
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
 
 .. note::
-    **Window Users**: run the next commands in a Git Bash session in the directory where you want
+    **Windows users**: run the next commands in a Git Bash session in the directory where you want
     to download pandas source code (download `Git for Windows <https://gitforwindows.org/>`_ if needed).
 
 * In the terminal of your computer, in the directory where you want the copy of pandas source code, run:
@@ -62,7 +62,7 @@ repository:
 * Download and install `Anaconda <https://www.anaconda.com/download/>`
 
 .. note::
-    **Window users**: run the next commands in the Anaconda Prompt (found in the Anaconda
+    **Windows users**: run the next commands in the Anaconda Prompt (found in the Anaconda
     folder of the Start menu.
 
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
@@ -82,7 +82,7 @@ Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
 .. note::
-    **Window Users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_.
+    **Windows users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_.
     Select the Python development workload and the Native development tools option.
 
     (Users of legacy Python 2.7 should install `Microsoft Visual C++ Compiler for Python 2.7 <https://www.microsoft.com/download/details.aspx?id=44266>`_ instead).
@@ -104,7 +104,7 @@ changes. This will be useful when you have finished your changes, and you want
 to submit a pull request, so they are included in pandas.
 
 .. note::
-   **Window users**: run the next commands with Git Bash started at the cloned
+   **Windows users**: run the next commands with Git Bash started at the cloned
    pandas folder.
 
 You can create a git branch running:
