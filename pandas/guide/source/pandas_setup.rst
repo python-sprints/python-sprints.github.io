@@ -40,7 +40,7 @@ To get the latest development version:
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
 
 .. note::
-    For Window Users: download git for Windows <https://gitforwindows.org/>
+    For **Window Users**: download git for Windows <https://gitforwindows.org/>
     and run Git Bash in the directory where you want the copy of pandas source
     code with the following commends.
 
@@ -66,7 +66,7 @@ repository:
 * Download and install `Anaconda <https://www.anaconda.com/download/>`
 
 .. note::
-    For Window users, go to the start menu, find Anaconda Prompt inside the Anaconda floder
+    For **Window users**, go to the start menu, find Anaconda Prompt inside the Anaconda floder
     and run the above commends in Anaconda Prompt
 
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
@@ -92,21 +92,21 @@ Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
 .. note::
-    For Window Users, you'll need to install the compiler toolset:
+    For **Window Users**, you'll need to install the compiler toolset:
     
-    for Python 3.6 - Install Visual Studio 2017, select the Python development workload
+    For Python 3.6 - Install Visual Studio 2017, select the Python development workload
     and the Native development tools option <https://www.visualstudio.com/>
     
-    for Python 2.7 - Microsoft Visual C++ Compiler for Python 2.7
+    For Python 2.7 - Microsoft Visual C++ Compiler for Python 2.7
     <https://www.microsoft.com/download/details.aspx?id=44266>
+    
+    After the installation, run the following commends in Anaconda Prompt
 
 To compile these files simply run:
     | ``cd <pandas-dir>``
     | ``python setup.py build_ext --inplace``
 
 The process will take several minutes.
-
-(For Window users: run the above commends in Anaconda Prompt)
 
 5. Create a branch and start coding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +117,7 @@ changes. This will be useful when you have finished your changes, and you want
 to submit a pull request, so they are included in pandas.
 
 .. note::
-   for Window users run above comments with Git Bash at the colned pandas floder
+   For **Window users** run above commends with Git Bash at the cloned pandas floder
 
 You can create a git branch running:
     | ``git checkout -b <new_branch_name>``
