@@ -22,28 +22,35 @@
   @extend .section-title;
 }
 
-.events-page__outer-container {
-  max-width: 80vw;
+@media (min-width: 768px) {
+  .events-page__outer-container {
+    max-width: 80vw;
+  }
 }
 
 .events-page__event-container {
-  background: $event-background;
-  min-height: 30vh;
   margin-top: 2.5%;
   margin-bottom: 2.5%;
-  border-radius: 5px;
 }
 
-.events-page__event-img {
-  float: left;
-  max-width: 30%;
-  padding: 1%;
-
+.events-page__img-container {
+  @extend .post__img-container;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-.events-page__event-title {
-  @extend .title-light;
-  font-size: 1.5em;
-  padding: 1%;
-
+.events-page__event-col {
+  @extend .post__event-col;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
+
+@media (min-width: 768px) {
+  .events-page__img-container {
+    border-radius: 5px 0 0 5px;
+  }
+  .events-page__event-col {
+    border-radius: 0 5px 5px 0;
+  }
+}
+

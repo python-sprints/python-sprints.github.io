@@ -5,12 +5,13 @@
 .post__img-container {
   background-size: cover;
   background-position: center center;
-  height: 65vh;
+  min-height: 100%;
   }
 
 .post__title {
   @extend .title-light;
-  padding-top: 25vh;
+  word-break: break-all;
+  padding-top: 20vh;
   text-align: center;
   font-size: 3em;
   }
@@ -44,10 +45,11 @@
 
 .post__button {
   @extend .button-standard;
-  min-width: 50%;
+  min-width: 40%;
   font-size: 1.25em;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
+  //margin-top: 0.5em;
+  //margin-bottom: 1em;
+  margin: 0.5em 0.5em 1em 0.5em;
   &:hover > .post__icon {
     color: $button-text-hover;
   }
@@ -56,7 +58,7 @@
 .post__icon {
   text-align: center;
   color: $button-text;
-  font-size: 1.5em;
+  font-size: 1.25em;
   transition: all 0.5s ease-in;
   min-width: 100%;
   min-height: 100%;
