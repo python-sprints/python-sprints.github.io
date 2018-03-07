@@ -1,0 +1,24 @@
+.about__page-title {
+  @extend .page__title;
+  margin-top: 15vh;
+}
+
+.about__page-subtitle {
+  @extend .page__subtitle;
+}
+
+.about__container {
+  max-width: 80%;
+}
+
+.about__title {
+  @extend .title-dark;
+  margin-top: 5%;
+  font-size: 1.65em;
+}
+
+.about__paragraph-dark {
+  @extend .paragraph-dark;
+  padding-left: 0;
+  padding-right: 0;
+}

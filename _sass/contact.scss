@@ -15,11 +15,12 @@
 }
 
 .contact__page-title {
-  @extend .page-title-light;
+  @extend .page__title;
+  margin-top: 15vh;
 }
 
 .contact__page-subtitle {
-  @extend .page-subtitle;
+  @extend .page__subtitle;
 }
 
 @media (max-width: 576px) {

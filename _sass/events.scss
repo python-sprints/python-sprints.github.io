@@ -7,11 +7,12 @@
 }
 
 .events-page__page-title {
-  @extend .page-title-light;
+  @extend .page__title;
+  margin-top: 15vh;
 }
 
 .events-page__page-subtitle {
-  @extend .page-subtitle
+  @extend .page__subtitle
 }
 
 .events-page__upcoming-section-title {
