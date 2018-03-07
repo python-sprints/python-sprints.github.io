@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Before the sprint: Set up instructions &#8212; Python  documentation</title>
+    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -28,11 +31,10 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body>
+  <body role="document">
   
 
     <div class="document">
@@ -46,7 +48,7 @@
 <p>You need the next software installed:</p>
 <ul class="simple">
 <li>Git</li>
-<li>An editor (vim, emacs, PyCharm,…). Make sure the editor is set up to use 4 spaces for tabs.</li>
+<li>An editor (vim, emacs, PyCharm,...). Make sure the editor is set up to use 4 spaces for tabs.</li>
 </ul>
 <p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/contributing.html">pandas contributing guide</a>
 contains detailed instructions on how to set up a pandas development environment.
@@ -55,7 +57,7 @@ the sprint.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Next steps will download from the Internet around 900Mb for the pandas
-repository, and around 600Mb for Anaconda. If you don’t have access to
+repository, and around 600Mb for Anaconda. If you don&#8217;t have access to
 a fast Internet connection, contact your local chapter organizer, who will
 try to get a copy of both in a usb key.</p>
 </div>
@@ -63,8 +65,8 @@ try to get a copy of both in a usb key.</p>
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="create-a-github-account">
 <h3>1. Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h3>
-<p>If you don’t have a GitHub account yet, simply go to <a class="reference external" href="https://github.com/join">https://github.com/join</a>,
-and provide your personal information (name, email…). Select the free plan.</p>
+<p>If you don&#8217;t have a GitHub account yet, simply go to <a class="reference external" href="https://github.com/join">https://github.com/join</a>,
+and provide your personal information (name, email...). Select the free plan.</p>
 </div>
 <div class="section" id="get-the-pandas-source-code">
 <h3>2. Get the pandas source code<a class="headerlink" href="#get-the-pandas-source-code" title="Permalink to this headline">¶</a></h3>
@@ -108,10 +110,10 @@ repository:</p>
 <p class="last"><strong>Windows users</strong>: run the next commands in the Anaconda Prompt (found in the Anaconda
 folder of the Start menu.</p>
 </div>
-<ul class="simple">
+<ul>
 <li><dl class="first docutils">
-<dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
-<dd><ul class="first last">
+<dt>Activate conda by one of the next (or equivalent, if you know what you&#8217;re doing):</dt>
+<dd><ul class="first last simple">
 <li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
 <li>Otherwise, run <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
 </ul>
@@ -120,17 +122,20 @@ folder of the Start menu.</p>
 </li>
 <li><dl class="first docutils">
 <dt>Create a conda environment:</dt>
-<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></dd>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></p>
+</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Activate the new conda environment:</dt>
-<dd><code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></dd>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></p>
+</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Install pandas development dependencies:</dt>
-<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></dd>
+<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></p>
+</dd>
 </dl>
 </li>
 </ul>
@@ -252,8 +257,8 @@ branch for each.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
       <a href="_sources/pandas_setup.rst.txt"

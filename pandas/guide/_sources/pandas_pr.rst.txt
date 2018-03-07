@@ -51,7 +51,7 @@ To build the documentation run:
 where `<your-function-or-method>` follows the format described in the previous
 section.
 
-This will generate a file `<pandas-dir>/doc/build/html/generated/<your-function-or-method>.html`
+This will generate a file `<pandas-dir>/doc/build/html/generated_single/<your-function-or-method>.html`
 that can be opened with your web browser.
 
 3. Validate that the docstring is clear to others
