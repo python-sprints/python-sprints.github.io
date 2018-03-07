@@ -91,7 +91,7 @@ Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
 .. note::
-    **Windows users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_.
+    **Windows users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_. You need the Community edition as a minimum. Visual Studio Code does not support the required Build Tools and will not work.
     Select the Python development workload and the Native development tools option.
 
     (Users of legacy Python 2.7 should install `Microsoft Visual C++ Compiler for Python 2.7 <https://www.microsoft.com/download/details.aspx?id=44266>`_ instead).
