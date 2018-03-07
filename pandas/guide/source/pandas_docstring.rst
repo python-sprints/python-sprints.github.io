@@ -278,7 +278,7 @@ is provided. In this case we will use `str, optional`.
             ----------
             kind : str
                 Kind of matplotlib plot.
-            color : str (default 'blue')
+            color : str, default 'blue'
                 Color name or rgb code.
             **kwargs
                 These parameters will be passed to the matplotlib plotting
