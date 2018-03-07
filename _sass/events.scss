@@ -6,12 +6,16 @@
   @extend .contact__background-img
 }
 
+.events-page__title-container {
+  @extend .page__title-container;
+}
+
 .events-page__page-title {
-  @extend .page-title-light;
+  @extend .page__title;
 }
 
 .events-page__page-subtitle {
-  @extend .page-subtitle
+  @extend .page__subtitle
 }
 
 .events-page__upcoming-section-title {

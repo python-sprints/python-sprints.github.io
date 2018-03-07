@@ -4,5 +4,64 @@ title: About
 permalink: /about/
 ---
 
-<h1>This is the content of the about page</h1>
-<h2>Fill it in !!!!</h2>
+<section class="about">
+    <!--REPLACE THIS IMAGE WITH A NEW ONE - MIX PREVIOUS MEETUPS AND MAKE A COLLAGE -->
+    <div class="about__background-img" data-image-type="responsive">
+        <picture>
+            <source srcset="../static/images/events_page/events_page_top_480x150px.jpg 480w,
+                            ../static/images/events_page/events_page_top_960x300px.jpg 960w,
+                            ../static/images/events_page/events_page_top_1920x600px.jpg 1920w"
+                    media="(orientation: landscape)"
+                    sizes="100vw">
+            <source srcset="../static/images/events_page/events_page_top_750x650px.jpg 750w,
+                            ../static/images/events_page/events_page_top_1650x1100px.jpg 1650w"
+                    media="(orientation: portrait)"
+                    sizes="100vw">
+            <img class="responsive"
+                 src="../static/images/events_page/events_page_top_960x300px.jpg"
+                 alt="Events"
+                 data-overlay="linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%)">
+        </picture>
+        <div class="about__page-title-container row container-fluid">
+            <div class="col-sm-12">
+                <h1 class="about__page-title">About Us</h1>
+                <h2 class="about__page-subtitle">Our Goals, Our Story</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="about__container container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">Python Sprints Decoded</h2>
+                <h2 class="about__title">Why We Work Together?</h2>
+                <p class="about__paragraph-dark">
+                    Python Sprints is a non for profit group of like minded programmers who care about making open source projects better.
+                    We all use them for free but often do not put any thought to how much effort it takes to create and maintain this software. Very often the amount of core developers working on a particular project can be counted on fingers of one hand and yet literally thousands of people use their work.
+                    We believe that we all should share our skills and earn our good karma.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="about__title">How It Started?</h2>
+                <p class="about__paragraph-dark">
+                    Our group was founded in October 2017. As all things in life the beginnings were humble with only a handful of people collaborating but the word quickly spread and now we have above 500 members and counting.
+                </p>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-12">
+                <h2 class="about__title">What Our Meetings Look Like?</h2>
+                <p class="about__paragraph-dark">
+                    Usually there is a subject advertised well ahead of the time with clear setup instructions so that everyone can come prepared.
+                    But you should not worry if setting up is difficult - part of our creed is to help new people get introduced into the world of open source.
+                    Help will be provided even if it is just creating a git repository and learning how to contribute. It is all part of growing our group organically and all people are welcome!
+                    All the coding aside there is always time for joyful banter with pizza and beers to hand.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</section>

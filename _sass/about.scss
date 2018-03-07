@@ -1,0 +1,31 @@
+.about__background-img {
+  @extend .contact__background-img;
+}
+
+.about__page-title-container {
+  @extend .page__title-container
+}
+
+.about__page-title {
+  @extend .page__title;
+}
+
+.about__page-subtitle {
+  @extend .page__subtitle;
+}
+
+.about__container {
+  max-width: 80%;
+}
+
+.about__title {
+  @extend .title-dark;
+  margin-top: 5%;
+  font-size: 1.65em;
+}
+
+.about__paragraph-dark {
+  @extend .paragraph-dark;
+  padding-left: 0;
+  padding-right: 0;
+}

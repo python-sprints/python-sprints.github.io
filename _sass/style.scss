@@ -115,58 +115,26 @@ a {
   background-color: rgba(7, 41, 72, 0.7);
 }
 
-.navigation__title, .navigation__subtitle, .navigation__button-close {
+
+.navigation__title-container {
+  @extend .page__title-container;
+}
+
+.navigation__title {
+  @extend .page__title;
+}
+
+
+.navigation__subtitle {
+  @extend .page__subtitle;
+}
+
+.navigation__button-close {
   user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   -o-user-select: none;
-}
-
-.navigation__title {
-  font-family: 'Share Tech Mono', monospace;
-  color: $page-title;
-  font-size: 3.5em;
-  margin-top: 40vh;
-  text-align: center;
-}
-
-.navigation__subtitle {
-  font-size: 1.75em;
-  font-family: 'Share Tech Mono', monospace;
-  color: $page-subtitle;
-  text-align: center;
-  margin-bottom: 50%;
-}
-
-@media (min-width: 450px) {
-  .navigation__title {
-    font-size: 4.3em;
-    margin-top: 40vh;
-  }
-  .navigation__subtitle {
-    font-size: 1.9em;
-  }
-}
-
-@media (min-width: 650px) {
-  .navigation__title {
-    font-size: 5em;
-    margin-top: 40vh;
-  }
-  .navigation__subtitle {
-    font-size: 2em;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navigation__title {
-    font-size: 6em;
-    margin-top: 40vh;
-  }
-  .navigation__subtitle {
-    font-size: 2.25em;
-  }
 }
 
 .navigation__hamburger-bar {
@@ -294,8 +262,8 @@ a {
 
 .upcoming__title {
   @extend .section-title;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
   font-size: 2.5em;
   color: $title-light;
   margin-top: 0;
@@ -321,6 +289,7 @@ a {
   background: rgba(7, 41, 72, 0.52);
   border: $dark-blue 2px groove;
   border-radius: 0 5px 5px 5px;
+  margin-bottom: 1em;
 }
 
 .upcoming__img-container {
@@ -633,4 +602,9 @@ a {
   width: 30%;
   margin-top: 1%;
   margin-bottom: 3%;
+}
+
+.footer__navigation-list {
+  list-style-type: none;
+  padding-left: 0;
 }
