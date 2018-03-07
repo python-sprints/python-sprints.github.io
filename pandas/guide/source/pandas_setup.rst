@@ -64,7 +64,7 @@ repository:
 3. Set up a Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Download and install `Anaconda <https://www.anaconda.com/download/>`
+* Download and install `Anaconda <https://www.anaconda.com/download/>`_.
 
 .. note::
     **Windows users**: run the next commands in the Anaconda Prompt (found in the Anaconda
@@ -74,11 +74,15 @@ repository:
     * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
     * Otherwise, run ``export PATH="<path-to-anaconda>/bin:$PATH"`` in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.
 * Create a conda environment:
-    ``conda env create -n pandas_dev -f <path-to-pandas>/ci/environment-dev.yaml``
+    ``conda env create -n pandas_dev -f <path-to-pandas-dir>/ci/environment-dev.yaml``
+
+.. note::
+    **Windows users**: If you're copy-pasting the path, replace all pasted ``\`` characters with ``/`` for the command to work.
+
 * Activate the new conda environment:
-    ``source activate pandas_dev``    
+    ``conda activate pandas_dev``    
 * Install pandas development dependencies:
-    ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
+    ``conda install -c defaults -c conda-forge --file=<path-to-pandas-dir>/ci/requirements-optional-conda.txt``
 
 4. Compile C code in pandas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
