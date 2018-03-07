@@ -74,7 +74,11 @@ repository:
     * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
     * Otherwise, run ``export PATH="<path-to-anaconda>/bin:$PATH"`` in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.
 * Create a conda environment:
-    ``conda env create -n pandas_dev -f <path-to-pandas>/ci/environment-dev.yaml``
+    ``conda env create -n pandas_dev -f <path-to-pandas-dir>/ci/environment-dev.yaml``
+
+.. note::
+    **Windows users**: If you're copy-pasting the path, replace all pasted ``\`` characters with ``/`` for the command to work.
+
 * Activate the new conda environment:
     ``conda activate pandas_dev``    
 * Install pandas development dependencies:
