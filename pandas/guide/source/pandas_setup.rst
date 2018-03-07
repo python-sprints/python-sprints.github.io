@@ -76,7 +76,7 @@ repository:
 * Create a conda environment:
     ``conda env create -n pandas_dev -f <path-to-pandas>/ci/environment-dev.yaml``
 * Activate the new conda environment:
-    ``source activate pandas_dev``    
+    ``conda activate pandas_dev``    
 * Install pandas development dependencies:
     ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
 
