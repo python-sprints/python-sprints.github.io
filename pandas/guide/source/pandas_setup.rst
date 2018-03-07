@@ -37,6 +37,7 @@ version of pandas. Do not make them to a version downloaded from the Internet
 via pip, conda or a zip.
 
 To get the latest development version:
+
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
 
 .. note::
@@ -51,6 +52,10 @@ This will create a directory named `pandas`, containing the latest version of
 the source code. We will name this directory `<pandas-dir>` in the rest of
 this document.
 
+Make sure you're in the root of the `<pandas-dir>` directory.
+
+    | ``cd <pandas-dir>``
+
 Then, set the upstream remote, so you can fetch the updates from the pandas
 repository:
 
@@ -63,7 +68,7 @@ repository:
 
 .. note::
     **Windows users**: run the next commands in the Anaconda Prompt (found in the Anaconda
-    folder of the Start menu.
+    folder of the Start menu).
 
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
     * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
