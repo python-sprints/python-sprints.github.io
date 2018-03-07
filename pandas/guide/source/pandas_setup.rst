@@ -64,7 +64,7 @@ repository:
 3. Set up a Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Download and install `Anaconda <https://www.anaconda.com/download/>`
+* Download and install `Anaconda <https://www.anaconda.com/download/>`_.
 
 .. note::
     **Windows users**: run the next commands in the Anaconda Prompt (found in the Anaconda
