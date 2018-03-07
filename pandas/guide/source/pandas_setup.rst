@@ -82,7 +82,7 @@ repository:
 * Activate the new conda environment:
     ``conda activate pandas_dev``    
 * Install pandas development dependencies:
-    ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
+    ``conda install -c defaults -c conda-forge --file=<path-to-pandas-dir>/ci/requirements-optional-conda.txt``
 
 4. Compile C code in pandas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
