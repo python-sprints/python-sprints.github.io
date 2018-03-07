@@ -2,21 +2,16 @@
   margin-top: -66px;
 }
 
-@media (orientation: landscape) {
-  .contact__background-img {
-  min-height: 55vh;
-  }
+.contact__background-img {
+  height: 55vh;
 }
 
-@media (orientation: portrait) {
-  .contact__background-img {
-  min-height: 25vh;
-  }
+.contact__page-title-container {
+  @extend .page__title-container;
 }
 
 .contact__page-title {
   @extend .page__title;
-  margin-top: 15vh;
 }
 
 .contact__page-subtitle {

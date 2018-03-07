@@ -115,15 +115,18 @@ a {
   background-color: rgba(7, 41, 72, 0.7);
 }
 
+
+.navigation__title-container {
+  @extend .page__title-container;
+}
+
 .navigation__title {
   @extend .page__title;
-  margin-top: 40vh;
 }
 
 
 .navigation__subtitle {
   @extend .page__subtitle;
-  margin-bottom: 50%;
 }
 
 .navigation__button-close {
@@ -259,8 +262,8 @@ a {
 
 .upcoming__title {
   @extend .section-title;
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  background: rgba(0, 0, 0, 0.9);
   font-size: 2.5em;
   color: $title-light;
   margin-top: 0;

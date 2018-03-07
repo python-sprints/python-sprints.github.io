@@ -6,9 +6,12 @@
   @extend .contact__background-img
 }
 
+.events-page__title-container {
+  @extend .page__title-container;
+}
+
 .events-page__page-title {
   @extend .page__title;
-  margin-top: 15vh;
 }
 
 .events-page__page-subtitle {

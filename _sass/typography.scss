@@ -35,6 +35,16 @@
 // Text styles below.
 // Page title.
 
+.page__title-container {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
 .page__title, .page__subtitle {
   user-select: none;
   -moz-user-select: none;
