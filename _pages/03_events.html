@@ -22,14 +22,14 @@ permalink: /events/
         <div class="events-page__title-container row container-fluid">
             <div class="col-sm-12">
                 <h1 class="events-page__page-title">Events</h1>
-                <h2 class="events-page__page-subtitle">See What's New And What We Did Already</h2>
+                <h2 class="events-page__page-subtitle">Find Out What We Do</h2>
             </div>
         </div>
     </div>
 
     <div class="events-page__outer-container container-fluid">
         <div class="row">
-            <div class="col-12 no-padding-x">
+            <div class="col-12">
                 <h2 class="events-page__upcoming-section-title">Upcoming Events</h2>
                 {% include events_array_generator.html future_events = true %}
                 {% for post in posts %}
