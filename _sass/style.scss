@@ -51,9 +51,10 @@ a {
   }
 }
 
-@media (orientation: landscape){
+@media (max-height: 400px) and (orientation: landscape){
   .page__background-img {
     min-height: 250px;
+    width: 100%;
   }
 }
 
@@ -66,6 +67,7 @@ a {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 
 /* Classes to change order of collapsed columns on mobiles*/
 @media (max-width: 767px) {
