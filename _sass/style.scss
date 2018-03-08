@@ -51,6 +51,12 @@ a {
   }
 }
 
+@media (orientation: landscape){
+  .page__background-img {
+    min-height: 250px;
+  }
+}
+
 .page__title-container {
   z-index: 2;
   position: absolute;
