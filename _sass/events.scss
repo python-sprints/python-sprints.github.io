@@ -48,6 +48,10 @@
   border-top-right-radius: 5px;
 }
 
+.events-page__background-img {
+  @extend .page__background-img;
+}
+
 .events-page__event-col {
   @extend .post__event-col;
   border-bottom-left-radius: 5px;

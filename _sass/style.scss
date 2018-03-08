@@ -41,12 +41,19 @@ a {
 .page__background-img-container {
   position: relative;
   &::after {
+    width: 100vw;
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+  }
+}
+
+@media (orientation: landscape){
+  .page__background-img {
+    min-height: 250px;
   }
 }
 
@@ -85,6 +92,7 @@ a {
 
 /*Here I need to move the background image to slide under the navigation*/
 /*Any smarter solutions are welcome!*/
+
 .navigation__content {
   @extend .page__background-img-container;
   margin-top: -66px;
@@ -93,10 +101,19 @@ a {
   }
 }
 
+.navigation__background-img {
+  height: calc(100vh + 2px);
+  width: 100%;
+}
+
 .navigation__brand {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.2);
   border: rgba(0, 0, 0, 0.2) 1px solid;
   border-radius: 6px;
+}
+
+.navigation__brand-link {
 }
 
 .navigation__brand-name {
