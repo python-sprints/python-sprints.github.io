@@ -777,6 +777,8 @@ positional arguments `head(3)`.
             2     True
             3    False
             dtype: bool
+            """
+            pass
 
 **Bad:**
 

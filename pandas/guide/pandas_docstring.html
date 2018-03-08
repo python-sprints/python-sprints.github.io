@@ -676,44 +676,46 @@ positional arguments <cite>head(3)</cite>.</p>
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">nan</span><span class="p">):</span>
-        <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">        Return whether each value contains `pattern`.</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return whether each value contains `pattern`.</span>
 
-<span class="s2">        In this case, we are illustrating how to use sections, even</span>
-<span class="s2">        if the example is simple enough and does not require them.</span>
+<span class="sd">        In this case, we are illustrating how to use sections, even</span>
+<span class="sd">        if the example is simple enough and does not require them.</span>
 
-<span class="s2">        Examples</span>
-<span class="s2">        --------</span>
-<span class="s2">        &gt;&gt;&gt; s = pd.Series(&#39;Antelope&#39;, &#39;Lion&#39;, &#39;Zebra&#39;, numpy.nan)</span>
-<span class="s2">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;)</span>
-<span class="s2">        0    False</span>
-<span class="s2">        1    False</span>
-<span class="s2">        2     True</span>
-<span class="s2">        3      NaN</span>
-<span class="s2">        dtype: bool</span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; s = pd.Series(&#39;Antelope&#39;, &#39;Lion&#39;, &#39;Zebra&#39;, numpy.nan)</span>
+<span class="sd">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;)</span>
+<span class="sd">        0    False</span>
+<span class="sd">        1    False</span>
+<span class="sd">        2     True</span>
+<span class="sd">        3      NaN</span>
+<span class="sd">        dtype: bool</span>
 
-<span class="s2">        **Case sensitivity**</span>
+<span class="sd">        **Case sensitivity**</span>
 
-<span class="s2">        With `case_sensitive` set to `False` we can match `a` with both</span>
-<span class="s2">        `a` and `A`:</span>
+<span class="sd">        With `case_sensitive` set to `False` we can match `a` with both</span>
+<span class="sd">        `a` and `A`:</span>
 
-<span class="s2">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;, case_sensitive=False)</span>
-<span class="s2">        0     True</span>
-<span class="s2">        1    False</span>
-<span class="s2">        2     True</span>
-<span class="s2">        3      NaN</span>
-<span class="s2">        dtype: bool</span>
+<span class="sd">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;, case_sensitive=False)</span>
+<span class="sd">        0     True</span>
+<span class="sd">        1    False</span>
+<span class="sd">        2     True</span>
+<span class="sd">        3      NaN</span>
+<span class="sd">        dtype: bool</span>
 
-<span class="s2">        **Missing values**</span>
+<span class="sd">        **Missing values**</span>
 
-<span class="s2">        We can fill missing values in the output using the `na` parameter:</span>
+<span class="sd">        We can fill missing values in the output using the `na` parameter:</span>
 
-<span class="s2">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;, na=False)</span>
-<span class="s2">        0    False</span>
-<span class="s2">        1    False</span>
-<span class="s2">        2     True</span>
-<span class="s2">        3    False</span>
-<span class="s2">        dtype: bool</span>
+<span class="sd">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;, na=False)</span>
+<span class="sd">        0    False</span>
+<span class="sd">        1    False</span>
+<span class="sd">        2     True</span>
+<span class="sd">        3    False</span>
+<span class="sd">        dtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>

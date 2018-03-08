@@ -103,9 +103,34 @@ Then, visit https://github.com/pandas-dev/pandas in your browser, and click
 on the "Compare & pull request" button in the yellow box above the repository
 files.
 
-This will create a pull request, will be reviewed by other developers. It is
-unlikely that a pull request is accepted in its first version, so expect some
-comments on things that can be improved, from more senior pandas contributors.
+If you have only one commit, the pull request will automatically use its
+comment as title. Otherwise, please name it following the same standard as
+described before (e.g. "DOC: Improved the docstring of DataFrame.head()").
+In the body of the description, there are some checkboxes. For the sprint,
+we do not have an issue for each docstring change, and as we are not changing
+code, we do not need to add/run tests or add a `whatsnew` entry. So you can
+ignore these check boxes. Just verify that your changes respect the PEP-8
+style by running the command:
+
+    | ``git diff upstream/master -u -- "*.py" | flake8 --diff``
+
+If the command does not return any warning, mark that checkbox with an X (do
+not leave spaces inside the brackets, use `[X]`). If it returns a warning,
+fix it, commit your changes, and push to your remote branch before opening
+the pull request.
+
+After the checklist, please **copy the output of the validate_docstrings.py
+script**. This will help reviewers see the rendered docstring, as well as
+identify any validation problem.
+
+This will create a pull request, and other developers will review it.
+
+Updating a pull request
+~~~~~~~~~~~~~~~~~~~~~~~
+
+It is unlikely that a pull request is accepted in its first version, so expect
+some comments on things that can be improved, from more senior pandas
+contributors.
 
 For comments in your review, you can make new changes in your local branch for
 that pull request. And once you addressed all the comments, you can commit them
