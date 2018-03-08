@@ -37,6 +37,7 @@ version of pandas. Do not make them to a version downloaded from the Internet
 via pip, conda or a zip.
 
 To get the latest development version:
+
 * Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub by click on the top-right `Fork` button
 
 .. note::
@@ -51,6 +52,10 @@ This will create a directory named `pandas`, containing the latest version of
 the source code. We will name this directory `<pandas-dir>` in the rest of
 this document.
 
+Make sure you're in the root of the `<pandas-dir>` directory.
+
+    | ``cd <pandas-dir>``
+
 Then, set the upstream remote, so you can fetch the updates from the pandas
 repository:
 
@@ -59,21 +64,25 @@ repository:
 3. Set up a Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Download and install `Anaconda <https://www.anaconda.com/download/>`
+* Download and install `Anaconda <https://www.anaconda.com/download/>`_.
 
 .. note::
     **Windows users**: run the next commands in the Anaconda Prompt (found in the Anaconda
-    folder of the Start menu.
+    folder of the Start menu).
 
 * Activate conda by one of the next (or equivalent, if you know what you're doing):
     * If you chose to prepend Anaconda to your PATH during install adding it to your ``~/.bashrc``, just restart your terminal.
     * Otherwise, run ``export PATH="<path-to-anaconda>/bin:$PATH"`` in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.
 * Create a conda environment:
-    ``conda env create -n pandas_dev -f <path-to-pandas>/ci/environment-dev.yaml``
+    ``conda env create -n pandas_dev -f <path-to-pandas-dir>/ci/environment-dev.yaml``
+
+.. note::
+    **Windows users**: If you're copy-pasting the path, replace all pasted ``\`` characters with ``/`` for the command to work.
+
 * Activate the new conda environment:
-    ``source activate pandas_dev``    
+    ``conda activate pandas_dev``    
 * Install pandas development dependencies:
-    ``conda install -c defaults -c conda-forge --file=<pandas-dir>/ci/requirements-optional-conda.txt``
+    ``conda install -c defaults -c conda-forge --file=<path-to-pandas-dir>/ci/requirements-optional-conda.txt``
 
 4. Compile C code in pandas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,7 +91,7 @@ Besides the Python `.py` files, pandas source code includes C/Cython files
 which need to be compiled in order to run the development version of pandas.
 
 .. note::
-    **Windows users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_.
+    **Windows users**: to compile pandas, you need to install `Visual Studio 2017 <https://www.visualstudio.com/>`_. You need the Community edition as a minimum. Visual Studio Code does not support the required Build Tools and will not work.
     Select the Python development workload and the Native development tools option.
 
     (Users of legacy Python 2.7 should install `Microsoft Visual C++ Compiler for Python 2.7 <https://www.microsoft.com/download/details.aspx?id=44266>`_ instead).
