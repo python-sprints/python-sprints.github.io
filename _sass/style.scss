@@ -41,6 +41,7 @@ a {
 .page__background-img-container {
   position: relative;
   &::after {
+    width: 100vw;
     content: "";
     position: absolute;
     top: 0;
@@ -100,9 +101,13 @@ a {
 }
 
 .navigation__brand {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.2);
   border: rgba(0, 0, 0, 0.2) 1px solid;
   border-radius: 6px;
+}
+
+.navigation__brand-link {
 }
 
 .navigation__brand-name {
