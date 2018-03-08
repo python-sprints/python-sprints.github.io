@@ -85,6 +85,7 @@ a {
 
 /*Here I need to move the background image to slide under the navigation*/
 /*Any smarter solutions are welcome!*/
+
 .navigation__content {
   @extend .page__background-img-container;
   margin-top: -66px;
@@ -94,7 +95,7 @@ a {
 }
 
 .navigation__background-img {
-  height: 100.5vh;
+  height: calc(100vh + 2px);
   width: 100%;
 }
 
