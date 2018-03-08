@@ -16,7 +16,7 @@ technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:
 
     | ``cd <pandas-dir>``
-    | ``scripts/validate_docstrings.py <your-function-or-method>``
+    | ``python scripts/validate_docstrings.py <your-function-or-method>``
 
 where `<your-function-or-method>` is for example `pandas.DataFrame.head`,
 `pandas.Series.tail` or `pandas.to_datetime`.
