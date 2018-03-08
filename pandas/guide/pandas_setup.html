@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Before the sprint: Set up instructions &#8212; Python  documentation</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -31,10 +28,11 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
+  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -48,7 +46,7 @@
 <p>You need the next software installed:</p>
 <ul class="simple">
 <li>Git</li>
-<li>An editor (vim, emacs, PyCharm,...). Make sure the editor is set up to use 4 spaces for tabs.</li>
+<li>An editor (vim, emacs, PyCharm,…). Make sure the editor is set up to use 4 spaces for tabs.</li>
 </ul>
 <p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/contributing.html">pandas contributing guide</a>
 contains detailed instructions on how to set up a pandas development environment.
@@ -57,7 +55,7 @@ the sprint.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Next steps will download from the Internet around 900Mb for the pandas
-repository, and around 600Mb for Anaconda. If you don&#8217;t have access to
+repository, and around 600Mb for Anaconda. If you don’t have access to
 a fast Internet connection, contact your local chapter organizer, who will
 try to get a copy of both in a usb key.</p>
 </div>
@@ -65,16 +63,18 @@ try to get a copy of both in a usb key.</p>
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="create-a-github-account">
 <h3>1. Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h3>
-<p>If you don&#8217;t have a GitHub account yet, simply go to <a class="reference external" href="https://github.com/join">https://github.com/join</a>,
-and provide your personal information (name, email...). Select the free plan.</p>
+<p>If you don’t have a GitHub account yet, simply go to <a class="reference external" href="https://github.com/join">https://github.com/join</a>,
+and provide your personal information (name, email…). Select the free plan.</p>
 </div>
 <div class="section" id="get-the-pandas-source-code">
 <h3>2. Get the pandas source code<a class="headerlink" href="#get-the-pandas-source-code" title="Permalink to this headline">¶</a></h3>
 <p>All the changes during the sprints need to be made to the latest development
 version of pandas. Do not make them to a version downloaded from the Internet
 via pip, conda or a zip.</p>
-<p>To get the latest development version:
-* Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas repository</a> on GitHub by click on the top-right <cite>Fork</cite> button</p>
+<p>To get the latest development version:</p>
+<ul class="simple">
+<li>Fork the <a class="reference external" href="https://github.com/pandas-dev/pandas">pandas repository</a> on GitHub by click on the top-right <cite>Fork</cite> button</li>
+</ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Windows users</strong>: run the next commands in a Git Bash session in the directory where you want
@@ -92,6 +92,12 @@ to download pandas source code (download <a class="reference external" href="htt
 <p>This will create a directory named <cite>pandas</cite>, containing the latest version of
 the source code. We will name this directory <cite>&lt;pandas-dir&gt;</cite> in the rest of
 this document.</p>
+<p>Make sure you’re in the root of the <cite>&lt;pandas-dir&gt;</cite> directory.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+</div>
+</div></blockquote>
 <p>Then, set the upstream remote, so you can fetch the updates from the pandas
 repository:</p>
 <blockquote>
@@ -99,21 +105,30 @@ repository:</p>
 <div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">https://github.com/pandas-dev/pandas</span></code></div>
 </div>
 </div></blockquote>
+<dl class="docutils">
+<dt>On how to fetch the latest updates from the pandas repository, follow the steps in <a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">Syncing a Fork</a>:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
+</div>
+</dd>
+</dl>
 </div>
 <div class="section" id="set-up-a-python-environment">
 <h3>3. Set up a Python environment<a class="headerlink" href="#set-up-a-python-environment" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Download and install <cite>Anaconda &lt;https://www.anaconda.com/download/&gt;</cite></li>
+<li>Download and install <a class="reference external" href="https://www.anaconda.com/download/">Anaconda</a>.</li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Windows users</strong>: run the next commands in the Anaconda Prompt (found in the Anaconda
-folder of the Start menu.</p>
+folder of the Start menu).</p>
 </div>
-<ul>
+<ul class="simple">
 <li><dl class="first docutils">
-<dt>Activate conda by one of the next (or equivalent, if you know what you&#8217;re doing):</dt>
-<dd><ul class="first last simple">
+<dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
+<dd><ul class="first last">
 <li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
 <li>Otherwise, run <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
 </ul>
@@ -122,20 +137,23 @@ folder of the Start menu.</p>
 </li>
 <li><dl class="first docutils">
 <dt>Create a conda environment:</dt>
-<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas&gt;/ci/environment-dev.yaml</span></code></p>
-</dd>
+<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas-dir&gt;/ci/environment-dev.yaml</span></code></dd>
 </dl>
 </li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Windows users</strong>: If you’re copy-pasting the path, replace all pasted <code class="docutils literal"><span class="pre">\</span></code> characters with <code class="docutils literal"><span class="pre">/</span></code> for the command to work.</p>
+</div>
+<ul class="simple">
 <li><dl class="first docutils">
 <dt>Activate the new conda environment:</dt>
-<dd><p class="first last"><code class="docutils literal"><span class="pre">source</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></p>
-</dd>
+<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Install pandas development dependencies:</dt>
-<dd><p class="first last"><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></p>
-</dd>
+<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;path-to-pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></dd>
 </dl>
 </li>
 </ul>
@@ -146,8 +164,8 @@ folder of the Start menu.</p>
 which need to be compiled in order to run the development version of pandas.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>Windows users</strong>: to compile pandas, you need to install <a class="reference external" href="https://www.visualstudio.com/">Visual Studio 2017</a>.
-Select the Python development workload and the Native development tools option.</p>
+<p><strong>Windows users</strong>: to compile pandas, you need to install <a class="reference external" href="https://www.visualstudio.com/">Visual Studio 2017</a>. You need Visual Studio Community 2017 (2.5GB download during installation) as a minimum. Visual Studio Code does not support the required Build Tools and will not work.
+Select the workload “Python development” and the option “Python native development tools” on the right side.</p>
 <p>(Users of legacy Python 2.7 should install <a class="reference external" href="https://www.microsoft.com/download/details.aspx?id=44266">Microsoft Visual C++ Compiler for Python 2.7</a> instead).</p>
 <p class="last">After the installation, run the following commands in Anaconda Prompt.</p>
 </div>
@@ -257,8 +275,8 @@ branch for each.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="_sources/pandas_setup.rst.txt"

@@ -2,8 +2,11 @@
   margin-top: -66px;
 }
 
-.events-page__background-img {
-  @extend .contact__background-img
+.events-page__background-img-container {
+  @extend .page__background-img-container;
+  &::after {
+    background: rgba(0, 0, 0, 0.6);
+  }
 }
 
 .events-page__title-container {
@@ -43,6 +46,10 @@
   @extend .post__img-container;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.events-page__background-img {
+  @extend .page__background-img;
 }
 
 .events-page__event-col {

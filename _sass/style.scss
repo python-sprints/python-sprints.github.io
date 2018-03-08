@@ -1,3 +1,5 @@
+//Global styles here.
+
 .body {
   background-color: $main-background;
   overflow-x: hidden;
@@ -36,6 +38,37 @@ a {
   padding-right: 15px;
 }
 
+.page__background-img-container {
+  position: relative;
+  &::after {
+    width: 100vw;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-height: 400px) and (orientation: landscape){
+  .page__background-img {
+    min-height: 250px;
+    width: 100%;
+  }
+}
+
+.page__title-container {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
 /* Classes to change order of collapsed columns on mobiles*/
 @media (max-width: 767px) {
   .first-on-mobile {
@@ -59,31 +92,30 @@ a {
   }
 }
 
-/* Responsive background image handling*/
-[data-image-type="responsive"] {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+/*Here I need to move the background image to slide under the navigation*/
+/*Any smarter solutions are welcome!*/
+
+.navigation__content {
+  @extend .page__background-img-container;
+  margin-top: -66px;
+  &::after {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%);
+  }
+}
+
+.navigation__background-img {
+  height: calc(100vh + 2px);
   width: 100%;
 }
 
-[data-image-type="responsive"] .responsive {
-  display: none;
-}
-
-/*Here I need to move the background image to slide under the navigation*/
-/*Any smarter solutions are welcome!*/
-.navigation__content {
-  background-size: cover;
-  margin-top: -66px;
-  max-width: 100vw;
-  height: 101vh;
-}
-
 .navigation__brand {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.2);
   border: rgba(0, 0, 0, 0.2) 1px solid;
   border-radius: 6px;
+}
+
+.navigation__brand-link {
 }
 
 .navigation__brand-name {

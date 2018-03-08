@@ -41,7 +41,6 @@ p {
 }
 
 ul li {
-  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -616,4 +615,17 @@ ul li {
 }
 .site-footer .social-block li a:hover, .site-footer .social-block li a:focus {
   opacity: 0.8;
+}
+#donate-box-outer {
+    margin-bottom: 10px;
+}
+#donate-box-inner {
+    margin: auto;
+    width: 310px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#donate-box-inner p {
+    margin: 0;
 }

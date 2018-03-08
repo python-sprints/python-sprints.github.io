@@ -35,16 +35,6 @@
 // Text styles below.
 // Page title.
 
-.page__title-container {
-  position: relative;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-
 .page__title, .page__subtitle {
   user-select: none;
   -moz-user-select: none;
@@ -125,7 +115,7 @@
 
 .event-label {
   font-family: 'Encode Sans Expanded', sans-serif;
-  background: linear-gradient(45deg, $grey, $grey 80%, transparent 80%,  transparent 100%);
+  background-image: linear-gradient(45deg, $grey, $grey 80%, transparent 80%,  transparent 100%);
   font-size: 1.25em;
   text-align: left;
   color: $title-dark;

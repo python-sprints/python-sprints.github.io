@@ -185,8 +185,8 @@
              "url": "https://www.meetup.com/PyData-Mumbai/events/248371284/",
              "sponsor_image": "",
              "sponsor_url": "",
-             "time": "1pm",
-             "address": "Grey Atom School of Data Science<br/>Samruddhi Venture Park, MIDC Main Road, Next to Tunga Paradise<br/>Andheri East Mumbai, Maharashtra 400093",
+             "time": "3pm",
+             "address": "Centre for Excellence in Telecom Technology and Management<br/>Technology Street, Hiranandani Gardens, Powai<br/>Near to Dr.L H Hiranandani Hospital, Mumbai, Maharashtra 400076",
              "lat": 19.120546,
              "lng": 72.870018},
             {"title": "Kanpur",
@@ -207,6 +207,15 @@
              "address": "Spectrum Saloon, 11C Golden Sun Centre,<br> 59 Bonham Strand West, Sheung Wan, HKSAR",
              "lat": 22.287408,
              "lng": 114.148381},
+            {"title": "Seoul",
+             "description": "Seoul",
+             "url": "https://www.eventbrite.com/e/worldwide-pandas-documentation-sprint-seoul-tickets-43978646315",
+             "sponsor_image": "pyconkr-badge.png",
+             "sponsor_url": "https://www.facebook.com/groups/pythonkorea/",
+             "time" : "11am",
+             "address": "서울특별시 서대문구 연희로2길 62 한빛미디어 1층 알프레도커피",
+             "lat": 37.5594866,
+             "lng": 126.9275006},
 
             // Americas
             {"title": "San Diego",
@@ -343,7 +352,7 @@
         #bio_ep a.footnote {
             color: #808080;
         }
-		#bio_ep a.button {
+		#bio_ep a.button, #donate-box-inner a.button {
             margin-top: 30px;
 			-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
 			-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
@@ -370,7 +379,7 @@
 			text-decoration:none;
 			text-shadow:0px 1px 0px #810e05;
 		}
-		#bio_ep a.button:hover {
+		#bio_ep a.button:hover, #donate-box-inner a.button:hover {
 			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
 			background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
 			background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
@@ -380,7 +389,7 @@
 			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
 			background-color:#c62d1f;
 		}
-		#bio_ep a.button:active {
+		#bio_ep a.button:active, #donate-box-inner a.button:active {
 			position:relative;
 			top:1px;
 		}
@@ -494,10 +503,14 @@
                         API documentation for the Series and DataFrame classes in a perfect state.
                     </p>
 
-                    <figure>
-                        <img alt="" class="img-responsive" src="assets/images/about-us.jpg">
-                    </figure>
-
+                    <p>You can make pandas better, even if you can't join the sprint...</p>
+                    <div id="donate-box-outer">
+                        <div id="donate-box-inner">
+                            <p><img alt="" src="assets/images/pandas_logo_donation.png"/>
+                            <p><a class="button" href="https://www.flipcause.com/secure/cause_pdetails/MzA3OA==">MAKE A DONATION</a></p>
+                            <p><a class="footnote" href="http://pandas.pydata.org/donate.html">More info</a></p>
+                        </div>
+                    </div>
                 </div><!-- /.col-sm-6 -->
 
                 <div class="col-sm-6">
@@ -510,13 +523,31 @@
                         there the venue, meeting time, etc.
                     </p>
 
-                    <p>Before the sprint, please make sure.</p>
+                    <h4>Before the sprint</h4>
 
                     <ul class="list-arrow-right">
                         <li>Bring your own laptop</li>
-                        <li><a href="https://python-sprints.github.io/pandas/guide/pandas_setup.html">Set up your environment</a> before the sprint</li>
-                        <li>Make sure you RSVP for your chapter, number of attendees can be limited</li>
+                        <li><a href="https://python-sprints.github.io/pandas/guide/pandas_setup.html">Set up your environment</a></li>
+                        <li>Make sure you RSVP and get a spot before attending</li>
                         <li>Join the <a href="https://gitter.im/py-sprints/pandas-doc">Gitter channel</a> of the sprint</li>
+                    </ul>
+
+                    <figure>
+                        <img alt="" class="img-responsive" src="assets/images/about-us.jpg">
+                    </figure>
+
+                    <h4>During the sprint</h4>
+
+                    <ul class="list-arrow-right">
+                        <li>Go to the sprint location at the starting time</li>
+                        <li>Organizers will provide information, and there is <a href="https://python-sprints.github.io/pandas/guide/contents.html">documentation</a></li>
+                        <li>Discuss on the <a href="https://gitter.im/py-sprints/pandas-doc">Gitter channel</a></li>
+                        <li>Share your experience and photos in social networks using <b>#pandasSprint</b></li>
+                        <li>Thank the local sponsor for their support (in person and in social media)</li>
+                        <li>
+                            Be respectful, no form of harassment or discrimination is tolerated
+                            <ul><li style="list-style-type: none;">Read the full <a href="https://pydata.org/code-of-conduct.html">Code of conduct</a></li></ul>
+                        </li>
                     </ul>
 
                 </div><!-- /.col-sm-6 -->
@@ -562,7 +593,6 @@
                     <h3 class="section-title">Locations</h3>
                     <address>
                         <p>Click on the markers in the map for exact times and locations.</p>
-                        <p>More locations will be added in the future. If you want to organize a chapter, please get in touch at <a href="py.sprints@gmail.com">py.sprints@gmail.com</a>.</p>
                     </address>
                 </div>
                 <div class="col-sm-9">

@@ -2,8 +2,15 @@
   margin-top: -66px;
 }
 
+.contact__background-img-container {
+  @extend .page__background-img-container;
+  &::after {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
 .contact__background-img {
-  height: 55vh;
+  @extend .page__background-img;
 }
 
 .contact__page-title-container {

@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>pandas docstring guide &#8212; Python  documentation</title>
-    
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -31,10 +28,11 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
+  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
     <div class="document">
@@ -46,9 +44,9 @@
 <span id="docstring"></span><h1>pandas docstring guide<a class="headerlink" href="#pandas-docstring-guide" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="about-docstrings-and-standards">
 <h2>About docstrings and standards<a class="headerlink" href="#about-docstrings-and-standards" title="Permalink to this headline">¶</a></h2>
-<p>A Python docstring is a string used to document a Python function or method,
-so programmers can understand what it does without having to read the details
-of the implementation.</p>
+<p>A Python docstring is a string used to document a Python module, class,
+function or method, so programmers can understand what it does without having
+to read the details of the implementation.</p>
 <p>Also, it is a common practice to generate online (html) documentation
 automatically from docstrings. <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> serves
 this purpose.</p>
@@ -119,16 +117,26 @@ provide additional convention specific to the pandas project.</p>
 left before or after the docstring. The text starts in the next line after the
 opening quotes. The closing quotes have their own line
 (meaning that they are not at the end of the last sentence).</p>
+<p>In rare occasions reST styles like bold text or itallics will be used in
+docstrings, but is it common to have inline code, which is presented between
+backticks. It is considered inline code:</p>
+<ul class="simple">
+<li>The name of a parameter</li>
+<li>Python code, a module, function, built-in, type, literal… (e.g. <cite>os</cite>, <cite>list</cite>, <cite>numpy.abs</cite>, <cite>datetime.date</cite>, <cite>True</cite>)</li>
+<li>A pandas class (in the form <code class="docutils literal"><span class="pre">:class:`~pandas.Series`</span></code>)</li>
+<li>A pandas method (in the form <code class="docutils literal"><span class="pre">:meth:`pandas.Series.sum`</span></code>)</li>
+<li>A pandas function (in the form <code class="docutils literal"><span class="pre">:func:`pandas.to_datetime`</span></code>)</li>
+</ul>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_values</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Some function.</span>
+<span class="sd">    Add the values in `arr`.</span>
 
-<span class="sd">    With a good docstring.</span>
+<span class="sd">    This is equivalent to Python `sum` of :meth:`pandas.Series.sum`.</span>
+
+<span class="sd">    Some sections are omitted here for simplicity.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">foo</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">bar</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">foo</span> <span class="o">+</span> <span class="n">bar</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
@@ -140,7 +148,7 @@ opening quotes. The closing quotes have their own line
 
 <span class="sd">    It has a blank like after the signature `def func():`.</span>
 
-<span class="sd">    The text &#39;Some function&#39; should go in the next line then the</span>
+<span class="sd">    The text &#39;Some function&#39; should go in the line after the</span>
 <span class="sd">    opening quotes of the docstring, not in the same line.</span>
 
 <span class="sd">    There is a blank line between the docstring and the first line</span>
@@ -158,9 +166,10 @@ opening quotes. The closing quotes have their own line
 <span id="docstring-short-summary"></span><h3>Section 1: Short summary<a class="headerlink" href="#section-1-short-summary" title="Permalink to this headline">¶</a></h3>
 <p>The short summary is a single sentence that express what the function does in a
 concise way.</p>
-<p>The short summary must start with a verb infinitive, end with a dot, and fit in
-a single line. It needs to express what the function does without providing
-details.</p>
+<p>The short summary must start with a capital letter, end with a dot, and fit in
+a single line. It needs to express what the object does without providing
+details. For functions and methods, the short summary must start with an
+infinitive verb.</p>
 <p><strong>Good:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -235,9 +244,9 @@ their use cases, if it is not too generic.</p>
 <div class="section" id="section-3-parameters">
 <span id="docstring-parameters"></span><h3>Section 3: Parameters<a class="headerlink" href="#section-3-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The details of the parameters will be added in this section. This section has
-the title &#8220;Parameters&#8221;, followed by a line with a hyphen under each letter of
-the word &#8220;Parameters&#8221;. A blank line is left before the section title, but not
-after, and not between the line with the word &#8220;Parameters&#8221; and the one with
+the title “Parameters”, followed by a line with a hyphen under each letter of
+the word “Parameters”. A blank line is left before the section title, but not
+after, and not between the line with the word “Parameters” and the one with
 the hyphens.</p>
 <p>After the title, each parameter in the signature must be documented, including
 <cite>*args</cite> and <cite>**kwargs</cite>, but not <cite>self</cite>.</p>
@@ -248,19 +257,19 @@ be defined for all other parameters. After the parameter definition, it is
 required to have a line with the parameter description, which is indented, and
 can have multiple lines. The description must start with a capital letter, and
 finish with a dot.</p>
-<p>Keyword arguments with a default value, the default will be listed in brackets
-at the end of the type. The exact form of the type in this case would be for
-example &#8220;int (default is 0)&#8221;. In some cases it may be useful to explain what
-the default argument means, which can be added after a comma &#8220;int (default is
--1, which means all cpus)&#8221;.</p>
+<p>For keyword arguments with a default value, the default will be listed after a
+comma at the end of the type. The exact form of the type in this case will be
+“int, default 0”. In some cases it may be useful to explain what the default
+argument means, which can be added after a comma “int, default -1, meaning all
+cpus”.</p>
 <p>In cases where the default value is <cite>None</cite>, meaning that the value will not be
-used, instead of &#8220;str (default is None)&#8221; it is preferred to use &#8220;str, optional&#8221;.
-When <cite>None</cite> is a value being used, we will keep the form &#8220;str (default None).
-For example consider <cite>.fillna(value=None)</cite>, in which <cite>None</cite> is the value being
-used to replace missing values. This is different from
-<cite>.to_csv(compression=None)</cite>, where <cite>None</cite> is not a value being used, but means
-that compression is optional, and will not be used, unless a compression type
-is provided. In this case we will use <cite>str, optional</cite>.</p>
+used. Instead of “str, default None” is preferred “str, optional”.
+When <cite>None</cite> is a value being used, we will keep the form “str, default None”.
+For example, in <cite>df.to_csv(compression=None)</cite>, <cite>None</cite> is not a value being used,
+but means that compression is optional, and no compression is being used if not
+provided. In this case we will use <cite>str, optional</cite>. Only in cases like
+<cite>func(value=None)</cite> and <cite>None</cite> is being used in the same way as <cite>0</cite> or <cite>foo</cite>
+would be used, then we will specify “str, int or None, default None”.</p>
 <p><strong>Good:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -274,7 +283,7 @@ is provided. In this case we will use <cite>str, optional</cite>.</p>
 <span class="sd">        ----------</span>
 <span class="sd">        kind : str</span>
 <span class="sd">            Kind of matplotlib plot.</span>
-<span class="sd">        color : str (default &#39;blue&#39;)</span>
+<span class="sd">        color : str, default &#39;blue&#39;</span>
 <span class="sd">            Color name or rgb code.</span>
 <span class="sd">        **kwargs</span>
 <span class="sd">            These parameters will be passed to the matplotlib plotting</span>
@@ -337,9 +346,9 @@ ordinal and they have an order, list them in this order. Otherwuse, list
 the default value first, if there is one:</p>
 <ul class="simple">
 <li>{0, 10, 25}</li>
-<li>{&#8216;simple&#8217;, &#8216;advanced&#8217;}</li>
-<li>{&#8216;low&#8217;, &#8216;medium&#8217;, &#8216;high&#8217;}</li>
-<li>{&#8216;cat&#8217;, &#8216;dog&#8217;, &#8216;bird&#8217;}</li>
+<li>{‘simple’, ‘advanced’}</li>
+<li>{‘low’, ‘medium’, ‘high’}</li>
+<li>{‘cat’, ‘dog’, ‘bird’}</li>
 </ul>
 <p>If the type is defined in a Python module, the module must be specified:</p>
 <ul class="simple">
@@ -369,7 +378,7 @@ accepted, iterable can be used:</p>
 <li>iterable</li>
 </ul>
 <p>If more than one type is accepted, separate them by commas, except the
-last two types, that need to be separated by the word &#8216;or&#8217;:</p>
+last two types, that need to be separated by the word ‘or’:</p>
 <ul class="simple">
 <li>int or float</li>
 <li>float, decimal.Decimal or None</li>
@@ -383,14 +392,14 @@ the list.</p>
 <span id="docstring-returns"></span><h3>Section 4: Returns or Yields<a class="headerlink" href="#section-4-returns-or-yields" title="Permalink to this headline">¶</a></h3>
 <p>If the method returns a value, it will be documented in this section. Also
 if the method yields its output.</p>
-<p>The title of the section will be defined in the same way as the &#8220;Parameters&#8221;.
-With the names &#8220;Returns&#8221; or &#8220;Yields&#8221; followed by a line with as many hyphens
+<p>The title of the section will be defined in the same way as the “Parameters”.
+With the names “Returns” or “Yields” followed by a line with as many hyphens
 as the letters in the preceding word.</p>
 <p>The documentation of the return is also similar to the parameters. But in this
 case, no name will be provided, unless the method returns or yields more than
 one value (a tuple of values).</p>
-<p>The types for &#8220;Returns&#8221; and &#8220;Yields&#8221; are the same as the ones for the
-&#8220;Parameters&#8221;. Also, the description must finish with a dot.</p>
+<p>The types for “Returns” and “Yields” are the same as the ones for the
+“Parameters”. Also, the description must finish with a dot.</p>
 <p>For example, with a single value:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -448,9 +457,9 @@ one value (a tuple of values).</p>
 </div>
 <div class="section" id="section-5-see-also">
 <span id="docstring-see-also"></span><h3>Section 5: See Also<a class="headerlink" href="#section-5-see-also" title="Permalink to this headline">¶</a></h3>
-<p>This is an optional section, used to let users know about pandas functionality
-related to the one being documented. While optional, this section should exist
-in most cases, unless no related methods or functions can be found at all.</p>
+<p>This section is used to let users know about pandas functionality
+related to the one being documented. In rare cases, if no related methods
+or functions can be found at all, this section can be skipped.</p>
 <p>An obvious example would be the <cite>head()</cite> and <cite>tail()</cite> methods. As <cite>tail()</cite> does
 the equivalent as <cite>head()</cite> but at the end of the <cite>Series</cite> or <cite>DataFrame</cite>
 instead of at the beginning, it is good to let the users know about it.</p>
@@ -478,14 +487,14 @@ especially the less experienced ones.</p>
 first (not an alias like <cite>np</cite>). If the function is in a module which is not
 the main one, like <cite>scipy.sparse</cite>, list the full module (e.g.
 <cite>scipy.sparse.coo_matrix</cite>).</p>
-<p>This section, as the previous, also has a header, &#8220;See Also&#8221; (note the capital
+<p>This section, as the previous, also has a header, “See Also” (note the capital
 S and A). Also followed by the line with hyphens, and preceded by a blank line.</p>
 <p>After the header, we will add a line for each related method or function,
 followed by a space, a colon, another space, and a short description that
 illustrated what this method or function does, why is it relevant in this
 context, and what are the key differences between the documented function and
 the one referencing. The description must also finish with a dot.</p>
-<p>Note that in &#8220;Returns&#8221; and &#8220;Yields&#8221;, the description is located in the
+<p>Note that in “Returns” and “Yields”, the description is located in the
 following line than the type. But in this section it is located in the same
 line, with a colon in between. If the description does not fit in the same
 line, it can continue in the next ones, but it has to be indented in them.</p>
@@ -530,7 +539,7 @@ with examples, than with accurate explanations.</p>
 method, they must be valid Python code, that in a deterministic way returns
 the presented output, and that can be copied and run by users.</p>
 <p>They are presented as a session in the Python terminal. <cite>&gt;&gt;&gt;</cite> is used to
-present code. <cite>...</cite> is used for code continuing from the previous line.
+present code. <cite>…</cite> is used for code continuing from the previous line.
 Output is presented immediately after the last line of code generating the
 output (no blank lines in between). Comments describing the examples can
 be added with blank lines before and after them.</p>
@@ -542,14 +551,6 @@ be added with blank lines before and after them.</p>
 <li>Add examples with explanations that illustrate how the parameters can be
 used for extended functionality</li>
 </ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Which data should be used in examples is a topic still under discussion.
-We&#8217;ll likely be importing a standard dataset from <cite>pandas.io.samples</cite>, but
-this still needs confirmation. You can work with the data from this pull
-request: <a class="reference external" href="https://github.com/pandas-dev/pandas/pull/19933/files">https://github.com/pandas-dev/pandas/pull/19933/files</a> but
-consider this could still change.</p>
-</div>
 <p>A simple example could be:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
@@ -595,6 +596,9 @@ consider this could still change.</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
 </pre></div>
 </div>
+<p>The examples should be as concise as possible. In cases where the complexity of
+the function requires long examples, is recommended to use blocks with headers
+in bold. Use double star ** to make a text bold, like in **this example**.</p>
 <div class="section" id="conventions-for-the-examples">
 <span id="docstring-example-conventions"></span><h4>Conventions for the examples<a class="headerlink" href="#conventions-for-the-examples" title="Permalink to this headline">¶</a></h4>
 <p>Code in examples is assumed to always start with these two lines which are not
@@ -609,11 +613,11 @@ and avoiding aliases. Avoid excessive imports, but if needed, imports from
 the standard library go first, followed by third-party libraries (like
 matplotlib).</p>
 <p>When illustrating examples with a single <cite>Series</cite> use the name <cite>s</cite>, and if
-illustrating with a single <cite>DataFrame</cite> use the name <cite>df</cite>. If a set of
-homogeneous <cite>Series</cite> or <cite>DataFrame</cite> is used, name them <cite>s1</cite>, <cite>s2</cite>, <cite>s3</cite>...
-or <cite>df1</cite>, <cite>df2</cite>, <cite>df3</cite>... If the data is not homogeneous, and more than
-one structure is needed, name them with something meaningful, for example
-<cite>df_main</cite> and <cite>df_to_join</cite>.</p>
+illustrating with a single <cite>DataFrame</cite> use the name <cite>df</cite>. For indices, <cite>idx</cite>
+is the preferred name. If a set of homogeneous <cite>Series</cite> or <cite>DataFrame</cite> is used,
+name them <cite>s1</cite>, <cite>s2</cite>, <cite>s3</cite>…  or <cite>df1</cite>, <cite>df2</cite>, <cite>df3</cite>… If the data is not
+homogeneous, and more than one structure is needed, name them with something
+meaningful, for example <cite>df_main</cite> and <cite>df_to_join</cite>.</p>
 <p>Data used in the example should be as compact as possible. The number of rows
 is recommended to be around 4, but make it a number that makes sense for the
 specific example. For example in the <cite>head</cite> method, it requires to be higher
@@ -621,7 +625,7 @@ than 5, to show the example with the default values. If doing the <cite>mean</ci
 we could use something like <cite>[1, 2, 3]</cite>, so it is easy to see that the
 value returned is the mean.</p>
 <p>For more complex examples (groupping for example), avoid using data without
-interpretation, like a matrix of random numbers with columns A, B, C, D...
+interpretation, like a matrix of random numbers with columns A, B, C, D…
 And instead use a meaningful example, which makes it easier to understand the
 concept. Unless required by the example, use names of animals, to keep examples
 consistent. And numerical properties of them.</p>
@@ -649,12 +653,12 @@ positional arguments <cite>head(3)</cite>.</p>
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; s = pd.Series([1, np.nan, 3])</span>
-<span class="sd">        &gt;&gt;&gt; s.fillna(9)</span>
-<span class="sd">        [1, 9, 3]</span>
+<span class="sd">        &gt;&gt;&gt; s.fillna(0)</span>
+<span class="sd">        [1, 0, 3]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 
-    <span class="k">def</span> <span class="nf">groupby_mean</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">groupby_mean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Group by index and return mean.</span>
 
@@ -664,20 +668,73 @@ positional arguments <cite>head(3)</cite>.</p>
 <span class="sd">        ...               name=&#39;max_speed&#39;,</span>
 <span class="sd">        ...               index=[&#39;falcon&#39;, &#39;falcon&#39;, &#39;parrot&#39;, &#39;parrot&#39;])</span>
 <span class="sd">        &gt;&gt;&gt; s.groupby_mean()</span>
-<span class="sd">        falcon  375.</span>
-<span class="sd">        parrot   25.</span>
+<span class="sd">        index</span>
+<span class="sd">        falcon    375.0</span>
+<span class="sd">        parrot     25.0</span>
+<span class="sd">        Name: max_speed, dtype: float64</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">na</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">nan</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return whether each value contains `pattern`.</span>
+
+<span class="sd">        In this case, we are illustrating how to use sections, even</span>
+<span class="sd">        if the example is simple enough and does not require them.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; s = pd.Series(&#39;Antelope&#39;, &#39;Lion&#39;, &#39;Zebra&#39;, numpy.nan)</span>
+<span class="sd">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;)</span>
+<span class="sd">        0    False</span>
+<span class="sd">        1    False</span>
+<span class="sd">        2     True</span>
+<span class="sd">        3      NaN</span>
+<span class="sd">        dtype: bool</span>
+
+<span class="sd">        **Case sensitivity**</span>
+
+<span class="sd">        With `case_sensitive` set to `False` we can match `a` with both</span>
+<span class="sd">        `a` and `A`:</span>
+
+<span class="sd">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;, case_sensitive=False)</span>
+<span class="sd">        0     True</span>
+<span class="sd">        1    False</span>
+<span class="sd">        2     True</span>
+<span class="sd">        3      NaN</span>
+<span class="sd">        dtype: bool</span>
+
+<span class="sd">        **Missing values**</span>
+
+<span class="sd">        We can fill missing values in the output using the `na` parameter:</span>
+
+<span class="sd">        &gt;&gt;&gt; s.contains(pattern=&#39;a&#39;, na=False)</span>
+<span class="sd">        0    False</span>
+<span class="sd">        1    False</span>
+<span class="sd">        2     True</span>
+<span class="sd">        3    False</span>
+<span class="sd">        dtype: bool</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">():</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A sample DataFrame method.</span>
 
 <span class="sd">    Do not import numpy and pandas.</span>
 
-<span class="sd">    Try to use meaningful data, when it adds value.</span>
+<span class="sd">    Try to use meaningful data, when it makes the example easier</span>
+<span class="sd">    to understand.</span>
+
+<span class="sd">    Try to avoid positional arguments like in `df.method(1)`. They</span>
+<span class="sd">    can be all right if previously defined with a meaningful name,</span>
+<span class="sd">    like in `present_value(interest_rate)`, but avoid them otherwise.</span>
+
+<span class="sd">    When presenting the behavior with different parameters, do not place</span>
+<span class="sd">    all the calls one next to the other. Instead, add a short sentence</span>
+<span class="sd">    explaining what the example shows.</span>
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
@@ -685,8 +742,36 @@ positional arguments <cite>head(3)</cite>.</p>
 <span class="sd">    &gt;&gt;&gt; import pandas as pd</span>
 <span class="sd">    &gt;&gt;&gt; df = pd.DataFrame(numpy.random.randn(3, 3),</span>
 <span class="sd">    ...                   columns=(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;))</span>
+<span class="sd">    &gt;&gt;&gt; df.method(1)</span>
+<span class="sd">    21</span>
+<span class="sd">    &gt;&gt;&gt; df.method(bar=14)</span>
+<span class="sd">    123</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plots-in-examples">
+<span id="docstring-example-plots"></span><h4>Plots in examples<a class="headerlink" href="#plots-in-examples" title="Permalink to this headline">¶</a></h4>
+<p>There are some methods in pandas returning plots. To render the plots generated
+by the examples in the documentation, the <cite>.. plot::</cite> directive exists.</p>
+<p>To use it, place the next code after the “Examples” header as shown below. The
+plot will be generated automatically when building the documentation.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a plot with the `Series` data.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+
+<span class="sd">        .. plot::</span>
+<span class="sd">            :context: close-figs</span>
+
+<span class="sd">        &gt;&gt;&gt; s = pd.Series([1, 2, 3])</span>
+<span class="sd">        &gt;&gt;&gt; s.plot()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
 </pre></div>
 </div>
 </div>
@@ -720,6 +805,7 @@ positional arguments <cite>head(3)</cite>.</p>
 <li><a class="reference internal" href="#section-6-notes">Section 6: Notes</a></li>
 <li><a class="reference internal" href="#section-7-examples">Section 7: Examples</a><ul>
 <li><a class="reference internal" href="#conventions-for-the-examples">Conventions for the examples</a></li>
+<li><a class="reference internal" href="#plots-in-examples">Plots in examples</a></li>
 </ul>
 </li>
 </ul>
@@ -761,8 +847,8 @@ positional arguments <cite>head(3)</cite>.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
       <a href="_sources/pandas_docstring.rst.txt"

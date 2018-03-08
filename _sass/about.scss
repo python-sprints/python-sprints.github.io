@@ -1,9 +1,20 @@
+.about {
+  margin-top: -66px;
+}
+
+.about__background-img-container {
+  @extend .page__background-img-container;
+  &::after {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
 .about__background-img {
-  @extend .contact__background-img;
+  @extend .page__background-img;
 }
 
 .about__page-title-container {
-  @extend .page__title-container
+  @extend .page__title-container;
 }
 
 .about__page-title {
