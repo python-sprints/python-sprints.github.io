@@ -105,6 +105,15 @@ repository:</p>
 <div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">https://github.com/pandas-dev/pandas</span></code></div>
 </div>
 </div></blockquote>
+<dl class="docutils">
+<dt>On how to fetch the latest updates from the pandas repository, follow the steps in <a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">Syncing a Fork</a>:</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
+</div>
+</dd>
+</dl>
 </div>
 <div class="section" id="set-up-a-python-environment">
 <h3>3. Set up a Python environment<a class="headerlink" href="#set-up-a-python-environment" title="Permalink to this headline">¶</a></h3>
@@ -155,8 +164,8 @@ folder of the Start menu).</p>
 which need to be compiled in order to run the development version of pandas.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p><strong>Windows users</strong>: to compile pandas, you need to install <a class="reference external" href="https://www.visualstudio.com/">Visual Studio 2017</a>. You need the Community edition as a minimum. Visual Studio Code does not support the required Build Tools and will not work.
-Select the Python development workload and the Native development tools option.</p>
+<p><strong>Windows users</strong>: to compile pandas, you need to install <a class="reference external" href="https://www.visualstudio.com/">Visual Studio 2017</a>. You need Visual Studio Community 2017 (2.5GB download during installation) as a minimum. Visual Studio Code does not support the required Build Tools and will not work.
+Select the workload “Python development” and the option “Python native development tools” on the right side.</p>
 <p>(Users of legacy Python 2.7 should install <a class="reference external" href="https://www.microsoft.com/download/details.aspx?id=44266">Microsoft Visual C++ Compiler for Python 2.7</a> instead).</p>
 <p class="last">After the installation, run the following commands in Anaconda Prompt.</p>
 </div>
