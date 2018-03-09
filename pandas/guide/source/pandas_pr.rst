@@ -34,6 +34,15 @@ Finally, the output will also contain errors from running the examples.
 
 With few exceptions, you should fix all the errors before continuing.
 
+If you are changing a docstring in a cython file (with ``.pyx`` extension),
+you need to rebuild the pandas C extensions to be able to see the resulting
+changes in the docstring and to validate the docstring with the command
+above. 
+To recompile pandas, run:
+
+    | ``cd <pandas-dir>``
+    | ``python setup.py build_ext --inplace``
+
 2. Visual validation of the docstring
 -------------------------------------
 
