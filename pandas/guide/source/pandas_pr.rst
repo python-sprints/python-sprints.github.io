@@ -16,7 +16,7 @@ technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:
 
     | ``cd <pandas-dir>``
-    | ``scripts/validate_docstrings.py <your-function-or-method>``
+    | ``python scripts/validate_docstrings.py <your-function-or-method>``
 
 where `<your-function-or-method>` is for example `pandas.DataFrame.head`,
 `pandas.Series.tail` or `pandas.to_datetime`.
@@ -113,6 +113,9 @@ ignore these check boxes. Just verify that your changes respect the PEP-8
 style by running the command:
 
     | ``git diff upstream/master -u -- "*.py" | flake8 --diff``
+
+If you don't already have flake8 installed, you can install it in the Anaconda Prompt it via
+    | ``conda install flake8``
 
 If the command does not return any warning, mark that checkbox with an X (do
 not leave spaces inside the brackets, use `[X]`). If it returns a warning,
