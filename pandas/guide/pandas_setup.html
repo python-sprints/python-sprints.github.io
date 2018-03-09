@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Before the sprint: Set up instructions &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -28,11 +20,9 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -84,7 +74,7 @@ to download pandas source code (download <a class="reference external" href="htt
 <li><p class="first">In the terminal of your computer, in the directory where you want the copy of pandas source code, run:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;your-github-username&gt;/pandas</span></code></div>
 </div>
 </div></blockquote>
 </li>
@@ -95,22 +85,22 @@ this document.</p>
 <p>Make sure you’re in the root of the <cite>&lt;pandas-dir&gt;</cite> directory.</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
 </div>
 </div></blockquote>
 <p>Then, set the upstream remote, so you can fetch the updates from the pandas
 repository:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">https://github.com/pandas-dev/pandas</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">add</span> <span class="pre">upstream</span> <span class="pre">https://github.com/pandas-dev/pandas</span></code></div>
 </div>
 </div></blockquote>
 <dl class="docutils">
 <dt>On how to fetch the latest updates from the pandas repository, follow the steps in <a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">Syncing a Fork</a>:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
 </div>
 </dd>
 </dl>
@@ -125,35 +115,38 @@ repository:</p>
 <p class="last"><strong>Windows users</strong>: run the next commands in the Anaconda Prompt (found in the Anaconda
 folder of the Start menu).</p>
 </div>
-<ul class="simple">
+<ul>
 <li><dl class="first docutils">
 <dt>Activate conda by one of the next (or equivalent, if you know what you’re doing):</dt>
-<dd><ul class="first last">
-<li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
-<li>Otherwise, run <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
+<dd><ul class="first last simple">
+<li>If you chose to prepend Anaconda to your PATH during install adding it to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
+<li>Otherwise, run <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your terminal. Keep in mind that it will be active exclusively in the terminal you run this command.</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Create a conda environment:</dt>
-<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas-dir&gt;/ci/environment-dev.yaml</span></code></dd>
+<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">pandas_dev</span> <span class="pre">-f</span> <span class="pre">&lt;path-to-pandas-dir&gt;/ci/environment-dev.yaml</span></code></p>
+</dd>
 </dl>
 </li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><strong>Windows users</strong>: If you’re copy-pasting the path, replace all pasted <code class="docutils literal"><span class="pre">\</span></code> characters with <code class="docutils literal"><span class="pre">/</span></code> for the command to work.</p>
+<p class="last"><strong>Windows users</strong>: If you’re copy-pasting the path, replace all pasted <code class="docutils literal notranslate"><span class="pre">\</span></code> characters with <code class="docutils literal notranslate"><span class="pre">/</span></code> for the command to work.</p>
 </div>
-<ul class="simple">
+<ul>
 <li><dl class="first docutils">
 <dt>Activate the new conda environment:</dt>
-<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></dd>
+<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pandas_dev</span></code></p>
+</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt>Install pandas development dependencies:</dt>
-<dd><code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;path-to-pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></dd>
+<dd><p class="first last"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">defaults</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">--file=&lt;path-to-pandas-dir&gt;/ci/requirements-optional-conda.txt</span></code></p>
+</dd>
 </dl>
 </li>
 </ul>
@@ -172,8 +165,8 @@ Select the workload “Python development” and the option “Python native dev
 <dl class="docutils">
 <dt>To compile these files simply run:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
 </div>
 </dd>
 </dl>
@@ -193,7 +186,7 @@ pandas folder.</p>
 <dl class="docutils">
 <dt>You can create a git branch running:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new_branch_name&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new_branch_name&gt;</span></code></div>
 </div>
 </dd>
 </dl>
@@ -205,12 +198,12 @@ branch for each.</p>
 <dl class="docutils">
 <dt>To check in which branch are you:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">branch</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code></div>
 </div>
 </dd>
 <dt>To change to another branch:</dt>
 <dd><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch_name&gt;</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">&lt;branch_name&gt;</span></code></div>
 </div>
 </dd>
 </dl>
@@ -259,12 +252,14 @@ branch for each.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -275,8 +270,8 @@ branch for each.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
       <a href="_sources/pandas_setup.rst.txt"

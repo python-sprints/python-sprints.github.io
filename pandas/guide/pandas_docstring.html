@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>pandas docstring guide &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -28,11 +20,9 @@
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
-  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -51,8 +41,9 @@ to read the details of the implementation.</p>
 automatically from docstrings. <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a> serves
 this purpose.</p>
 <p>Next example gives an idea on how a docstring looks like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
-<span class="sd">&quot;&quot;&quot;Add up two integer numbers.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Add up two integer numbers.</span>
 
 <span class="sd">This function simply wraps the `+` operator, and does not</span>
 <span class="sd">do anything interesting, except for illustrating what is</span>
@@ -123,12 +114,12 @@ backticks. It is considered inline code:</p>
 <ul class="simple">
 <li>The name of a parameter</li>
 <li>Python code, a module, function, built-in, type, literal… (e.g. <cite>os</cite>, <cite>list</cite>, <cite>numpy.abs</cite>, <cite>datetime.date</cite>, <cite>True</cite>)</li>
-<li>A pandas class (in the form <code class="docutils literal"><span class="pre">:class:`~pandas.Series`</span></code>)</li>
-<li>A pandas method (in the form <code class="docutils literal"><span class="pre">:meth:`pandas.Series.sum`</span></code>)</li>
-<li>A pandas function (in the form <code class="docutils literal"><span class="pre">:func:`pandas.to_datetime`</span></code>)</li>
+<li>A pandas class (in the form <code class="docutils literal notranslate"><span class="pre">:class:`~pandas.Series`</span></code>)</li>
+<li>A pandas method (in the form <code class="docutils literal notranslate"><span class="pre">:meth:`pandas.Series.sum`</span></code>)</li>
+<li>A pandas function (in the form <code class="docutils literal notranslate"><span class="pre">:func:`pandas.to_datetime`</span></code>)</li>
 </ul>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_values</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_values</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add the values in `arr`.</span>
 
@@ -140,7 +131,7 @@ backticks. It is considered inline code:</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
 
     <span class="sd">&quot;&quot;&quot;Some function.</span>
 
@@ -171,7 +162,7 @@ a single line. It needs to express what the object does without providing
 details. For functions and methods, the short summary must start with an
 infinitive verb.</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cast Series type.</span>
 
@@ -181,7 +172,7 @@ infinitive verb.</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Casts Series type.</span>
 
@@ -225,7 +216,7 @@ go in other sections.</p>
 every paragraph in the extended summary is finished by a dot.</p>
 <p>The extended summary should provide details on why the function is useful and
 their use cases, if it is not too generic.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">unstack</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Pivot a row index to columns.</span>
 
@@ -263,7 +254,7 @@ comma at the end of the type. The exact form of the type in this case will be
 argument means, which can be added after a comma “int, default -1, meaning all
 cpus”.</p>
 <p>In cases where the default value is <cite>None</cite>, meaning that the value will not be
-used. Instead of “str, default None” is preferred “str, optional”.
+used. Instead of “str, default None”, it is preferred to write “str, optional”.
 When <cite>None</cite> is a value being used, we will keep the form “str, default None”.
 For example, in <cite>df.to_csv(compression=None)</cite>, <cite>None</cite> is not a value being used,
 but means that compression is optional, and no compression is being used if not
@@ -271,7 +262,7 @@ provided. In this case we will use <cite>str, optional</cite>. Only in cases lik
 <cite>func(value=None)</cite> and <cite>None</cite> is being used in the same way as <cite>0</cite> or <cite>foo</cite>
 would be used, then we will specify “str, int or None, default None”.</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a plot.</span>
@@ -293,7 +284,7 @@ would be used, then we will specify “str, int or None, default None”.</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a plot.</span>
@@ -401,7 +392,7 @@ one value (a tuple of values).</p>
 <p>The types for “Returns” and “Yields” are the same as the ones for the
 “Parameters”. Also, the description must finish with a dot.</p>
 <p>For example, with a single value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate and return a random number.</span>
 
@@ -417,7 +408,7 @@ one value (a tuple of values).</p>
 </pre></div>
 </div>
 <p>With more than one value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_letters</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_letters</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate and return a sequence of random letters.</span>
 
@@ -438,7 +429,7 @@ one value (a tuple of values).</p>
 </pre></div>
 </div>
 <p>If the method yields its value:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_values</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sample_values</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate an infinite sequence of random numbers.</span>
 
@@ -499,9 +490,10 @@ following line than the type. But in this section it is located in the same
 line, with a colon in between. If the description does not fit in the same
 line, it can continue in the next ones, but it has to be indented in them.</p>
 <p>For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the first 5 elements of the Series.</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the first 5 elements of the Series.</span>
 
 <span class="sd">        This function is mainly useful to preview the values of the</span>
 <span class="sd">        Series without displaying the whole of it.</span>
@@ -552,9 +544,10 @@ be added with blank lines before and after them.</p>
 used for extended functionality</li>
 </ol>
 <p>A simple example could be:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Return the first elements of the Series.</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return the first elements of the Series.</span>
 
 <span class="sd">        This function is mainly useful to preview the values of the</span>
 <span class="sd">        Series without displaying the whole of it.</span>
@@ -603,7 +596,7 @@ in bold. Use double star ** to make a text bold, like in **this example**.</p>
 <span id="docstring-example-conventions"></span><h4>Conventions for the examples<a class="headerlink" href="#conventions-for-the-examples" title="Permalink to this headline">¶</a></h4>
 <p>Code in examples is assumed to always start with these two lines which are not
 shown:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
@@ -632,7 +625,7 @@ consistent. And numerical properties of them.</p>
 <p>When calling the method, keywords arguments <cite>head(n=3)</cite> are preferred to
 positional arguments <cite>head(3)</cite>.</p>
 <p><strong>Good:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Compute the mean of the input.</span>
@@ -719,7 +712,7 @@ positional arguments <cite>head(3)</cite>.</p>
 </pre></div>
 </div>
 <p><strong>Bad:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">foo</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bar</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A sample DataFrame method.</span>
 
@@ -751,13 +744,56 @@ positional arguments <cite>head(3)</cite>.</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="tips-for-getting-your-examples-pass-the-doctests">
+<span id="docstring-doctest-tips"></span><h4>Tips for getting your examples pass the doctests<a class="headerlink" href="#tips-for-getting-your-examples-pass-the-doctests" title="Permalink to this headline">¶</a></h4>
+<p>Getting the examples pass the doctests in the validation script can sometimes
+be tricky. Here are some attention points:</p>
+<ul>
+<li><p class="first">Import all needed libraries (except for pandas and numpy, those are already
+imported as <cite>import pandas as pd</cite> and <cite>import numpy as np</cite>) and define all
+variables you use in the example.</p>
+</li>
+<li><p class="first">Try to avoid using random data.</p>
+</li>
+<li><p class="first">If you have a code snippet that wraps multiple lines, you need to use ‘…’
+on the continued lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
+<span class="gp">... </span>                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you want to show a case where an exception is raised, you can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s2">&quot;712-01-01&quot;</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">OutOfBoundsDatetime</span>: <span class="n">Out of bounds nanosecond timestamp: 712-01-01 00:00:00</span>
+</pre></div>
+</div>
+<p>It is essential to include the “Traceback (most recent call last):”, but for
+the actual error only the error name is sufficient.</p>
+</li>
+<li><p class="first">If there is a small part of the result that can vary (e.g. a hash in an object
+represenation), you can use <code class="docutils literal notranslate"><span class="pre">...</span></code> to represent this part.</p>
+<p>If you want to show that <code class="docutils literal notranslate"><span class="pre">s.plot()</span></code> returns a matplotlib AxesSubplot object,
+this will fail the doctest:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7efd0c0b0690&gt;</span>
+</pre></div>
+</div>
+<p>However, you can do (notice the comment that needs to be added):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  
+<span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at ...&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
 <div class="section" id="plots-in-examples">
 <span id="docstring-example-plots"></span><h4>Plots in examples<a class="headerlink" href="#plots-in-examples" title="Permalink to this headline">¶</a></h4>
 <p>There are some methods in pandas returning plots. To render the plots generated
 by the examples in the documentation, the <cite>.. plot::</cite> directive exists.</p>
 <p>To use it, place the next code after the “Examples” header as shown below. The
 plot will be generated automatically when building the documentation.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Series</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generate a plot with the `Series` data.</span>
@@ -768,8 +804,8 @@ plot will be generated automatically when building the documentation.</p>
 <span class="sd">        .. plot::</span>
 <span class="sd">            :context: close-figs</span>
 
-<span class="sd">        &gt;&gt;&gt; s = pd.Series([1, 2, 3])</span>
-<span class="sd">        &gt;&gt;&gt; s.plot()</span>
+<span class="sd">            &gt;&gt;&gt; s = pd.Series([1, 2, 3])</span>
+<span class="sd">            &gt;&gt;&gt; s.plot()</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
 </pre></div>
@@ -805,6 +841,7 @@ plot will be generated automatically when building the documentation.</p>
 <li><a class="reference internal" href="#section-6-notes">Section 6: Notes</a></li>
 <li><a class="reference internal" href="#section-7-examples">Section 7: Examples</a><ul>
 <li><a class="reference internal" href="#conventions-for-the-examples">Conventions for the examples</a></li>
+<li><a class="reference internal" href="#tips-for-getting-your-examples-pass-the-doctests">Tips for getting your examples pass the doctests</a></li>
 <li><a class="reference internal" href="#plots-in-examples">Plots in examples</a></li>
 </ul>
 </li>
@@ -831,12 +868,14 @@ plot will be generated automatically when building the documentation.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -847,8 +886,8 @@ plot will be generated automatically when building the documentation.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
       
       |
       <a href="_sources/pandas_docstring.rst.txt"
