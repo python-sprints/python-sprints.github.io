@@ -97,6 +97,9 @@ cases it could be more than one file). And `<commit-message>` is a short
 description of your changes, starting by "DOC:" (e.g. "DOC: Improved the
 docstring of DataFrame.head()").
 
+If you have multiple commits, you can squash them to a single one, see section 
+`Combining Commits <https://pandas.pydata.org/pandas-docs/stable/contributing.html#id34>`_.
+
 5. Push your changes to pandas
 ------------------------------
 
