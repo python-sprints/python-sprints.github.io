@@ -815,6 +815,52 @@ positional arguments `head(3)`.
         pass
 
 
+.. _docstring.doctest_tips:
+
+Tips for getting your examples pass the doctests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Getting the examples pass the doctests in the validation script can sometimes
+be tricky. Here are some attention points:
+
+* Import all needed libraries (except for pandas and numpy, those are already
+  imported as `import pandas as pd` and `import numpy as np`) and define all
+  variables you use in the example.
+
+* Try to avoid using random data.
+
+* If you have a code snippet that wraps multiple lines, you need to use '...'
+  on the continued lines:
+
+  ::
+
+    >>> df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b', 'c'],
+    ...                   columns=['A', 'B'])
+
+* If you want to show a case where an exception is raised, you can do::
+
+    >>> pd.to_datetime(["712-01-01"])
+    Traceback (most recent call last):
+    OutOfBoundsDatetime: Out of bounds nanosecond timestamp: 712-01-01 00:00:00
+
+  It is essential to include the "Traceback (most recent call last):", but for
+  the actual error only the error name is sufficient.
+
+* If there is a small part of the result that can vary (e.g. a hash in an object
+  represenation), you can use ``...`` to represent this part.
+
+  If you want to show that ``s.plot()`` returns a matplotlib AxesSubplot object,
+  this will fail the doctest::
+
+    >>> s.plot()
+    <matplotlib.axes._subplots.AxesSubplot at 0x7efd0c0b0690>
+
+  However, you can do (notice the comment that needs to be added)::
+
+    >>> s.plot()  # doctest: +ELLIPSIS
+    <matplotlib.axes._subplots.AxesSubplot at ...>
+
+
 .. _docstring.example_plots:
 
 Plots in examples
