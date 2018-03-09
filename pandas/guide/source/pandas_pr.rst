@@ -114,6 +114,9 @@ style by running the command:
 
     | ``git diff upstream/master -u -- "*.py" | flake8 --diff``
 
+If you don't already have flake8 installed, you can install it in the Anaconda Prompt it via
+    | ``conda install flake8``
+
 If the command does not return any warning, mark that checkbox with an X (do
 not leave spaces inside the brackets, use `[X]`). If it returns a warning,
 fix it, commit your changes, and push to your remote branch before opening
