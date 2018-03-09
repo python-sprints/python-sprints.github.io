@@ -20,7 +20,8 @@ Next example gives an idea on how a docstring looks like:
 .. code-block:: python
 
     def add(num1, num2):
-    """Add up two integer numbers.
+    """
+    Add up two integer numbers.
 
     This function simply wraps the `+` operator, and does not
     do anything interesting, except for illustrating what is
@@ -265,7 +266,7 @@ argument means, which can be added after a comma "int, default -1, meaning all
 cpus".
 
 In cases where the default value is `None`, meaning that the value will not be
-used. Instead of "str, default None" is preferred "str, optional".
+used. Instead of "str, default None", it is preferred to write "str, optional".
 When `None` is a value being used, we will keep the form "str, default None".
 For example, in `df.to_csv(compression=None)`, `None` is not a value being used,
 but means that compression is optional, and no compression is being used if not
@@ -535,7 +536,8 @@ For example:
 
     class Series:
         def head(self):
-            """Return the first 5 elements of the Series.
+            """
+            Return the first 5 elements of the Series.
 
             This function is mainly useful to preview the values of the
             Series without displaying the whole of it.
@@ -603,7 +605,8 @@ A simple example could be:
 
     class Series:
         def head(self, n=5):
-            """Return the first elements of the Series.
+            """
+            Return the first elements of the Series.
 
             This function is mainly useful to preview the values of the
             Series without displaying the whole of it.
@@ -815,6 +818,52 @@ positional arguments `head(3)`.
         pass
 
 
+.. _docstring.doctest_tips:
+
+Tips for getting your examples pass the doctests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Getting the examples pass the doctests in the validation script can sometimes
+be tricky. Here are some attention points:
+
+* Import all needed libraries (except for pandas and numpy, those are already
+  imported as `import pandas as pd` and `import numpy as np`) and define all
+  variables you use in the example.
+
+* Try to avoid using random data.
+
+* If you have a code snippet that wraps multiple lines, you need to use '...'
+  on the continued lines:
+
+  ::
+
+    >>> df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b', 'c'],
+    ...                   columns=['A', 'B'])
+
+* If you want to show a case where an exception is raised, you can do::
+
+    >>> pd.to_datetime(["712-01-01"])
+    Traceback (most recent call last):
+    OutOfBoundsDatetime: Out of bounds nanosecond timestamp: 712-01-01 00:00:00
+
+  It is essential to include the "Traceback (most recent call last):", but for
+  the actual error only the error name is sufficient.
+
+* If there is a small part of the result that can vary (e.g. a hash in an object
+  represenation), you can use ``...`` to represent this part.
+
+  If you want to show that ``s.plot()`` returns a matplotlib AxesSubplot object,
+  this will fail the doctest::
+
+    >>> s.plot()
+    <matplotlib.axes._subplots.AxesSubplot at 0x7efd0c0b0690>
+
+  However, you can do (notice the comment that needs to be added)::
+
+    >>> s.plot()  # doctest: +ELLIPSIS
+    <matplotlib.axes._subplots.AxesSubplot at ...>
+
+
 .. _docstring.example_plots:
 
 Plots in examples
@@ -839,7 +888,7 @@ plot will be generated automatically when building the documentation.
             .. plot::
                 :context: close-figs
 
-            >>> s = pd.Series([1, 2, 3])
-            >>> s.plot()
+                >>> s = pd.Series([1, 2, 3])
+                >>> s.plot()
             """
             pass

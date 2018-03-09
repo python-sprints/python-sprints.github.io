@@ -16,7 +16,7 @@ technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:
 
     | ``cd <pandas-dir>``
-    | ``scripts/validate_docstrings.py <your-function-or-method>``
+    | ``python scripts/validate_docstrings.py <your-function-or-method>``
 
 where `<your-function-or-method>` is for example `pandas.DataFrame.head`,
 `pandas.Series.tail` or `pandas.to_datetime`.
@@ -33,6 +33,15 @@ missing dot at the end of a sentence, a blank line where it should not be, etc.
 Finally, the output will also contain errors from running the examples.
 
 With few exceptions, you should fix all the errors before continuing.
+
+If you are changing a docstring in a cython file (with ``.pyx`` extension),
+you need to rebuild the pandas C extensions to be able to see the resulting
+changes in the docstring and to validate the docstring with the command
+above. 
+To recompile pandas, run:
+
+    | ``cd <pandas-dir>``
+    | ``python setup.py build_ext --inplace``
 
 2. Visual validation of the docstring
 -------------------------------------
@@ -113,6 +122,9 @@ ignore these check boxes. Just verify that your changes respect the PEP-8
 style by running the command:
 
     | ``git diff upstream/master -u -- "*.py" | flake8 --diff``
+
+If you don't already have flake8 installed, you can install it in the Anaconda Prompt it via
+    | ``conda install flake8``
 
 If the command does not return any warning, mark that checkbox with an X (do
 not leave spaces inside the brackets, use `[X]`). If it returns a warning,
