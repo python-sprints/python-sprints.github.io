@@ -20,6 +20,10 @@ the sprint.
     fast Internet connection, contact your local chapter organizer, who will
     try to get a copy of both on a usb key.
 
+.. note::
+    **Windows users:** `Video tutorial: Set up pandas development environment
+    in Windows <https://www.youtube.com/watch?v=417zAcfM96U>`_ by Frank Akogun.
+    
 Instructions
 ------------
 

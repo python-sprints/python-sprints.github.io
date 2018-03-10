@@ -4,20 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Before the sprint: Set up instructions &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -31,8 +23,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
@@ -59,6 +50,11 @@ around 600Mb for Anaconda from the Internet. If you don’t have access to a
 fast Internet connection, contact your local chapter organizer, who will
 try to get a copy of both on a usb key.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Windows users:</strong> <a class="reference external" href="https://www.youtube.com/watch?v=417zAcfM96U">Video tutorial: Set up pandas development environment
+in Windows</a> by Frank Akogun.</p>
+</div>
 <div class="section" id="instructions">
 <h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="create-a-github-account">
@@ -82,32 +78,32 @@ Windows</a> if needed).</p>
 </div>
 <p>In the terminal of your computer, in the directory where you want the copy of
 pandas source code, run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/</span><span class="n">pandas</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/</span><span class="n">pandas</span>
 </pre></div>
 </div>
 <p>or (if you have set up SSH keys for accessing GitHub):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/</span><span class="n">pandas</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/</span><span class="n">pandas</span>
 </pre></div>
 </div>
-<p>This will create a directory named <code class="docutils literal"><span class="pre">pandas</span></code>, containing the latest version of
-the source code. We will name this directory <code class="docutils literal"><span class="pre">&lt;pandas-dir&gt;</span></code> in the rest of
+<p>This will create a directory named <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, containing the latest version of
+the source code. We will name this directory <code class="docutils literal notranslate"><span class="pre">&lt;pandas-dir&gt;</span></code> in the rest of
 this document.</p>
-<p>Make sure you’re in the root of the <code class="docutils literal"><span class="pre">&lt;pandas-dir&gt;</span></code> directory.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
+<p>Make sure you’re in the root of the <code class="docutils literal notranslate"><span class="pre">&lt;pandas-dir&gt;</span></code> directory.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Then, set the upstream remote, so you can fetch the updates from the pandas
 repository:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pandas</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">pandas</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pandas</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">pandas</span>
 </pre></div>
 </div>
 <p>or (if you have set up SSH keys for accessing GitHub):</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">pandas</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">pandas</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">pandas</span><span class="o">-</span><span class="n">dev</span><span class="o">/</span><span class="n">pandas</span>
 </pre></div>
 </div>
 <p>To fetch the latest updates from the pandas repository, follow the steps in
 <a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">Syncing a Fork</a>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
 <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
 <span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
 </pre></div>
@@ -128,30 +124,30 @@ you’re doing):</p>
 <blockquote>
 <div><ul class="simple">
 <li>If you chose to prepend Anaconda to your PATH during install adding it to
-your <code class="docutils literal"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
-<li>Otherwise, run <code class="docutils literal"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your
+your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>, just restart your terminal.</li>
+<li>Otherwise, run <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">PATH=&quot;&lt;path-to-anaconda&gt;/bin:$PATH&quot;</span></code> in your
 terminal. Keep in mind that it will be active exclusively in the terminal
 you run this command.</li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="first">Create a conda environment:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pandas_dev</span> <span class="o">-</span><span class="n">f</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">ci</span><span class="o">/</span><span class="n">environment</span><span class="o">-</span><span class="n">dev</span><span class="o">.</span><span class="n">yaml</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">pandas_dev</span> <span class="o">-</span><span class="n">f</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">ci</span><span class="o">/</span><span class="n">environment</span><span class="o">-</span><span class="n">dev</span><span class="o">.</span><span class="n">yaml</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last"><strong>Windows users</strong>: If you’re copy-pasting the path, replace all pasted
-<code class="docutils literal"><span class="pre">\</span></code> characters with <code class="docutils literal"><span class="pre">/</span></code> for the command to work.</p>
+<code class="docutils literal notranslate"><span class="pre">\</span></code> characters with <code class="docutils literal notranslate"><span class="pre">/</span></code> for the command to work.</p>
 </div>
 </li>
 <li><p class="first">Activate the new conda environment:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">activate</span> <span class="n">pandas_dev</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="n">activate</span> <span class="n">pandas_dev</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Install pandas development dependencies:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">defaults</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">file</span><span class="o">=&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">ci</span><span class="o">/</span><span class="n">requirements</span><span class="o">-</span><span class="n">optional</span><span class="o">-</span><span class="n">conda</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">defaults</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">file</span><span class="o">=&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">ci</span><span class="o">/</span><span class="n">requirements</span><span class="o">-</span><span class="n">optional</span><span class="o">-</span><span class="n">conda</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 </li>
@@ -175,7 +171,7 @@ instead.</p>
 <p class="last">After the installation, run the following commands in Anaconda Prompt.</p>
 </div>
 <p>To compile these files simply run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
 <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_ext</span> <span class="o">--</span><span class="n">inplace</span>
 </pre></div>
 </div>
@@ -194,25 +190,25 @@ pandas folder.</p>
 </div>
 <p>Before creating a branch, make sure that you fetched the latest master version
 of the upstream pandas repository. You can do this with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
 <span class="n">git</span> <span class="n">pull</span> <span class="n">upstream</span> <span class="n">master</span> <span class="o">--</span><span class="n">ff</span><span class="o">-</span><span class="n">only</span>
 </pre></div>
 </div>
 <p>Then, you can create a new git branch running:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">new_branch_name</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="o">&lt;</span><span class="n">new_branch_name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>The branch name should be descriptive of the feature you will work on. For
-example, if you will work on the docstring of the method <code class="docutils literal"><span class="pre">head</span></code>, you can
-name your branch <code class="docutils literal"><span class="pre">docstring_head</span></code>.</p>
+example, if you will work on the docstring of the method <code class="docutils literal notranslate"><span class="pre">head</span></code>, you can
+name your branch <code class="docutils literal notranslate"><span class="pre">docstring_head</span></code>.</p>
 <p>If during the sprint you work in more than one docstring, you will need a
 branch for each.</p>
 <p>To check in which branch are you:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
 </pre></div>
 </div>
 <p>To change to another branch:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">branch_name</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">&lt;</span><span class="n">branch_name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -260,12 +256,14 @@ branch for each.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -276,7 +274,7 @@ branch for each.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
