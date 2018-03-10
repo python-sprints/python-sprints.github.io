@@ -40,19 +40,17 @@ and released in the next version.</p>
 <p>There is a script in pandas that validates whether a docstring follows the
 technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scripts/validate_docstrings.py</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">validate_docstrings</span><span class="o">.</span><span class="n">py</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span>
+</pre></div>
 </div>
-</div></blockquote>
-<p>where <cite>&lt;your-function-or-method&gt;</cite> is for example <cite>pandas.DataFrame.head</cite>,
-<cite>pandas.Series.tail</cite> or <cite>pandas.to_datetime</cite>.</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;your-function-or-method&gt;</span></code> is for example <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.head</span></code>,
+<code class="docutils literal notranslate"><span class="pre">pandas.Series.tail</span></code> or <code class="docutils literal notranslate"><span class="pre">pandas.to_datetime</span></code>.</p>
 <p>The output of the script will show the final docstring. In many cases just a
 verbatim copy, but in some cases the docstring is implemented as a template,
 and reused by more than one method or function, and this is useful to see
 the final result.</p>
-<p>The output will also contain a list of issues with the docstring. Mainly style
+<p>The output will also highlight any issues with the docstring. Mainly style
 errors, where the docstring does not respect the convention. For example, a
 missing dot at the end of a sentence, a blank line where it should not be, etc.</p>
 <p>Finally, the output will also contain errors from running the examples.</p>
@@ -60,32 +58,29 @@ missing dot at the end of a sentence, a blank line where it should not be, etc.<
 <p>If you are changing a docstring in a cython file (with <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> extension),
 you need to rebuild the pandas C extensions to be able to see the resulting
 changes in the docstring and to validate the docstring with the command
-above.
-To recompile pandas, run:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_ext</span> <span class="pre">--inplace</span></code></div>
+above.</p>
+<p>To recompile pandas, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
+<span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_ext</span> <span class="o">--</span><span class="n">inplace</span>
+</pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="visual-validation-of-the-docstring">
 <h2>2. Visual validation of the docstring<a class="headerlink" href="#visual-validation-of-the-docstring" title="Permalink to this headline">¶</a></h2>
 <p>The previous script validates things like the names of the sections, or
-that there are dots, spaces, or blank lines in the right side. But does
+that there are dots, spaces, or blank lines in the right place. It does
 not validate for typos, unclear sentences, or other mistakes. To validate
 them, as well as the visualization of your docstring in the pandas website
 you need to generate the html version of the page you worked on.</p>
 <p>To build the documentation run:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;pandas-dir&gt;/doc</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">make.py</span> <span class="pre">html</span> <span class="pre">--single</span> <span class="pre">&lt;your-function-or-method&gt;</span></code></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">doc</span>
+<span class="n">python</span> <span class="n">make</span><span class="o">.</span><span class="n">py</span> <span class="n">html</span> <span class="o">--</span><span class="n">single</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span>
+</pre></div>
 </div>
-</div></blockquote>
-<p>where <cite>&lt;your-function-or-method&gt;</cite> follows the format described in the previous
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;your-function-or-method&gt;</span></code> follows the format described in the previous
 section.</p>
-<p>This will generate a file <cite>&lt;pandas-dir&gt;/doc/build/html/generated_single/&lt;your-function-or-method&gt;.html</cite>
+<p>This will generate a file
+<code class="docutils literal notranslate"><span class="pre">&lt;pandas-dir&gt;/doc/build/html/generated_single/&lt;your-function-or-method&gt;.html</span></code>
 that can be opened with your web browser.</p>
 </div>
 <div class="section" id="validate-that-the-docstring-is-clear-to-others">
@@ -100,26 +95,22 @@ and make sure they are able to fully understand it.</p>
 into git.</p>
 <p>Before committing your changes, make sure you are in the branch of the feature
 you are going to commit with:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+</pre></div>
 </div>
-</div></blockquote>
-<p>If the current branch is <cite>master</cite>, do not commit your changes, as you can get
+<p>If the current branch is <code class="docutils literal notranslate"><span class="pre">master</span></code>, do not commit your changes, as you can get
 into a situation where you need to undo your history in git, which is not
 straightforward.</p>
-<p>Then, follow the next steps:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">upstream</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span> <span class="pre">upstream/master</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;modified-file(s)&gt;</span></code></div>
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;commit-message&gt;&quot;</span></code></div>
+<p>Then, get the latest upstream changes and commit your changes on top:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
+<span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">modified</span><span class="o">-</span><span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;&lt;commit-message&gt;&quot;</span>
+</pre></div>
 </div>
-</div></blockquote>
-<p>where <cite>&lt;modified-file(s)&gt;</cite> is the file where you made your changes (in rare
-cases it could be more than one file). And <cite>&lt;commit-message&gt;</cite> is a short
-description of your changes, starting by “DOC:” (e.g. “DOC: Improved the
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;modified-file(s)&gt;</span></code> is the file where you made your changes (in rare
+cases it could be more than one file). And <code class="docutils literal notranslate"><span class="pre">&lt;commit-message&gt;</span></code> is a short
+description of your changes, starting by “DOC:” (e.g. “DOC: Improve the
 docstring of DataFrame.head()”).</p>
 </div>
 <div class="section" id="push-your-changes-to-pandas">
@@ -128,34 +119,28 @@ docstring of DataFrame.head()”).</p>
 pandas maintainers, so they can add them to the main pandas repository.</p>
 <p>The first step is to push your local changes to your own fork, so they are
 available online:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">&lt;your-branch-name&gt;</span></code></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
 </div>
-</div></blockquote>
 <p>Then, visit <a class="reference external" href="https://github.com/pandas-dev/pandas">https://github.com/pandas-dev/pandas</a> in your browser, and click
 on the “Compare &amp; pull request” button in the yellow box above the repository
 files.</p>
-<p>If you have only one commit, the pull request will automatically use its
-comment as title. Otherwise, please name it following the same standard as
-described before (e.g. “DOC: Improved the docstring of DataFrame.head()”).
-In the body of the description, there are some checkboxes. For the sprint,
-we do not have an issue for each docstring change, and as we are not changing
-code, we do not need to add/run tests or add a <cite>whatsnew</cite> entry. So you can
-ignore these check boxes. Just verify that your changes respect the PEP-8
-style by running the command:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">upstream/master</span> <span class="pre">-u</span> <span class="pre">--</span> <span class="pre">&quot;*.py&quot;</span> <span class="pre">|</span> <span class="pre">flake8</span> <span class="pre">--diff</span></code></div>
+<p>If you have only one commit, the pull request will automatically use its commit
+message as title. Otherwise, please name it following the same standard as
+described before (e.g. “DOC: Improve the docstring of DataFrame.head()”).  In
+the body of the description, there are some checkboxes. For the sprint, we do
+not have an issue for each docstring change, and as we are not changing code,
+we do not need to add/run tests or add a <cite>whatsnew</cite> entry. So you can ignore
+these check boxes. Just verify that your changes respect the PEP-8 style by
+running the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span> <span class="o">-</span><span class="n">u</span> <span class="o">--</span> <span class="s2">&quot;*.py&quot;</span> <span class="o">|</span> <span class="n">flake8</span> <span class="o">--</span><span class="n">diff</span>
+</pre></div>
 </div>
-</div></blockquote>
-<dl class="docutils">
-<dt>If you don’t already have flake8 installed, you can install it in the Anaconda Prompt it via</dt>
-<dd><div class="first last line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">flake8</span></code></div>
+<p>If you don’t already have flake8 installed, you can install it in the Anaconda
+Prompt it via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">flake8</span>
+</pre></div>
 </div>
-</dd>
-</dl>
 <p>If the command does not return any warning, mark that checkbox with an X (do
 not leave spaces inside the brackets, use <cite>[X]</cite>). If it returns a warning,
 fix it, commit your changes, and push to your remote branch before opening
@@ -171,13 +156,11 @@ some comments on things that can be improved, from more senior pandas
 contributors.</p>
 <p>For comments in your review, you can make new changes in your local branch for
 that pull request. And once you addressed all the comments, you can commit them
-and push again to your local branch. As you used the parameter <cite>-u</cite> in your
-first push, you can simply run:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code></div>
+and push again to your local branch. As you used the parameter <code class="docutils literal notranslate"><span class="pre">-u</span></code> to set
+the upstream branch in your first push, you can simply run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+</pre></div>
 </div>
-</div></blockquote>
 <p>from your local branch, and the changes will be pushed to your remote branch.</p>
 <p>Updating your remote branch automatically updates the pull request, so you do
 not need to create a new pull request, or make any other changes in the one
@@ -189,7 +172,7 @@ the same pull request. While in the first contributions is normal to feel
 frustrated for getting feedback requesting changes, it is actually because of
 reviews that the open source software quality is very high. And also, it is
 probably the part of contributing to open source projects in which you will
-learn more. So, be patient and enjoy. And feel free to provide constructive
+learn the most. So, be patient and enjoy. And feel free to provide constructive
 feedback in other contributors pull requests too.</p>
 </div>
 </div>
