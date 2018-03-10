@@ -4,6 +4,10 @@
 Submitting your changes
 =======================
 
+.. note::
+  `Video tutorial: Submitting docstring changes to GitHub
+  <https://www.youtube.com/watch?v=7eC3MjDIxNM>`_ by Frank Akogun.
+
 Once you finished the changes to your assigned docstring, you can follow the
 instructions in this document in order to get your changes merged into pandas,
 and released in the next version.
