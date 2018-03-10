@@ -183,8 +183,16 @@ to submit a pull request, so they are included in pandas.</p>
 <p class="last"><strong>Windows users</strong>: run the next commands with Git Bash started at the cloned
 pandas folder.</p>
 </div>
+<p>Before creating a branch, make sure that you fetched the latest master version
+of the upstream pandas repository. You can do this with:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">master</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">upstream</span> <span class="pre">master</span> <span class="pre">--ff-only</span></code></div>
+</div>
+</div></blockquote>
 <dl class="docutils">
-<dt>You can create a git branch running:</dt>
+<dt>Then, you can create a new git branch running:</dt>
 <dd><div class="first last line-block">
 <div class="line"><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">&lt;new_branch_name&gt;</span></code></div>
 </div>
