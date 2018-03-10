@@ -399,6 +399,10 @@ last two types, that need to be separated by the word 'or':
 If ``None`` is one of the accepted values, it always needs to be the last in
 the list.
 
+For axis, the convention is to use something like:
+
+- axis : {0 or 'index', 1 or 'columns', None}, default None
+
 .. _docstring.returns:
 
 Section 4: Returns or Yields

@@ -4,12 +4,20 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Submitting your changes &#8212; Python  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
@@ -22,7 +30,8 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head><body>
+  </head>
+  <body>
   
 
     <div class="document">
@@ -40,12 +49,12 @@ and released in the next version.</p>
 <p>There is a script in pandas that validates whether a docstring follows the
 technical parts of the pandas docstring convention. To run the script,
 execute in your terminal:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
 <span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">validate_docstrings</span><span class="o">.</span><span class="n">py</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">&lt;your-function-or-method&gt;</span></code> is for example <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame.head</span></code>,
-<code class="docutils literal notranslate"><span class="pre">pandas.Series.tail</span></code> or <code class="docutils literal notranslate"><span class="pre">pandas.to_datetime</span></code>.</p>
+<p>where <code class="docutils literal"><span class="pre">&lt;your-function-or-method&gt;</span></code> is for example <code class="docutils literal"><span class="pre">pandas.DataFrame.head</span></code>,
+<code class="docutils literal"><span class="pre">pandas.Series.tail</span></code> or <code class="docutils literal"><span class="pre">pandas.to_datetime</span></code>.</p>
 <p>The output of the script will show the final docstring. In many cases just a
 verbatim copy, but in some cases the docstring is implemented as a template,
 and reused by more than one method or function, and this is useful to see
@@ -55,12 +64,12 @@ errors, where the docstring does not respect the convention. For example, a
 missing dot at the end of a sentence, a blank line where it should not be, etc.</p>
 <p>Finally, the output will also contain errors from running the examples.</p>
 <p>With few exceptions, you should fix all the errors before continuing.</p>
-<p>If you are changing a docstring in a cython file (with <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> extension),
+<p>If you are changing a docstring in a cython file (with <code class="docutils literal"><span class="pre">.pyx</span></code> extension),
 you need to rebuild the pandas C extensions to be able to see the resulting
 changes in the docstring and to validate the docstring with the command
 above.</p>
 <p>To recompile pandas, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
 <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build_ext</span> <span class="o">--</span><span class="n">inplace</span>
 </pre></div>
 </div>
@@ -73,14 +82,14 @@ not validate for typos, unclear sentences, or other mistakes. To validate
 them, as well as the visualization of your docstring in the pandas website
 you need to generate the html version of the page you worked on.</p>
 <p>To build the documentation run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">doc</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">pandas</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;/</span><span class="n">doc</span>
 <span class="n">python</span> <span class="n">make</span><span class="o">.</span><span class="n">py</span> <span class="n">html</span> <span class="o">--</span><span class="n">single</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">function</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">method</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">&lt;your-function-or-method&gt;</span></code> follows the format described in the previous
+<p>where <code class="docutils literal"><span class="pre">&lt;your-function-or-method&gt;</span></code> follows the format described in the previous
 section.</p>
 <p>This will generate a file
-<code class="docutils literal notranslate"><span class="pre">&lt;pandas-dir&gt;/doc/build/html/generated_single/&lt;your-function-or-method&gt;.html</span></code>
+<code class="docutils literal"><span class="pre">&lt;pandas-dir&gt;/doc/build/html/generated_single/&lt;your-function-or-method&gt;.html</span></code>
 that can be opened with your web browser.</p>
 </div>
 <div class="section" id="validate-that-the-docstring-is-clear-to-others">
@@ -95,21 +104,21 @@ and make sure they are able to fully understand it.</p>
 into git.</p>
 <p>Before committing your changes, make sure you are in the branch of the feature
 you are going to commit with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">branch</span>
 </pre></div>
 </div>
-<p>If the current branch is <code class="docutils literal notranslate"><span class="pre">master</span></code>, do not commit your changes, as you can get
+<p>If the current branch is <code class="docutils literal"><span class="pre">master</span></code>, do not commit your changes, as you can get
 into a situation where you need to undo your history in git, which is not
 straightforward.</p>
 <p>Then, get the latest upstream changes and commit your changes on top:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
 <span class="n">git</span> <span class="n">merge</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
 <span class="n">git</span> <span class="n">add</span> <span class="o">&lt;</span><span class="n">modified</span><span class="o">-</span><span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">&gt;</span>
 <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;&lt;commit-message&gt;&quot;</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">&lt;modified-file(s)&gt;</span></code> is the file where you made your changes (in rare
-cases it could be more than one file). And <code class="docutils literal notranslate"><span class="pre">&lt;commit-message&gt;</span></code> is a short
+<p>where <code class="docutils literal"><span class="pre">&lt;modified-file(s)&gt;</span></code> is the file where you made your changes (in rare
+cases it could be more than one file). And <code class="docutils literal"><span class="pre">&lt;commit-message&gt;</span></code> is a short
 description of your changes, starting by “DOC:” (e.g. “DOC: Improve the
 docstring of DataFrame.head()”).</p>
 </div>
@@ -119,7 +128,7 @@ docstring of DataFrame.head()”).</p>
 pandas maintainers, so they can add them to the main pandas repository.</p>
 <p>The first step is to push your local changes to your own fork, so they are
 available online:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="o">&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">branch</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Then, visit <a class="reference external" href="https://github.com/pandas-dev/pandas">https://github.com/pandas-dev/pandas</a> in your browser, and click
@@ -133,12 +142,12 @@ not have an issue for each docstring change, and as we are not changing code,
 we do not need to add/run tests or add a <cite>whatsnew</cite> entry. So you can ignore
 these check boxes. Just verify that your changes respect the PEP-8 style by
 running the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span> <span class="o">-</span><span class="n">u</span> <span class="o">--</span> <span class="s2">&quot;*.py&quot;</span> <span class="o">|</span> <span class="n">flake8</span> <span class="o">--</span><span class="n">diff</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">diff</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span> <span class="o">-</span><span class="n">u</span> <span class="o">--</span> <span class="s2">&quot;*.py&quot;</span> <span class="o">|</span> <span class="n">flake8</span> <span class="o">--</span><span class="n">diff</span>
 </pre></div>
 </div>
 <p>If you don’t already have flake8 installed, you can install it in the Anaconda
 Prompt it via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">flake8</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">flake8</span>
 </pre></div>
 </div>
 <p>If the command does not return any warning, mark that checkbox with an X (do
@@ -156,9 +165,9 @@ some comments on things that can be improved, from more senior pandas
 contributors.</p>
 <p>For comments in your review, you can make new changes in your local branch for
 that pull request. And once you addressed all the comments, you can commit them
-and push again to your local branch. As you used the parameter <code class="docutils literal notranslate"><span class="pre">-u</span></code> to set
+and push again to your local branch. As you used the parameter <code class="docutils literal"><span class="pre">-u</span></code> to set
 the upstream branch in your first push, you can simply run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span>
 </pre></div>
 </div>
 <p>from your local branch, and the changes will be pushed to your remote branch.</p>
@@ -218,14 +227,12 @@ feedback in other contributors pull requests too.</p>
    </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
-    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -236,7 +243,7 @@ feedback in other contributors pull requests too.</p>
       &copy;.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
       
       |
