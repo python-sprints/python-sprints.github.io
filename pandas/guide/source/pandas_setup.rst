@@ -36,18 +36,18 @@ All the changes during the sprints need to be made to the latest development
 version of pandas in a Git repository. Do not make them to a version downloaded
 from the Internet via pip, conda or a zip.
 
-To get the latest development version:
+Follow these steps to get the latest development version:
 
-* Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on
-  GitHub by clicking the `Fork` button on the top-right
+Fork the `pandas repository <https://github.com/pandas-dev/pandas>`_ on GitHub
+by clicking the `Fork` button on the top-right
 
 .. note::
     **Windows users**: run the next commands in a Git Bash session in the
     directory where you want to download pandas source code (download `Git for
     Windows <https://gitforwindows.org/>`_ if needed).
 
-* In the terminal of your computer, in the directory where you want the copy of
-  pandas source code, run: ::
+In the terminal of your computer, in the directory where you want the copy of
+pandas source code, run: ::
 
     git clone https://github.com/<your-github-username>/pandas
 
@@ -85,7 +85,7 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
 * Download and install `Anaconda <https://www.anaconda.com/download/>`_.
 
-.. note::
+  .. note::
     **Windows users**: run the next commands in the Anaconda Prompt (found in the Anaconda
     folder of the Start menu).
 
@@ -102,7 +102,7 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
     conda env create -n pandas_dev -f <path-to-pandas-dir>/ci/environment-dev.yaml
 
-.. note::
+  .. note::
     **Windows users**: If you're copy-pasting the path, replace all pasted
     ``\`` characters with ``/`` for the command to work.
 
