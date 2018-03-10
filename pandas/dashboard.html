@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>#pandasSprint</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>#pandasSprint overview</h1>
+            <ol>
+                <li><a href="https://python-sprints.github.io/pandas/guide/pandas_setup.html">Install the environment</a></li>
+                <li>Your local organizers will assign you a documentation page</li>
+                <li>
+                    Understand <b>well</b> what the functionality you're documenting does
+                    <ul>
+                        <li>Check the current <a href="https://pandas.pydata.org/pandas-docs/stable/">pandas documentation</a></li>
+                        <li>Search <a href="https://stackoverflow.com">Stack overflow</a> for it</li>
+                        <li>Use a jupyter notebook to experiment</li>
+                    </ul>
+                </li>
+                <li>Find where the docstring is in the source code</li>
+                <li>
+                    Check if the docstring is reused by other functions/methods
+                    <ul>
+                        <li>You have a <a href="https://github.com/TomAugspurger/pandas/blob/0e43660d96d4f4d8f860643fc1271a603ad2390c/doc/source/contributing.rst#sharing-docstrings">guide about sharing docstrings</a></li>
+                        <li>If it is, <a href="https://docs.google.com/spreadsheets/d/10EpQFkVDqiIFLLVGtIWzCMRACz20yWuta3_DU0qV6-E/edit#gid=861430795">investigate</a> who is working in the other functions<li>
+                        <li>Contact them to make sure you don't have code conflicts, or you do repeated work</li>
+                    </ul>
+                </li>
+                <li>
+                    Follow <b>carefully</b> the <a href="https://python-sprints.github.io/pandas/guide/pandas_docstring.html">instructions on how to write a good docstring</a>
+                    <ul>
+                        <li>Every detail is important</li>
+                        <li>Doing it fast will make the process slower, and you will waste reviewers time</li>
+                        <li>The changes will only get approved when they are <b>perfect</b></li>
+                    </ul>
+                </li>
+                <li>Run the <a href="https://python-sprints.github.io/pandas/guide/pandas_pr.html#validate-that-your-docstring-does-not-have-technical-errors">validation script</a>, and make sure you don't have errors</li>
+                <li><a href="https://python-sprints.github.io/pandas/guide/pandas_pr.html#visual-validation-of-the-docstring">Build the html version</a> of the documentation</li>
+                <li>Show the html version to someone in your sprint who has not work on it
+                    <ul>
+                        <li>Does this person understand what the function does, and is able to use it in a toy example?</li>
+                        <li>Is everything explained in a clear way? Is there any part that is not well understood?</li>
+                        <li>Is the language correct? Are there grammar mistakes or typos?</li>
+                        <li>Can the page be simplified? Is there anything that doesn't add value?</li>
+                        <li>Checking the text version of the docstring, does it follow all the standards from the documentation?</li>
+                    </ul>
+                </li>
+                <li>Validate that there are no PEP-8 issues <code>git diff upstream/master -u -- "*.py" | flake8 --diff</code></li>
+                <li><a href="https://python-sprints.github.io/pandas/guide/pandas_pr.html#commit-your-changes">Commit and push</a> your changes</li>
+                <li>Open the pull request
+                    <ul>
+                        <li>Make sure the description is <code>DOC: Improved the docstring of &lt;your-function&gt;</code></li>
+                        <li>Review if you did all the validations enumerated in the description</li>
+                        <li>Mark them with <code>[X]</code> if you did, do the validation <b>before</b> sending the PR if you didn't</li>
+                        <li><b>If you completed EVERY step in this list, you can finally open the PR</b></li>
+                    </ul>
+                 </li>
+                 <li>Now you can take a rest, help other people, make new friends... :)</li>
+                 <li>Your PR will be reviewed by other people, who will help make it even better
+                    <ul>
+                        <li>Make the changes and discuss the PR until it's approved</li>
+                    </ul>
+                 </li>
+                 <li>You should also review <a href="https://github.com/pandas-dev/pandas/pulls">other people PRs</a>
+                    <ul>
+                        <li>Be nice, concise and clear</li>
+                        <li>In general it's better of avoid comments in a PR with only "Thank you", "Understood", "I'll do it"...</li>
+                    </ul>
+                 </li>
+             </ol>
+        </div>
+        <div class="col-lg-6">
+            <a class="twitter-timeline"  href="https://twitter.com/hashtag/pandasSprint" data-widget-id="972275233502703616">#pandasSprint Tweets</a>
+                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                              
+        </div>
+    </div>
+  </body>
+</html>
