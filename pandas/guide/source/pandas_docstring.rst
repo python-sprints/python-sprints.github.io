@@ -101,7 +101,8 @@ docstrings, but is it common to have inline code, which is presented between
 backticks. It is considered inline code:
 
 - The name of a parameter
-- Python code, a module, function, built-in, type, literal... (e.g. `os`, `list`, `numpy.abs`, `datetime.date`, `True`)
+- Python code, a module, function, built-in, type, literal... (e.g. ``os``,
+  ``list``, ``numpy.abs``, ``datetime.date``, ``True``)
 - A pandas class (in the form ``:class:`~pandas.Series```)
 - A pandas method (in the form ``:meth:`pandas.Series.sum```)
 - A pandas function (in the form ``:func:`pandas.to_datetime```)
@@ -149,8 +150,8 @@ backticks. It is considered inline code:
 Section 1: Short summary
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The short summary is a single sentence that express what the function does in a
-concise way.
+The short summary is a single sentence that expresses what the function does in
+a concise way.
 
 The short summary must start with a capital letter, end with a dot, and fit in
 a single line. It needs to express what the object does without providing
@@ -395,7 +396,7 @@ last two types, that need to be separated by the word 'or':
 - float, decimal.Decimal or None
 - str or list of str
 
-If `None` is one of the accepted values, it always needs to be the last in
+If ``None`` is one of the accepted values, it always needs to be the last in
 the list.
 
 .. _docstring.returns:
@@ -493,28 +494,28 @@ instead of at the beginning, it is good to let the users know about it.
 To give an intuition on what can be considered related, here there are some
 examples:
 
-* `loc` and `iloc`, as they do the same, but in one case providing indices and
-  in the other positions
-* `max` and `min`, as they do the opposite
-* `iterrows`, `itertuples` and `iteritems`, as it is easy that a user looking
-  for the method to iterate over columns ends up in the method to iterate
-  over rows, and vice-versa
-* `fillna` and `dropna`, as both methods are used to handle missing values
-* `read_csv` and `to_csv`, as they are complementary
-* `merge` and `join`, as one is a generalization of the other
-* `astype` and `pandas.to_datetime`, as users may be reading the documentation
-  of `astype` to know how to cast as a date, and the way to do it is with
-  `pandas.to_datetime`
-* `where` is related to `numpy.where`, as its functionality is based on it
+* ``loc`` and ``iloc``, as they do the same, but in one case providing indices
+  and in the other positions
+* ``max`` and ``min``, as they do the opposite
+* ``iterrows``, ``itertuples`` and ``iteritems``, as it is easy that a user
+  looking for the method to iterate over columns ends up in the method to
+  iterate over rows, and vice-versa
+* ``fillna`` and ``dropna``, as both methods are used to handle missing values
+* ``read_csv`` and ``to_csv``, as they are complementary
+* ``merge`` and ``join``, as one is a generalization of the other
+* ``astype`` and ``pandas.to_datetime``, as users may be reading the
+  documentation of ``astype`` to know how to cast as a date, and the way to do
+  it is with ``pandas.to_datetime``
+* ``where`` is related to ``numpy.where``, as its functionality is based on it
 
 When deciding what is related, you should mainly use your common sense and
 think about what can be useful for the users reading the documentation,
 especially the less experienced ones.
 
-When relating to other libraries (mainly `numpy`), use the name of the module
-first (not an alias like `np`). If the function is in a module which is not
-the main one, like `scipy.sparse`, list the full module (e.g.
-`scipy.sparse.coo_matrix`).
+When relating to other libraries (mainly ``numpy``), use the name of the module
+first (not an alias like ``np``). If the function is in a module which is not
+the main one, like ``scipy.sparse``, list the full module (e.g.
+``scipy.sparse.coo_matrix``).
 
 This section, as the previous, also has a header, "See Also" (note the capital
 S and A). Also followed by the line with hyphens, and preceded by a blank line.
@@ -579,8 +580,8 @@ placed in the last position. As often, people understand concepts better
 with examples, than with accurate explanations.
 
 Examples in docstrings, besides illustrating the usage of the function or
-method, they must be valid Python code, that in a deterministic way returns
-the presented output, and that can be copied and run by users.
+method, must be valid Python code, that in a deterministic way returns the
+presented output, and that can be copied and run by users.
 
 They are presented as a session in the Python terminal. `>>>` is used to
 present code. `...` is used for code continuing from the previous line.
@@ -590,7 +591,7 @@ be added with blank lines before and after them.
 
 The way to present examples is as follows:
 
-1. Import required libraries (except `numpy` and `pandas`)
+1. Import required libraries (except ``numpy`` and ``pandas``)
 
 2. Create the data required for the example
 
@@ -649,7 +650,7 @@ A simple example could be:
 
 The examples should be as concise as possible. In cases where the complexity of
 the function requires long examples, is recommended to use blocks with headers
-in bold. Use double star \*\* to make a text bold, like in \*\*this example\*\*.
+in bold. Use double star ``**`` to make a text bold, like in ``**this example**``.
 
 .. _docstring.example_conventions:
 
@@ -671,19 +672,20 @@ and avoiding aliases. Avoid excessive imports, but if needed, imports from
 the standard library go first, followed by third-party libraries (like
 matplotlib).
 
-When illustrating examples with a single `Series` use the name `s`, and if
-illustrating with a single `DataFrame` use the name `df`. For indices, `idx`
-is the preferred name. If a set of homogeneous `Series` or `DataFrame` is used,
-name them `s1`, `s2`, `s3`...  or `df1`, `df2`, `df3`... If the data is not
-homogeneous, and more than one structure is needed, name them with something
-meaningful, for example `df_main` and `df_to_join`.
+When illustrating examples with a single ``Series`` use the name ``s``, and if
+illustrating with a single ``DataFrame`` use the name ``df``. For indices,
+``idx`` is the preferred name. If a set of homogeneous ``Series`` or
+``DataFrame`` is used, name them ``s1``, ``s2``, ``s3``...  or ``df1``,
+``df2``, ``df3``... If the data is not homogeneous, and more than one structure
+is needed, name them with something meaningful, for example ``df_main`` and
+``df_to_join``.
 
 Data used in the example should be as compact as possible. The number of rows
 is recommended to be around 4, but make it a number that makes sense for the
-specific example. For example in the `head` method, it requires to be higher
-than 5, to show the example with the default values. If doing the `mean`,
-we could use something like `[1, 2, 3]`, so it is easy to see that the
-value returned is the mean.
+specific example. For example in the ``head`` method, it requires to be higher
+than 5, to show the example with the default values. If doing the ``mean``, we
+could use something like ``[1, 2, 3]``, so it is easy to see that the value
+returned is the mean.
 
 For more complex examples (groupping for example), avoid using data without
 interpretation, like a matrix of random numbers with columns A, B, C, D...
@@ -691,8 +693,8 @@ And instead use a meaningful example, which makes it easier to understand the
 concept. Unless required by the example, use names of animals, to keep examples
 consistent. And numerical properties of them.
 
-When calling the method, keywords arguments `head(n=3)` are preferred to
-positional arguments `head(3)`.
+When calling the method, keywords arguments ``head(n=3)`` are preferred to
+positional arguments ``head(3)``.
 
 **Good:**
 
@@ -827,15 +829,13 @@ Getting the examples pass the doctests in the validation script can sometimes
 be tricky. Here are some attention points:
 
 * Import all needed libraries (except for pandas and numpy, those are already
-  imported as `import pandas as pd` and `import numpy as np`) and define all
-  variables you use in the example.
+  imported as ``import pandas as pd`` and ``import numpy as np``) and define
+  all variables you use in the example.
 
 * Try to avoid using random data.
 
 * If you have a code snippet that wraps multiple lines, you need to use '...'
-  on the continued lines:
-
-  ::
+  on the continued lines: ::
 
     >>> df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=['a', 'b', 'c'],
     ...                   columns=['A', 'B'])
@@ -853,12 +853,12 @@ be tricky. Here are some attention points:
   represenation), you can use ``...`` to represent this part.
 
   If you want to show that ``s.plot()`` returns a matplotlib AxesSubplot object,
-  this will fail the doctest::
+  this will fail the doctest ::
 
     >>> s.plot()
     <matplotlib.axes._subplots.AxesSubplot at 0x7efd0c0b0690>
 
-  However, you can do (notice the comment that needs to be added)::
+  However, you can do (notice the comment that needs to be added) ::
 
     >>> s.plot()  # doctest: +ELLIPSIS
     <matplotlib.axes._subplots.AxesSubplot at ...>
@@ -870,7 +870,7 @@ Plots in examples
 ^^^^^^^^^^^^^^^^^
 
 There are some methods in pandas returning plots. To render the plots generated
-by the examples in the documentation, the `.. plot::` directive exists.
+by the examples in the documentation, the ``.. plot::`` directive exists.
 
 To use it, place the next code after the "Examples" header as shown below. The
 plot will be generated automatically when building the documentation.
