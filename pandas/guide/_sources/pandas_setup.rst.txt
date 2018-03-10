@@ -122,7 +122,13 @@ to submit a pull request, so they are included in pandas.
    **Windows users**: run the next commands with Git Bash started at the cloned
    pandas folder.
 
-You can create a git branch running:
+Before creating a branch, make sure that you fetched the latest master version
+of the upstream pandas repository. You can do this with:
+
+    | ``git checkout master``
+    | ``git pull upstream master --ff-only``
+
+Then, you can create a new git branch running:
     | ``git checkout -b <new_branch_name>``
 
 The branch name should be descriptive of the feature you will work on. For
