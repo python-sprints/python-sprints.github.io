@@ -4,6 +4,9 @@
 pandas docstring guide
 ======================
 
+.. note::
+  **Windows users:** `Video tutorial: Pandas docstring guide`_ by Frank Akogun
+
 About docstrings and standards
 ------------------------------
 
