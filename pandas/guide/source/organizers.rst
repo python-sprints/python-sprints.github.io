@@ -167,7 +167,7 @@ pandas documentation.
 At the moment this documentation is under discussion, but it will soon be
 in its final state. You can find it here:
 
-https://python-sprints.github.io/pandas/guide/contents.html
+https://python-sprints.github.io/pandas/guide/
 
 There is a document on how to set up your computer for the sprint, which
 attendees are expected to follow before the sprint.

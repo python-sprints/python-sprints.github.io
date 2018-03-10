@@ -353,7 +353,7 @@ for `dict` and normal brackets for `tuple`):
 
 In case where there are just a set of values allowed, list them in curly
 brackets and separated by commas (followed by a space). If the values are
-ordinal and they have an order, list them in this order. Otherwise, list
+ordinal and they have an order, list them in this order. Otherwuse, list
 the default value first, if there is one:
 
 - {0, 10, 25}
