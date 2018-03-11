@@ -764,7 +764,16 @@ be tricky. Here are some attention points:</p>
 imported as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code> and <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>) and define
 all variables you use in the example.</p>
 </li>
-<li><p class="first">Try to avoid using random data.</p>
+<li><p class="first">Try to avoid using random data. However random data might be OK in some
+cases, like if the function you are documenting deals with probability
+distributions, or if the amount of data needed to make the function result
+meaningful is too much, such that creating it manually is very cumbersome.
+In those cases, always use a fixed random seed to make the generated examples
+predictable. Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;normal&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)})</span>
+</pre></div>
+</div>
 </li>
 <li><p class="first">If you have a code snippet that wraps multiple lines, you need to use ‘…’
 on the continued lines:</p>
