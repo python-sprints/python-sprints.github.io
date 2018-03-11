@@ -41,10 +41,19 @@
   text-align: right;
 }
 
-.about__paragraph-title {
+
+.about__title-container {
+}
+
+.about__paragraph-title-dark {
   @extend .title-dark;
   font-size: 1.65em;
   text-align: right;
+}
+
+.about__paragraph-title-light {
+  @extend .title-light;
+  font-size: 1.65em;
 }
 
 .about__divider-right {
@@ -61,6 +70,14 @@
   padding-right: 0;
 }
 
+.about__paragraph-light {
+  @extend .paragraph-light;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .about__paragraph-img-main {
   width: 35%;
   float: left;
@@ -68,29 +85,83 @@
   margin-bottom: 0.5em;
 }
 
-.about__paragraph-img-container {
+.about__img-container {
   position: relative;
   padding-bottom: 50%;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
-
-.about__paragraph-img-top {
+.about__img-top-container {
   position: absolute;
-  display: block;
-  width: 40%;
   top: 0;
   right: 15%;
-  border-bottom: $light-white 2px groove;
-  border-left: $light-white 2px groove;
+  background: url("../images/about/top_image_964x643px.JPG") no-repeat top center;
+  background-size: cover;
+  overflow: hidden;
+  width: 40%;
+  height: 50%;
+  border: $old-white 2px groove;
+  border-radius: 5px;
 }
 
-.about__paragraph-img-bot {
+.about__img-top-title-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/about/top_image_964x643px.JPG") no-repeat top center;
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -1;
+  }
+}
+
+.about__img-top-title {
+  @extend .about__paragraph-title-light;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 2em;
+}
+
+.about__img-bot-container {
   position: absolute;
-  display: block;
-  width: 40%;
   top: 40%;
   left: 15%;
-  border-top: $light-white 2px groove;
-  border-right: $light-white 2px groove;
+  width: 40%;
+  height: 50%;
+  background: url("../images/about/top_image_964x659px.JPG") no-repeat top center;
+  background-size: cover;
+  overflow: hidden;
+  border: $old-white 2px groove;
+  border-radius: 5px;
+}
+
+.about__img-bot-title-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/about/top_image_964x659px.JPG") no-repeat top center;
+    background-size: cover;
+    filter: blur(2px);
+    z-index: -1;
+  }
+}
+
+.about__img-bot-title {
+  @extend .about__img-top-title
 }
