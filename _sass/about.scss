@@ -107,7 +107,6 @@
 .about__img-top-title-container {
   position: relative;
   top: 0;
-  left: 0;
   z-index: 2;
   &::after {
     position: absolute;
@@ -116,7 +115,7 @@
     height: 100%;
     content: "";
     display: block;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/about/top_image_964x643px.JPG") no-repeat top center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/about/top_image_964x643px.JPG") no-repeat top center;
     background-size: cover;
     filter: blur(2px);
     z-index: -1;
@@ -125,6 +124,7 @@
 
 .about__img-top-title {
   @extend .about__paragraph-title-light;
+  font-size: 2em;
   text-align: center;
   margin-bottom: 0;
   line-height: 2em;
@@ -136,7 +136,7 @@
   left: 15%;
   width: 40%;
   height: 50%;
-  background: url("../images/about/top_image_964x659px.JPG") no-repeat top center;
+  background: url("../images/about/top_image_964x659px.JPG") no-repeat bottom center;
   background-size: cover;
   overflow: hidden;
   border: $old-white 2px groove;
@@ -144,9 +144,9 @@
 }
 
 .about__img-bot-title-container {
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   z-index: 2;
   &::after {
     position: absolute;
@@ -155,7 +155,7 @@
     height: 100%;
     content: "";
     display: block;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/about/top_image_964x659px.JPG") no-repeat top center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/about/top_image_964x659px.JPG") no-repeat bottom center;
     background-size: cover;
     filter: blur(2px);
     z-index: -1;
