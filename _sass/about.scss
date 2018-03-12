@@ -52,6 +52,12 @@
   text-align: right;
 }
 
+.about__paragraph-title-dark-left {
+  @extend .title-dark;
+  font-size: 1.65em;
+  text-align: left;
+}
+
 .about__paragraph-title-light {
   @extend .title-light;
   font-size: 1.65em;
@@ -62,6 +68,10 @@
   width: 50%;
 }
 
+.about__divider-left {
+  margin-left: 0;
+  width: 50%;
+}
 
 .about__paragraph-dark {
   @extend .paragraph-dark;
