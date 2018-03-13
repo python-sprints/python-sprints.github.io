@@ -120,10 +120,18 @@ backticks. It is considered inline code:</p>
 <li>The name of a parameter</li>
 <li>Python code, a module, function, built-in, type, literal… (e.g. <code class="docutils literal notranslate"><span class="pre">os</span></code>,
 <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy.abs</span></code>, <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code>, <code class="docutils literal notranslate"><span class="pre">True</span></code>)</li>
-<li>A pandas class (in the form <code class="docutils literal notranslate"><span class="pre">:class:`~pandas.Series`</span></code>)</li>
+<li>A pandas class (in the form <code class="docutils literal notranslate"><span class="pre">:class:`pandas.Series`</span></code>)</li>
 <li>A pandas method (in the form <code class="docutils literal notranslate"><span class="pre">:meth:`pandas.Series.sum`</span></code>)</li>
 <li>A pandas function (in the form <code class="docutils literal notranslate"><span class="pre">:func:`pandas.to_datetime`</span></code>)</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To display only the last component of the linked class, method or
+function, prefix it with <code class="docutils literal notranslate"><span class="pre">~</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">:class:`~pandas.Series`</span></code>
+will link to <code class="docutils literal notranslate"><span class="pre">pandas.Series</span></code> but only display the last part, <code class="docutils literal notranslate"><span class="pre">Series</span></code>
+as the link text. See <a class="reference external" href="http://www.sphinx-doc.org/en/stable/domains.html#cross-referencing-syntax">Sphinx cross-referencing syntax</a>
+for details.</p>
+</div>
 <p><strong>Good:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_values</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
