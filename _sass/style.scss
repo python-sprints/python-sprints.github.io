@@ -515,7 +515,8 @@ a {
 }
 
 .services__content {
-  @extend .paragraph-dark
+  @extend .paragraph-dark;
+  margin-top: 0;
 }
 
 @media (min-width: 768px) {

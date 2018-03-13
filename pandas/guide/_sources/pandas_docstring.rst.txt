@@ -848,7 +848,15 @@ be tricky. Here are some attention points:
   imported as ``import pandas as pd`` and ``import numpy as np``) and define
   all variables you use in the example.
 
-* Try to avoid using random data.
+* Try to avoid using random data. However random data might be OK in some
+  cases, like if the function you are documenting deals with probability
+  distributions, or if the amount of data needed to make the function result
+  meaningful is too much, such that creating it manually is very cumbersome.
+  In those cases, always use a fixed random seed to make the generated examples
+  predictable. Example::
+
+    >>> np.random.seed(42)
+    >>> df = pd.DataFrame({'normal': np.random.normal(100, 5, 20)})
 
 * If you have a code snippet that wraps multiple lines, you need to use '...'
   on the continued lines: ::
