@@ -14,8 +14,6 @@ image:
 sponsors: 
     - harvey_nash
 ---
-
-Details
 After the success of #pandasSprint, with around 500 participants, and almost 200 pull requests sent, we're back to our regular sprints. 
 For the ones who missed it, you can get an idea on how it was checking this feed:
 [https://twitter.com/hashtag/pandasSprint](https://twitter.com/hashtag/pandasSprint)
