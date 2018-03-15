@@ -3,6 +3,10 @@
 .body {
   background-color: $main-background;
   overflow-x: hidden;
+  /*Here I need to move the background image to slide under the navigation*/
+  /*Any smarter solutions are welcome!*/
+  margin-top: -66px;
+
 }
 
 .no-scroll {
@@ -92,12 +96,9 @@ a {
   }
 }
 
-/*Here I need to move the background image to slide under the navigation*/
-/*Any smarter solutions are welcome!*/
 
 .navigation__content {
   @extend .page__background-img-container;
-  margin-top: -66px;
   &::after {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.8) 100%);
   }
@@ -116,23 +117,18 @@ a {
 }
 
 .navigation__brand-link {
-}
-
-.navigation__brand-name {
-  font-size: 0.8em;
-  color: $brand-name;
-  font-family: 'Share Tech Mono', monospace;
-}
-
-@media (min-width: 450px) {
-  .navigation__brand-name {
-    font-size: 1.2em;
-  }
+  width: 100%;
 }
 
 .navigation__brand-img {
-  width: 2em;
+  width: 6em;
   padding-left: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .navigation__brand-img {
+  width: 10em;
+  }
 }
 
 .navigation__button-open-container {
@@ -147,9 +143,21 @@ a {
   background-color: rgba(7, 41, 72, 0.7);
 }
 
-
 .navigation__title-container {
   @extend .page__title-container;
+}
+
+.navigation__site-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+@media (orientation: portrait) {
+  .navigation__site-logo {
+    width: 80%;
+  }
 }
 
 .navigation__title {
@@ -582,7 +590,8 @@ a {
 
 .footer__text-copyright {
   @extend .footer-font;
-  font-size: 1.5em;
+  text-align: center;
+  font-size: 2em;
   color: $footer-text;
 }
 
@@ -627,7 +636,9 @@ a {
 }
 
 .footer__brand-img {
-  width: 2em;
+  width: 8em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .footer__divider {
