@@ -38,130 +38,252 @@ layout: default
         </div>
     </div>
 </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="background col-12"></div>
+    </div>
+</div>
 
-<!--Mission section-->
-<section class="mission">
-    <div class="mission container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="section-title">Our Mission</h2>
-                <h3 class="mission__statement">Contribute to open source projects.</h3>
-                <h3 class="mission__statement">Grow the Python community.</h3>
-                <h3 class="mission__statement">Provide mentorship and challenge for people of all backgrounds and skills.</h3>
+<div class="events-chapters-container container-fluid">
+    <div class="row">
+        <div class="col-md-12 no-padding-x">
+            <div class="row">
+                <div class="col-md-6 no-padding-x">
+                    <!--Upcoming Events section-->
+                    {% if upcoming_event == true %}
+                        <section class="upcoming">
+                            <div class="row container-fluid">
+                                <div class="upcoming__img-container col-md-12 no-padding-x">
+                                    <div class="row">
+                                        <div class="col-12 no-padding-x">
+                                            <h2 class="upcoming__title">Upcoming Event</h2>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming__content row with-padding-x">
+                                        <div class="upcoming__col col-md-5 col-12 mr-auto">
+                                            <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Event</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__event-title col-12">
+                                                    {{ post.title }}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Venue</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__event-title col-12">
+                                                    {{ post.venue }}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Date</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__event-title col-12">
+                                                    {{ post.date | date: "%e %B %Y" }}
+                                                </div>
+                                            </div>
+                                            {% if post.project_logo %}
+                                                <div class="row">
+                                                    <div class="no-gutters__col col-6">
+                                                        <h2 class="upcoming__event-label">Project</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="upcoming__event-title col-12 text-center">
+                                                        <a href="{{ post.project_link }}">
+                                                            <img class="upcoming__project-logo"
+                                                                 src="{{ site.baseurl }}/{{ post.project_logo }}"
+                                                                 alt="Upcoming project logo">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="upcoming__col col-md-5 text-center">
+
+                                             <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Sponsors</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__sponsor-col col-12">
+                                                    {% assign site_sponsors_all = "" | split: ',' %}
+                                                    {% for sponsor in site.sponsors %}
+                                                        {% assign site_sponsors_all = site_sponsors_all | push: sponsor %}
+                                                    {% endfor %}
+                                                    <!--Build an array of sponsors for the event.-->
+                                                    {% assign event_sponsors = "" | split: ',' %}
+                                                    {% for sponsor in post.sponsors %}
+                                                        {% for site_sponsor in site_sponsors_all %}
+                                                            {% if site_sponsor.sponsor_id == sponsor %}
+                                                                {% assign event_sponsors = event_sponsors | push: site_sponsor %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                    {%
+                                                        include row_display_outer_loop.html
+                                                        items_array = event_sponsors
+                                                        inner_layout = "sponsors_inner_layout.html"
+                                                    %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming__button-row row">
+                                        <div class="col-md-12 text-center">
+                                            {% if post.event_link %}
+                                                {% assign upcoming_event_link = post.event_link %}
+                                            {% else %}
+                                                {% assign upcoming_event_link = post.meetup_link %}
+                                            {% endif %}
+                                            <a class="upcoming__link" href="{{ upcoming_event_link }}">
+                                                <button class="button-standard btn btn-lg">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
+                </div>
+
+
+
+
+
+
+
+                <div class="col-md-6 no-padding-x">
+                    <section class="chapters">
+                            <div class="row container-fluid">
+                                <div class="upcoming__img-container col-md-12 no-padding-x">
+                                    <div class="row">
+                                        <div class="col-12 no-padding-x">
+                                            <h2 class="upcoming__title">Test Chapters Section</h2>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming__content row with-padding-x">
+                                        <div class="upcoming__col col-md-5 col-12 mr-auto">
+                                            <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Event</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__event-title col-12">
+                                                    {{ post.title }}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Venue</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__event-title col-12">
+                                                    {{ post.venue }}
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Date</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__event-title col-12">
+                                                    {{ post.date | date: "%e %B %Y" }}
+                                                </div>
+                                            </div>
+                                            {% if post.project_logo %}
+                                                <div class="row">
+                                                    <div class="no-gutters__col col-6">
+                                                        <h2 class="upcoming__event-label">Project</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="upcoming__event-title col-12 text-center">
+                                                        <a href="{{ post.project_link }}">
+                                                            <img class="upcoming__project-logo"
+                                                                 src="{{ site.baseurl }}/{{ post.project_logo }}"
+                                                                 alt="Upcoming project logo">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="upcoming__col col-md-5 text-center">
+
+                                             <div class="row">
+                                                <div class="no-gutters__col col-6">
+                                                    <h2 class="upcoming__event-label">Sponsors</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="upcoming__sponsor-col col-12">
+                                                    {% assign site_sponsors_all = "" | split: ',' %}
+                                                    {% for sponsor in site.sponsors %}
+                                                        {% assign site_sponsors_all = site_sponsors_all | push: sponsor %}
+                                                    {% endfor %}
+                                                    <!--Build an array of sponsors for the event.-->
+                                                    {% assign event_sponsors = "" | split: ',' %}
+                                                    {% for sponsor in post.sponsors %}
+                                                        {% for site_sponsor in site_sponsors_all %}
+                                                            {% if site_sponsor.sponsor_id == sponsor %}
+                                                                {% assign event_sponsors = event_sponsors | push: site_sponsor %}
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                    {%
+                                                        include row_display_outer_loop.html
+                                                        items_array = event_sponsors
+                                                        inner_layout = "sponsors_inner_layout.html"
+                                                    %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming__button-row row">
+                                        <div class="col-md-12 text-center">
+                                            {% if post.event_link %}
+                                                {% assign upcoming_event_link = post.event_link %}
+                                            {% else %}
+                                                {% assign upcoming_event_link = post.meetup_link %}
+                                            {% endif %}
+                                            <a class="upcoming__link" href="{{ upcoming_event_link }}">
+                                                <button class="button-standard btn btn-lg">
+                                                    Learn More
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+
+
+
+
+
+                </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
-<!--Upcoming Events section-->
-{% if upcoming_event == true %}
-    <section class="upcoming">
-        <div class="row container-fluid">
-            <hr class="upcoming-divider">
-            <div class="upcoming__img-container col-md-12 no-padding-x">
-                <div class="row">
-                    <div class="col-12 no-padding-x">
-                        <h2 class="upcoming__title">Upcoming Event</h2>
-                    </div>
-                </div>
-                <div class="upcoming__content row with-padding-x">
-                    <div class="upcoming__col col-md-5 col-12 mr-auto">
-                        <div class="row">
-                            <div class="no-gutters__col col-6">
-                                <h2 class="upcoming__event-label">Event</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__event-title col-12">
-                                {{ post.title }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="no-gutters__col col-6">
-                                <h2 class="upcoming__event-label">Venue</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__event-title col-12">
-                                {{ post.venue }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="no-gutters__col col-6">
-                                <h2 class="upcoming__event-label">Date</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__event-title col-12">
-                                {{ post.date | date: "%e %B %Y" }}
-                            </div>
-                        </div>
-                        {% if post.project_logo %}
-                            <div class="row">
-                                <div class="no-gutters__col col-6">
-                                    <h2 class="upcoming__event-label">Project</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="upcoming__event-title col-12 text-center">
-                                    <a href="{{ post.project_link }}">
-                                        <img class="upcoming__project-logo"
-                                             src="{{ site.baseurl }}/{{ post.project_logo }}"
-                                             alt="Upcoming project logo">
-                                    </a>
-                                </div>
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="upcoming__col col-md-5 text-center">
 
-                         <div class="row">
-                            <div class="no-gutters__col col-6">
-                                <h2 class="upcoming__event-label">Sponsors</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__sponsor-col col-12">
-                                {% assign site_sponsors_all = "" | split: ',' %}
-                                {% for sponsor in site.sponsors %}
-                                    {% assign site_sponsors_all = site_sponsors_all | push: sponsor %}
-                                {% endfor %}
-                                <!--Build an array of sponsors for the event.-->
-                                {% assign event_sponsors = "" | split: ',' %}
-                                {% for sponsor in post.sponsors %}
-                                    {% for site_sponsor in site_sponsors_all %}
-                                        {% if site_sponsor.sponsor_id == sponsor %}
-                                            {% assign event_sponsors = event_sponsors | push: site_sponsor %}
-                                        {% endif %}
-                                    {% endfor %}
-                                {% endfor %}
-                                {%
-                                    include row_display_outer_loop.html
-                                    items_array = event_sponsors
-                                    inner_layout = "sponsors_inner_layout.html"
-                                %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="upcoming__button-row row">
-                    <div class="col-md-12 text-center">
-                        {% if post.event_link %}
-                            {% assign upcoming_event_link = post.event_link %}
-                        {% else %}
-                            {% assign upcoming_event_link = post.meetup_link %}
-                        {% endif %}
-                        <a class="upcoming__link" href="{{ upcoming_event_link }}">
-                            <button class="button-standard btn btn-lg">
-                                Learn More
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endif %}
+
 
 <!--Events in the past section-->
 {% include recent_events_section.html %}

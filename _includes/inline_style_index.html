@@ -9,12 +9,39 @@
         {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
     {% endif %}
 {% endif %}
-<style>
-.upcoming__img-container {
-    background-image: linear-gradient(to bottom right,
-    rgba(255, 81, 107, 0.5),
-    rgba(7, 41, 72, 0.3) 80%,
-    rgba(0, 0, 0, 0.3) 100%),
-    url("{{ site.baseurl }}/{{ image }}");
-      }
-</style>
+<!--<style>-->
+
+<!--@mixin base-background($background-url) {-->
+    <!--background-image: linear-gradient(to bottom,-->
+    <!--rgba(0, 0, 0, 0.9),-->
+    <!--rgba(7, 41, 72, 0.73) 20%,-->
+    <!--rgba(255, 81, 107, 0.5) 50%,-->
+    <!--rgba(7, 41, 72, 0.3) 80%,-->
+    <!--rgba(0, 0, 0, 0.3) 100%),-->
+    <!--url("{{ site.baseurl }}/$background-url");-->
+<!--}-->
+
+<!--.events-chapters-container {-->
+    <!--@include base-background(static/images/events/events-chapters_background_480x205px.jpeg);-->
+<!--}-->
+
+<!--@media (min-width: 481px){-->
+    <!--.events-chapters-container {-->
+    <!--@include base-background(static/images/events/events-chapters_background_960x540px.jpeg);-->
+    <!--}-->
+<!--}-->
+
+<!--@media (min-width: 961px){-->
+    <!--.events-chapters-container {-->
+    <!--@include base-background(static/images/events/events-chapters_background_1920x1080px.jpeg");-->
+    <!--}-->
+<!--}-->
+
+<!--@media (min-width: 1921px){-->
+    <!--.events-chapters-container {-->
+    <!--@include base-background(static/images/events/events-chapters_background_3840x2160px.jpeg);-->
+    <!--}-->
+<!--}-->
+<!--</style>-->
+
+
