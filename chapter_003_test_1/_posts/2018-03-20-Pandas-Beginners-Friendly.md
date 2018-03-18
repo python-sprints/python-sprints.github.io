@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Pandas, Beginners Friendly
-subtitle: Improving Pandas documentation
+title: Test event 2
+subtitle: Test subtitle 2
 project: Pandas
 project_description: Powerful Python data analysis toolkit
 project_logo: static/images/events/pandas_logo_donation.png
 project_link: http://pandas.pydata.org/index.html
-date: 2018-03-20
+date: 2018-05-29
 time: "18:30"
-venue: Harvey Nash, London
-address: 110 Bishopsgate,<br>London,<br>EC2N 4AY
+venue: SPD, New York
+address: 1st Avenue,<br>New York,<br>1SD-DFT3
 meetup_link: https://www.meetup.com/Python-Sprints/events/248711552/
 event_link:
 image:

@@ -276,7 +276,7 @@ a {
 }
 
 .upcoming-chapters-container {
-    @include base-background("../images/events/events-chapters_background_480x205px.jpeg");
+  @include base-background("../images/events/events-chapters_background_480x205px.jpeg");
 }
 
 @media (min-width: 481px){
@@ -300,9 +300,6 @@ a {
 .upcoming-chapters-container {
   background-size: cover;
   background-position: center center;
-  //border-top: rgba(129, 129, 129, 0.51) 1px solid;
-
-  //border-top: rgba(7, 41, 72, 0.71) 1px solid;
   padding-bottom: 1em;
   min-height: 100vh;
 }
@@ -313,15 +310,10 @@ a {
 }
 
 .upcoming {
-  //margin-left: 2%;
-  //margin-right: 2%;
-  //height: 100vh;
 }
 
 @media (min-width: 768px) {
   .upcoming {
-  //margin-left: 10%;
-  //margin-right: 10%;
   }
 }
 
@@ -334,7 +326,7 @@ a {
 .upcoming__col {
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
-  border: #000000 2px groove;
+  border: #000000 1px solid;
   box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
   min-height: 100%;
   margin-top: 1em;
@@ -344,8 +336,6 @@ a {
   .upcoming__col {
     margin-top: 0;
     margin-bottom: 0.5em;
-    //margin-left: auto;
-    //margin-right: auto;
   }
 }
 
@@ -353,17 +343,11 @@ a {
   @extend .section-title;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  //font-size: 2.5em;
   color: $title-light;
   margin-top: 2em;
   margin-bottom: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  //border-top-left-radius: 20px;
-  //border-top-right-radius: 20px;
-  //border-bottom: rgba(129, 129, 129, 0.51) 1px solid;
-
-  //border-bottom: rgba(250, 235, 215, 0.85) 1px solid;
 }
 //
 //.upcoming__event-label {
@@ -423,6 +407,13 @@ a {
     margin-top: 5.5%;
     margin-bottom: 5.5%;
   }
+}
+
+.upcoming__link-col {
+  padding-right: 0.5em;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: 0.5em;
 }
 
 .upcoming__link {
