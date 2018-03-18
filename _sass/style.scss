@@ -384,8 +384,6 @@ a {
   margin-bottom: 1em;
 }
 
-
-
 .upcoming__content {
   margin-top: 5.5%;
 }
@@ -417,6 +415,25 @@ a {
 }
 
 .upcoming__link {
+}
+
+.chapters {
+
+}
+
+.chapters__title {
+  @extend .upcoming__title;
+}
+
+.chapters__content {
+  margin-top: 5.5%;
+}
+
+#chapters__map {
+  height: 40vh;
+  width: 100%;
+  border-radius: 5px;
+  border: black 1px solid;
 }
 
 .events {
