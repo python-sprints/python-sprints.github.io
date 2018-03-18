@@ -303,18 +303,18 @@ a {
   border-top: rgba(129, 129, 129, 0.51) 1px solid;
 
   //border-top: rgba(7, 41, 72, 0.71) 1px solid;
-  min-height: 50vh;
+  min-height: 100vh;
 }
 
 .background {
-  height: 30vh;
+  height: 15vh;
   background-color: black;
 }
 
 .upcoming {
   //margin-left: 2%;
   //margin-right: 2%;
-  max-height: 100vh;
+  height: 100vh;
 }
 
 @media (min-width: 768px) {
