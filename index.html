@@ -1,6 +1,28 @@
 ---
 layout: default
 ---
+
+{% assign chapters = "" | split: ',' %}
+{% for chapter in site.chapters %}
+    {% assign chapters = chapters | push: chapter %}
+{% endfor %}
+{% comment %}
+Create a javascript variable for use in the function adding map markers.
+{% endcomment %}
+<script>
+    var chapters = [
+        {% for chapter in site.chapters %}
+            {"chapterId": "{{ chapter.chapter_id }}",
+            "chapterName": "{{ chapter.chapter_name }}",
+            "chapterUrl": "{{ chapter.chapter_meetup_link }}",
+            "chapterLocation": "{{ chapter.chapter_location }}",
+            "lat": {{ chapter.lat }},
+            "lng": {{ chapter.lng }}},
+        {% endfor %}
+    ];
+</script>
+
+{% comment %}}
 <script type="text/javascript">
     var chapters = [
         // Europe
@@ -308,6 +330,7 @@ layout: default
          "lat": -1.300474,
          "lng": 36.784610},
      ];
+{% endcomment %}
 </script>
 <div class="navigation__content container-fluid">
     <picture>
@@ -436,48 +459,46 @@ layout: default
                             <div class="col-12 my-auto">
                                 <div id="chapters__map"></div>
                                 <script>
-                                  function initMap() {
-                                    var infowindow=new google.maps.InfoWindow();
+                                    function initMap() {
+                                        var infowindow = new google.maps.InfoWindow();
 
-                                    var map = new google.maps.Map(document.getElementById('chapters__map'), {
-                                      zoom: 2,
-                                      center: {lat: 20., lng: 0.}
-                                    });
-
-                                    for (i=0; i < chapters.length; i++) {
-                                        var desc = '<b>' + chapters[i]['description'] + '</b><br/><br/>';
-                                        desc += 'Starts at: ' + chapters[i]['time'] + ' (local time)</br>';
-                                        desc += 'Address:<br/>' + chapters[i]['address'] + '</br>';
-                                        if (chapters[i]['sponsor_image'] != '') {
-                                            desc += '<br/>With the support of:<br/>';
-                                            desc += '<a href="' + chapters[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + chapters[i]['sponsor_image'] + '"/></a><br/>';
-                                        }
-                                        desc += '<br/><a style="color: #800000;" href="' + chapters[i]['url'] + '">Go to event page</a><br/>';
-                                        var marker = new google.maps.Marker({
-                                          title: chapters[i]["title"],
-                                          html: desc,
-                                          position: {lat: chapters[i]["lat"],
-                                                     lng: chapters[i]["lng"]},
-                                          map: map
+                                        var map = new google.maps.Map(document.getElementById('chapters__map'), {
+                                            zoom: 2,
+                                            center: {lat: 20., lng: 0.}
                                         });
-                                        google.maps.event.addListener(
-                                            marker,
-                                            'click',
-                                            function(){
-                                                infowindow.setContent(this.html);
-                                                infowindow.open(map,this);
-                                            }
-                                        );
-                                    }
 
-                                  }
+                                        for (i = 0; i < chapters.length; i++) {
+                                            var desc = '<b>' + chapters[i]['chapterName'] + '</b><br/><br/>';
+                                            // desc += 'Starts at: ' + chapters[i]['time'] + ' (local time)</br>';
+                                            desc += 'Location:<br/>' + chapters[i]['chapterLocation'] + '</br>';
+                                            // if (chapters[i]['sponsor_image'] != '') {
+                                            //     desc += '<br/>With the support of:<br/>';
+                                            //     desc += '<a href="' + chapters[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + chapters[i]['sponsor_image'] + '"/></a><br/>';
+                                            // }
+                                            desc += '<br/><a style="color: #800000;" href="' + chapters[i]['chapterUrl'] + '">Go to event page</a><br/>';
+                                            var marker = new google.maps.Marker({
+                                                title: chapters[i]["chapterName"],
+                                                html: desc,
+                                                position: {
+                                                    lat: chapters[i]["lat"],
+                                                    lng: chapters[i]["lng"]
+                                                },
+                                                map: map
+                                            });
+                                            google.maps.event.addListener(
+                                                marker,
+                                                'click',
+                                                function () {
+                                                    infowindow.setContent(this.html);
+                                                    infowindow.open(map, this);
+                                                }
+                                            );
+                                        }
+                                    }
                                 </script>
                                 <script async defer
                                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
                                 </script>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -487,11 +508,10 @@ layout: default
     </div>
 </div>
 
-
-
-
+{% comment %}
 <!--Events in the past section-->
 {% include recent_events_section.html %}
+{% endcomment %}
 
 <!--Services section-->
 <section class="services">

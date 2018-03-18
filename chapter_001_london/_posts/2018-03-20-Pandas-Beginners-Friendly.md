@@ -9,7 +9,6 @@ project_link: http://pandas.pydata.org/index.html
 date: 2018-03-20
 time: "18:30"
 venue: Harvey Nash, London
-address: 110 Bishopsgate,<br>London,<br>EC2N 4AY
 meetup_link: https://www.meetup.com/Python-Sprints/events/248711552/
 event_link:
 image:

@@ -23,6 +23,7 @@ exclude:
 future: true
 collections:
   - sponsors
+  - chapters
 
 # command to run build locally:
 # bundle exec jekyll serve --host 0.0.0.0 --config _config.yml,_config_dev.yml
