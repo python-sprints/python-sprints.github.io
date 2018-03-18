@@ -275,32 +275,32 @@ a {
     url($background-url);
 }
 
-.events-chapters-container {
+.upcoming-chapters-container {
     @include base-background("../images/events/events-chapters_background_480x205px.jpeg");
 }
 
 @media (min-width: 481px){
-    .events-chapters-container {
+    .upcoming-chapters-container {
     @include base-background("../images/events/events-chapters_background_960x540px.jpeg");
     }
 }
 
 @media (min-width: 961px){
-    .events-chapters-container {
+    .upcoming-chapters-container {
     @include base-background("../images/events/events-chapters_background_1920x1080px.jpeg");
     }
 }
 
 @media (min-width: 1921px){
-    .events-chapters-container {
+    .upcoming-chapters-container {
     @include base-background("../images/events/events-chapters_background_3840x2160px.jpeg");
     }
 }
 
-.events-chapters-container {
+.upcoming-chapters-container {
   background-size: cover;
   background-position: center center;
-  border-top: rgba(129, 129, 129, 0.51) 1px solid;
+  //border-top: rgba(129, 129, 129, 0.51) 1px solid;
 
   //border-top: rgba(7, 41, 72, 0.71) 1px solid;
   min-height: 100vh;
@@ -314,7 +314,7 @@ a {
 .upcoming {
   //margin-left: 2%;
   //margin-right: 2%;
-  height: 100vh;
+  //height: 100vh;
 }
 
 @media (min-width: 768px) {
@@ -342,8 +342,8 @@ a {
 @media (min-width: 768px) {
   .upcoming__col {
     margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    //margin-left: auto;
+    //margin-right: auto;
   }
 }
 
@@ -353,25 +353,42 @@ a {
   width: 100%;
   font-size: 2.5em;
   color: $title-light;
-  margin-top: 0;
+  margin-top: 2em;
   margin-bottom: 0;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   //border-top-left-radius: 20px;
   //border-top-right-radius: 20px;
-  border-bottom: rgba(129, 129, 129, 0.51) 1px solid;
+  //border-bottom: rgba(129, 129, 129, 0.51) 1px solid;
 
   //border-bottom: rgba(250, 235, 215, 0.85) 1px solid;
 }
-
-.upcoming__event-label {
-  @extend .event-label;
-}
+//
+//.upcoming__event-label {
+//  @extend .event-label;
+//}
 
 .upcoming__event-title {
-  @extend .event-title;
-  background: rgba(7, 41, 72, 0.7);
+  @extend .title-light;
+  font-size: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.1em;
+}
+
+.upcoming__event-subtitle {
+  @extend .subtitle;
+  font-size: 1.25em;
   margin-bottom: 0.5em;
+}
+
+.upcoming__paragraph {
+  @extend .subtitle;
+  color: $light-blue;
+  margin-bottom: 0.25em;
+}
+
+.upcoming__icon {
+  margin-right: 0.5em;
 }
 
 .upcoming__sponsor-col {
