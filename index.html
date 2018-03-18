@@ -1,7 +1,6 @@
 ---
 layout: default
 ---
-{% include inline_style_index.html %}
 <div class="navigation__content container-fluid">
     <picture>
         <source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
@@ -48,6 +47,10 @@ layout: default
     <div class="row">
         <div class="col-md-6 no-padding-x">
             <!--Upcoming Events section-->
+            {% include events_array_generator.html future_events = true %}
+            {% if posts.size > 0 %}
+                {% assign upcoming_event = true %}
+            {% endif %}
             {% if upcoming_event == true %}
                 <section class="upcoming">
                     <div class="row container-fluid">
@@ -56,53 +59,55 @@ layout: default
                         </div>
                     </div>
                     <div class="upcoming__content row with-padding-x">
-                        <div class="upcoming__col col-md-12 no-padding-x">
+                        {% for post in posts %}
+                            <div class="upcoming__col col-md-12 no-padding-x">
 
 
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="upcoming__event-title"> {{ post.title }}</h2>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 class="upcoming__event-title"> {{ post.title }}</h2>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2 class="upcoming__event-subtitle"> {{ post.subtitle }}</h2>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 class="upcoming__event-subtitle"> {{ post.subtitle }}</h2>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="row">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row">
 
-                                        <div class="col-6 no-padding-x">
-                                            <div class="row">
-                                                <div class="col-12 no-padding-x">
-                                                    <p class="upcoming__paragraph">
-                                                        <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ post.venue }}
-                                                    </p>
+                                            <div class="col-6 no-padding-x">
+                                                <div class="row">
+                                                    <div class="col-12 no-padding-x">
+                                                        <p class="upcoming__paragraph">
+                                                            <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ post.venue }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 no-padding-x">
+                                                        <p class="upcoming__paragraph">
+                                                            {{ post.date | date: "%e %B %Y" }}, {{ post.time }}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12 no-padding-x">
-                                                    <p class="upcoming__paragraph">
-                                                        {{ post.date | date: "%e %B %Y" }}, {{ post.time }}
-                                                    </p>
-                                                </div>
+
+                                            <div class="col-6 pr-0 text-right">
+                                                <a class="upcoming__link" href="{{ post.url }}">
+                                                    <button class="button-standard btn btn-lg">
+                                                        Learn More
+                                                    </button>
+                                                </a>
                                             </div>
-                                        </div>
 
-                                        <div class="col-6 pr-0 text-right">
-                                            <a class="upcoming__link" href="{{ post.url }}">
-                                                <button class="button-standard btn btn-lg">
-                                                    Learn More
-                                                </button>
-                                            </a>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </section>
             {% endif %}
@@ -113,7 +118,7 @@ layout: default
 
 
 
-
+    <!--Use google map api here-->
         <div class="col-md-6 no-padding-x">
             <section class="chapters">
                     <div class="row container-fluid">

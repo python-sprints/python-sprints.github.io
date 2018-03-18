@@ -303,6 +303,7 @@ a {
   //border-top: rgba(129, 129, 129, 0.51) 1px solid;
 
   //border-top: rgba(7, 41, 72, 0.71) 1px solid;
+  padding-bottom: 1em;
   min-height: 100vh;
 }
 
@@ -342,6 +343,7 @@ a {
 @media (min-width: 768px) {
   .upcoming__col {
     margin-top: 0;
+    margin-bottom: 0.5em;
     //margin-left: auto;
     //margin-right: auto;
   }
@@ -351,7 +353,7 @@ a {
   @extend .section-title;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  font-size: 2.5em;
+  //font-size: 2.5em;
   color: $title-light;
   margin-top: 2em;
   margin-bottom: 0;
