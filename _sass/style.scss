@@ -433,6 +433,26 @@ a {
   box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
 }
 
+.chapters__card-container {
+  margin-top: 1em;
+}
+
+.chapters__card-main {
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
+  border: black 1px solid;
+}
+
+.chapters__card-header {
+  border-bottom: rgba(129, 129, 129, 0.41) 1px solid;
+  background-color: $dark-blue;
+}
+
+.chapters__card-title {
+  @extend .title-light;
+  font-size: 1.1em;
+}
+
 .events {
   margin-top: 15%;
   background: $background-dark;
