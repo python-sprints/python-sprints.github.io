@@ -275,6 +275,14 @@ a {
     url($background-url);
 }
 
+
+.upcoming-chapters-container {
+  background-size: cover;
+  background-position: center center;
+  padding-bottom: 1em;
+  min-height: 100vh;
+}
+
 .upcoming-chapters-container {
   @include base-background("../images/events/events-chapters_background_480x205px.jpeg");
 }
@@ -295,18 +303,6 @@ a {
     .upcoming-chapters-container {
     @include base-background("../images/events/events-chapters_background_3840x2160px.jpeg");
     }
-}
-
-.upcoming-chapters-container {
-  background-size: cover;
-  background-position: center center;
-  padding-bottom: 1em;
-  min-height: 100vh;
-}
-
-.background {
-  height: 15vh;
-  background-color: black;
 }
 
 .upcoming {
@@ -344,10 +340,10 @@ a {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   color: $title-light;
-  margin-top: 2em;
+  margin-top: 1.5em;
   margin-bottom: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 //
 //.upcoming__event-label {
