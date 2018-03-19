@@ -14,7 +14,7 @@ Create a javascript variable for use in the function adding map markers.
         {% for chapter in site.chapters %}
             {"chapterId": "{{ chapter.chapter_id }}",
             "chapterName": "{{ chapter.chapter_name }}",
-            "chapterUrl": "{{ chapter.chapter_meetup_link }}",
+            "chapterURL": "{{ chapter.chapter_meetup_link }}",
             "chapterLocation": "{{ chapter.chapter_location }}",
             "lat": {{ chapter.lat }},
             "lng": {{ chapter.lng }}},
@@ -157,7 +157,7 @@ Create a javascript variable for use in the function adding map markers.
                                             //     desc += '<br/>With the support of:<br/>';
                                             //     desc += '<a href="' + chapters[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + chapters[i]['sponsor_image'] + '"/></a><br/>';
                                             // }
-                                            desc += '<br/><a style="color: #800000;" href="' + chapters[i]['chapterUrl'] + '">Go to event page</a><br/>';
+                                            desc += '<br/><a style="color: #800000;" href="' + chapters[i]['chapterURL'] + '">Go to event page</a><br/>';
                                             var marker = new google.maps.Marker({
                                                 title: chapters[i]["chapterName"],
                                                 html: desc,
