@@ -437,20 +437,62 @@ a {
   margin-top: 1em;
 }
 
+.chapters__card-columns {
+  column-count: 2;
+}
+
 .chapters__card-main {
   background: rgba(0, 0, 0, 0.7);
   box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
   border: black 1px solid;
+  //height: 9em;
 }
 
 .chapters__card-header {
   border-bottom: rgba(129, 129, 129, 0.41) 1px solid;
   background-color: $dark-blue;
+  padding: 0;
 }
 
 .chapters__card-title {
   @extend .title-light;
-  font-size: 1.1em;
+  text-align: center;
+  font-size: 1.25em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  margin-bottom: 0;
+}
+
+.chapters__card-paragraph {
+  @extend .paragraph;
+  color: $light-blue;
+}
+
+.chapters__flag {
+  margin-right: 0;
+  border-radius: 5px;
+  font-size: 1.5em;
+  margin-left: 0.25em;
+  margin-top: 0.25em;
+}
+
+.chapters__card-button {
+  @extend .button-standard;
+  min-width: 50%;
+  padding: 0;
+  margin-bottom: 0.25em;
+  &:hover > .chapters__card-icon {
+    color: $button-text-hover;
+  }
+}
+
+.chapters__card-icon {
+  text-align: center;
+  color: $button-text;
+  font-size: 1em;
+  transition: all 0.5s ease-in;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .events {
