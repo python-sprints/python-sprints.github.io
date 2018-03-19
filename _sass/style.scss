@@ -716,13 +716,6 @@ a {
   }
 }
 
-.footer__text-copyright {
-  @extend .footer-font;
-  text-align: center;
-  font-size: 2em;
-  color: $footer-text;
-}
-
 .footer__section-title {
   @extend .footer-font;
   font-size: 1.5em;
@@ -779,4 +772,18 @@ a {
 .footer__navigation-list {
   list-style-type: none;
   padding-left: 0;
+}
+
+.footer__text-copyright {
+  @extend .footer-font;
+  text-align: center;
+  font-size: 2em;
+  color: $footer-text;
+}
+
+.footer__text-credits {
+  @extend .footer-font;
+  text-align: center;
+  font-size: 1em;
+  color: $footer-text;
 }
