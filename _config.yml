@@ -21,6 +21,7 @@ exclude:
   - Gemfile.lock
   - static/images/sources/
   - _pages/02_get_started.html
+  - DOCS/
 future: true
 collections:
   - sponsors
