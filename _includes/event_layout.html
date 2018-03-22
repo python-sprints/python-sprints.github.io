@@ -1,7 +1,7 @@
 {% comment %}
-Please note that css will not accept an id starting with a number which is
-what post.id starts with (date) or containing "."
-I also remove "/" to make the id more readable.
+    Please note that css will not accept an id starting with a number which is
+    what post.id starts with (date) or containing "."
+    I also remove "/" to make the id more readable.
 {% endcomment %}
 
 {% assign post_id = include.post.id | remove: "/" | remove: "." | prepend: "_" %}

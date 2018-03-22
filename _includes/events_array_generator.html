@@ -1,15 +1,22 @@
 {% comment %}
-    This include is to generate a list of posts for use in views.
-    The array posts is to be used then in the view.
+events_array_generator.html (future_events, limit):
+
+    Create an array of selected posts (events) for a layout.
+
+    This include is to generate an array of posts (events) for use in layouts.
+    Jekyll's standard variable site.posts contains all posts across entire site.
+    This include is used for selecting the ones we want to display.
+
     Parameters:
-        - future_events:   (bool) Include future events in the array?
+        future_events: bool, default: false
+            Include future events in the array?
             If future_events is true, no past events will be added.
             If it is false, only past events are added.
-            Default: false.
-        - limit:    (int) How many events to add to the array.
-            Default: 0 (no limit).
-    Creates variable for use in the outer scope:
-        - posts (array) Array of post objects.
+        limit: int, default: 0 (no limit)
+            How many events to add to the array.
+    Returns:
+        posts: liquid array
+            Array of post objects - variable for use in the outer scope.
 {% endcomment %}
 
 {% if include.future_events %}

@@ -1,8 +1,9 @@
 ---
-chapter_id: szczecin_test_sprints
-chapter_name: "Szczecin Test Sprints"
-chapter_meetup_link: https://www.meetup.com/Python-Sprints/
-chapter_location: Szcecin, Poland
+layout: default
+id: szczecin_test_sprints
+title: "Szczecin Test Sprints"
+meetup_link: https://www.meetup.com/Python-Sprints/
+address: Szczecin, Poland
 lat: 53.428544
 lng: 14.552812
 ---

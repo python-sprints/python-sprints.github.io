@@ -1,0 +1,44 @@
+{% comment %}
+locations_variable_generator.html (locations_array):
+
+    Create a javascript variable for use in the function adding map markers.
+
+    Accepts Liquid array object and converts it to a javascript list
+    of dictionaries.
+
+    Parameters:
+
+        locations_array: Liquid array
+            A Liquid array containing locations to convert to javascript array
+            of dictionaries. Can contain only 1 element.
+
+    Returns:
+        locations: JSON
+            Javascript array of dictionaries with locations' details.
+
+    Further info:
+        To generate an array:
+            {% assign chapters = "" | split: ',' %}
+        {% for chapter in site.chapters %}
+            {% assign chapters = chapters | push: chapter %}
+        {% endfor %}
+
+    But it should be enough to use site.chapters or site.posts etc.
+{% endcomment %}
+
+
+
+<script>
+    var locations = [
+        {% for location in include.locations_array %}
+            {"id": "{{ location.id }}",
+            "title": "{{ location.title }}",
+            "meetupURL": "{{ location.meetup_link }}",
+            "URL": "{{ location.url }}",
+            "address": "{{ location.address }}",
+            "lat": {{ location.lat }},
+            "lng": {{ location.lng }}
+            },
+        {% endfor %}
+    ];
+</script>
