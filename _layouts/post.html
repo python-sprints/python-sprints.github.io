@@ -87,28 +87,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-                                <!--<div class="row">-->
-                                    <!--<div class="post__button-col col-12">-->
-                                        <!--<a class="post__button btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">-->
-                                            <!--<i class="post__icon fab fa-meetup"></i>-->
-                                        <!--</a>-->
-                                        <!--{% if page.event_link %}-->
-                                            <!--<a class="post__button btn btn-primary btn-lg text-center" href="{{ page.event_link }}">-->
-                                                <!--<i class="post__icon  fas fa-external-link-square-alt"></i>-->
-                                            <!--</a>-->
-                                        <!--{% endif %}-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-
-
-
-
-
-
                             </div>
                         </div>
                     </div>
@@ -116,8 +94,32 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="post__content col-md-12">
+
                             <h1 class="post__content-title">{{ page.title }}</h1>
                             <p class="post__paragraph">{{ page.content }}</p>
+                            <hr class="post__divider">
+                            <h1 class="post__content-title">Event's location</h1>
+                            <div class="chapters__content row">
+                                <div class="col-12 my-auto">
+                                    <div id="chapters__map"></div>
+                                    {% comment %}
+                                        Create a javascript variable for use in the function adding map markers.
+                                    {% endcomment %}
+                                    {% assign locations_test = "" | split: ',' %}
+                                    {% assign first_location = site.chapters | first %}
+                                    {% assign locations_test = locations_test | push: first_location %}
+
+                                    {% comment %}
+                                    {% assign last_location = site.chapters | last %}
+                                    {% assign locations_test = locations_test | push: last_location %}
+                                    {% endcomment %}
+
+                                    {% include locations_variable_generator.html locations_array = locations_test %}
+                                    <script async defer
+                                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+                                    </script>
+                                </div>
+                            </div>
                             <hr class="post__divider">
                             <h1 class="post__content-title">Event's sponsors</h1>
                         </div>

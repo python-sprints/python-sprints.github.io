@@ -41,5 +41,11 @@ function initMap() {
             }
         );
     }
-    map.fitBounds(bounds);
+    if (locations.length === 1) {
+        var latLng = marker.getPosition();
+        map.setCenter(latLng);
+        map.zoom = 17;
+    } else {
+        map.fitBounds(bounds);
+    }
 }

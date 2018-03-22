@@ -85,6 +85,10 @@
   padding-right: 10%;
 }
 
+#chapters__map_test {
+  @extend #chapters__map;
+}
+
 .post__content-title {
   @extend .title-dark;
   margin-top: 5%;

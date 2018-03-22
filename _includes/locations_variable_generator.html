@@ -31,11 +31,15 @@ locations_variable_generator.html (locations_array):
 <script>
     var locations = [
         {% for location in include.locations_array %}
-            {"id": "{{ location.id }}",
-            "title": "{{ location.title }}",
+            {"title": "{{ location.title }}",
             "meetupURL": "{{ location.meetup_link }}",
             "URL": "{{ location.url }}",
-            "address": "{{ location.address }}",
+            {% if location.address %}
+                "address": "{{ location.address }}",
+            {% else %}
+                {% assign sponsor = location.sponsors  %}
+                "address": "{{ sponsor.address }}",
+            {% endif %}
             "lat": {{ location.lat }},
             "lng": {{ location.lng }}
             },

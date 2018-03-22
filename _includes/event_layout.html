@@ -1,10 +1,9 @@
 {% comment %}
-    Please note that css will not accept an id starting with a number which is
-    what post.id starts with (date) or containing "."
-    I also remove "/" to make the id more readable.
+    To create a unique html element's id we have to slugify the jekyll's post.id.
+    Then this unique id is used to set a post dependent background image on it.
 {% endcomment %}
 
-{% assign post_id = include.post.id | remove: "/" | remove: "." | prepend: "_" %}
+{% assign post_id = include.post.id | slugify | prepend: "_" %}
 {% assign post_id_selector = post_id | prepend: "#" %}
 {% if include.post.image %}
     {% assign image = include.post.image %}

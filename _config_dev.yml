@@ -23,10 +23,27 @@ exclude:
   - _pages/02_get_started.html
   - DOCS/
 future: true
+
 collections:
   sponsors:
+    output: false
   chapters:
-    output: true
+      output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      is_post: true
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
 
 # command to run build locally:
 # bundle exec jekyll serve --host 0.0.0.0 --config _config.yml,_config_dev.yml
