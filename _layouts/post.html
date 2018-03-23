@@ -6,6 +6,7 @@
 {% else %}
     {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
 {% endif %}
+{% include get_host_sponsor.html event = page %}
 <style>
     .post__img-container {
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{{ site.baseurl }}/{{ image }}");
@@ -25,18 +26,21 @@
                     <div class="no-gutters__col col-md-12 container-fluid">
                         <div class="row">
                             <div class="post__img-container col-md-7 col-sm-12">
-                                <h1 class="post__title">{{ page.project }}</h1>
-                                <h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>
+                                <!--<h1 class="post__title">{{ page.project }}</h1>-->
+                                <h1 class="post__title">{{ page.title }}</h1>
+                                <!--<h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>-->
+                                <h2 class="post__subtitle">{{ page.subtitle }}</h2>
                             </div>
                             <div class="post__event-col col-md-5 col-12">
                                 <div class="row">
                                     <div class="no-gutters__col col-6">
-                                        <h2 class="post__label">Event</h2>
+                                        <!--<h2 class="post__label">Event</h2>-->
+                                        <h2 class="post__label">Project</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="post__event-title col-12">
-                                        {{ page.title }}
+                                        {{ page.project }}
                                     </div>
                                 </div>
 
@@ -47,7 +51,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="post__event-title col-12">
-                                        {{ page.venue }}
+                                        {{ host_sponsor.name }}
                                     </div>
                                 </div>
 
@@ -98,9 +102,8 @@
                             <h1 class="post__content-title">{{ page.title }}</h1>
                             <p class="post__paragraph">{{ page.content }}</p>
                             <hr class="post__divider">
-                            <h1 class="post__content-title">Event's location</h1>
-                            {% assign host_sponsor_id = page.sponsors | first  %}
-                            {% assign host_sponsor = site.sponsors | where:"obj_id", host_sponsor_id | first %}
+                            <h1 class="post__content-title">When & Where</h1>
+                            <p class="post__address-title">{{ page.date | date: "%e %B %Y" }}, {{ page.time }}</p>
                             <p class="post__address-title">{{ host_sponsor.name }}</p>
                             <p class="post__address">{{ host_sponsor.address }}</p>
                             <div class="chapters__content row">

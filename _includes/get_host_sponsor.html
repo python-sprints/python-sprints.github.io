@@ -1,0 +1,19 @@
+{% comment %}
+get_host_sponsor.html (event):
+
+    Obtain host sponsor object for the event.
+
+    Get the event's foreign key sponsors and use its first object in the array
+    as host sponsor object.
+
+    Parameters:
+        event: jekyll post object
+            Post object containing yml variable sponsors.
+
+    Returns:
+        host_sponsor: sponsor object
+            Object from collection sponsors.
+{% endcomment %}
+
+{% assign host_sponsor_id = include.event.sponsors | first  %}
+{% assign host_sponsor = site.sponsors | where:"obj_id", host_sponsor_id | first %}

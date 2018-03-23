@@ -2,12 +2,10 @@
 title: Pandas, Beginners Friendly
 subtitle: Improving Pandas documentation
 project: Pandas
-project_description: Powerful Python data analysis toolkit
 project_logo: static/images/events/pandas_logo_donation.png
 project_link: http://pandas.pydata.org/index.html
 date: 2018-03-20
 time: "18:30"
-venue: Harvey Nash, London
 meetup_link: https://www.meetup.com/Python-Sprints/events/248711552/
 event_link:
 image:

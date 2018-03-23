@@ -43,7 +43,10 @@
             {% include events_array_generator.html future_events = true %}
             {% if posts.size > 0 %}
                 {% assign upcoming_event = true %}
+                {% assign chapters_col = "col-lg-6" %}
                 {% assign posts = posts | reverse %}
+            {% else %}
+                {% assign chapters_col = "col-12" %}
             {% endif %}
             {% if upcoming_event == true %}
                 <section class="upcoming">
@@ -100,7 +103,8 @@
                 </section>
             {% endif %}
         </div>
-        <div class="col-lg-6 no-padding-x">
+
+        <div class="{{ chapters_col }} no-padding-x">
             <section class="chapters">
                 <div class="row container-fluid">
                     <div class="col-12 no-padding-x">

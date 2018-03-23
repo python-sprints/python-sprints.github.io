@@ -1,11 +1,11 @@
 ---
 title: Pandas documentation sprint (worldwide)
+subtitle: Improving Pandas documentation
 project: Pandas
-project_description: Powerful Python data analysis toolkit
 project_logo: static/images/events/pandas_logo_donation.png
 project_link: http://pandas.pydata.org/index.html
 date: 2018-03-10
-venue: Bloomberg (London)
+time: "10:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/247097848/
 event_link: https://python-sprints.github.io/pandas/
 image: static/images/events/pandas_documentation_sprint_1280_720px.jpg

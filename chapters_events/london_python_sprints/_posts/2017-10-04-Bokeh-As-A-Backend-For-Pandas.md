@@ -1,9 +1,9 @@
 ---
 title: Bokeh as a backend for Pandas
+subtitle: Implementing Bokeh plotting as Pandas API
 project: Pandas
-project_description: Powerful Python data analysis toolkit
 date: 2017-10-04
-venue: Harvey Nash
+time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/243422372/
 image: static/images/events/pandas_bokeh_backend_harvey_nash_960x539px.jpeg
 sponsors: 

@@ -9,10 +9,9 @@
 
 .post__title {
   @extend .title-light;
-  word-break: break-all;
   padding-top: 15vh;
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
   }
 .post__subtitle {
   @extend .subtitle;
