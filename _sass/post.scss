@@ -96,6 +96,18 @@
   font-size: 2em;
 }
 
+.post__address {
+  @extend .paragraph;
+  color: $paragraph-dark;
+  font-size: 1em;
+}
+
+.post__address-title {
+  @extend .post__address;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+}
+
 .post__sponsor-col {
   padding-left: 10%;
   padding-right: 10%;

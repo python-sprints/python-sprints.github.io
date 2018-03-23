@@ -99,6 +99,10 @@
                             <p class="post__paragraph">{{ page.content }}</p>
                             <hr class="post__divider">
                             <h1 class="post__content-title">Event's location</h1>
+                            {% assign host_sponsor_id = page.sponsors | first  %}
+                            {% assign host_sponsor = site.sponsors | where:"obj_id", host_sponsor_id | first %}
+                            <p class="post__address-title">{{ host_sponsor.name }}</p>
+                            <p class="post__address">{{ host_sponsor.address }}</p>
                             <div class="chapters__content row">
                                 <div class="col-12 my-auto">
                                     <div id="chapters__map"></div>
