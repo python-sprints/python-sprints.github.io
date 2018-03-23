@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Test event 1
 subtitle: Test subtitle 1
 project: Pandas

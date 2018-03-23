@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bokeh as a backend for Pandas
 project: Pandas
 project_description: Powerful Python data analysis toolkit

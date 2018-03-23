@@ -1,5 +1,4 @@
 ---
-layout: post
 title: python-dateutil issues
 project: date-util
 project_description: Powerful extensions to datetime

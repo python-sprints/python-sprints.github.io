@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Pandas documentation sprint (worldwide)
 project: Pandas
 project_description: Powerful Python data analysis toolkit

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Pandas, Beginners Friendly
 subtitle: Improving Pandas documentation
 project: Pandas

@@ -1,9 +1,9 @@
 ---
-sponsor_id: quantum_black
-sponsor_name: "Quantum Black"
-sponsor_logo: static/images/sponsors/quantum_black.png
-sponsor_link: https://www.quantumblack.com/
-sponsor_address: "Kinnaird House, 1 Pall Mall<br/>London SW1Y 5AU, UK"
+obj_id: quantum_black
+name: "Quantum Black"
+logo: static/images/sponsors/quantum_black.png
+link: https://www.quantumblack.com/
+address: "Kinnaird House, 1 Pall Mall<br/>London SW1Y 5AU, UK"
 lat: 51.507954
 lng: -0.130718
 permanent: false

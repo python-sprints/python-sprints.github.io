@@ -38,6 +38,14 @@ defaults:
     values:
       layout: "post"
       is_post: true
+
+  -
+    scope:
+      path: ""
+      type: "chapters"
+    values:
+      is_chapter: true
+
   -
     scope:
       path: ""

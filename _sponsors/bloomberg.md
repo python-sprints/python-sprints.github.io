@@ -1,9 +1,9 @@
 ---
-sponsor_id: bloomberg
-sponsor_name: "Bloomberg"
-sponsor_logo: static/images/sponsors/bloomberg.png
-sponsor_link: https://www.bloomberg.com/careers/
-sponsor_address: "3 Queen Victoria St<br/>London, EC4N 4TQ, UK"
+obj_id: bloomberg
+name: "Bloomberg"
+logo: static/images/sponsors/bloomberg.png
+link: https://www.bloomberg.com/careers/
+address: "3 Queen Victoria St<br/>London, EC4N 4TQ, UK"
 lat: 51.520363
 lng: -0.086270
 permanent: true

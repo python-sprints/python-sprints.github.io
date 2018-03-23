@@ -1,6 +1,6 @@
 ---
 layout: default
-id: szczecin_test_sprints
+obj_id: szczecin_test_sprints
 title: "Szczecin Test Sprints"
 meetup_link: https://www.meetup.com/Python-Sprints/
 address: Szczecin, Poland

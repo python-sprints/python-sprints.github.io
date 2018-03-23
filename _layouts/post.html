@@ -105,16 +105,10 @@
                                     {% comment %}
                                         Create a javascript variable for use in the function adding map markers.
                                     {% endcomment %}
-                                    {% assign locations_test = "" | split: ',' %}
-                                    {% assign first_location = site.chapters | first %}
-                                    {% assign locations_test = locations_test | push: first_location %}
-
-                                    {% comment %}
-                                    {% assign last_location = site.chapters | last %}
-                                    {% assign locations_test = locations_test | push: last_location %}
-                                    {% endcomment %}
-
-                                    {% include locations_variable_generator.html locations_array = locations_test %}
+                                    {% assign locations = "" | split: ',' %}
+                                    {% assign location = page %}
+                                    {% assign locations = locations | push: location %}
+                                    {% include locations_variable_generator.html locations_array = locations %}
                                     <script async defer
                                       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
                                     </script>
@@ -125,15 +119,15 @@
                         </div>
                     </div>
                     {% for sponsor in page.sponsors %}
-                        {% assign sponsor_obj = site.sponsors | where:"sponsor_id", sponsor | first %}
+                        {% assign sponsor_obj = site.sponsors | where:"obj_id", sponsor | first %}
                          <div class="row flex-nowrap">
                             <div class="post__sponsor-col col-md-12">
                                 <div class="row">
                                     <div class="post__logo-col col-sm-3 col-12">
-                                        <h3 class="post__sponsor-name">{{ sponsor_obj.sponsor_name }}</h3>
-                                            <a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.sponsor_link }}">
+                                        <h3 class="post__sponsor-name">{{ sponsor_obj.name }}</h3>
+                                            <a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.link }}">
                                                 <img class="post__sponsor-img"
-                                                     src="{{ site.baseurl }}/{{ sponsor_obj.sponsor_logo }}"
+                                                     src="{{ site.baseurl }}/{{ sponsor_obj.logo }}"
                                                      alt="Sponsor logo">
                                             </a>
                                     </div >

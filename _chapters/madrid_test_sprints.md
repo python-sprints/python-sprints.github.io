@@ -1,6 +1,6 @@
 ---
 layout: default
-id: madrid_test_sprints
+obj_id: madrid_test_sprints
 title: "Madrid Test Sprints"
 meetup_link: https://www.meetup.com/Python-Sprints/
 address: Madrid, Spain

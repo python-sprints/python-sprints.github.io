@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Pandas Sprint continued (ALL LEVELS)
 subtitle: Improving Pandas
 project: Pandas

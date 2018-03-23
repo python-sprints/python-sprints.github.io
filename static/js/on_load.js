@@ -19,7 +19,7 @@ function initMap() {
         //     desc += '<br/>With the support of:<br/>';
         //     desc += '<a href="' + locations[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + locations[i]['sponsor_image'] + '"/></a><br/>';
         // }
-        desc += '<br/><a style="color: #800000;" href="' + locations[i]['URL'] + '">Go to event page</a><br/>';
+        desc += '<br/><a style="color: #800000;" href="' + locations[i]['URL'] + '">Learn More</a><br/>';
         var marker = new google.maps.Marker({
             title: locations[i]["title"],
             html: desc,

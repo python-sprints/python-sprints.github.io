@@ -1,6 +1,6 @@
 ---
 layout: default
-id: london_python_sprints
+obj_id: london_python_sprints
 title: "London Python Sprints"
 meetup_link: https://www.meetup.com/Python-Sprints/
 address: London, United Kingdom
