@@ -57,6 +57,7 @@
                     </div>
                     <div class="upcoming__content row with-padding-x">
                         {% for post in posts %}
+                            {% include get_host_sponsor.html event = post %}
                             <div class="upcoming__col col-md-12 no-padding-x">
                                 <div class="row">
                                     <div class="col-12">
@@ -75,7 +76,7 @@
                                                 <div class="row">
                                                     <div class="col-12 no-padding-x">
                                                         <p class="upcoming__paragraph">
-                                                            <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ post.venue }}
+                                                            <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ host_sponsor.address }}
                                                         </p>
                                                     </div>
                                                 </div>
