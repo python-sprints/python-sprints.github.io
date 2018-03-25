@@ -137,13 +137,17 @@
   border-radius: 0 5px 5px 5px;
   }
 
+.title {
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
 .title-dark {
-  font-family: 'Encode Sans Expanded', sans-serif;
+  @extend .title;
   color: $title-dark;
 }
 
 .title-light {
-  font-family: 'Encode Sans Expanded', sans-serif;
+  @extend .title;
   color: $title-light;
 }
 

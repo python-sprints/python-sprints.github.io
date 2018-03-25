@@ -314,16 +314,17 @@ a {
 }
 
 .upcoming-divider {
-  border-bottom: rgba(127, 160, 194, 0.35) 1px solid;
-  width: 20%;
-  margin: 10% auto 10%;
+  border-bottom: rgba(127, 160, 194, 0.05) 1px solid;
+  width: 30%;
+  margin: 0.25em 0;
 }
 
 .upcoming__col {
-  background: rgba(0, 0, 0, 0.7);
+  //background: rgba(0, 0, 0, 0.7);
+  background: $bright-white;
   border-radius: 5px;
   border: #000000 1px solid;
-  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
+  //box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
   min-height: 100%;
   margin-top: 1em;
 }
@@ -351,7 +352,8 @@ a {
 //}
 
 .upcoming__event-title {
-  @extend .title-light;
+  @extend .title;
+  color: $black;
   font-size: 2em;
   margin-top: 0.5em;
   margin-bottom: 0.1em;
@@ -359,13 +361,14 @@ a {
 
 .upcoming__event-subtitle {
   @extend .subtitle;
+  color: $black;
   font-size: 1.25em;
   margin-bottom: 0.5em;
 }
 
 .upcoming__paragraph {
   @extend .subtitle;
-  color: $light-blue;
+  color: $black;
   margin-bottom: 0.25em;
 }
 
