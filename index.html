@@ -71,28 +71,21 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 pr-0">
+                                        <hr class="upcoming-divider">
                                         <div class="row">
                                             <div class="col-6 no-padding-x">
-                                                <div class="row">
-                                                    <div class="col-12 no-padding-x">
-                                                        <hr class="upcoming-divider">
-                                                        <p class="upcoming__paragraph">
-                                                            <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ host_sponsor.address }}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 no-padding-x">
-                                                        <p class="upcoming__paragraph">
-                                                            <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
-                                                        </p>
-                                                    </div>
+                                                <div class="col-12 no-padding-x">
+                                                    <p class="upcoming__paragraph">
+                                                        <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ host_sponsor.address }}
+                                                    </p>
                                                 </div>
                                             </div>
-                                            <div class="upcoming__link-col col-6">
-                                                <a class="upcoming__button btn" href="{{ post.url }}">
-                                                    <i class="upcoming__button-icon fas fa-info-circle"></i>
-                                                </a>
+                                            <div class="col-6 no-padding-x">
+                                                <div class="col-12 no-padding-x">
+                                                    <p class="upcoming__paragraph text-right mr-2">
+                                                        <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
