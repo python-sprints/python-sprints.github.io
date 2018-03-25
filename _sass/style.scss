@@ -436,7 +436,7 @@ a {
   width: 100%;
   border-radius: 5px;
   border: black 1px solid;
-  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
+  //box-shadow: rgba(0, 0, 0, 0.76) 2px 2px 2px 0;
 }
 
 .chapters__card-container {
@@ -454,19 +454,22 @@ a {
 }
 
 .chapters__card-main {
-  background: rgba(0, 0, 0, 0.7);
-  box-shadow: rgba(0, 0, 0, 0.76) 5px 5px 5px 0;
+  //background: rgba(0, 0, 0, 0.7);
+  background: rgba(250, 235, 215, 0.85);
+  //box-shadow: rgba(0, 0, 0, 0.76) 2px 2px 2px 0;
   border: black 1px solid;
 }
 
 .chapters__card-header {
   border-bottom: rgba(129, 129, 129, 0.41) 1px solid;
-  background-color: $dark-blue;
+  //background-color: $dark-blue;
+  background: rgba(129, 129, 129, 0.61);
   padding: 0;
 }
 
 .chapters__card-title {
-  @extend .title-light;
+  @extend .title;
+  color: $black;
   text-align: center;
   font-size: 1.25em;
   padding-top: 0.25em;
@@ -476,7 +479,7 @@ a {
 
 .chapters__card-paragraph {
   @extend .paragraph;
-  color: $light-blue;
+  color: $very-dark-blue;
 }
 
 .chapters__flag {
@@ -488,18 +491,18 @@ a {
 }
 
 .chapters__card-button {
-  @extend .button-standard;
+  @extend .button-minimal;
   min-width: 50%;
   padding: 0;
   margin-bottom: 0.25em;
   &:hover > .chapters__card-icon {
-    color: $button-text-hover;
+    color: $orange;
   }
 }
 
 .chapters__card-icon {
   text-align: center;
-  color: $button-text;
+  color: $black;
   font-size: 1em;
   transition: all 0.5s ease-in;
   min-width: 100%;
