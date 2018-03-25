@@ -16,14 +16,14 @@
 .button-minimal {
   font-size: 1.5em;
   font-family: 'Playfair Display', serif;
-  //background: $button-background;
+  background: transparent;
   color: $black;
-  //border: $button-border;
+  border: $black 1px solid;
   min-width: 30%;
   transition: all 0.5s ease-in-out;
   &:hover {
-    color: $button-text-hover;
-    background: $button-background-hover;
-    border: $button-border-hover;
+    color: $orange;
+    //background: $button-background-hover;
+    border: $black 1px solid;
   }
 }
