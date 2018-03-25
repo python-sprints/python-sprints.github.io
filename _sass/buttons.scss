@@ -4,7 +4,7 @@
   background: $button-background;
   color: $button-text;
   border: $button-border;
-  min-width: 30%;
+  min-width: 6em;
   transition: all 0.5s ease-in-out;
   &:hover {
     color: $button-text-hover;
@@ -19,7 +19,7 @@
   background: transparent;
   color: $black;
   border: $black 1px solid;
-  min-width: 30%;
+  min-width: 6em;
   transition: all 0.5s ease-in-out;
   &:hover {
     color: $orange;
