@@ -1,52 +1,33 @@
 <footer class="footer">
     <div class="row container-fluid">
-        <div class="col-md-3 text-center">
-            <h2 class="footer__section-title">Find Us Online</h2>
-            <hr class="footer__divider">
-            <a href="https://www.meetup.com/Python-Sprints/" target="_blank"><i class="footer__icon fab fa-meetup"></i></a>
-            <a href="https://twitter.com/py_sprints" target="_blank"><i class="footer__icon fab fa-twitter"></i></a>
+        <div class="col-md-5 text-center" style="padding-top: 30px;">
+            <a class="twitter-timeline" data-width="400" data-height="400" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/py_sprints?ref_src=twsrc%5Etfw">Tweets by py_sprints</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div class="col-md-6">
-            <h2 class="footer__section-title">Our Sponsors</h2>
+        <div class="col-md-7">
+            <h2 class="footer__section-title">With the support of...</h2>
             <hr class="footer__divider">
-            <!--Create an array of permanent sponsors-->
-            {% assign sponsors = "" | split: ',' %}
-            {% for sponsor in site.sponsors %}
-                {% if sponsor.permanent %}
-                    {% assign sponsors = sponsors | push: sponsor %}
-                {% endif %}
-            {% endfor %}
-
-            {%
-                include row_display_outer_loop.html
-                items_array = sponsors
-                inner_layout = "footer_sponsors_inner_layout.html"
-            %}
-        </div>
-        <div class="col-md-3">
-            <h2 class="footer__section-title">Python Sprints</h2>
-            <hr class="footer__divider">
-            <ul class="footer__navigation-list text-center">
-                <li><a class="footer__link" href="{{ '/' | prepend: site.baseurl }}">Home</a></li>
-            {% for page in site.pages %}
-                {% if page.title %}
-                    <li><a class="footer__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-
-        </div>
-    </div>
-
-    <div class="footer__content row container-fluid">
-        <div class="col-md-12">
-                <p class="footer__text-copyright">
-                    ©
-                    <img class="footer__brand-img" src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo_triangles_flat_light_text_502x100px.png" alt="Python Sprints Logo">
-                    <script>document.write(new Date().getFullYear())</script>
-                </p>
-                <p class="footer__text-credits">Created by: <a href="http://tomasz-kluczkowski.com/">Tomasz Kluczkowski</a></p>
-                <p class="footer__text-credits">Site logo: <a href="https://www.linkedin.com/in/marcelgarciadesigner/">Marcel Garcia</a></p>
+            <div class="row">
+                <div class="footer__sponsor-col col-md-6 col-lg-6">
+                    <a class="footer__sponsor-link" href="https://www.python.org/psf/">
+                        <img src="{{ site.baseurl }}/static/images/sponsors/psf.png">
+                    </a>
+                </div>
+                <div class="footer__sponsor-col col-md-6 col-lg-6">
+                    <a class="footer__sponsor-link" href="https://www.numfocus.org/">
+                        <img src="{{ site.baseurl }}/static/images/sponsors/numfocus.png">
+                    </a>
+                </div>
+            </div>
+            <p class="footer__text-copyright">
+                ©
+                <img class="footer__brand-img" src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo_triangles_flat_light_text_502x100px.png" alt="Python Sprints Logo">
+                <script>document.write(new Date().getFullYear())</script>
+            </p>
+            <p class="footer__text-credits">
+                Website created by: <a href="http://tomasz-kluczkowski.com/">Tomasz Kluczkowski</a>
+                |
+                Python Sprints logo: <a href="https://www.linkedin.com/in/marcelgarciadesigner/">Marcel Garcia</a>
+            </p>
         </div>
     </div>
 </footer>
