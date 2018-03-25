@@ -20,10 +20,11 @@
   color: $black;
   border: $black 1px solid;
   min-width: 6em;
-  transition: all 0.5s ease-in-out;
-  &:hover {
+  &:hover > * {
     color: $orange;
-    background: transparent;
-    border: $black 1px solid;
   }
 }
+
+.button-minimal > *{
+    transition: all 0.5s ease-in-out;
+  }
