@@ -56,11 +56,19 @@
                         </div>
                     </div>
                     <div class="upcoming__content row with-padding-x">
+                        {% assign current_date = "" %}
                         {% for post in posts %}
                             {% include get_host_sponsor.html event = post %}
                             <div class="upcoming__col col-md-12 no-padding-x">
                                 <div class="row">
                                     <div class="col-12">
+                                        {% unless post.date == current_date %}
+                                            <p class="upcoming__date">
+                                                <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
+                                            </p>
+                                            <!--<hr class="upcoming__date-divider">-->
+                                        {% endunless %}
+                                        {% assign current_date = post.date %}
                                         <h2 class="upcoming__event-title"> {{ post.title }}</h2>
                                     </div>
                                 </div>
@@ -70,8 +78,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 pr-0">
-                                        <hr class="upcoming-divider">
+                                    <div class="col-12">
                                         <div class="row">
                                             <div class="col-6 no-padding-x">
                                                 <div class="col-12 no-padding-x">
@@ -80,14 +87,15 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="col-6 no-padding-x">
-                                                <div class="col-12 no-padding-x">
-                                                    <p class="upcoming__paragraph text-right mr-2">
-                                                        <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
-                                                    </p>
-                                                </div>
+                                            <div class="col-6 no-padding-x text-right">
+                                                <a class="upcoming__button btn" href="{{ post.url }}">
+                                                    <i class="upcoming__button-icon fas fa-info-circle"></i>
+                                                </a>
                                             </div>
                                         </div>
+                                        {% unless forloop.last %}
+                                            <hr class="upcoming__divider">
+                                        {% endunless %}
                                     </div>
                                 </div>
                             </div>
