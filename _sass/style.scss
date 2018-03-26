@@ -259,12 +259,6 @@ a {
   color: $nav-button-close-hover;
 }
 
-//.mission__statement {
-//  font-size: 1.1em;
-//  text-align: center;
-//  font-family: 'Playfair Display', serif;
-//}
-
 @mixin base-background($background-url) {
     background-image: linear-gradient(to bottom,
     rgba(0, 0, 0, 0.9),
@@ -321,7 +315,6 @@ a {
 
 .upcoming__col {
   background: rgba(250, 235, 215, 0.85);
-  //border-top: $black 1px solid;
   border-right: $black 1px solid;
   border-left: $black 1px solid;
   min-height: 100%;
