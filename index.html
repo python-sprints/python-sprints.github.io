@@ -1,42 +1,44 @@
 ---
 ---
-<div class="navigation__content container-fluid">
-    <picture>
-        <!--<source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,-->
-                        <!--static/images/title_photo/title_glass_building_960x540.jpg 960w,-->
-                        <!--static/images/title_photo/title_glass_building_1334x750.jpg 1334w,-->
-                        <!--static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,-->
-                        <!--static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,-->
-                        <!--static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"-->
-                <!--media="(orientation: landscape)"-->
-                <!--sizes="100vw">-->
-        <!--<source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,-->
-                        <!--static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,-->
-                        <!--static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,-->
-                        <!--static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,-->
-                        <!--static/images/title_photo/title_glass_building_1442x2562.jpg 1442w"-->
-                <!--media="(orientation: portrait)"-->
-                <!--sizes="100vw">-->
-        <img class="navigation__background-img"
-             src="static/images/title_photo/Python_Sprints_title_2048x1152px.jpg"
-             alt="Python Sprints Title Image">
-    </picture>
+<section id="home">
+    <div class="navigation__content container-fluid">
+        <picture>
+            <!--<source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,-->
+                            <!--static/images/title_photo/title_glass_building_960x540.jpg 960w,-->
+                            <!--static/images/title_photo/title_glass_building_1334x750.jpg 1334w,-->
+                            <!--static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,-->
+                            <!--static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,-->
+                            <!--static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"-->
+                    <!--media="(orientation: landscape)"-->
+                    <!--sizes="100vw">-->
+            <!--<source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,-->
+                            <!--static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,-->
+                            <!--static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,-->
+                            <!--static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,-->
+                            <!--static/images/title_photo/title_glass_building_1442x2562.jpg 1442w"-->
+                    <!--media="(orientation: portrait)"-->
+                    <!--sizes="100vw">-->
+            <img class="navigation__background-img"
+                 src="static/images/title_photo/Python_Sprints_title_2048x1152px.jpg"
+                 alt="Python Sprints Title Image">
+        </picture>
 
-    <div class="navigation__title-container row container-fluid">
-        <div class="col-md-12">
-            <img class="navigation__site-logo"
-                 srcset="static/images/site_logo/python_sprints_logo_triangles_light_text_480x245px.png 480w,
-                        static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png 960w,
-                        static/images/site_logo/python_sprints_logo_triangles_light_text_1920x978px.png 1920w,
-                        "
-                 sizes="100vw"
-                 src="static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png"
-                 alt="Python Sprints Logo">
-            <h2 class="navigation__subtitle">All About Open Source</h2>
+        <div class="navigation__title-container row container-fluid">
+            <div class="col-md-12">
+                <img class="navigation__site-logo"
+                     srcset="static/images/site_logo/python_sprints_logo_triangles_light_text_480x245px.png 480w,
+                            static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png 960w,
+                            static/images/site_logo/python_sprints_logo_triangles_light_text_1920x978px.png 1920w,
+                            "
+                     sizes="100vw"
+                     src="static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png"
+                     alt="Python Sprints Logo">
+                <h2 class="navigation__subtitle">All About Open Source</h2>
+            </div>
         </div>
     </div>
-</div>
-<div id="upcoming" class="upcoming-chapters-container container-fluid">
+</section>
+<div class="upcoming-chapters-container container-fluid">
     <div class="row">
         {% include events_array_generator.html future_events = true %}
         {% if posts.size > 0 %}
@@ -49,7 +51,7 @@
         {% if upcoming_event == true %}
             <div class="col-lg-6 no-padding-x">
                 <!--Upcoming Events section-->
-                <section class="upcoming">
+                <section id="events" class="upcoming">
                     <div class="row container-fluid">
                         <div class="col-md-12 no-padding-x">
                             <h2 class="upcoming__title">Events</h2>
