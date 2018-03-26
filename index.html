@@ -36,7 +36,7 @@
         </div>
     </div>
 </div>
-<div class="upcoming-chapters-container container-fluid">
+<div id="upcoming" class="upcoming-chapters-container container-fluid">
     <div class="row">
         {% include events_array_generator.html future_events = true %}
         {% if posts.size > 0 %}
@@ -106,7 +106,7 @@
         {% endif %}
 
         <div class="{{ chapters_col }} no-padding-x">
-            <section class="chapters">
+            <section id="chapters" class="chapters">
                 <div class="row container-fluid">
                     <div class="col-12 no-padding-x">
                         <div class="row">
@@ -166,7 +166,7 @@
 {% endcomment %}
 
 <!--Services section-->
-<section class="services">
+<section id="about" class="services">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">

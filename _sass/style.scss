@@ -5,7 +5,7 @@
   overflow-x: hidden;
   /*Here I need to move the background image to slide under the navigation*/
   /*Any smarter solutions are welcome!*/
-  margin-top: -66px;
+  //margin-top: -66px;
 
 }
 
@@ -96,6 +96,10 @@ a {
   }
 }
 
+.navigation {
+  background: rgba(0, 0, 0, 0.9);
+}
+
 
 .navigation__content {
   @extend .page__background-img-container;
@@ -117,7 +121,7 @@ a {
 }
 
 .navigation__brand-link {
-  width: 100%;
+  //width: 100%;
 }
 
 .navigation__brand-img {
@@ -129,6 +133,10 @@ a {
   .navigation__brand-img {
   width: 10em;
   }
+}
+
+.navigation__icon {
+  color: grey;
 }
 
 .navigation__button-open-container {
@@ -218,10 +226,10 @@ a {
 
 .navigation__link {
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.25em;
   font-family: 'Encode Sans Expanded', sans-serif;
-  color: $nav-link;
-  display: block;
+  color: $nav-link!important;
+  //display: block;
   transition: all 0.5s ease-in-out;
 }
 
