@@ -271,33 +271,33 @@ a {
 
 
 .upcoming-chapters-container {
-  background-size: cover;
-  background-position: center center;
+  //background-size: cover;
+  //background-position: center center;
   padding-bottom: 1em;
   min-height: 100vh;
 }
 
-.upcoming-chapters-container {
-  @include base-background("../images/events/events-chapters_background_480x205px.jpeg");
-}
-
-@media (min-width: 481px){
-    .upcoming-chapters-container {
-    @include base-background("../images/events/events-chapters_background_960x540px.jpeg");
-    }
-}
-
-@media (min-width: 961px){
-    .upcoming-chapters-container {
-    @include base-background("../images/events/events-chapters_background_1920x1080px.jpeg");
-    }
-}
-
-@media (min-width: 1921px){
-    .upcoming-chapters-container {
-    @include base-background("../images/events/events-chapters_background_3840x2160px.jpeg");
-    }
-}
+//.upcoming-chapters-container {
+//  @include base-background("../images/events/events-chapters_background_480x205px.jpeg");
+//}
+//
+//@media (min-width: 481px){
+//    .upcoming-chapters-container {
+//    @include base-background("../images/events/events-chapters_background_960x540px.jpeg");
+//    }
+//}
+//
+//@media (min-width: 961px){
+//    .upcoming-chapters-container {
+//    @include base-background("../images/events/events-chapters_background_1920x1080px.jpeg");
+//    }
+//}
+//
+//@media (min-width: 1921px){
+//    .upcoming-chapters-container {
+//    @include base-background("../images/events/events-chapters_background_3840x2160px.jpeg");
+//    }
+//}
 
 .upcoming {
 }
@@ -314,15 +314,17 @@ a {
 }
 
 .upcoming__col {
-  background: rgba(250, 235, 215, 0.85);
+  //background: rgba(250, 235, 215, 0.85);
   border-right: $black 1px solid;
   border-left: $black 1px solid;
   min-height: 100%;
   &:first-child {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+    border-top: $black 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
   &:last-child {
+    border-bottom: $black 1px solid;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -337,9 +339,9 @@ a {
 
 .upcoming__title {
   @extend .section-title;
-  background-color: rgba(0, 0, 0, 0.5);
+  //background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  color: $title-light;
+  color: $title-dark;
   margin-top: 1.5em;
   margin-bottom: 0;
   padding-top: 0.25em;
@@ -464,7 +466,7 @@ a {
 }
 
 .chapters__card-main {
-  background: rgba(250, 235, 215, 0.85);
+  background: $main-background;
   border: black 1px solid;
 }
 
