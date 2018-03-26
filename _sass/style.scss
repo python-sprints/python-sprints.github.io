@@ -42,6 +42,19 @@ a {
   padding-right: 15px;
 }
 
+@media (min-width: 992px){
+  .hide-on-desktop {
+  display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+
 .page__background-img-container {
   position: relative;
   &::after {
@@ -225,6 +238,8 @@ a {
 }
 
 .navigation__link {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
   text-decoration: none;
   font-size: 1.25em;
   font-family: 'Encode Sans Expanded', sans-serif;
