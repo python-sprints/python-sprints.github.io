@@ -314,17 +314,18 @@ a {
 }
 
 .upcoming__col {
-  //background: rgba(250, 235, 215, 0.85);
-  border-right: $black 1px solid;
-  border-left: $black 1px solid;
+  background: $section-background;
+  border-right: $blue 1px solid;
+  border-left: $blue 1px solid;
   min-height: 100%;
+  box-shadow: $black-shadow;
   &:first-child {
-    border-top: $black 1px solid;
+    border-top: $blue 1px solid;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
   &:last-child {
-    border-bottom: $black 1px solid;
+    border-bottom: $blue 1px solid;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -448,7 +449,8 @@ a {
   height: 40vh;
   width: 100%;
   border-radius: 5px;
-  border: black 1px solid;
+  border: $blue 1px solid;
+  box-shadow: $black-shadow;
 }
 
 .chapters__card-container {
@@ -466,8 +468,9 @@ a {
 }
 
 .chapters__card-main {
-  background: $main-background;
-  border: black 1px solid;
+  background: $section-background;
+  border: $blue 1px solid;
+  box-shadow: $black-shadow;
 }
 
 .chapters__card-header {
