@@ -310,7 +310,7 @@ a {
 .upcoming__divider {
   border-bottom: rgba(127, 160, 194, 0.05) 1px solid;
   width: 100%;
-  margin: 0.25em 0;
+  margin: 0.25em 0 1em 0;
 }
 
 .upcoming__col {
@@ -318,7 +318,7 @@ a {
   border-right: $blue 1px solid;
   border-left: $blue 1px solid;
   min-height: 100%;
-  box-shadow: $black-shadow;
+  //box-shadow: $black-shadow;
   &:first-child {
     border-top: $blue 1px solid;
     border-top-left-radius: 5px;
@@ -397,6 +397,13 @@ a {
 
 .upcoming__content {
   margin-top: 5.5%;
+  border-radius: 5px;
+  box-shadow: $black-shadow;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.upcoming__events-container {
 }
 
 .upcoming__project-logo {
@@ -454,23 +461,32 @@ a {
 }
 
 .chapters__card-container {
-  margin-top: 1em;
-}
-
-.chapters__card-columns {
-  column-count: 1;
-}
-
-@media (min-width: 576px){
-  .chapters__card-columns {
-  column-count: 2;
-  }
-}
-
-.chapters__card-main {
   background: $section-background;
+  margin-top: 1em;
+  border-radius: 5px;
   border: $blue 1px solid;
   box-shadow: $black-shadow;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+//.chapters__card-columns {
+//  column-count: 1;
+//}
+
+//@media (min-width: 576px){
+//  .chapters__card-columns {
+//  column-count: 2;
+//  }
+//}
+
+.chapters__card-main {
+  //background: $section-background;
+  //margin-bottom: 1em;
+  //&:first-child {
+  //  border-top-left-radius: 5px;
+  //  border-top-right-radius: 5px;
+  //}
 }
 
 .chapters__card-header {
@@ -483,7 +499,7 @@ a {
   @extend .title;
   color: $black;
   text-align: center;
-  font-size: 1.25em;
+  font-size: 1.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   margin-bottom: 0;
@@ -492,6 +508,8 @@ a {
 .chapters__card-paragraph {
   @extend .paragraph;
   color: $very-dark-blue;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .chapters__flag {
@@ -506,7 +524,7 @@ a {
   @extend .button-minimal;
   min-width: 50%;
   padding: 0;
-  margin-bottom: 0.25em;
+  margin: 0.25em auto;
 }
 
 .chapters__card-icon {

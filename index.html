@@ -2,23 +2,23 @@
 ---
 <div class="navigation__content container-fluid">
     <picture>
-        <source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
-                        static/images/title_photo/title_glass_building_960x540.jpg 960w,
-                        static/images/title_photo/title_glass_building_1334x750.jpg 1334w,
-                        static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,
-                        static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,
-                        static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"
-                media="(orientation: landscape)"
-                sizes="100vw">
-        <source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,
-                        static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
-                        static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
-                        static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
-                        static/images/title_photo/title_glass_building_1442x2562.jpg 1442w"
-                media="(orientation: portrait)"
-                sizes="100vw">
+        <!--<source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,-->
+                        <!--static/images/title_photo/title_glass_building_960x540.jpg 960w,-->
+                        <!--static/images/title_photo/title_glass_building_1334x750.jpg 1334w,-->
+                        <!--static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,-->
+                        <!--static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,-->
+                        <!--static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"-->
+                <!--media="(orientation: landscape)"-->
+                <!--sizes="100vw">-->
+        <!--<source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,-->
+                        <!--static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,-->
+                        <!--static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,-->
+                        <!--static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,-->
+                        <!--static/images/title_photo/title_glass_building_1442x2562.jpg 1442w"-->
+                <!--media="(orientation: portrait)"-->
+                <!--sizes="100vw">-->
         <img class="navigation__background-img"
-             src="static/images/title_photo/title_glass_building_960x540.jpg"
+             src="static/images/title_photo/Python_Sprints_title_2048x1152px.jpg"
              alt="Python Sprints Title Image">
     </picture>
 
@@ -55,7 +55,7 @@
                             <h2 class="upcoming__title">Events</h2>
                         </div>
                     </div>
-                    <div class="upcoming__content row with-padding-x">
+                    <div class="upcoming__content row">
                         {% assign current_date = "" %}
                         {% for post in posts %}
                             {% include get_host_sponsor.html event = post %}
@@ -87,7 +87,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div class="col-6 no-padding-x text-right">
+                                            <div class="col-6 no-padding-x text-right my-auto">
                                                 <a class="upcoming__button btn" href="{{ post.url }}">
                                                     <i class="upcoming__button-icon fas fa-info-circle"></i>
                                                 </a>
@@ -127,82 +127,31 @@
                             </div>
                         </div>
                         <div class="chapters__card-container row">
-                            <div class="col-12">
-                                <div class="chapters__card-columns card-columns">
-                                    <div class="chapters__card-main card">
-                                        <div class="chapters__card-header card-header">
-                                            <h2 class="chapters__card-title">London Python Sprints</h2>
-                                        </div>
-                                        <div class="card-block">
-                                            <p class="chapters__card-paragraph">
-                                                <span class="chapters__flag flag-icon flag-icon-gb"></span>
-                                                London, United Kingdom
-                                            </p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 text-center">
-                                                <a class="chapters__card-button btn" href="https://www.meetup.com/Python-Sprints/">
-                                                    <i class="chapters__card-icon fab fa-meetup"></i>
-                                                 </a>
-                                            </div>
+                            {% for chapter in site.chapters %}
+                                <div class="chapters__card-main col-12">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h2 class="chapters__card-title">{{ chapter.title }}</h2>
                                         </div>
                                     </div>
-                                    <div class="chapters__card-main card">
-                                        <div class="chapters__card-header card-header">
-                                            <h2 class="chapters__card-title">Szczecin Data Workouts</h2>
-                                        </div>
-                                        <div class="card-block">
+                                    <div class="row">
+                                        <div class="col-6 d-flex align-items-center">
                                             <p class="chapters__card-paragraph">
-                                                <span class="chapters__flag flag-icon flag-icon-pl"></span>
-                                                Szczecin, Poland
+                                                <span class="chapters__flag flag-icon flag-icon-{{ chapter.country_code }}"></span>
+                                                {{ chapter.address }}
                                             </p>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12 text-center">
-                                                <a class="chapters__card-button btn btn-primary btn-lg text-center" href="https://www.meetup.com/Python-Sprints/">
-                                                    <i class="chapters__card-icon fab fa-meetup"></i>
-                                                 </a>
-                                            </div>
+                                        <div class="col-6 text-center">
+                                            <a class="chapters__card-button btn" href="{{ chapter.url }}">
+                                                <i class="chapters__card-icon fas fa-info-circle"></i>
+                                             </a>
                                         </div>
                                     </div>
-                                    <div class="chapters__card-main card">
-                                        <div class="chapters__card-header card-header">
-                                            <h2 class="chapters__card-title">Pydata New York</h2>
-                                        </div>
-                                        <div class="card-block">
-                                            <p class="chapters__card-paragraph">
-                                                <span class="chapters__flag flag-icon flag-icon-us"></span>
-                                                New York, United States
-                                            </p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 text-center">
-                                                <a class="chapters__card-button btn btn-primary btn-lg text-center" href="https://www.meetup.com/Python-Sprints/">
-                                                    <i class="chapters__card-icon fab fa-meetup"></i>
-                                                 </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="chapters__card-main card">
-                                        <div class="chapters__card-header card-header">
-                                            <h2 class="chapters__card-title">Pydata Madrid</h2>
-                                        </div>
-                                        <div class="card-block">
-                                            <p class="chapters__card-paragraph">
-                                                <span class="chapters__flag flag-icon flag-icon-es"></span>
-                                                Madrid, Spain
-                                            </p>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12 text-center">
-                                                <a class="chapters__card-button btn btn-primary btn-lg text-center" href="https://www.meetup.com/Python-Sprints/">
-                                                    <i class="chapters__card-icon fab fa-meetup"></i>
-                                                 </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% unless forloop.last %}
+                                        <hr class="upcoming__divider">
+                                    {% endunless %}
                                 </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
