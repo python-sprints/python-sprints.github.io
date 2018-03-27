@@ -1,11 +1,11 @@
 # Site settings
 title: Python-Sprints
-email: py.sprints@gmail.com
+# email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Python Sprints is a website to promote sprints in the Python community
+  Python-Sprints is a non profit organisation gathering Python programmers and helping improve code in open source projects.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://python-sprints.github.io/" # the base hostname & protocol for your site
-twitter_username: py_sprints
+# twitter_username: jekyllrb
 github_username:  python-sprints
 
 # Build settings
@@ -15,6 +15,7 @@ sass:
 kramdown:
   input: GFM
 include: ["_test.html", "_static", "pandas/guide/_static", "_pages"]
+#include: ["_pages"]
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -27,9 +28,7 @@ collections:
   sponsors:
     output: false
   chapters:
-    output: true
-  projects:
-    output: false
+      output: true
 
 defaults:
   -
@@ -39,6 +38,7 @@ defaults:
     values:
       layout: "post"
       is_post: true
+
   -
     scope:
       path: ""

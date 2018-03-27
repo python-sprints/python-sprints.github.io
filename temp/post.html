@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+{% if page.image %}
+    {% assign image = page.image %}
+{% else %}
+    {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
+{% endif %}
+{% include get_host_sponsor.html event = page %}
+<style>
+    .post__img-container {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{{ site.baseurl }}/{{ image }}");
+      }
+
+    @media (min-width: 769px) {
+        .post__img-container {
+            background-image: linear-gradient(75deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, 0.6) 80%, black 87%, black 100%), url("{{ site.baseurl }}/{{ image }}");
+        }
+    }
+</style>
+    <body class="body">
+        {% include navigation.html %}
+        <main>
+            <article class="post">
+                <div class="row">
+                    <div class="no-gutters__col col-md-12 container-fluid">
+                        <div class="row">
+                            <div class="post__img-container col-md-7 col-sm-12">
+                                <!--<h1 class="post__title">{{ page.project }}</h1>-->
+                                <h1 class="post__title">{{ page.title }}</h1>
+                                <!--<h2 class="post__subtitle"><em>{{ page.project_description }}</em></h2>-->
+                                <h2 class="post__subtitle">{{ page.subtitle }}</h2>
+                            </div>
+                            <div class="post__event-col col-md-5 col-12">
+                                <div class="row">
+                                    <div class="no-gutters__col col-6">
+                                        <!--<h2 class="post__label">Event</h2>-->
+                                        <h2 class="post__label">Project</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="post__event-title col-12">
+                                        {{ page.project }}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="no-gutters__col col-6">
+                                        <h2 class="post__label">Venue</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="post__event-title col-12">
+                                        {{ host_sponsor.name }}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="no-gutters__col col-6">
+                                        <h2 class="post__label">Date</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="post__event-title col-12">
+                                        {{ page.date | date: "%e %B %Y" }}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="post__button-col col-12 no-padding-x">
+                                        <div class="row">
+                                            {% if page.event_link %}
+                                                {% assign meetup_col_class = "col-lg-6" %}
+                                                {% assign meetup_button_class = "post__button" %}
+                                            {% else %}
+                                                {% assign meetup_col_class = "col-12" %}
+                                                {% assign meetup_button_class = "post__button-solo" %}
+                                            {% endif %}
+                                            <div class="{{ meetup_col_class }} text-center">
+                                                <a class="{{ meetup_button_class }} btn btn-primary btn-lg text-center" href="{{ page.meetup_link }}">
+                                                    <i class="post__icon fab fa-meetup"></i>
+                                                 </a>
+                                            </div>
+                                            {% if page.event_link %}
+                                                <div class="col-lg-6 text-center">
+                                                    <a class="post__button btn btn-primary btn-lg text-center" href="{{ page.event_link }}">
+                                                        <i class="post__icon fas fa-external-link-square-alt"></i>
+                                                    </a>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="post__content col-md-12">
+
+                            <h1 class="post__content-title">{{ page.title }}</h1>
+                            <p class="post__paragraph">{{ page.content }}</p>
+                            <hr class="post__divider">
+                            <h1 class="post__content-title">When & Where</h1>
+                            <p class="post__address-title">{{ page.date | date: "%e %B %Y" }}, {{ page.time }}</p>
+                            <p class="post__address-title">{{ host_sponsor.name }}</p>
+                            <p class="post__address">{{ host_sponsor.address }}</p>
+                            <div class="chapters__content row">
+                                <div class="col-12 my-auto">
+                                    <div id="chapters__map"></div>
+                                    {% comment %}
+                                        Create a javascript variable for use in the function adding map markers.
+                                    {% endcomment %}
+                                    {% assign locations = "" | split: ',' %}
+                                    {% assign location = page %}
+                                    {% assign locations = locations | push: location %}
+                                    {% include locations_variable_generator.html locations_array = locations %}
+                                    <script async defer
+                                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+                                    </script>
+                                </div>
+                            </div>
+                            <hr class="post__divider">
+                            <h1 class="post__content-title">Event's sponsors</h1>
+                        </div>
+                    </div>
+                    {% for sponsor in page.sponsors %}
+                        {% assign sponsor_obj = site.sponsors | where:"obj_id", sponsor | first %}
+                         <div class="row flex-nowrap">
+                            <div class="post__sponsor-col col-md-12">
+                                <div class="row">
+                                    <div class="post__logo-col col-sm-3 col-12">
+                                        <h3 class="post__sponsor-name">{{ sponsor_obj.name }}</h3>
+                                            <a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.link }}">
+                                                <img class="post__sponsor-img"
+                                                     src="{{ site.baseurl }}/{{ sponsor_obj.logo }}"
+                                                     alt="Sponsor logo">
+                                            </a>
+                                    </div >
+                                    <div class="post__sponsor-info-col col-12 col-sm-auto col-xl-7 ">
+                                        <p class="post__sponsor-content">{{ sponsor_obj.content}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </article>
+            {% include footer.html %}
+        </main>
+        {% include scripts.html %}
+    </body>
+</html>
