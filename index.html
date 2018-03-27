@@ -76,7 +76,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <h2 class="upcoming__event-subtitle"> {{ post.subtitle }}</h2>
+                                        {% if post.level %}
+                                        <h2 class="upcoming__event-subtitle">Level: {{ post.level }}</h2>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="row">

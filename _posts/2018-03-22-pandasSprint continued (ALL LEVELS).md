@@ -1,15 +1,13 @@
 ---
+category: london
 title: Pandas Sprint continued (ALL LEVELS)
-subtitle: Improving Pandas on all levels
-project: Pandas
-project_logo: static/images/events/pandas_logo_donation.png
-project_link: http://pandas.pydata.org/index.html
+level: All
 date: 2018-03-22
 time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/248712103/
 event_link:
+project: Pandas
 image:
-
 sponsors: 
     - quantum_black
 ---

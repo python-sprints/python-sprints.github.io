@@ -1,7 +1,7 @@
 ---
 obj_id: harvey_nash
 name: "Harvey Nash"
-logo: https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Harvey_Nash_Corporate_Logo.svg/1200px-Harvey_Nash_Corporate_Logo.svg.png
+logo: static/images/sponsors/harvey_nash.png
 link: https://www.linkedin.com/in/hamishpitkeathly/
 address: "110 Bishopsgate,<br>London, EC2N 4AY, UK"
 lat: 51.5162822

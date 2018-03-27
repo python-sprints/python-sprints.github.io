@@ -1,10 +1,12 @@
 ---
+category: london
 title: python-dateutil issues
-subtitle: Fixing issues of all levels
-project: date-util
+level: All
 date: 2017-12-06
 time: "18:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/245317647/
+event_link:
+project: date-util
 image: static/images/events/dateutil_bloomberg_960x539px.jpeg
 sponsors: 
     - bloomberg
