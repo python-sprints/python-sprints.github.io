@@ -794,7 +794,7 @@ a {
 }
 
 .footer__sponsor-link {
-  background: $very-dark-blue;
+  background: white;
   border-radius: 5px;
   border: $light-blue 1px solid;
   text-align: center;
@@ -811,12 +811,9 @@ a {
   }
 }
 
-.footer__img {
+.footer__sponsor-link img {
   padding: 10px;
   max-width: 100%;
-  filter: gray;
-  -webkit-filter: grayscale(1);
-  transition: filter, .8s ease-in-out;
 }
 
 .footer__link {
@@ -847,13 +844,14 @@ a {
 .footer__text-copyright {
   @extend .footer-font;
   text-align: center;
-  font-size: 2em;
+  font-size: 1.2em;
   color: $footer-text;
+  margin-top: 130px;
 }
 
 .footer__text-credits {
   @extend .footer-font;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.8em;
   color: $footer-text;
 }
