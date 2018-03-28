@@ -1,7 +1,7 @@
 ---
 obj_id: tornado
 name: "Tornado"
-logo: http://www.tornadoweb.org/en/stable/_images/tornado.png
+logo: static/images/projects/tornado.png
 website: http://www.tornadoweb.org/en/stable/
 setup_html: |
     <p>

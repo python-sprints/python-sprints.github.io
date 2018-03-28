@@ -33,12 +33,12 @@
     <body class="body">
         {% include navigation.html %}
         <main>
-            <article class="post">
+            <section id="post" class="post">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="post__content col-12">
                             {% if project.logo %}
-                                <img class="post__project-logo" src="{{ project.logo }}">
+                                <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
                             {% endif %}
                         </div>
                     </div>
@@ -46,21 +46,23 @@
                         <div class="post__content col-md-8">
                             <h1 class="post__content-title">{{ page.title }}</h1>
                             <h2 class="post__title">Level: {{ page.level }}</h2>
+                            <hr>
                             <p class="post__paragraph">{{ project.content }}</p>
                             <p class="post_paragraph">More information about {{ project.name }}: <a href="{{ project.website }}">{{ project.website }}</a></p>
                             <p class="post__paragraph">{{ page.content }}</p>
+                            <hr>
                             <h2 class="post__address-title">Set up instructions</h2>
                             {{ project.setup_html }}
                         </div>
                         <div class="post__info col-md-4">
-                            <h1 class="post__content-title">Info</h1>
+                            <h1 class="post__content-title">Location</h1>
                             <p class="post__address-title">{{ host_sponsor.name }}</p>
-                            <p class="post__address-title">{{ page.date | date: "%e %B %Y" }}, {{ page.time }}</p>
                             <a class="post__sponsor-container post__sponsor-link" href="{{ host_sponsor.link }}">
                                 <img class="post__sponsor-img"
                                      src="{{ site.baseurl }}/{{ host_sponsor.logo }}"
-                                     alt="Sponsor logo">
+                                alt="Sponsor logo">
                             </a>
+                            <p class="post__address">{{ page.date | date: "%e %B %Y" }}, {{ page.time }}</p>
                             <!--<img class="post__sponsor-img" src="{{ site.baseurl}}/{{ host_sponsor.logo }}">-->
                             <p class="post__address">{{ host_sponsor.address }}</p>
                             <div id="chapters__map"></div>
@@ -97,7 +99,7 @@
                         <!--</div>-->
                     <!--{% endfor %}-->
                 </div>
-            </article>
+            </section>
             {% include footer.html %}
         </main>
         {% include scripts.html %}
