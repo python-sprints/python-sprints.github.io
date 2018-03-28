@@ -36,22 +36,33 @@
             <article class="post">
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="post__content col-12">
+                            {% if project.logo %}
+                                <img class="post__project-logo" src="{{ project.logo }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="post__content col-md-8">
-                            <img src="{{ project.logo }}">
                             <h1 class="post__content-title">{{ page.title }}</h1>
-                            <p>Level: {{ page.level }}</p>
+                            <h2 class="post__title">Level: {{ page.level }}</h2>
                             <p class="post__paragraph">{{ project.content }}</p>
                             <p class="post_paragraph">More information about {{ project.name }}: <a href="{{ project.website }}">{{ project.website }}</a></p>
                             <p class="post__paragraph">{{ page.content }}</p>
-                            <h3>Set up instructions</h3>
+                            <h2 class="post__address-title">Set up instructions</h2>
                             {{ project.setup_html }}
                         </div>
-                        <div class="post__content col-md-4">
+                        <div class="post__info col-md-4">
                             <h1 class="post__content-title">Info</h1>
+                            <p class="post__address-title">{{ host_sponsor.name }}</p>
                             <p class="post__address-title">{{ page.date | date: "%e %B %Y" }}, {{ page.time }}</p>
-                            <img class="post__sponsor-img" src="{{ sponsor.logo }}">
-                            <p class="post__address-title">{{ sponsor.name }}</p>
-                            <p class="post__address">{{ sponsor.address }}</p>
+                            <a class="post__sponsor-container post__sponsor-link" href="{{ host_sponsor.link }}">
+                                <img class="post__sponsor-img"
+                                     src="{{ site.baseurl }}/{{ host_sponsor.logo }}"
+                                     alt="Sponsor logo">
+                            </a>
+                            <!--<img class="post__sponsor-img" src="{{ site.baseurl}}/{{ host_sponsor.logo }}">-->
+                            <p class="post__address">{{ host_sponsor.address }}</p>
                             <div id="chapters__map"></div>
                             {% comment %}
                                 Create a javascript variable for use in the function adding map markers.
@@ -65,26 +76,26 @@
                             </script>
                         </div>
                     </div>
-                    {% for sponsor in page.sponsors %}
-                        {% assign sponsor_obj = site.sponsors | where:"obj_id", sponsor | first %}
-                         <div class="row flex-nowrap">
-                            <div class="post__sponsor-col col-md-12">
-                                <div class="row">
-                                    <div class="post__logo-col col-sm-3 col-12">
-                                        <h3 class="post__sponsor-name">{{ sponsor_obj.name }}</h3>
-                                            <a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.link }}">
-                                                <img class="post__sponsor-img"
-                                                     src="{{ site.baseurl }}/{{ sponsor_obj.logo }}"
-                                                     alt="Sponsor logo">
-                                            </a>
-                                    </div >
-                                    <div class="post__sponsor-info-col col-12 col-sm-auto col-xl-7 ">
-                                        <p class="post__sponsor-content">{{ sponsor_obj.content}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+                    <!--{% for sponsor in page.sponsors %}-->
+                        <!--{% assign sponsor_obj = site.sponsors | where:"obj_id", sponsor | first %}-->
+                         <!--<div class="row flex-nowrap">-->
+                            <!--<div class="post__sponsor-col col-md-12">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="post__logo-col col-sm-3 col-12">-->
+                                        <!--<h3 class="post__sponsor-name">{{ sponsor_obj.name }}</h3>-->
+                                            <!--<a class="post__sponsor-container post__sponsor-link" href="{{ sponsor_obj.link }}">-->
+                                                <!--<img class="post__sponsor-img"-->
+                                                     <!--src="{{ site.baseurl }}/{{ sponsor_obj.logo }}"-->
+                                                     <!--alt="Sponsor logo">-->
+                                            <!--</a>-->
+                                    <!--</div >-->
+                                    <!--<div class="post__sponsor-info-col col-12 col-sm-auto col-xl-7 ">-->
+                                        <!--<p class="post__sponsor-content">{{ sponsor_obj.content}}</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--{% endfor %}-->
                 </div>
             </article>
             {% include footer.html %}
