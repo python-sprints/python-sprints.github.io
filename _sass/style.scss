@@ -765,6 +765,10 @@ a {
   border-top: $light-blue 1px solid;
 }
 
+.footer__twitter-container {
+  margin-top: 1em;
+}
+
 .footer__content {
   padding-top: 5%;
   text-align: center;
@@ -790,7 +794,7 @@ a {
   @extend .footer-font;
   font-size: 1.5em;
   color: $footer-title;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .footer__sponsor-link {
