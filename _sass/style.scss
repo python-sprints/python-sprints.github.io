@@ -396,6 +396,10 @@ a {
   margin-bottom: 0.5em;
 }
 
+.upcoming__project-logo {
+  max-width: 33%;
+}
+
 .upcoming__date-divider {
   border-bottom: $black 1px solid;
   width: 100%;
@@ -443,13 +447,6 @@ a {
 }
 
 .upcoming__events-container {
-}
-
-.upcoming__project-logo {
-  margin: 0.5em;
-  border: $orange 3px double;
-  border-radius: 5px;
-  max-width: 50%;
 }
 
 .upcoming__button-row {

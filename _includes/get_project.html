@@ -1,0 +1,19 @@
+{% comment %}
+get_project.html (event):
+
+    Obtain project object for the event.
+
+    Get the event's foreign key project and use its first object in the array
+    as project object.
+
+    Parameters:
+        event: jekyll post object
+            Post object containing yml variable project.
+
+    Returns:
+        project: project object
+            Object from collection projects.
+{% endcomment %}
+
+{% assign project_id = include.event.project %}
+{% assign project = site.projects | where:"obj_id", project_id | first %}

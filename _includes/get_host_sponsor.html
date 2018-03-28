@@ -11,9 +11,10 @@ get_host_sponsor.html (event):
             Post object containing yml variable sponsors.
 
     Returns:
-        host_sponsor: sponsor object
+        sponsor: sponsor object
             Object from collection sponsors.
 {% endcomment %}
 
-{% assign host_sponsor_id = include.event.sponsors | first  %}
-{% assign host_sponsor = site.sponsors | where:"obj_id", host_sponsor_id | first %}
+{% assign sponsor_id = include.event.sponsor %}
+{% assign sponsor = site.sponsors | where:"obj_id", sponsor_id | first %}
+

@@ -36,7 +36,7 @@ locations_variable_generator.html (locations_array):
     var locations = [
         {% for location in include.locations_array %}
             {% if location.is_post %}
-                {% assign host_sponsor_id = location.sponsors | first  %}
+                {% assign host_sponsor_id = location.sponsor  %}
                 {% assign host_sponsor = site.sponsors | where:"obj_id", host_sponsor_id | first %}
                 {% capture prefix %}
                     "address": "{{ host_sponsor.address }}",

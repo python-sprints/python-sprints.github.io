@@ -5,6 +5,7 @@ var buttonCloseContainer = $(".navigation__button-close-container");
 var navigationButtonClose = $(".navigation__button-close");
 var scrollPosition = 0;
 var scrollBarWidth = 0;
+var parallelSection = false;
 var preventDefaultAction = function(e) {
     e.preventDefault();
 };
@@ -15,6 +16,11 @@ $(document).ready(function () {
     navigationButtonClose.on("click", closeNav);
 });
 
+
+
+function removeChapters () {
+    o
+}
 
 // Code for active links and scrolling
 $(document).ready(function() {
@@ -39,8 +45,13 @@ $(document).ready(function() {
                 nav.find('a').removeClass('active');
                 sections.removeClass('active');
 
-                $(this).addClass('active');
-                nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+                if ($(window).width() < 992) {
+                    $(this).addClass('active');
+                    nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+                } else if (this.id !== "chapters") {
+                    $(this).addClass('active');
+                    nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+                }
             }
         });
     });

@@ -41,3 +41,28 @@ function readDeviceOrientation() {
 
     return window.matchMedia("(orientation: portrait)").matches;
 }
+
+
+
+
+
+
+function removeChapters () {
+    var chaptersSection = $("#chapters");
+    if ($(window).width() >= 992) {
+        chaptersSection.removeAttr("id")
+    }
+    else {
+        chaptersSection.attr('id', 'chapters');
+    }
+}
+
+
+
+$(document).ready(function () {
+    buttonOpenContainer.on("click", openNav);
+    navigationButtonClose.on("click", closeNav);
+    $(window).on("load resize", function() {
+      removeChapters();
+    });
+});

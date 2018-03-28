@@ -6,10 +6,9 @@ date: 2018-03-20
 time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/248711552/
 event_link:
-project: Pandas
+project: pandas
 image:
-sponsors: 
-    - harvey_nash
+sponsor: harvey_nash
 ---
 After the success of #pandasSprint, with around 500 participants, and almost 200 pull requests sent, we're back to our regular sprints. 
 For the ones who missed it, you can get an idea on how it was checking this feed:

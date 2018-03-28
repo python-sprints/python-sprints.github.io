@@ -6,10 +6,9 @@ date: 2018-03-22
 time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/248712103/
 event_link:
-project: Pandas
+project: pandas
 image:
-sponsors: 
-    - quantum_black
+sponsor: quantum_black
 ---
 This will be a follow up of the worldwide #pandasSprint: [https://python-sprints.github.io/pandas/](https://python-sprints.github.io/pandas/)
 

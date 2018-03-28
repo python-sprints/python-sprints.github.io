@@ -3,23 +3,19 @@
 <section id="home">
     <div class="navigation__content container-fluid">
         <picture>
-            <!--<source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,-->
-                            <!--static/images/title_photo/title_glass_building_960x540.jpg 960w,-->
-                            <!--static/images/title_photo/title_glass_building_1334x750.jpg 1334w,-->
-                            <!--static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,-->
-                            <!--static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,-->
-                            <!--static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"-->
-                    <!--media="(orientation: landscape)"-->
-                    <!--sizes="100vw">-->
-            <!--<source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,-->
-                            <!--static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,-->
-                            <!--static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,-->
-                            <!--static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,-->
-                            <!--static/images/title_photo/title_glass_building_1442x2562.jpg 1442w"-->
-                    <!--media="(orientation: portrait)"-->
-                    <!--sizes="100vw">-->
+            <source srcset="static/images/title_photo/Python_Sprints_title_512x288px.jpg 512w,
+                            static/images/title_photo/Python_Sprints_title_1024x576px.jpg 1024w,
+                            static/images/title_photo/Python_Sprints_title_1334x750px.jpg 1334w,
+                            static/images/title_photo/Python_Sprints_title_1920x1080px.jpg 1920w,
+                            static/images/title_photo/Python_Sprints_title_2048x1152px.jpg 2048w"
+                    media="(orientation: landscape)"
+                    sizes="100vw">
+            <source srcset="static/images/title_photo/Python_Sprints_title_750x1334px.jpg 750w,
+                            static/images/title_photo/Python_Sprints_title_1080x1920px.jpg 1080w"
+                    media="(orientation: portrait)"
+                    sizes="100vw">
             <img class="navigation__background-img"
-                 src="static/images/title_photo/Python_Sprints_title_2048x1152px.jpg"
+                 src="static/images/title_photo/Python_Sprints_title_1920x1080px.jpg"
                  alt="Python Sprints Title Image">
         </picture>
 
@@ -68,9 +64,10 @@
                                             <p class="upcoming__date">
                                                 <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
                                             </p>
-                                            <!--<hr class="upcoming__date-divider">-->
                                         {% endunless %}
                                         {% assign current_date = post.date %}
+                                        {% include get_project.html event = post %}
+                                        <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ project.logo }}" alt="Project logo">
                                         <h2 class="upcoming__event-title"> {{ post.title }}</h2>
                                     </div>
                                 </div>
@@ -87,7 +84,7 @@
                                             <div class="col-6 no-padding-x">
                                                 <div class="col-12 no-padding-x">
                                                     <p class="upcoming__paragraph">
-                                                        <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ host_sponsor.address }}
+                                                        <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ sponsor.address }}
                                                     </p>
                                                 </div>
                                             </div>
