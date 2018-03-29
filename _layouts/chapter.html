@@ -1,87 +1,87 @@
-<section class="about">
-    <div class="about__background-img-container">
-        <picture>
-            <source srcset="../static/images/about/date-util-evening-session_480x150px.jpg 480w,
-                            ../static/images/about/date-util-evening-session_960x300px.jpg 960w,
-                            ../static/images/about/date-util-evening-session_1920x600px.jpg 1920w,
-                            ../static/images/about/date-util-evening-session_3840x1200px.jpg 3840w"
-                    media="(orientation: landscape)"
-                    sizes="100vw">
-            <source srcset="../static/images/about/date-util-evening-session_750x650px.jpg 750w,
-                            ../static/images/about/date-util-evening-session_1650X1100px.jpg 1650w"
-                    media="(orientation: portrait)"
-                    sizes="100vw">
-            <img class="about__background-img"
-                 src="../static/images/about/date-util-evening-session_960x300px.jpg"
-                 alt="About Us">
-        </picture>
-        <div class="about__page-title-container row container-fluid">
-            <div class="col-sm-12">
-                <h1 class="about__page-title">About Us</h1>
-                <h2 class="about__page-subtitle">Our Goals, Our Story</h2>
-            </div>
-        </div>
-    </div>
-    <div class="about__container container-fluid">
-        <div class="row">
-            <div class="col-12 no-padding-x">
-                <h2 class="about__section-title-left">Who We Are</h2>
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <img class="about__paragraph-img-main rounded" src="../static/images/about/python_sprints_decoded_673x411px.JPG" alt="Focused on quality">
-                        <h2 class="about__paragraph-title-dark">Python Sprints Decoded</h2>
-                        <hr class="about__divider-right">
-                        <p class="about__paragraph-dark">
-                        Python Sprints is a non for profit group of like minded programmers who care about making open source projects better.
-                        We believe in sharing our skills for free to earn our good karma. If you are devoted to a particular open source project, please let us know, we could make a sprint dedicated to it!
-                        Inclusion is in the nature of our group and we want to make sure that no one is underrepresented. All people are welcome.
-                        </p>
-                        <h2 class="about__paragraph-title-dark-left">How It Started</h2>
-                        <hr class="about__divider-left">
-                        <p class="about__paragraph-dark">
-                            Our group was founded in October 2017. As all things in life the beginnings were humble with only a handful of people collaborating but the word quickly spread and now we have nearly 600 members and counting.
-                        </p>
-                        <h1>{{ page.title }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+    <body class="body">
+        {% include navigation.html %}
+        <main>
+            <article>
+                {{ content }}
+                <div class="chapter-container container-fluid">
+                    <div class="row">
+                        {% include events_array_generator.html future_events = true %}
+                        {% if posts.size > 0 %}
+                            {% assign upcoming_event = true %}
+                            {% assign chapters_col = "col-lg-6" %}
+                            {% assign posts = posts | reverse %}
+                        {% else %}
+                            {% assign chapters_col = "col-12" %}
+                        {% endif %}
+                        {% if upcoming_event == true %}
+                            <div class="col-12 no-padding-x">
+                                <!--Upcoming Events section-->
+                                <section class="chapter">
+                                    <div class="row container-fluid">
+                                        <div class="col-md-12 no-padding-x">
+                                            <h2 class="upcoming__title">Events</h2>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming__content row">
+                                        {% assign current_date = "" %}
+                                        {% for post in posts %}
+                                            {% include get_host_sponsor.html event = post %}
+                                            <div class="upcoming__col col-md-12 no-padding-x">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        {% unless post.date == current_date %}
+                                                            <p class="upcoming__date">
+                                                                <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
+                                                            </p>
+                                                        {% endunless %}
+                                                        {% assign current_date = post.date %}
+                                                        {% include get_project.html event = post %}
+                                                        <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ project.logo }}" alt="Project logo">
+                                                        <h2 class="upcoming__event-title"> {{ post.title }}</h2>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        {% if post.level %}
+                                                        <h2 class="upcoming__event-subtitle">Level: {{ post.level }}</h2>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-6 no-padding-x">
+                                                                <div class="col-12 no-padding-x">
+                                                                    <p class="upcoming__paragraph">
+                                                                        <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ sponsor.address }}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 no-padding-x text-right my-auto">
+                                                                <a class="upcoming__button btn" href="{{ post.url }}">
+                                                                    <i class="upcoming__button-icon fas fa-info-circle"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        {% unless forloop.last %}
+                                                            <hr class="upcoming__divider">
+                                                        {% endunless %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </section>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="about__img-outer-container col-md-12">
-        <div class="about__img-top-container">
-            <div class="about__img-top-title-container">
-                <h2 class="about__img-top-title">Passion</h2>
-            </div>
-        </div>
-        <div class="about__img-bot-container">
-            <div class="about__img-bot-title-container">
-                <h2 class="about__img-bot-title">Dedication</h2>
-            </div>
-        </div>
-    </div>
-    <div class="about__container container-fluid">
-        <div class="row">
-            <div class="col-12 no-padding-x">
-                <h2 class="about__section-title-right">Our Way</h2>
-                <div class="row">
-                    <div class="col-md-8 offset-md-2">
-                        <img class="about__paragraph-img-main rounded" src="../static/images/about/teamwork_673x411px.JPG" alt="Teamwork for the win">
-                        <h2 class="about__paragraph-title-dark">Teamwork Rules</h2>
-                        <hr class="about__divider-right">
-                        <p class="about__paragraph-dark">
-                            We believe in helping each other to bring the knowledge in the group up to the highest possible level. Anyone can ask a question and expect aid in their problems during the session. We have people using all kinds of OSes, editors etc. and we all sometimes struggle but a solution is just ask someone else to have a look.
-                        </p>
-                        <h2 class="about__paragraph-title-dark-left">What Our Meetings Look Like?</h2>
-                        <hr class="about__divider-left">
-                        <p class="about__paragraph-dark">
-                            Usually there is a subject advertised well ahead of the time with clear setup instructions so that everyone can come prepared.
-                            But you should not worry if setting up is difficult - part of our creed is to help new people get introduced into the world of open source.
-                            Help will be provided even if it is just creating a git repository and learning how to contribute. It is all part of growing our group organically and all people are welcome!
-                            All the coding aside there is always time for a joyful banter, sharing work and life experiences with pizza and beers to hand.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </article>
+            {% include footer.html %}
+        </main>
+        {% include scripts.html %}
+    </body>
+</html>

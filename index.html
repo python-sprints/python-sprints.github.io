@@ -36,7 +36,7 @@
 </section>
 <div class="upcoming-chapters-container container-fluid">
     <div class="row">
-        {% include events_array_generator.html future_events = true %}
+        {% include events_array_generator.html future_events=true %}
         {% if posts.size > 0 %}
             {% assign upcoming_event = true %}
             {% assign chapters_col = "col-lg-6" %}
@@ -56,7 +56,7 @@
                     <div class="upcoming__content row">
                         {% assign current_date = "" %}
                         {% for post in posts %}
-                            {% include get_host_sponsor.html event = post %}
+                            {% include get_host_sponsor.html event=post %}
                             <div class="upcoming__col col-md-12 no-padding-x">
                                 <div class="row">
                                     <div class="col-12">
@@ -66,7 +66,7 @@
                                             </p>
                                         {% endunless %}
                                         {% assign current_date = post.date %}
-                                        {% include get_project.html event = post %}
+                                        {% include get_project.html event=post %}
                                         <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ project.logo }}" alt="Project logo">
                                         <h2 class="upcoming__event-title"> {{ post.title }}</h2>
                                     </div>
@@ -121,7 +121,7 @@
                                 {% comment %}
                                     Create a javascript variable for use in the function adding map markers.
                                 {% endcomment %}
-                                {% include locations_variable_generator.html locations_array = site.chapters %}
+                                {% include locations_variable_generator.html locations_array=site.chapters %}
                                 <script async defer
                                   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
                                 </script>

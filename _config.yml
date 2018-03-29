@@ -44,6 +44,7 @@ defaults:
       path: ""
       type: "chapters"
     values:
+      layout: "chapter"
       is_chapter: true
   -
     scope:
