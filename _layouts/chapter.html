@@ -8,17 +8,13 @@
                 {{ content }}
                 <div class="chapter-container container-fluid">
                     <div class="row">
-                        {% include events_array_generator.html future_events = true %}
+                        {% include events_array_generator.html future_events=true category=page.category %}
                         {% if posts.size > 0 %}
                             {% assign upcoming_event = true %}
-                            {% assign chapters_col = "col-lg-6" %}
                             {% assign posts = posts | reverse %}
-                        {% else %}
-                            {% assign chapters_col = "col-12" %}
                         {% endif %}
                         {% if upcoming_event == true %}
                             <div class="col-12 no-padding-x">
-                                <!--Upcoming Events section-->
                                 <section class="chapter">
                                     <div class="row container-fluid">
                                         <div class="col-md-12 no-padding-x">
@@ -28,50 +24,27 @@
                                     <div class="upcoming__content row">
                                         {% assign current_date = "" %}
                                         {% for post in posts %}
-                                            {% include get_host_sponsor.html event = post %}
-                                            <div class="upcoming__col col-md-12 no-padding-x">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        {% unless post.date == current_date %}
-                                                            <p class="upcoming__date">
-                                                                <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
-                                                            </p>
-                                                        {% endunless %}
-                                                        {% assign current_date = post.date %}
-                                                        {% include get_project.html event = post %}
-                                                        <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ project.logo }}" alt="Project logo">
-                                                        <h2 class="upcoming__event-title"> {{ post.title }}</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        {% if post.level %}
-                                                        <h2 class="upcoming__event-subtitle">Level: {{ post.level }}</h2>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="row">
-                                                            <div class="col-6 no-padding-x">
-                                                                <div class="col-12 no-padding-x">
-                                                                    <p class="upcoming__paragraph">
-                                                                        <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ sponsor.address }}
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6 no-padding-x text-right my-auto">
-                                                                <a class="upcoming__button btn" href="{{ post.url }}">
-                                                                    <i class="upcoming__button-icon fas fa-info-circle"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        {% unless forloop.last %}
-                                                            <hr class="upcoming__divider">
-                                                        {% endunless %}
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {% include event_layout.html event=post %}
+                                        {% endfor %}
+                                    </div>
+                                </section>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        {% include events_array_generator.html category=page.category %}
+                        {% if posts.size > 0 %}
+                            <div class="col-12 no-padding-x">
+                                <section class="chapter">
+                                    <div class="row container-fluid">
+                                        <div class="col-md-12 no-padding-x">
+                                            <h2 class="upcoming__title">Recent Events</h2>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming__content row">
+                                        {% assign current_date = "" %}
+                                        {% for post in posts %}
+                                            {% include event_layout.html event=post %}
                                         {% endfor %}
                                     </div>
                                 </section>

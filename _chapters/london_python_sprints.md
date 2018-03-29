@@ -6,6 +6,7 @@ address: London, United Kingdom
 country_code: gb
 lat: 51.512344
 lng: -0.090985
+category: "london"
 ---
 <div class="chapter__background-img-container">
     <picture>
