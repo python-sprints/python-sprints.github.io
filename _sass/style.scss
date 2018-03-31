@@ -1,7 +1,7 @@
 //Global styles here.
 
 .body {
-  background-color: $main-background;
+  //background-color: $main-background;
   overflow-x: hidden;
   /*Here I need to move the background image to slide under the navigation*/
   /*Any smarter solutions are welcome!*/
@@ -76,6 +76,7 @@ a {
   border-bottom: $blue 1px solid;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  box-shadow: $black-shadow;
 }
 
 .page__background-img-container {

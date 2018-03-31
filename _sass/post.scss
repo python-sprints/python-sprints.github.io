@@ -1,10 +1,15 @@
 .post {
+  background-color: white;
   padding: 30px 20px 0;
+}
+
+.post__event-info {
+  background-color: $light-white !important;
 }
 
 .post__project-logo {
   width: 150px;
-  margin-bottom: 5px;
+  margin-bottom: 16px;
 }
 
 .post__sponsor-img {
