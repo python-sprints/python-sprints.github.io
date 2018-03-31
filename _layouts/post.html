@@ -16,6 +16,8 @@
                     <div class="row">
                         <div class="col-md-9">
                             <h2>{{ page.title }}</h2>
+                            <p>{{ page.content }}</p>
+
                             <div class="infobox post__sponsor-box">
                                 <a href="{{ sponsor.link }}">
                                     <img class="post__sponsor-img"
@@ -25,9 +27,6 @@
                                 <p>Thanks to <a href="{{ sponsor.link }}">{{ sponsor.name }}</a> for hosting this event!</p>
                                 <p>{{ sponsor.content }}</p>
                             </div>
-                            <p>{{ page.content }}</p>
-
-                            <hr/>
 
                             {% if project.logo %}
                                 <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
