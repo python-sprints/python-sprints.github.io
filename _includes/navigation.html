@@ -22,8 +22,6 @@
     </div>
     <div class="navigation__overlay">
         <div class="navigation__overlay-content">
-            <a class="navigation__link"
-               href="{{ '/' | prepend: site.baseurl }}">Home</a>
             {% for page in site.pages %}
             {% if page.title %}
             <a class="navigation__link"
@@ -52,9 +50,6 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             {% unless page.is_post or page.is_chapter %}
-                <li class="nav-item active">
-                    <a class="navigation__link active nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
-                </li>
                 <li class="hide-on-desktop nav-item">
                     <a class="navigation__link nav-link" href="#events">Events</a>
                 </li>
@@ -69,10 +64,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="navigation__link nav-link" href="#contact">Contact</a>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                    <a class="navigation__link nav-link" href="{{ '/' | prepend: site.baseurl }}">Home<span class="sr-only">(current)</span></a>
                 </li>
             {% endunless %}
         </ul>

@@ -9,6 +9,16 @@
 
 }
 
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+p, a {
+  font-size: 16px;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -54,6 +64,19 @@ a {
   }
 }
 
+.infobox {
+  width: 100%;
+  padding: 10px 5px;
+  background: $section-background;
+  border-right: $blue 1px solid;
+  border-left: $blue 1px solid;
+  border-top: $blue 1px solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: $blue 1px solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
 .page__background-img-container {
   position: relative;

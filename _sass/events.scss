@@ -43,7 +43,6 @@
 }
 
 .events-page__img-container {
-  @extend .post__img-container;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -53,7 +52,6 @@
 }
 
 .events-page__event-col {
-  @extend .post__event-col;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -68,5 +66,4 @@
 }
 
 .events-page__button-col {
-  @extend .post__button-col;
 }
