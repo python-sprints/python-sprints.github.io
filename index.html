@@ -29,7 +29,7 @@
                      sizes="100vw"
                      src="static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png"
                      alt="Python Sprints Logo">
-                <h2 class="navigation__subtitle">All About Open Source</h2>
+                <h2 class="navigation__subtitle">Contributing together</h2>
             </div>
         </div>
     </div>
@@ -44,75 +44,49 @@
         {% else %}
             {% assign chapters_col = "col-12" %}
         {% endif %}
-        {% if upcoming_event == true %}
-            <div class="col-lg-6 no-padding-x">
-                <!--Upcoming Events section-->
-                <section id="events" class="upcoming">
-                    <div class="row container-fluid">
-                        <div class="col-md-12 no-padding-x">
-                            <h2 class="upcoming__title">Events</h2>
+        <div class="col-lg-8 no-padding-x">
+            <section id="events">
+                <h2>Upcoming events</h2>
+                {% if upcoming_event == true %}
+                    {% assign current_date = "" %}
+                    {% for post in posts %}
+                        <div>
+                            {% unless post.date == current_date %}
+                                <p class="date"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %B %Y" }}</p>
+                            {% endunless %}
+                            {% assign current_date = post.date %}
+                            {% include get_project.html event = post %}
+                            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                            <!--
+                            <img src="{{ site.baseurl }}/{{ project.logo }}" alt="">
+                            <p class="content">{{ post.content }}</p>
+                            -->
+                            <p class="text-capitalize"><i class="fas fa-map-marker-alt"></i> {{ post.category }}</p>
+                            {% unless forloop.last %}<hr/>{% endunless %}
                         </div>
-                    </div>
-                    <div class="upcoming__content row">
-                        {% assign current_date = "" %}
-                        {% for post in posts %}
-                            {% include event_layout.html event=post %}
-                        {% endfor %}
-                    </div>
-                </section>
-            </div>
-        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <p>No upcoming events at the moment</p>
+                {% endif %}
+            </section>
+        </div>
 
-        <div class="{{ chapters_col }} no-padding-x">
-            <section id="chapters" class="chapters">
-                <div class="row container-fluid">
-                    <div class="col-12 no-padding-x">
-                        <div class="row">
-                            <div class="col-12 no-padding-x">
-                                <h2 class="chapters__title">Chapters</h2>
-                            </div>
-                        </div>
-                        <div class="chapters__content row">
-                            <div class="col-12 my-auto">
-                                <div id="chapters__map"></div>
-                                {% comment %}
-                                    Create a javascript variable for use in the function adding map markers.
-                                {% endcomment %}
-                                {% include locations_variable_generator.html locations_array=site.chapters %}
-                                <script async defer
-                                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
-                                </script>
-                            </div>
-                        </div>
-                        <div class="chapters__card-container row">
-                            {% for chapter in site.chapters %}
-                                <div class="chapters__card-main col-12">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h2 class="chapters__card-title">{{ chapter.title }}</h2>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-6 d-flex align-items-center">
-                                            <p class="chapters__card-paragraph">
-                                                <span class="chapters__flag flag-icon flag-icon-{{ chapter.country_code }}"></span>
-                                                {{ chapter.address }}
-                                            </p>
-                                        </div>
-                                        <div class="col-6 text-center">
-                                            <a class="chapters__card-button btn" href="{{ chapter.url }}">
-                                                <i class="chapters__card-icon fas fa-info-circle"></i>
-                                             </a>
-                                        </div>
-                                    </div>
-                                    {% unless forloop.last %}
-                                        <hr class="upcoming__divider">
-                                    {% endunless %}
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+        <div class="col-lg-3 no-padding-x">
+            <section id="chapters" class="infobox">
+                <h2>User groups</h2>
+                <div id="chapters__map"></div>
+                {% include locations_variable_generator.html locations_array=site.chapters %}
+                <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+                </script>
+                {% for chapter in site.chapters %}
+                    <h3><a href="{{ chapter.url }}">{{ chapter.title }}</a></h3>
+                    <p>
+                        <span class="chapters__flag flag-icon flag-icon-{{ chapter.country_code }}"></span>
+                        {{ chapter.address }}
+                    </p>
+                    {% unless forloop.last %}<hr/>{% endunless %}
+                {% endfor %}
             </section>
         </div>
     </div>
@@ -123,16 +97,8 @@
 {% include recent_events_section.html %}
 {% endcomment %}
 
-<!--Services section-->
-<section id="about" class="services">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="services__section-title">What Do We Do?</h2>
-            </div>
-        </div>
-    </div>
-
+<section id="about">
+    <h2>About us</h2>
     <div class="row">
         <div class="second-on-mobile no-gutters__col col-md-6">
             <img class="services__img img-fluid rounded"
