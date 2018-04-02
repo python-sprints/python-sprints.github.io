@@ -8,5 +8,4 @@ lat: 51.5162822
 lng: -0.0809643
 permanent: true
 ---
-Harvey Nash specialise in professional recruitment.
-Since 1988, they supported many of the world's top organisations to recruit, source and manage the highly-skilled talent needed to succeed in an increasingly competitive world.
+Harvey Nash is a global professional recruitment consultancy and IT outsourcing service provider. They are committed to delivering the very best talent and IT solutions to a broad base of international clients.
