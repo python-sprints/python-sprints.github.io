@@ -2,7 +2,7 @@
 category: london
 title: (LADIES ONLY) #pandasSprint continued
 level: All
-date: 2018-04-01
+date: 2018-05-01
 time: "10:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/249352290/
 project: pandas
