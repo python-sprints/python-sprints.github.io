@@ -1,9 +1,9 @@
 ---
 category: london
-title: (LADIES ONLY) \#pandasSprint continued
+title: "#pandasSprint for gender minorities"
 level: All
 date: 2018-05-01
-time: "10:00"
+time: "18:30"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/249352290/
 project: pandas
 sponsor: harvey_nash
@@ -31,5 +31,6 @@ Before the sprint, it's recommended to:
 - Join the [Gitter channel](https://gitter.im/py-sprints/pandas-doc-london) of the sprint
 
 In order to create a more inclusive environemnt, we host events specific for underrepresented
-groups in our events. This sprint is one of them, and is for **ladies only**.
+groups in our events. This sprint is one of them, and is for **gender minorities** (meaning
+women, trans, non-binary... but no men).
 

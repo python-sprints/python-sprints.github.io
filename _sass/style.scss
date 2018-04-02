@@ -16,7 +16,7 @@ h3, h3 a {
   font-size: 22px;
   color: black;
 }
-p, a {
+p, a, label, button {
   font-size: 16px;
 }
 
@@ -369,14 +369,15 @@ section {
 #chapters {
     background-color: $light-white;
     margin: 30px 5px 0 0;
+    padding: 10px 30px;
 }
 #chapters__map {
-  height: 40vh;
+  height: 35vh;
   width: 100%;
   border-radius: 5px;
   border: $blue 1px solid;
   box-shadow: $black-shadow;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .chapters__card-container {

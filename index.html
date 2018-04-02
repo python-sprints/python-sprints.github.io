@@ -44,7 +44,7 @@
         {% else %}
             {% assign chapters_col = "col-12" %}
         {% endif %}
-        <div class="col-lg-8 no-padding-x">
+        <div class="col-lg-7 no-padding-x">
             <section id="events">
                 <h2>Upcoming events</h2>
                 {% if upcoming_event == true %}
@@ -71,7 +71,7 @@
             </section>
         </div>
 
-        <div class="col-lg-3 no-padding-x">
+        <div class="col-lg-4 no-padding-x">
             <section id="chapters" class="infobox">
                 <h2>User groups</h2>
                 <div id="chapters__map"></div>
@@ -99,93 +99,122 @@
 
 <section id="about">
     <h2>About us</h2>
+
     <div class="row">
         <div class="second-on-mobile no-gutters__col col-md-6">
             <img class="services__img img-fluid rounded"
-                 src="static/images/services/educating_devs_840x561px.jpg"
-                 alt="Educating developers">
+                 src="static/images/sprints/lagos.png"
+                 alt="">
         </div>
         <div class="first-on-mobile no-gutters__col col-md-6">
-            <h2 class="services__title text-right">Helping Beginners To Get Good</h2>
-            <hr class="services__divider-right">
-            <p class="services__content text-right">We are open to people who just started to program and need guidance and mentorship. We can help you become a better programmer by collaborating with others and reading loads of code. Come and try it - you will not be disappointed. We normally have a mixture of seasoned and new coders during every sprint so advice is literally at hands reach.</p>
+            <h3 class="text-right">What is Python sprints about?</h3>
+            <hr/>
+            <p class="text-right">
+                Open source software, including Python and most Python projects
+                is developed as a joint effort of thousands of programmers.
+                Programmers like each of us, that spend some time contributing
+                bug fixes, new features, documentation, tests...
+            </p>
+            <p class="text-right">
+                A sprint is an event where open source programmers meet, and
+                work together. Traditionally, sprints mainly happened at the
+                end of conferences, that core developers attended. But our
+                approach is to have them often, and open to all levels.
+            </p>
         </div>
     </div>
 
     <div class="row">
         <div class="no-gutters__col col-md-6">
-            <h2 class="services__title text-left">Engaging Core Developers</h2>
-            <hr class="services__divider-left">
-            <p class="services__content text-left">For those of you who are programming on the advanced level there are always new tasks to test your mettle. We fix bugs, we improve implementations and add features. No matter your style you will be able to find a ticket to your liking. The sprints are always advertised well ahead of the time so you can prepare yourself by checking on the issues that will be worked on early enough.</p>
+            <h3 class="text-left">Are sprints for me?</h3>
+            <hr/>
+            <p class="text-left">
+                Short answer: Yes. Sprints are for eveyone. Programmers new
+                to open source are more than welcome. One of our main goals
+                is to help people get started. In most events, we have an
+                introduction on how to contribute to open source.
+            </p>
+            <p class="text-left">
+                Core developers and experienced contributors are also very
+                welcome. Not only to contribute during the sprints, but also
+                to mentor other people, and to help planning the sprints.
+            </p>
         </div>
         <div class="no-gutters__col col-md-6">
             <img class="services__img img-fluid rounded"
-                 src="static/images/services/advanced_lvl_840x560px.jpg"
-                 alt="Core developers in action">
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <div class="contact__background-img-container">
-        <picture>
-            <source srcset="../static/images/contact/contact_top_450x150px.jpg 450w,
-                            ../static/images/contact/contact_top_960x300px.jpg 960w,
-                            ../static/images/contact/contact_top_1920x600px.jpg 1920w"
-                    media="(orientation: landscape)"
-                    sizes="100vw">
-            <source srcset="../static/images/contact/contact_top_750x650px.jpg 750w,
-                            ../static/images/contact/contact_top_1650x1100px.jpg 1650w"
-                    media="(orientation: portrait)"
-                    sizes="100vw">
-            <img class="contact__background-img"
-                 src="../static/images/contact/contact_top_960x300px.jpg"
-                 alt="Contact Us">
-        </picture>
-        <div class="contact__page-title-container row container-fluid">
-            <div class="col-sm-12">
-                <h1 class="contact__page-title">Contact Us</h1>
-                <h2 class="contact__page-subtitle">We Are Happy To Help</h2>
-            </div>
+                 src="static/images/sprints/paris.png"
+                 alt="">
         </div>
     </div>
 
-    <!--Contact form-->
-    <form class="contact__form container" method="POST" action="//formspree.io/py.sprints@gmail.com" role="form">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label class="contact__label" for="contact__form-name">Full Name *</label>
-                    <input id="contact__form-name" type="text" name="name" class="form-control" placeholder="Please enter your full name *" required="required" data-error="Full name is required.">
-                    <div class="help-block with-errors"></div>
-                </div>
-            </div>
-             <div class="col-md-6">
-                <div class="form-group">
-                    <label class="contact__label" for="contact__form-email">Email *</label>
-                    <input id="contact__form-email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                </div>
-            </div>
+    <div class="row">
+        <div class="second-on-mobile no-gutters__col col-md-6">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/sprints/delhi.png"
+                 alt="">
         </div>
+        <div class="first-on-mobile no-gutters__col col-md-6">
+            <h3 class="text-right">Diversity and inclusion</h3>
+            <hr/>
+            <p class="text-right">
+                We are commited to a friendly and inclusive environment for
+                everyone. Regardless of gender, sexual orientation, disability,
+                physical appearance, body size, race, or religion.
+                We do not tolerate any of harassment in our events.
+            </p>
+            <p class="text-right">
+                We practice inclusion policies, with the goal of creating a
+                diverse and welcoming environment for everybody. We give
+                priority to people from underrepresented groups for events
+                with a waiting list. We also organize events focused to
+                specific groups.
+            </p>
+        </div>
+    </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label class="contact__label" for="contact__form-message">Message *</label>
-                    <textarea id="contact__form-message" name="message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                    <div class="help-block with-errors"></div>
+    <div class="row">
+        <div class="no-gutters__col col-md-6">
+            <h3 class="text-left">Contact us</h3>
+            <hr/>
+            <form class="container" method="POST" action="//formspree.io/py.sprints@gmail.com" role="form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact__form-name">Name</label>
+                            <input id="contact__form-name" type="text" name="name" class="form-control" placeholder="Your name, so we know who is contacting" required="required" data-error="Full name is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact__form-email">Email</label>
+                            <input id="contact__form-email" type="email" name="email" class="form-control" placeholder="Your email, so we can reply" required="required" data-error="Valid email is required.">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-12 text-center">
-                <input type="text" name="_gotcha" style="display: none">
-                <input type="hidden" name="_subject" value="Message from Python Sprints">
-                <button type="submit" class="contact__submit-button btn btn-success btn-send btn-lg">Send Message<span class="contact__icon"><i class="fas fa-envelope"></i></span></button>
-            </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="contact__form-message">Message</label>
+                            <textarea id="contact__form-message" name="message" class="form-control" placeholder="Tell us what we can do for you" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <input type="text" name="_gotcha" style="display: none">
+                        <input type="hidden" name="_subject" value="Message from Python Sprints">
+                        <button type="submit" class="btn btn-success btn-send btn-lg">Send <span class="contact__icon"><i class="fas fa-envelope"></i></span></button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p class="text-muted"><strong>*</strong> Required fields</p>
-            </div>
+        <div class="no-gutters__col col-md-6">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/sprints/chicago.png"
+                 alt="">
         </div>
-    </form>
+    </div>
+
 </section>
+
