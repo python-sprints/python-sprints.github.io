@@ -335,10 +335,8 @@ section {
     url($background-url);
 }
 
-
 .upcoming-chapters-container {
-  padding-bottom: 1em;
-  min-height: 100vh;
+  padding-bottom: 10em;
 }
 
 #events img {
@@ -375,7 +373,7 @@ section {
   width: 100%;
   border-radius: 5px;
   border: $blue 1px solid;
-  box-shadow: $black-shadow;
+  //box-shadow: $black-shadow;
   margin-bottom: 30px;
 }
 

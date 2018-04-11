@@ -73,7 +73,11 @@
 }
 
 .about__divider {
-  @extend .services__divider;
+  width: 95%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .about__divider-right {
@@ -84,6 +88,16 @@
 .about__divider-left {
   @extend .about__divider;
   margin-left: 0;
+}
+
+.about__paragraph-right {
+  text-align: right;
+  margin-left: 5%;
+}
+
+.about__paragraph-left {
+  text-align: left;
+  margin-right: 5%;
 }
 
 .about__paragraph-dark {
