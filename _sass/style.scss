@@ -1,10 +1,5 @@
 .body {
-  //background-color: $main-background;
   overflow-x: hidden;
-  /*Here I need to move the background image to slide under the navigation*/
-  /*Any smarter solutions are welcome!*/
-  //margin-top: -66px;
-
 }
 
 h2, h2 a {
@@ -149,11 +144,11 @@ section {
   }
 }
 
-@media (min-width: 1200px) {
-  #home {
-     margin-top: -72px;
-  }
-}
+//@media (min-width: 1200px) {
+//  #home {
+//     margin-top: -72px;
+//  }
+//}
 
 .navigation {
   background: rgba(0, 0, 0, 0.9);

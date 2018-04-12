@@ -17,6 +17,39 @@
     Returns:
 {% endcomment %}
 {% assign post = include.event %}
+<div class="col-lg-12 no-padding-x">
+                {% if upcoming_event == true %}
+                        <div>
+                            {% unless post.date == current_date %}
+                                <p class="date"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %B %Y" }}</p>
+                            {% endunless %}
+                            {% assign current_date = post.date %}
+                            {% include get_project.html event = post %}
+                            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                            <!--
+                            <img src="{{ site.baseurl }}/{{ project.logo }}" alt="">
+                            <p class="content">{{ post.content }}</p>
+                            -->
+                            <p class="text-capitalize"><i class="fas fa-map-marker-alt"></i> {{ post.category }}</p>
+                            {% unless forloop.last %}<hr class="chapter__divider-left"/>{% endunless %}
+                        </div>
+                {% else %}
+                    <p>No upcoming events at the moment</p>
+                {% endif %}
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}
 {% include get_host_sponsor.html event = post %}
 <div class="upcoming__col col-md-12 no-padding-x">
     <div class="row">
@@ -61,3 +94,4 @@
         </div>
     </div>
 </div>
+{% endcomment %}

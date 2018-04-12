@@ -5,8 +5,44 @@
         {% include navigation.html %}
         <main>
             <article>
-                {{ content }}
-                <div class="chapter-container container-fluid">
+                <div class="chapter__background-img-container">
+                    <picture>
+                        <source srcset="../static/images/about/date-util-evening-session_480x150px.jpg 480w,
+                                ../static/images/about/date-util-evening-session_960x300px.jpg 960w,
+                                ../static/images/about/date-util-evening-session_1920x600px.jpg 1920w,
+                                ../static/images/about/date-util-evening-session_3840x1200px.jpg 3840w"
+                                media="(orientation: landscape)"
+                                sizes="100vw">
+                        <source srcset="../static/images/about/date-util-evening-session_750x650px.jpg 750w,
+                                ../static/images/about/date-util-evening-session_1650X1100px.jpg 1650w"
+                                media="(orientation: portrait)"
+                                sizes="100vw">
+                        <img class="chapter__background-img"
+                             src="../static/images/about/date-util-evening-session_960x300px.jpg"
+                             alt="About Us">
+                    </picture>
+                    <div class="chapter__page-title-container row container-fluid">
+                        <div class="col-sm-12">
+                            <h1 class="chapter__page-title">{{ page.title }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter__container container-fluid">
+                    <div class="row">
+                        <div class="col-12 no-padding-x">
+                            <!--<img class="chapter__paragraph-img-main rounded" src="../static/images/about/python_sprints_decoded_673x411px.JPG" alt="Focused on quality">-->
+                            <h2 class="chapter__paragraph-title-dark-left">{{ page.title }}</h2>
+                            <hr class="chapter__divider-left">
+                            <p class="chapter__paragraph-dark">
+                                {{ content }}
+                            </p>
+                            <a class="chapter__paragraph-title-dark" href="{{ page.meetup_link }}">
+                                Join us here!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter__container container-fluid">
                     <div class="row">
                         {% include events_array_generator.html future_events=true category=page.category %}
                         {% if posts.size > 0 %}
@@ -15,19 +51,17 @@
                         {% endif %}
                         {% if upcoming_event == true %}
                             <div class="col-12 no-padding-x">
-                                <section class="chapter">
-                                    <div class="row container-fluid">
-                                        <div class="col-md-12 no-padding-x">
-                                            <h2 class="upcoming__title">Events</h2>
-                                        </div>
+                                <div class="row container no-padding-x">
+                                    <div class="col-md-12 no-padding-x">
+                                        <h2 class="chapter__title">Upcoming events</h2>
                                     </div>
-                                    <div class="upcoming__content row">
-                                        {% assign current_date = "" %}
-                                        {% for post in posts %}
-                                            {% include event_layout.html event=post %}
-                                        {% endfor %}
-                                    </div>
-                                </section>
+                                </div>
+                                <div class="upcoming__content row">
+                                    {% assign current_date = "" %}
+                                    {% for post in posts %}
+                                        {% include event_layout.html event=post %}
+                                    {% endfor %}
+                                </div>
                             </div>
                         {% endif %}
                     </div>
@@ -35,19 +69,17 @@
                         {% include events_array_generator.html category=page.category %}
                         {% if posts.size > 0 %}
                             <div class="col-12 no-padding-x">
-                                <section class="chapter">
-                                    <div class="row container-fluid">
-                                        <div class="col-md-12 no-padding-x">
-                                            <h2 class="upcoming__title">Recent Events</h2>
-                                        </div>
+                                <div class="row container-fluid">
+                                    <div class="col-md-12 no-padding-x">
+                                        <h2 class="chapter__title">Recent Events</h2>
                                     </div>
-                                    <div class="upcoming__content row">
-                                        {% assign current_date = "" %}
-                                        {% for post in posts %}
-                                            {% include event_layout.html event=post %}
-                                        {% endfor %}
-                                    </div>
-                                </section>
+                                </div>
+                                <div class="upcoming__content row">
+                                    {% assign current_date = "" %}
+                                    {% for post in posts %}
+                                        {% include event_layout.html event=post %}
+                                    {% endfor %}
+                                </div>
                             </div>
                         {% endif %}
                     </div>
