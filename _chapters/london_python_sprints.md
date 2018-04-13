@@ -7,6 +7,10 @@ country_code: gb
 lat: 51.512344
 lng: -0.090985
 category: "london"
+sponsors:
+  - harvey_nash
+  - touch_surgery
+  - bloomberg
 ---
 We are a London based group of programmers who care about making open source projects better.
 We believe in sharing our skills for free to earn our good karma. If you are devoted to a particular open source project, please let us know, we could make a sprint dedicated to it!

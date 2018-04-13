@@ -32,6 +32,7 @@
 }
 
 .chapter__title {
+  //font-size: 1.65em;
   margin-top: 1em;
 }
 
@@ -52,21 +53,23 @@
 }
 
 .chapter__paragraph-title-dark {
-  @extend .title-dark;
+  //@extend .title-dark;
+  color: black;
   font-size: 1.65em;
-  text-align: right;
+  margin-bottom: 2em;
+  //text-align: right;
 }
 
 .chapter__paragraph-title-dark-left {
-  @extend .title-dark;
-  font-size: 1.65em;
+  //@extend .title-dark;
+  //font-size: 1.65em;
   text-align: left;
   margin-top: 2em;
 }
 
 .chapter__paragraph-title-light {
   @extend .title-light;
-  font-size: 1.65em;
+  //font-size: 1.65em;
 }
 
 .chapter__divider {

@@ -24,7 +24,7 @@ a {
   text-decoration: none !important;
   transition: all 0.5s ease-in-out;
   &:hover {
-    color: $link-hover!important;
+    color: $grey!important;
   }
 }
 
@@ -68,14 +68,8 @@ section {
   width: 100%;
   padding: 10px 5px;
   background: $section-background;
-  border-right: $blue 1px solid;
-  border-left: $blue 1px solid;
-  border-top: $blue 1px solid;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom: $blue 1px solid;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border: 1px solid;
+  border-radius: 5px;
   box-shadow: $black-shadow;
 }
 
@@ -331,7 +325,7 @@ section {
 }
 
 .upcoming-chapters-container {
-  padding-bottom: 10em;
+  padding-bottom: 5em;
 }
 
 #events img {
@@ -343,7 +337,7 @@ section {
   margin: 0.25em 0 1em 0;
 }
 
-#events .date {
+.date {
   @extend .title;
   color: $blue;
   margin-top: 0.5em;

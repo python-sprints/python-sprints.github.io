@@ -5,7 +5,7 @@
 {% else %}
     {% assign image = "static/images/events/default_image_800x800px.jpeg" %}
 {% endif %}
-{% include get_host_sponsor.html event = page %}
+{% include get_sponsor.html sponsor_id = page.sponsor %}
 {% include get_project.html event = page %}
 <html lang="en">
     <body class="body">
