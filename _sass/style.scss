@@ -15,6 +15,11 @@ p, a, li, label, button {
   font-size: 16px;
 }
 
+section {
+    padding: 20px 40px;
+}
+
+
 .no-scroll {
   overflow: hidden;
 }
@@ -28,9 +33,7 @@ a {
   }
 }
 
-section {
-    padding: 20px 40px;
-}
+
 
 .row {
   margin-left: 0;
@@ -693,7 +696,7 @@ section {
 
 .footer__sponsor-link img {
   padding: 10px;
-  max-width: 100%;
+  height: 90%;
 }
 
 .footer__link {
