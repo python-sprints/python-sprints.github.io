@@ -1,30 +1,38 @@
 ---
 category: london
-title: PyData dojo-like sprint
+title: "PyData dojo-like sprint"
 level: All
-date: 2018-03-22
+date: 2018-05-08
 time: "18:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/
-event_link:
 project: 
-image:
 sponsor: quantum_black
 ---
-This will be a follow up of the worldwide #pandasSprint: [https://python-sprints.github.io/pandas/](https://python-sprints.github.io/pandas/)
 
-Beginners to contributing to open source will get a pandas documentation page assigned, and will be guided through the step to make it as good as pandas itself. During the sprint, this step-by-step checklist will help you make your first contribution, and our senior members will help you with any problem.
+**Note that this sprint starts at 6pm (and not at 6:30pm, as mmost events in the past).**
 
-[https://python-sprints.github.io/pandas/dashboard.html](https://python-sprints.github.io/pandas/dashboard.html)
+In this sprint we will try a new and cooler format, and we will sprint in a Dojo like way.
 
-Advanced contributors will be able to:
-- Help reviewing open pull requests
-- Experiment with the Sphinx theme of the pandas documentation
-- Improve the validation of docstrings
-- Refactor the contributing documentation
-- And of course mentor more junior contributors
+A Dojo is an event were Pythonistas improve their skills by performing a kata. A kata is a
+programming task oriented to get some practice in specific programming patterns.
 
-Before the sprint, and to optimise your time, we recommend trying to set up a pandas development environment in your laptop:
+While we will still work in making open source software better, we will borrow the
+format of our [London Python Dojo](https://twitter.com/ldnpydojo) friend, which is
+described in the agenda.
 
-[https://python-sprints.github.io/pandas/guide/pandas_setup.html](https://python-sprints.github.io/pandas/guide/pandas_setup.html)
+**Agenda**
 
-For this sprint, we welcome our new sponsor QuantumBlack.
+- 6pm: Doors open, pizza and beer served, and **sprint proposals**
+- 6:30pm: Sprint proposals voting, and group creation
+- 7pm-9pm: Coding in groups
+- 9pm: Group presentations
+
+Bring your OWN ideas to make your sprint proposal:
+
+- That annoying bug you wanted to see fixed
+- That missing feature you need
+- That documentation page needs some care
+- ...
+
+To narrow the scope of the sprint, all ideas should be for data related projects
+(pandas, numpy, matplotlib, keras, pytorch, your own data project...).
