@@ -5,8 +5,12 @@
   }
 }
 
+
 .chapter__background-img {
-  @extend .page__background-img;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .chapter__page-title-container {

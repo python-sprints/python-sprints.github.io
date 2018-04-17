@@ -6,21 +6,9 @@
         <main>
             <article>
                 <div class="chapter__background-img-container">
-                    <picture>
-                        <source srcset="../static/images/about/date-util-evening-session_480x150px.jpg 480w,
-                                ../static/images/about/date-util-evening-session_960x300px.jpg 960w,
-                                ../static/images/about/date-util-evening-session_1920x600px.jpg 1920w,
-                                ../static/images/about/date-util-evening-session_3840x1200px.jpg 3840w"
-                                media="(orientation: landscape)"
-                                sizes="100vw">
-                        <source srcset="../static/images/about/date-util-evening-session_750x650px.jpg 750w,
-                                ../static/images/about/date-util-evening-session_1650X1100px.jpg 1650w"
-                                media="(orientation: portrait)"
-                                sizes="100vw">
-                        <img class="chapter__background-img"
-                             src="../static/images/about/date-util-evening-session_960x300px.jpg"
-                             alt="About Us">
-                    </picture>
+                    <img class="chapter__background-img"
+                         src="{{ site.baseurl }}/{{ page.image }}"
+                         alt="{{ page.title }} photo">
                     <div class="chapter__page-title-container row container-fluid">
                         <div class="col-sm-12">
                             <h1 class="chapter__page-title">{{ page.title }}</h1>

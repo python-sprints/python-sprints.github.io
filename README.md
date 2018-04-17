@@ -34,6 +34,8 @@ separating words with underscore (e.g. `london_pyton_sprints`).
 The content of the file has a header section with some fields (started and finished with
 ---), and the main description of the chapter afterwards. 
 We are using markdown files to store your data and they can contain either markdown tags for text formatting or pure html - it is up to you how to style your content.<br>
+The image that will represent your chapter should be in jpeg format. The size the content is optimized for is: 1920 x 600 px.
+Please name it <your_chapter_name_1920x600px.jpg>.
 This is the format:
 
     ---
@@ -42,6 +44,7 @@ This is the format:
     meetup_link: <url-of-your-other-website-if-any>
     address: "Description of your location, usually City, Country"
     country_code: <2-digit-country-code-used-for-the-flag>
+    image: <relative path to the chapter image>
     lat: <float-number-with-latitude-for-the-marker-in-the-map>
     lng: <float-number-with-longitude-for-the-marker-in-the-map>
     sponsors:
@@ -68,6 +71,7 @@ Example chapter setup
     meetup_link: https://www.meetup.com/Python-Sprints/
     address: London, United Kingdom
     country_code: gb
+    image: static/images/chapters/london_python_sprints_1920x600px.jpg
     lat: 51.512344
     lng: -0.090985
     sponsors:

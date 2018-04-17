@@ -4,6 +4,7 @@ title: "London Python Sprints"
 meetup_link: https://www.meetup.com/Python-Sprints/
 address: London, United Kingdom
 country_code: gb
+image: static/images/chapters/london_python_sprints_1920x600px.jpg
 lat: 51.512344
 lng: -0.090985
 sponsors:
