@@ -130,6 +130,39 @@ Example event setup
     
 You may want to copy one of the last events in `_posts` to be used as reference.
 
+How to add a sponsor
+--------------------
+If you need to add your local sponsor which is not already in the _sponsors folder you can do so easily.<br>
+To add a sponsor logo please copy it to the static/images/sponsors folder with a name matching the obj_id of your sponsor.
+We use png files for our sponsors. The maximum size is: 258px x 82px so please scale them down to match one of those dimensions.
+
+Create an <name_of_your_sponsor>.md file using the format below:
+
+    ---
+    obj_id: <unique_identifier_of_your_sponsor>
+    name: "name of your sponsor"
+    logo: <relative path to your sponsor logo>
+    link: <website link to your sponsor>
+    address: "sponsor's full address"
+    lat: <float-number-with-latitude-for-the-marker-in-the-map>
+    lng: <float-number-with-longitude-for-the-marker-in-the-map>
+    ---
+    Here you can place a short description of your sponsor's business etc.
+    
+Example sponsor setup
+---------------------
+    ---
+    obj_id: quantum_black
+    name: "Quantum Black"
+    logo: static/images/sponsors/quantum_black.png
+    link: https://www.quantumblack.com/
+    address: "Kinnaird House, 1 Pall Mall<br/>London, SW1Y 5AU, UK"
+    lat: 51.507954
+    lng: -0.130718
+    ---
+    QuantumBlack is an advanced analytics firm operating at the intersection of strategy, technology & design to improve performance outcomes for organisations. With roots in Formula One, we now work across sector with some of the world's leading organisations in advanced industries, healthcare and finance.
+
+
 How does Jekyll work?
 ---------------------
 
