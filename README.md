@@ -45,7 +45,7 @@ How does Jekyll work?
 
 - Posts (files in `_posts/*.md`) are the event pages in markdown
 - Projects (`_project/*.md`) are the open source projects we contribut to
-- Sponsors (`_sponsors/*.md) are the companies providing the venue and pizzas
+- Sponsors (`_sponsors/*.md`) are the companies providing the venue and pizzas
 - Layouts (files in `_layouts/*.html`) are equivalent to Django templates,
   and used to render the posts (events)
 - CSS is managed with scss/sass and built by Jekyll
