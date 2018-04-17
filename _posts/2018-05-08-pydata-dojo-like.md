@@ -9,7 +9,7 @@ project:
 sponsor: quantum_black
 ---
 
-**Note that this sprint starts at 6pm (and not at 6:30pm, as mmost events in the past).**
+**Note that this sprint starts at 6pm (and not at 6:30pm, as most events in the past).**
 
 In this sprint we will try a new and cooler format, and we will sprint in a Dojo like way.
 
@@ -27,12 +27,12 @@ described in the agenda.
 - 7pm-9pm: Coding in groups
 - 9pm: Group presentations
 
-Bring your OWN ideas to make your sprint proposal:
+**Bring your OWN ideas for the sprint.** To narrow the scope of the sprint,
+all ideas should be for data related projects (pandas, numpy, matplotlib,
+keras, pytorch, your own data project...).
 
 - That annoying bug you wanted to see fixed
 - That missing feature you need
 - That documentation page needs some care
 - ...
 
-To narrow the scope of the sprint, all ideas should be for data related projects
-(pandas, numpy, matplotlib, keras, pytorch, your own data project...).

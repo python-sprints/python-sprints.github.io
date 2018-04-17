@@ -28,14 +28,16 @@
                                 <p>{{ sponsor.content }}</p>
                             </div>
 
-                            {% if project.logo %}
-                                <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
-                            {% endif %}
-                            <p>{{ project.content }}</p>
-                            <p>More information about {{ project.name }}: <a href="{{ project.website }}">{{ project.website }}</a></p>
-                            {% if project.setup_html %}
-                                <h3>Set up instructions</h3>
-                                {{ project.setup_html }}
+                            {if project.name %}
+                                {% if project.logo %}
+                                    <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
+                                {% endif %}
+                                <p>{{ project.content }}</p>
+                                <p>More information about {{ project.name }}: <a href="{{ project.website }}">{{ project.website }}</a></p>
+                                {% if project.setup_html %}
+                                    <h3>Set up instructions</h3>
+                                    {{ project.setup_html }}
+                                {% endif %}
                             {% endif %}
                         </div>
                         <div class="col-md-3">
