@@ -1,8 +1,7 @@
 ---
-category: london
+category: "london"
 title: "#pandasSprint for gender minorities"
-level: All
-date: 2018-05-01
+level: "All"
 time: "18:30"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/249352290/
 project: pandas

@@ -1,8 +1,7 @@
 ---
-category: london
-title: Pandas, Beginners Friendly
-level: Beginner
-date: 2018-03-20
+category: "london"
+title: "Pandas, Beginners Friendly"
+level: "Beginner"
 time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/248711552/
 event_link:

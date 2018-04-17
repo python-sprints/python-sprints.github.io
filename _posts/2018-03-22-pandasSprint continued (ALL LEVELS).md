@@ -1,8 +1,7 @@
 ---
-category: london
-title: Pandas Sprint continued (ALL LEVELS)
-level: All
-date: 2018-03-22
+category: "london"
+title: "Pandas Sprint continued (ALL LEVELS)"
+level: "All"
 time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/248712103/
 event_link:

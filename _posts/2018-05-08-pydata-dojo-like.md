@@ -1,8 +1,7 @@
 ---
-category: london
+category: "london"
 title: "PyData sprint (the dojo way)"
-level: All
-date: 2018-05-08
+level: "All"
 time: "18:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/
 project: 

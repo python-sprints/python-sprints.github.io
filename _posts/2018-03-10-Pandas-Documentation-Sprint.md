@@ -1,8 +1,7 @@
 ---
-category: london
-title: Pandas documentation sprint (worldwide)
-level: All
-date: 2018-03-10
+category: "london"
+title: "Pandas documentation sprint (worldwide)"
+level: "All"
 time: "10:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/247097848/
 event_link: https://python-sprints.github.io/pandas/

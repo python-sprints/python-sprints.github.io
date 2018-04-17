@@ -1,8 +1,7 @@
 ---
-category: london
-title: python-dateutil issues
-level: All
-date: 2017-12-06
+category: "london"
+title: "python-dateutil issues"
+level: "All"
 time: "18:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/245317647/
 event_link:

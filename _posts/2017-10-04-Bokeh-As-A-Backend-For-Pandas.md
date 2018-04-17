@@ -1,8 +1,7 @@
 ---
-category: london
-title: Bokeh as a backend for Pandas
-level: All
-date: 2017-10-04
+category: "london"
+title: "Bokeh as a backend for Pandas"
+level: "All"
 time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/243422372/
 event_link:
