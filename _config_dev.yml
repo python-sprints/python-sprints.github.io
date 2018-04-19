@@ -22,6 +22,7 @@ exclude:
   - _pages/02_get_started.html
   - DOCS/
 future: true
+timezone: Europe/London
 
 collections:
   sponsors:

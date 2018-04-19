@@ -38,7 +38,7 @@
 {% endif %}
 
 {% assign post_count = 0 %}
-{% assign curDate = site.time | date: "%s" %}
+{% assign curDate = site.time | date: "%s" | plus: 0 %}
 {% assign posts = "" | split: ',' %}
 {% for post in site.posts %}
     {% unless category == all %}
@@ -47,7 +47,7 @@
         {% endunless %}
     {% endunless %}
 
-    {% assign postStartDate = post.date | date: "%s" %}
+    {% assign postStartDate = post.date | date: "%s" | plus: 172800 %}
     {% if future_events %}
         {% if postStartDate >= curDate %}
             {% assign posts = posts | push: post %}
