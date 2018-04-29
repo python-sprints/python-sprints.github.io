@@ -18,15 +18,17 @@
                             <h2>{{ page.title }}</h2>
                             <p>{{ page.content }}</p>
 
-                            <div class="infobox post__sponsor-box">
-                                <a href="{{ sponsor.link }}">
-                                    <img class="post__sponsor-img"
-                                         src="{{ site.baseurl }}/{{ sponsor.logo }}"
-                                    alt="Sponsor logo">
-                                </a>
-                                <p>Thanks to <a href="{{ sponsor.link }}">{{ sponsor.name }}</a> for hosting this event!</p>
-                                <p>{{ sponsor.content }}</p>
-                            </div>
+                            {% if sponsor %}
+                                <div class="infobox post__sponsor-box">
+                                    <a href="{{ sponsor.link }}">
+                                        <img class="post__sponsor-img"
+                                             src="{{ site.baseurl }}/{{ sponsor.logo }}"
+                                        alt="Sponsor logo">
+                                    </a>
+                                    <p>Thanks to <a href="{{ sponsor.link }}">{{ sponsor.name }}</a> for hosting this event!</p>
+                                    <p>{{ sponsor.content }}</p>
+                                </div>
+                            {% endif %}
 
                             {% if project.name %}
                                 {% if project.logo %}
@@ -48,22 +50,24 @@
                                 <p><b>Level:</b> {{ page.level }}</p>
                                 <p><b>Date:</b> {{ page.date | date: "%e %B %Y" }}</p>
                                 <p><b>Time:</b> {{ page.time }}</p>
-                                <p>
-                                    <b>Address:</b><br/>
-                                    {{ sponsor.name }}<br/>
-                                    {{ sponsor.address }}
-                                    <div id="chapters__map"></div>
-                                    {% comment %}
-                                        Create a javascript variable for use in the function adding map markers.
-                                    {% endcomment %}
-                                    {% assign locations = "" | split: ',' %}
-                                    {% assign location = page %}
-                                    {% assign locations = locations | push: location %}
-                                    {% include locations_variable_generator.html locations_array = locations %}
-                                    <script async defer
-                                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
-                                    </script>
-                                </p>
+                                {% if sponsor %}
+                                    <p>
+                                        <b>Address:</b><br/>
+                                        {{ sponsor.name }}<br/>
+                                        {{ sponsor.address }}
+                                        <div id="chapters__map"></div>
+                                        {% comment %}
+                                            Create a javascript variable for use in the function adding map markers.
+                                        {% endcomment %}
+                                        {% assign locations = "" | split: ',' %}
+                                        {% assign location = page %}
+                                        {% assign locations = locations | push: location %}
+                                        {% include locations_variable_generator.html locations_array = locations %}
+                                        <script async defer
+                                          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+                                        </script>
+                                    </p>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
