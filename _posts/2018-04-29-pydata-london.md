@@ -31,12 +31,16 @@ Before the sprint, it's recommended to:
 - Join the pandas-sprint channel in PyData London slack
 
 Docstrings to improve:
-- pandas.Series.str.decode / pandas.Series.str.encode
-- pandas.Series.str.join
-- pandas.Series.str.ljust / pandas.Series.str.rjust
-- pandas.Series.str.wrap
+- pandas.Series.str.slice (see pandas.Sereies.str.slice\_replace for reference)
+- pandas.Series.str.rsplit (see pandas.Series.str.split for reference)
+- pandas.Series.str.contains (see pandas.Series.str.startswith/endwith for reference)
 - pandas.Series.str.zfill
-- pandas.Series.str.slice
+- pandas.Series.str.repeat
+- pandas.Series.str.match
+- pandas.Series.str.decode / pandas.Series.str.encode
+- pandas.Series.str.ljust / pandas.Series.str.rjust
+- pandas.Series.str.strip (shared docstring lstrip, rstrip), difficulty medium
+- pandas.Seeries.str.ismethods (shared docstring between isalnum, isalpha, isdigit, isspace, islower, isupper, istitle, isnumeric, isdecimal), difficulty medium
 
 Other tickets to work on:
 - Confusing docstring <https://github.com/pandas-dev/pandas/issues/19411>
