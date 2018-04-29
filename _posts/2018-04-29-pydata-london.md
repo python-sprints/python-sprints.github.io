@@ -30,10 +30,18 @@ Before the sprint, it's recommended to:
 - Set up your environment
 - Join the pandas-sprint channel in PyData London slack
 
-Tickets:
-- <https://github.com/pandas-dev/pandas/issues/19411>
-- <https://github.com/pandas-dev/pandas/issues/18644>
-- <https://github.com/pandas-dev/pandas/issues/18498>
-- <https://github.com/pandas-dev/pandas/issues/17775>
-- <https://github.com/pandas-dev/pandas/issues/17096>
-- <https://github.com/pandas-dev/pandas/issues/13871>
+Docstrings to improve:
+- pandas.Series.str.decode / pandas.Series.str.encode
+- pandas.Series.str.join
+- pandas.Series.str.ljust / pandas.Series.str.rjust
+- pandas.Series.str.wrap
+- pandas.Series.str.zfill
+- pandas.Series.str.slice
+
+Other tickets to work on:
+- Confusing docstring <https://github.com/pandas-dev/pandas/issues/19411>
+- Test splitting <https://github.com/pandas-dev/pandas/issues/18644>
+- Test splitting <https://github.com/pandas-dev/pandas/issues/18498>
+- Groupby documentation <https://github.com/pandas-dev/pandas/issues/17775>
+- Reusing docstrings isna... <https://github.com/pandas-dev/pandas/issues/17096>
+- Error message <https://github.com/pandas-dev/pandas/issues/13871>
