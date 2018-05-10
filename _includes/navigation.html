@@ -41,12 +41,14 @@
              src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo_triangles_flat_light_text_502x100px.png"
              alt="Python Sprints Logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarToggler"
-            aria-controls="navbarToggler" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navigation__icon navbar-toggler-icon"></span>
-    </button>
+    {% if page.url == "/" %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navigation__icon navbar-toggler-icon"></span>
+        </button>
+    {% endif %}
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             {% unless page.is_post or page.is_chapter %}
