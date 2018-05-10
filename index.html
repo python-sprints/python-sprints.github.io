@@ -54,20 +54,7 @@
                 {% if upcoming_event == true %}
                     {% assign current_date = "" %}
                     {% for post in posts %}
-                        <div>
-                            {% unless post.date == current_date %}
-                                <p class="date"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %B %Y" }}</p>
-                            {% endunless %}
-                            {% assign current_date = post.date %}
-                            {% include get_project.html event = post %}
-                            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-                            <!--
-                            <img src="{{ site.baseurl }}/{{ project.logo }}" alt="">
-                            <p class="content">{{ post.content }}</p>
-                            -->
-                            <p class="text-capitalize"><i class="fas fa-map-marker-alt"></i> {{ post.category }}</p>
-                            {% unless forloop.last %}<hr/>{% endunless %}
-                        </div>
+                        {% include event_layout.html event=post %}
                     {% endfor %}
                 {% else %}
                     <p>No upcoming events at the moment</p>
