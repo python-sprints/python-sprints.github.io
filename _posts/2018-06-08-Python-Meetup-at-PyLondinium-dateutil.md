@@ -3,7 +3,7 @@ category: "london"
 title: "Python Meetup at PyLondinium: dateutil"
 level: "All"
 time: "09:00 - 18:00"
-meetup_link: https://www.meetup.com/Python-Sprints/events/250614421/
+rsvp_link: https://www.meetup.com/Python-Sprints/events/250614421/
 project: 
 sponsor: bloomberg
 ---
