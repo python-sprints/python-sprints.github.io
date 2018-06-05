@@ -44,7 +44,9 @@ function initMap() {
         );
     }
     function focusMap() {
-        map.fitBounds(bounds);
+        if (locations.length > 1) {
+            map.fitBounds(bounds);
+        }
     }
 
     if (locations.length === 1) {
