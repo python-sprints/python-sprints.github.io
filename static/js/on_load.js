@@ -1,4 +1,6 @@
 // Put here code required to be present before DOM is loaded (for map generation so far).
+// Please note that locations variable is a global variable generated using Liquid.
+// See locations_variable_generator.html to check how it is constructed.
 
 function initMap() {
     var infowindow = new google.maps.InfoWindow();
@@ -41,11 +43,16 @@ function initMap() {
             }
         );
     }
+    function focusMap() {
+        map.fitBounds(bounds);
+    }
+
     if (locations.length === 1) {
         var latLng = marker.getPosition();
         map.setCenter(latLng);
         map.zoom = 17;
     } else {
-        map.fitBounds(bounds);
+        focusMap();
     }
+    window.addEventListener("resize", focusMap);
 }
