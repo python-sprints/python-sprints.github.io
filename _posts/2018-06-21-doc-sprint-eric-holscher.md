@@ -14,17 +14,17 @@ a group will have the opportunity to briefly explain which issues they would lik
 the rest of the people will be able to join any group they want.
 
 Some of the projects that will be proposed:
-- [https://pandas.pydata.org](pandas)
-- [https://matplotlib.org/](matplotlib)
-- [https://jupyter.org/](jupyter)
-- [https://www.djangoproject.com/](Django)
-- [http://www.numpy.org/](numpy)
+- [pandas](https://pandas.pydata.org)
+- [matplotlib](https://matplotlib.org/)
+- [jupyter](https://jupyter.org/)
+- [Django](https://www.djangoproject.com/)
+- [numpy](http://www.numpy.org/)
 
 For this sprint, we will be honoured by the visit of **Eric Holscher**. Eric is a director at the
-[https://www.python.org/psf/](Python Software Foundation). Eric is also co-founder of
-[https://readthedocs.org/](Read the Docs) the de-facto platform for publishing Python projects
+[Python Software Foundation](https://www.python.org/psf/). Eric is also co-founder of
+[Read the Docs](https://readthedocs.org/) the de-facto platform for publishing Python projects
 documentation (used by lots of projects including `jupyter`, `requests`, `pillow` to name few).
-Eric is also co-founder of [http://www.writethedocs.org/](Write the Docs), a global
+Eric is also co-founder of [Write the Docs](http://www.writethedocs.org/), a global
 community of people who cares about documentation.
 
 Agenda
