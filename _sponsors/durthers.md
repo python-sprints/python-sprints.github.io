@@ -1,5 +1,5 @@
 ---
-obj_id: harvey_nash
+obj_id: druthers
 name: "Darthers"
 logo: static/images/sponsors/durthers.png
 link: http://www.drutherssearch.com/

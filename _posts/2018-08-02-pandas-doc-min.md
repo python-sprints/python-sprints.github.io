@@ -5,7 +5,7 @@ level: "All"
 time: "18:30"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/253088220/
 project: pandas
-sponsor: Druthers
+sponsor: druthers
 ---
 
 The 10th of March, around 500 people in 30 different locations worldwide,
