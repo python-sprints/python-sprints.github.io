@@ -1,6 +1,6 @@
 ---
 obj_id: druthers
-name: "Darthers"
+name: "Druthers"
 logo: static/images/sponsors/durthers.png
 link: http://www.drutherssearch.com/
 address: "68-80 Hanbury St, London, E1 5JL, UK"
