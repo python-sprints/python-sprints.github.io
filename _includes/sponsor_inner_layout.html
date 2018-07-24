@@ -1,0 +1,19 @@
+{% comment %}
+<div class="footer__sponsor-col col-md-12 col-lg-6">
+    <a class="footer__sponsor-link" href="{{ include.item.link }}">
+        <img class="footer__img"
+             src="{{ site.baseurl }}/{{ include.item.logo }}"
+             alt="Sponsor logo">
+    </a>
+</div>
+{% endcomment %}
+{% assign sponsor = include.sponsor %}
+<div class="infobox post__sponsor-box">
+    <a href="{{ sponsor.link }}">
+        <img class="post__sponsor-img"
+             src="{{ site.baseurl }}/{{ sponsor.logo }}"
+             alt="Sponsor logo">
+    </a>
+    <p>More info on <a href="{{ sponsor.link }}">{{ sponsor.name }}</a></p>
+    <p>{{ sponsor.content }}</p>
+</div>

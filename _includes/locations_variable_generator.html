@@ -1,0 +1,61 @@
+{% comment %}
+locations_variable_generator.html (locations_array):
+
+    Create a javascript variable for use in the function adding map markers.
+
+    Accepts Liquid array object and converts it to a javascript list
+    of dictionaries (JSON). This will be used for chapters and events(posts) maps.
+    If array of posts (events) is provided we get the event's address, latitude,
+    longitude etc. from the FIRST sponsor object (if more than one are present
+    for an event) Sponsor is a equivalent of a foreignkey for the event.
+    One must remember though that sponsor is just a name not a reference to
+    the sponsor object.
+    This we find among sponsors using "where" filter as below.
+    This is to avoid duplication of records in our yml section.
+
+    Parameters:
+
+        locations_array: Liquid array
+            A Liquid array containing locations to convert to javascript array
+            of dictionaries. Can contain only 1 element.
+
+    Returns:
+        locations: JSON
+            Javascript array of dictionaries with locations' details.
+
+    Further info:
+        To generate an array:
+            {% assign chapters = "" | split: ',' %}
+        {% for chapter in site.chapters %}
+            {% assign chapters = chapters | push: chapter %}
+        {% endfor %}
+
+    But it should be enough to use site.chapters or site.posts etc.
+{% endcomment %}
+<script>
+    var locations = [
+        {% for location in include.locations_array %}
+            {% if location.is_post %}
+                {% assign host_sponsor_id = location.sponsor  %}
+                {% assign host_sponsor = site.sponsors | where:"obj_id", host_sponsor_id | first %}
+                {% capture prefix %}
+                    "address": "{{ host_sponsor.address }}",
+                    "lat": {{ host_sponsor.lat }},
+                    "lng": {{ host_sponsor.lng }},
+                {% endcapture %}
+            {% else %}
+                {% capture prefix %}
+                    "address": "{{ location.address }}",
+                    "lat": {{ location.lat }},
+                    "lng": {{ location.lng }},
+                {% endcapture %}
+            {% endif %}
+            {
+            {{ prefix }}
+            "title": "{{ location.title }}",
+            "meetupURL": "{{ location.meetup_link }}",
+            "URL": "{{ location.url }}",
+            },
+        {% endfor %}
+    ];
+</script>

@@ -1,0 +1,15 @@
+<div class="no-gutters__col col-sm-6">
+    <div class="events__spacer"></div>
+    <div class="events__img-container">
+        <div class="events__img-overlay">
+            <a class="events__link" href="{{ include.item.url }}">
+                <i class="events__icon fas fa-info-circle"></i>
+            </a>
+            <div class="events__title-container">
+                <h2 class="events__img-title">Event: {{ include.item.title }}</h2>
+                <p class="events__img-subtitle">{{ include.item.venue }}, {{ include.item.date | date: "%e %B %Y" }}</p>
+            </div>
+        </div>
+        <img class="events__img img-fluid" src="{{ site.baseurl }}/{{ include.item.image }}">
+    </div>
+</div>

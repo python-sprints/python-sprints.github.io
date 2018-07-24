@@ -1,31 +1,182 @@
+// Settings for global font sizes and classes related strictly to text.
+
 .body {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /* Mobiles 576px and up */
 @media (min-width: 576px) {
-    .body {
-        font-size: 90%;
-    }
+  .body {
+    font-size: 90%;
+  }
 }
 
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-    .body {
-        font-size: 100%;
-    }
+  .body {
+    font-size: 100%;
+  }
 }
 
 /*// Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
-    .body {
+  .body {
     font-size: 120%;
   }
 }
 
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-    .body {
-        font-size: 140%;
-    }
+  .body {
+    font-size: 140%;
+  }
+}
+
+// Text styles below.
+// Page title.
+
+.page__title, .page__subtitle {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.page__title {
+  font-family: 'Share Tech Mono', monospace;
+  color: $page-title;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.page__subtitle {
+  font-size: 1.75em;
+  font-family: 'Share Tech Mono', monospace;
+  color: $page-subtitle;
+  text-align: center;
+}
+
+@media (min-width: 450px) {
+  .page__title {
+    font-size: 4.3em;
+  }
+  .page__subtitle {
+    font-size: 1.9em;
+  }
+}
+
+@media (min-width: 650px) {
+  .page__title {
+    font-size: 5em;
+  }
+  .page__subtitle {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page__title {
+    font-size: 6em;
+  }
+  .page__subtitle {
+    font-size: 2.25em;
+  }
+}
+
+// Section titles.
+
+
+.section-title {
+  font-size: 2.5em;
+  color: $section-title-dark;
+  text-align: center;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  margin-top: 5%;
+  margin-bottom: 2.5%;
+}
+
+@media (min-width: 376px) {
+  .section-title {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 500px) {
+  .section-title {
+    font-size: 4em;
+  }
+}
+
+.section-title-light {
+  @extend .section-title;
+  color: $section-title-light;
+}
+
+.event-label {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  background-image: linear-gradient(45deg, $grey, $grey 80%, transparent 80%,  transparent 100%);
+  font-size: 1.25em;
+  text-align: left;
+  color: $title-dark;
+  border-top-left-radius: 5px;
+  padding: 0.15em 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  min-width: 5em;
+}
+
+.event-title {
+  background: rgba(7, 41, 72, 0.52);
+  border: $dark-blue 2px groove;
+  font-size: 1.25em;
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $title-light;
+  padding-left: 0.25em;
+  margin-right: 0.25em;
+  border-radius: 0 5px 5px 5px;
+  }
+
+.title {
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+.title-dark {
+  @extend .title;
+  color: $title-dark;
+}
+
+.title-light {
+  @extend .title;
+  color: $title-light;
+}
+
+.subtitle {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  color: $subtitle;
+}
+
+.paragraph {
+  font-family: 'Playfair Display', serif;
+}
+
+.paragraph-dark {
+  font-size: 1em;
+  color: $paragraph-dark;
+  font-family: 'Playfair Display', serif;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.paragraph-light {
+  font-size: 1em;
+  color: $paragraph-light;
+  font-family: 'Playfair Display', serif;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.footer-font {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
 }

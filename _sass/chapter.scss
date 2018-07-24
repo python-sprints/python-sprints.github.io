@@ -1,0 +1,123 @@
+.chapter__background-img-container {
+  @extend .page__background-img-container;
+  &::after {
+    background: rgba(0, 0, 0, 0.65);
+  }
+}
+
+
+.chapter__background-img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.chapter__page-title-container {
+  @extend .page__title-container;
+}
+
+.chapter__page-title {
+  @extend .page__title;
+}
+
+//.chapter__page-subtitle {
+//  @extend .page__subtitle;
+//}
+
+.chapter__container {
+  max-width: 90%;
+}
+
+@media (min-width: 1200px) {
+  .chapter__container {
+    max-width: 50%;
+  }
+}
+
+.chapter__title {
+  //font-size: 1.65em;
+  margin-top: 1em;
+}
+
+.chapter__section-title-left {
+  @extend .section-title;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  text-align: left;
+}
+
+.chapter__section-title-right {
+  @extend .chapter__section-title-left;
+  text-align: right;
+  margin-top: 5%;
+}
+
+.chapter__title-container {
+}
+
+.chapter__paragraph-title-dark {
+  //@extend .title-dark;
+  color: black;
+  font-size: 1.65em;
+  margin-bottom: 2em;
+  //text-align: right;
+}
+
+.chapter__paragraph-title-dark-left {
+  //@extend .title-dark;
+  //font-size: 1.65em;
+  text-align: left;
+  margin-top: 2em;
+}
+
+.chapter__paragraph-title-light {
+  @extend .title-light;
+  //font-size: 1.65em;
+}
+
+.chapter__divider {
+  width: 50%;
+  margin-top: 0;
+}
+
+.chapter__divider-right {
+  @extend .chapter__divider;
+  margin-right: 0;
+}
+
+.chapter__divider-left {
+  @extend .chapter__divider;
+  margin-left: 0;
+  margin-bottom: 0.25em;
+}
+
+.chapter__paragraph-dark {
+  @extend .paragraph-dark;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1em;
+}
+
+.chapter__paragraph-light {
+  @extend .paragraph-light;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.chapter__paragraph-img-main {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .chapter__paragraph-img-main {
+    float: left;
+    width: 35%;
+    margin-right: 1em;
+  }
+}

@@ -1,14 +1,13 @@
 ---
-layout: post
-title: python-dateutil issues
-project: date-util
-project_description: Powerful extensions to datetime
-date: 2017-12-06
-venue: Bloomberg
+category: "london"
+title: "python-dateutil issues"
+level: "All"
+time: "18:00"
 meetup_link: https://www.meetup.com/Python-Sprints/events/245317647/
+event_link:
+project: date-util
 image: static/images/events/dateutil_bloomberg_960x539px.jpeg
-sponsors: 
-    - bloomberg
+sponsor: bloomberg
 ---
 
 This time we will be working in [python-dateutil](https://github.com/dateutil/dateutil), one of the most downloaded libraries from PyPI and the de-facto extension for date and times manipulation in Python.

@@ -1,14 +1,13 @@
 ---
-layout: post
-title: Bokeh as a backend for Pandas
-project: Pandas
-project_description: Powerful Python data analysis toolkit
-date: 2017-10-04
-venue: Harvey Nash
+category: "london"
+title: "Bokeh as a backend for Pandas"
+level: "All"
+time: "18:30"
 meetup_link: https://www.meetup.com/Python-Sprints/events/243422372/
+event_link:
+project: pandas
 image: static/images/events/pandas_bokeh_backend_harvey_nash_960x539px.jpeg
-sponsors: 
-    - harvey_nash
+sponsor: harvey_nash
 ---
 
 According to this recent blog post by [Stack Overflow](https://stackoverflow.com/), Python is declared as the fastest-growing major programming language.

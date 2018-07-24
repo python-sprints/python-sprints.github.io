@@ -1,0 +1,29 @@
+.get-started {
+}
+
+.get-started__background-img-container {
+  @extend .page__background-img-container;
+  &::after {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
+.get-started__background-img {
+  @extend .page__background-img;
+}
+
+.get-started__page-title-container {
+  @extend .page__title-container;
+}
+
+.get-started__page-title {
+  @extend .page__title;
+}
+
+.get-started__page-subtitle {
+  @extend .page__subtitle;
+}
+
+.get-started__container {
+  max-width: 90%;
+}

@@ -1,0 +1,67 @@
+{% comment %}
+    events_array_generator.html (future_events, limit, category):
+
+    Create an array of selected posts (events) for a layout.
+
+    This include is to generate an array of posts (events) for use in layouts.
+    Jekyll's standard variable site.posts contains all posts across entire site.
+    This include is used for selecting the ones we want to display.
+
+    Parameters:
+        future_events: bool, default: false
+            Include future events in the array?
+            If future_events is true, no past events will be added.
+            If it is false, only past events are added.
+        limit: int, default: 0 (no limit)
+            How many events to add to the
+        category: str, optional
+            Event's category set in yml section. If not given all categories
+            will be used.
+    Returns:
+        posts: liquid array
+            Array of post objects (all or from the category)
+            - variable for use in the outer scope.
+{% endcomment %}
+
+{% if include.future_events %}
+    {% assign future_events = include.future_events %}
+{% else %}
+    {% assign future_events = false %}
+{% endif %}
+{% if include.limit %}
+    {% assign limit = include.limit %}
+{% endif %}
+{% if include.category %}
+    {% assign category = include.category %}
+{% else %}
+    {% assign category = all %}
+{% endif %}
+
+{% assign post_count = 0 %}
+{% assign curDate = site.time | date: "%s" | plus: 0 %}
+{% assign posts = "" | split: ',' %}
+{% for post in site.posts %}
+    {% unless category == all %}
+        {% unless post.category == category %}
+            {% continue %}
+        {% endunless %}
+    {% endunless %}
+
+    {% assign postStartDate = post.date | date: "%s" | plus: 172800 %}
+    {% if future_events %}
+        {% if postStartDate >= curDate %}
+            {% assign posts = posts | push: post %}
+            {% assign post_count = post_count | plus: 1 %}
+        {% endif %}
+    {% else %}
+        {% if postStartDate < curDate %}
+            {% assign posts = posts | push: post %}
+            {% assign post_count = post_count | plus: 1 %}
+        {% endif %}
+    {% endif %}
+
+    {% if post_count == limit | default: 0 %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+

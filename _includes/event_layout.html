@@ -1,0 +1,90 @@
+{% comment %}
+    event_layout.html (event):
+
+    Generate a layout for an event.
+
+    Creates a basic layout for an event object. For every unique date on which
+    an event happens the date will be displayed. Events with same dates get the
+    date displayed only once. This include is to be used inside a for loop in
+    association with events_arrary_generator.html.
+    Before the for loop: current_date = "" must be set in the outer scope!
+    See index.html, line 57 for example of usage.
+
+    Parameters:
+        event: event object
+            Event object containing yml variables and content.
+
+    Returns:
+{% endcomment %}
+
+{% assign post = include.event %}
+<div class="col-lg-12 no-padding-x">
+    <div>
+        {% unless post.date == current_date %}
+            <p class="date"><i class="far fa-calendar-alt"></i> {{ post.date | date: "%e %B %Y" }}</p>
+        {% endunless %}
+        {% assign current_date = post.date %}
+        {% include get_project.html event = post %}
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="text-capitalize"><i class="fas fa-map-marker-alt"></i> {{ post.category }}</p>
+        {% unless forloop.last %}<hr class="chapter__divider-left"/>{% endunless %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}
+{% include get_host_sponsor.html event = post %}
+<div class="upcoming__col col-md-12 no-padding-x">
+    <div class="row">
+        <div class="col-12">
+            {% unless post.date == current_date %}
+                <p class="upcoming__date">
+                    <i class="upcoming__icon far fa-calendar-alt"></i>{{ post.date | date: "%e %B %Y" }}, {{ post.time }}
+                </p>
+            {% endunless %}
+            {% assign current_date = post.date %}
+            {% include get_project.html event = post %}
+            <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ project.logo }}" alt="Project logo">
+            <h2 class="upcoming__event-title"> {{ post.title }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {% if post.level %}
+            <h2 class="upcoming__event-subtitle">Level: {{ post.level }}</h2>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-6 no-padding-x">
+                    <div class="col-12 no-padding-x">
+                        <p class="upcoming__paragraph">
+                            <i class="upcoming__icon fas fa-map-marker-alt"></i>{{ sponsor.address }}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 no-padding-x text-right my-auto">
+                    <a class="upcoming__button btn" href="{{ post.url }}">
+                        <i class="upcoming__button-icon fas fa-info-circle"></i>
+                    </a>
+                </div>
+            </div>
+            {% unless forloop.last %}
+                <hr class="upcoming__divider">
+            {% endunless %}
+        </div>
+    </div>
+</div>
+{% endcomment %}

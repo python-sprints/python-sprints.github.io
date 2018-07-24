@@ -1,8 +1,11 @@
+{% comment %}
 <nav class="navigation navbar sticky-top navbar-light">
     <div class="navigation__brand">
-        <a class="navigation__brand-link navbar-brand" href="{{ '/' | prepend: site.baseurl }}">
-            <img class="navigation__brand-img" src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo.png" alt="Python Sprints Logo">
-            <span class="navigation__brand-name">Python Sprints</span>
+        <a class="navigation__brand-link navbar-brand"
+           href="{{ '/' | prepend: site.baseurl }}">
+            <img class="navigation__brand-img"
+                 src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo_triangles_flat_light_text_502x100px.png"
+                 alt="Python Sprints Logo">
         </a>
     </div>
 
@@ -19,12 +22,49 @@
     </div>
     <div class="navigation__overlay">
         <div class="navigation__overlay-content">
-            <a class="navigation__link" href="{{ '/' | prepend: site.baseurl }}">Home</a>
             {% for page in site.pages %}
-                {% if page.title %}
-                    <a class="navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-                {% endif %}
+            {% if page.title %}
+            <a class="navigation__link"
+               href="{{ page.url | prepend: site.baseurl }}">{{ page.title
+                }}</a>
+            {% endif %}
             {% endfor %}
         </div>
+    </div>
+</nav>
+{% endcomment %}
+
+
+<nav class="navigation navbar navbar-expand-lg navbar-dark sticky-top">
+    <a class="navigation__brand-link navbar-brand" href="{{ '/' | prepend: site.baseurl }}">
+        <img class="navigation__brand-img"
+             src="{{ site.baseurl }}/static/images/site_logo/python_sprints_logo_triangles_flat_light_text_502x100px.png"
+             alt="Python Sprints Logo">
+    </a>
+    {% if page.url == "/" %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggler"
+                aria-controls="navbarToggler" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navigation__icon navbar-toggler-icon"></span>
+        </button>
+    {% endif %}
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            {% unless page.is_post or page.is_chapter %}
+                <li class="hide-on-desktop nav-item">
+                    <a class="navigation__link nav-link" href="#events">Events</a>
+                </li>
+                <li class="hide-on-desktop nav-item">
+                    <a class="navigation__link nav-link" href="#chapters">Chapters</a>
+                </li>
+                <li class="hide-on-mobile nav-item">
+                    <a class="navigation__link nav-link" href="#events">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navigation__link nav-link" href="#about">About us</a>
+                </li>
+            {% endunless %}
+        </ul>
     </div>
 </nav>

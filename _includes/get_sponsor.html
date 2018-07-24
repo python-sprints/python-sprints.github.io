@@ -1,0 +1,20 @@
+{% comment %}
+get_sponsor.html (sponsor_id):
+
+    Obtain host sponsor object for the event.
+
+    Get the event's foreign key sponsors and use its first object in the array
+    as host sponsor object.
+
+    Parameters:
+        sponsor_id: id of the sponsor
+            Yml variable which will be used to access sponsor object.
+
+    Returns:
+        sponsor: sponsor object
+            Object from collection sponsors.
+{% endcomment %}
+
+{% assign sponsor_id = include.sponsor_id %}
+{% assign sponsor = site.sponsors | where:"obj_id", sponsor_id | first %}
+

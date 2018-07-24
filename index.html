@@ -1,205 +1,211 @@
 ---
-layout: default
 ---
-{% include inline_style_index.html %}
-<!--Title image will be set to display:none and used as a background image on the div below-->
-<div class="navigation__content container-fluid" data-image-type="responsive">
-    <picture>
-        <source srcset="static/images/title_photo/title_glass_building_480x270.jpg 480w,
-                        static/images/title_photo/title_glass_building_960x540.jpg 960w,
-                        static/images/title_photo/title_glass_building_1334x750.jpg 1334w,
-                        static/images/title_photo/title_glass_building_1920x1080.jpg 1920w,
-                        static/images/title_photo/title_glass_building_2562x1442.jpg 2562w,
-                        static/images/title_photo/title_glass_building_3840x2160.jpg 3840w"
-                media="(orientation: landscape)"
-                sizes="100vw">
-        <source srcset="static/images/title_photo/title_glass_building_750x1334.jpg 750w,
-                        static/images/title_photo/title_glass_building_1080x1920.jpg 1080w,
-                        static/images/title_photo/title_glass_building_1125x2436.jpg 1125w,
-                        static/images/title_photo/title_glass_building_1242x2436.jpg 1242w,
-                        static/images/title_photo/title_glass_building_1442x2562.jpg 1442w,
-                        "
-                media="(orientation: portrait)"
-                sizes="100vw">
-        <img class="responsive" src="static/images/title_photo/title_glass_building_960x540.jpg" alt="Python Sprints Title Image">
-    </picture>
+<section id="home">
+    <div class="navigation__content container-fluid">
+        <picture>
+            <source srcset="static/images/title_photo/Python_Sprints_title_512x288px.jpg 512w,
+                            static/images/title_photo/Python_Sprints_title_1024x576px.jpg 1024w,
+                            static/images/title_photo/Python_Sprints_title_1334x750px.jpg 1334w,
+                            static/images/title_photo/Python_Sprints_title_1920x1080px.jpg 1920w,
+                            static/images/title_photo/Python_Sprints_title_2048x1152px.jpg 2048w"
+                    media="(orientation: landscape)"
+                    sizes="100vw">
+            <source srcset="static/images/title_photo/Python_Sprints_title_750x1334px.jpg 750w,
+                            static/images/title_photo/Python_Sprints_title_1080x1920px.jpg 1080w"
+                    media="(orientation: portrait)"
+                    sizes="100vw">
+            <img class="navigation__background-img"
+                 src="static/images/title_photo/Python_Sprints_title_1920x1080px.jpg"
+                 alt="Python Sprints Title Image">
+        </picture>
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="navigation__title">Python Sprints</h1>
-            <h2 class="navigation__subtitle"><em>The World Is Waiting For Your Code</em></h2>
-        </div>
-    </div>
-</div>
-
-<!--Mission section-->
-<section class="mission">
-    <div class="mission container-fluid">
-        <div class="row">
+        <div class="navigation__title-container row container-fluid">
             <div class="col-md-12">
-                <h2 class="section-title">Our Mission</h2>
-                <h3 class="mission__statement">Contribute to open source projects.</h3>
-                <h3 class="mission__statement">Grow the Python community.</h3>
-                <h3 class="mission__statement">Provide mentorship and challenge for people of all backgrounds and skills.</h3>
+                <img class="navigation__site-logo"
+                     srcset="static/images/site_logo/python_sprints_logo_triangles_light_text_480x245px.png 480w,
+                            static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png 960w,
+                            static/images/site_logo/python_sprints_logo_triangles_light_text_1920x978px.png 1920w,
+                            "
+                     sizes="100vw"
+                     src="static/images/site_logo/python_sprints_logo_triangles_light_text_960x489px.png"
+                     alt="Python Sprints Logo">
+                <h2 class="navigation__subtitle">Contributing together</h2>
             </div>
         </div>
     </div>
 </section>
 
-<!--Upcoming Events section-->
-{% if upcoming_event == true %}
-    <section class="upcoming">
-        <div class="row container-fluid">
-            <hr class="upcoming-divider">
-            <div class="upcoming__img-container col-md-12">
-                <div class="upcoming__content row">
-                    <div class="upcoming__col col-md-5 col-12 mr-auto">
-                        <h2 class="upcoming__title">Upcoming Event</h2>
-                        <div class="row">
-                            <div class="no-gutters__col col-3">
-                                <h2 class="post__label">Event</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__event-title col-12">
-                                {{ post.title }}
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="no-gutters__col col-3">
-                                <h2 class="post__label">Venue</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__event-title col-12">
-                                {{ post.venue }}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="no-gutters__col col-3">
-                                <h2 class="post__label">Date</h2>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="upcoming__event-title col-12">
-                                {{ post.date | date: "%e %B %Y" }}
-                            </div>
-                        </div>
-                        {% if post.project_logo %}
-                            <div class="row">
-                                <div class="no-gutters__col col-3">
-                                    <h2 class="post__label">Project</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="upcoming__event-title col-12 text-center">
-                                    <a href="{{ post.project_link }}">
-                                        <img class="upcoming__project-logo" src="{{ site.baseurl }}/{{ post.project_logo }}">
-                                    </a>
-                                </div>
-                            </div>
-                        {% endif %}
-                    </div>
-                    <div class="upcoming__logo-col col-md-5 text-center">
-                        <div class="upcoming__sponsor-list h-100">
-                            <h2 class="upcoming__sponsor-title">Supported By</h2>
-                            <!--HERE feed event sponsors only - we need sponsor objects not just the name.-->
-                            <!--Build an array of site sponsors (all).-->
-                            {% assign site_sponsors_all = "" | split: ',' %}
-                            {% for sponsor in site.sponsors %}
-                            {% assign site_sponsors_all = site_sponsors_all | push: sponsor %}
-                            {% endfor %}
-
-                            <!--Build an array of sponsors for the event.-->
-                            {% assign event_sponsors = "" | split: ',' %}
-                            {% for sponsor in post.sponsors %}
-                                {% for site_sponsor in site_sponsors_all %}
-                                    {% if site_sponsor.sponsor_id == sponsor %}
-                                        {% assign event_sponsors = event_sponsors | push: site_sponsor %}
-                                    {% endif %}
-                                {% endfor %}
-                            {% endfor %}
-
-                            {% assign num_of_sponsors = event_sponsors | size %}
-                            {% assign sponsors_remainder = num_of_sponsors | modulo: 2 %}
-
-                            {% if sponsors_remainder == 0 %}
-                                {% assign num_of_sponsors_even = true %}
-                                {% assign row_num_modifier = 1 %}
-                            {% else %}
-                                {% assign num_of_sponsors_even = false %}
-                                {% assign row_num_modifier = 0 %}
-                            {% endif %}
-
-                            {% assign num_of_rows = num_of_sponsors | divided_by: 2 | floor | minus: row_num_modifier %}
-                            {% assign items_per_row = 1 %}
-
-                            {% for row in (0..num_of_rows) %}
-                                {% if forloop.last and num_of_sponsors_even == false %}
-                                    {% assign items_per_row = 0 %}
-                                {% endif %}
-                                <div class="row">
-                                    {% for col in (0..items_per_row) %}
-                                        {% assign sponsor_index = row | times: 2 | plus: col %}
-                                        {% assign sponsor = event_sponsors[sponsor_index] %}
-                                        <div class="footer__sponsor-col col-md-12 col-lg-6">
-                                            <a class="footer__sponsor-link" href="{{ sponsor.sponsor_link }}">
-                                                <img class="footer__img" src="{{ site.baseurl }}/{{ sponsor.sponsor_logo }}">
-                                            </a>
-                                        </div>
-                                    {% endfor %}
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                <div class="upcoming__button-row row">
-                    <div class="col-md-12 text-center">
-                        <a class="upcoming__link" href="{{ post.event_link }}">
-                            <button class="upcoming__button btn btn-outline-primary btn-lg">
-                                Learn More
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+<div class="upcoming-chapters-container container-fluid">
+    <div class="row">
+        {% include events_array_generator.html future_events=true %}
+        {% if posts.size > 0 %}
+            {% assign upcoming_event = true %}
+            {% assign chapters_col = "col-lg-6" %}
+            {% assign posts = posts | reverse %}
+        {% else %}
+            {% assign chapters_col = "col-12" %}
+        {% endif %}
+        <div class="col-lg-1 no-padding-x">
         </div>
-    </section>
-{% endif %}
+        <div class="col-lg-6 no-padding-x">
+            <section id="events">
+                <h2>Upcoming events</h2>
+                {% if upcoming_event == true %}
+                    {% assign current_date = "" %}
+                    {% for post in posts %}
+                        {% include event_layout.html event=post %}
+                    {% endfor %}
+                {% else %}
+                    <p>No upcoming events at the moment</p>
+                {% endif %}
+            </section>
+        </div>
 
+        <div class="col-lg-4 no-padding-x">
+            <section id="chapters" class="infobox">
+                <h2>User groups</h2>
+                <div id="chapters__map"></div>
+                {% include locations_variable_generator.html locations_array=site.chapters %}
+                <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+                </script>
+                {% for chapter in site.chapters %}
+                    <h3><a href="{{ chapter.url }}">{{ chapter.title }}</a></h3>
+                    <p>
+                        <span class="chapters__flag flag-icon flag-icon-{{ chapter.country_code }}"></span>
+                        {{ chapter.address }}
+                    </p>
+                    {% unless forloop.last %}<hr/>{% endunless %}
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+</div>
+
+{% comment %}
 <!--Events in the past section-->
-{% include event.html %}
+{% include recent_events_section.html %}
+{% endcomment %}
 
-<!--Services section-->
-<section class="services">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="section-title">What Do We Do?</h2>
-            </div>
+<section id="about">
+    <h2>About us</h2>
+
+    <div class="row">
+        <div class="second-on-mobile no-gutters__col col-md-6">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/sprints/lagos.jpg"
+                 alt="">
+        </div>
+        <div class="first-on-mobile no-gutters__col col-md-6">
+            <h3 class="text-right">What is a Python sprint?</h3>
+            <hr class="about__divider-right"/>
+            <p class="about__paragraph-right">
+                Open source software, including Python and most Python projects
+                is developed as a joint effort of thousands of programmers.
+                Programmers like each of us, that spend some time contributing
+                bug fixes, new features, documentation, tests...
+            </p>
+            <p class="about__paragraph-right">
+                A sprint is an event where open source programmers meet, and
+                work together. Traditionally, sprints mainly happened at the
+                end of conferences, that core developers attended. But our
+                approach is to have them often, and open to all levels.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="no-gutters__col col-md-6">
+            <h3 class="text-left">Are sprints for me?</h3>
+            <hr class="about__divider-left"/>
+            <p class="about__paragraph-left">
+                Short answer: Yes. Sprints are for eveyone. Programmers new
+                to open source are more than welcome. One of our main goals
+                is to help people get started. In most events, we have an
+                introduction on how to contribute to open source.
+            </p>
+            <p class="about__paragraph-left">
+                Core developers and experienced contributors are also very
+                welcome. Not only to contribute during the sprints, but also
+                to mentor other people, and to help planning the sprints.
+            </p>
+        </div>
+        <div class="no-gutters__col col-md-6">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/sprints/paris.jpg"
+                 alt="">
         </div>
     </div>
 
     <div class="row">
         <div class="second-on-mobile no-gutters__col col-md-6">
-            <img class="services__img img-fluid rounded" src="static/images/services/educating_devs_840x561px.jpg">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/sprints/delhi.jpg"
+                 alt="">
         </div>
         <div class="first-on-mobile no-gutters__col col-md-6">
-            <h2 class="services__title text-right">Helping Beginners To Get Good</h2>
-            <hr class="services__divider-right">
-            <p class="services__content text-right">We are open to people who just started to program and need guidance and mentorship. We can help you become a better programmer by collaborating with others and reading loads of code. Come and try it - you will not be disappointed. We normally have a mixture of seasoned and new coders during every sprint so advice is literally at hands reach.</p>
+            <h3 class="text-right">Diversity and inclusion</h3>
+            <hr class="about__divider-right"/>
+            <p class="about__paragraph-right">
+                We are commited to a friendly and inclusive environment for
+                everyone. Regardless of gender, sexual orientation, disability,
+                physical appearance, body size, race, or religion.
+                We do not tolerate any of harassment in our events.
+            </p>
+            <p class="about__paragraph-right">
+                We practice inclusion policies, with the goal of creating a
+                diverse and welcoming environment for everybody. We give
+                priority to people from underrepresented groups for events
+                with a waiting list. We also organize events focused to
+                specific groups.
+            </p>
         </div>
     </div>
 
     <div class="row">
         <div class="no-gutters__col col-md-6">
-            <h2 class="services__title text-left">Engaging Core Developers</h2>
-            <hr class="services__divider-left">
-            <p class="services__content text-left">For those of you who are programming on the advanced level there are always new tasks to test your mettle. We fix bugs, we improve implementations and add features. No matter your style you will be able to find a ticket to your liking. The sprints are always advertised well ahead of the time so you can prepare yourself by checking on the issues that will be worked on early enough.</p>
+            <h3 class="mt-3 text-left">Contact us</h3>
+            <hr class="about__divider-left"/>
+            <form class="container" method="POST" action="//formspree.io/py.sprints@gmail.com" role="form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact__form-name">Name</label>
+                            <input id="contact__form-name" type="text" name="name" class="form-control" placeholder="Your name, so we know who is contacting" required="required" data-error="Full name is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="contact__form-email">Email</label>
+                            <input id="contact__form-email" type="email" name="email" class="form-control" placeholder="Your email, so we can reply" required="required" data-error="Valid email is required.">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="contact__form-message">Message</label>
+                            <textarea id="contact__form-message" name="message" class="form-control" placeholder="Tell us what we can do for you" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <input type="text" name="_gotcha" style="display: none">
+                        <input type="hidden" name="_subject" value="Message from Python Sprints">
+                        <button type="submit" class="btn btn-success btn-send btn-lg">Send <span class="contact__icon"><i class="fas fa-envelope"></i></span></button>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="no-gutters__col col-md-6">
-            <img class="services__img img-fluid rounded" src="static/images/services/advanced_lvl_840x560px.jpg">
+            <img class="services__img img-fluid rounded"
+                 src="static/images/sprints/chicago.jpg"
+                 alt="">
         </div>
     </div>
+
 </section>
+

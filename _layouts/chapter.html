@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+    <body class="body">
+        {% include navigation.html %}
+        <main>
+            <article>
+                <div class="chapter__background-img-container">
+                    <img class="chapter__background-img"
+                         src="{{ site.baseurl }}/{{ page.image }}"
+                         alt="{{ page.title }} photo">
+                    <div class="chapter__page-title-container row container-fluid">
+                        <div class="col-sm-12">
+                            <h1 class="chapter__page-title">{{ page.title }}</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter__container container-fluid">
+                    <div class="row">
+                        <div class="col-12 no-padding-x">
+                            <!--<img class="chapter__paragraph-img-main rounded" src="../static/images/about/python_sprints_decoded_673x411px.JPG" alt="Focused on quality">-->
+                            <h2 class="chapter__paragraph-title-dark-left">{{ page.title }}</h2>
+                            <hr class="chapter__divider-left">
+                            <p class="chapter__paragraph-dark">
+                                {{ content }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <a class="btn btn-outline-dark" href="{{ page.meetup_link }}">
+                                Join us!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapter__container container-fluid">
+                    <div class="row">
+                        {% include events_array_generator.html future_events=true category=page.category %}
+                        {% if posts.size > 0 %}
+                            {% assign upcoming_event = true %}
+                            {% assign posts = posts | reverse %}
+                        {% endif %}
+                        {% if upcoming_event == true %}
+                            <div class="col-12 no-padding-x">
+                                <div class="row container no-padding-x">
+                                    <div class="col-md-12 no-padding-x">
+                                        <h2 class="chapter__title">Upcoming events</h2>
+                                    </div>
+                                </div>
+                                <div class="upcoming__content row">
+                                    {% assign current_date = "" %}
+                                    {% for post in posts %}
+                                        {% include event_layout.html event=post %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="row">
+                        {% include events_array_generator.html category=page.category %}
+                        {% if posts.size > 0 %}
+                            <div class="col-12 no-padding-x">
+                                <div class="row container-fluid">
+                                    <div class="col-md-12 no-padding-x">
+                                        <h2 class="chapter__title">Recent Events</h2>
+                                    </div>
+                                </div>
+                                <div class="upcoming__content row">
+                                    {% assign current_date = "" %}
+                                    {% for post in posts %}
+                                        {% include event_layout.html event=post %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="row no-padding-x">
+                        <div class="col-md-12 no-padding-x">
+                            <h2 class="chapter__title">Our Sponsors</h2>
+                            {% for sponsor_id in page.sponsors %}
+                                {% for sponsor_obj in site.sponsors %}
+                                    {% if sponsor_obj.obj_id == sponsor_id %}
+                                        {% assign sponsor = sponsor_obj %}
+                                        {% include sponsor_inner_layout.html sponsor=sponsor %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {% include footer.html %}
+        </main>
+        {% include scripts.html %}
+    </body>
+</html>
