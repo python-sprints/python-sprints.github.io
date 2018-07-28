@@ -17,13 +17,14 @@ So, there is still some work to do.
 In this sprint, each pair of participants (or each participant if you prefer
 not to pair-program) will be assigned a pandas documentation page to work on.
 
-There will also be a tutorial section about pandas for beginners. 
+There will also be a tutorial section about pandas and data analysis in python
+by Marc Garcia, code developer of pandas.
 
 By the end of the sprint, you should be able to convert a page like this:
-- <https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.kde.html>
+- <http://pandas.pydata.org/pandas-docs/version/0.20/generated/pandas.Series.plot.kde.html>
 
 In a page like this:
-- <http://pandas-docs.github.io/pandas-docs-travis/generated/pandas.DataFrame.plot.kde.html>
+- <http://pandas.pydata.org/pandas-docs/version/0.23/generated/pandas.Series.plot.kde.html>
 
 Before the sprint, it's recommended to:
 
