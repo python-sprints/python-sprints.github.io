@@ -5,7 +5,7 @@ level: "All"
 time: "18:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/255191480/
 project:
-sponsor: Monzo
+sponsor: monzo
 ---
 
 The London Python sprints group started a year ago, and since then we
