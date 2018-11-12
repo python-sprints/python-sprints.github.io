@@ -112,7 +112,7 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
 * Activate the new conda environment: ::
 
-    source activate pandas_dev
+    source activate pandas-dev
 
 
 4. Compile C code in pandas
