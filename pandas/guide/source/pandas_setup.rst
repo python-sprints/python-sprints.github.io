@@ -104,7 +104,7 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
 * Create a conda environment: ::
 
-    conda env create -n pandas_dev -f <path-to-pandas-dir>/environment.yaml
+    conda env create
 
   .. note::
     **Windows users**: If you're copy-pasting the path, replace all pasted
