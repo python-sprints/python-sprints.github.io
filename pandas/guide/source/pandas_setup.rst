@@ -106,10 +106,6 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
     conda env create
 
-  .. note::
-    **Windows users**: If you're copy-pasting the path, replace all pasted
-    ``\`` characters with ``/`` for the command to work.
-
 * Activate the new conda environment: ::
 
     source activate pandas-dev
