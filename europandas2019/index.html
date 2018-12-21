@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1635939-27"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-1635939-27');
+	</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Pandas documentation sprint</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript">
+        var chapters = [
+            {"sponsor_image": "oakam.png",
+             "sponsor_url": "https://www.oakam.com/",
+             "address": "Oakam<br/>3rd floor, 31 Great Titchfield St<br/>London, W1W 7PA",
+             "lat": 51.5175111,
+             "lng": -0.1425433},
+         ];
+    </script>
+    <style type="text/css">
+        #bio_ep {
+            height: 300px;
+            padding: 30px 50px;
+        }
+        #bio_ep p {
+            margin-bottom: 10px;
+        }
+        #bio_ep .note {
+            color: #808080;
+        }
+        #bio_ep .main {
+            font-weight: bold;
+        }
+        #bio_ep .links {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        #bio_ep a.footnote {
+            color: #808080;
+        }
+		#bio_ep a.button, #donate-box-inner a.button {
+            margin-top: 30px;
+			-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+			box-shadow:inset 0px 1px 0px 0px #f5978e;
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+			background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+			background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+			background-color:#f24537;
+			-moz-border-radius:6px;
+			-webkit-border-radius:6px;
+			border-radius:6px;
+			border:1px solid #d02718;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:15px;
+			font-weight:bold;
+			padding:6px 24px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #810e05;
+		}
+		#bio_ep a.button:hover, #donate-box-inner a.button:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+			background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+			background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+			background-color:#c62d1f;
+		}
+		#bio_ep a.button:active, #donate-box-inner a.button:active {
+			position:relative;
+			top:1px;
+		}
+        #bio_ep_close {
+            margin: -38px 0 0 -12px;
+        }
+    </style>
+    <script type="text/javascript" src="assets/js/bioep.min.js"></script>
+    <script type="text/javascript">
+        var popup = '<p class="note">before you leave...</p>';
+        popup += '<p><img alt="" src="assets/images/pandas_logo_donation.png"/>';
+        popup += '<p class="main">You can contribute to make pandas better, even if you can\'t join the sprint.</p>';
+        popup += '<p class="links"><a class="button" href="https://www.flipcause.com/secure/cause_pdetails/MzA3OA==">DONATE TO PANDAS NOW</a></p>';
+        popup += '<p class="links"><a class="footnote" href="http://pandas.pydata.org/donate.html">More info</a></p>';
+        bioEp.init({
+            html: popup,
+            css: '',
+            cookieExp: 0,
+            delay: 1
+        });
+    </script>
+</head>
+<body data-spy="scroll" data-target="#site-nav">
+    <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- logo -->
+                <div class="site-branding">
+                    <a class="logo" href="index.html">
+
+                        <!-- logo image  -->
+                        <img src="assets/images/pandas_logo.png" alt="Logo">
+
+                    </a>
+                </div>
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-items" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div><!-- /.navbar-header -->
+
+            <div class="collapse navbar-collapse" id="navbar-items">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <!-- navigation menu -->
+                    <li class="active"><a data-scroll href="#about">About</a></li>
+                    <li><a data-scroll href="#schedule">Schedule</a></li>
+                    <li><a data-scroll href="#location">Location</a></li>
+                    <li><a data-scroll href="#partner">Supporters</a></li>
+                    <li><a data-scroll href="#register">Register</a></li>
+
+                </ul>
+            </div>
+        </div><!-- /.container -->
+    </nav>
+
+    <header id="site-header" class="site-header valign-center">
+        <div class="intro">
+
+            <h2>Jan 25-27, 2019</h2>
+
+            <h1 style="font-size: 48px;">European pandas summit</h1>
+
+			<p id="countdown"></p>
+			<script>
+			var countDownDate = new Date("Jan 25, 2019 16:00:00").getTime();
+
+			var x = setInterval(function() {
+			  var now = new Date().getTime();
+			  var distance = countDownDate - now;
+			  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			  document.getElementById("countdown").innerHTML = "" + days + " DAYS " + hours + " HOURS "
+			  + minutes + " MINUTES " + seconds + " SECONDS ";
+
+			  if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo").innerHTML = "";
+			  }
+			}, 1000);
+			</script>
+
+            <a class="btn btn-white" data-scroll href="#register">Join Now</a>
+
+        </div>
+    </header>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <h3 class="section-title">About the event</h3>
+                    <p>
+                        <a href="http://pandas.pydata.org/">pandas</a> is an open source Python library for data manipulation and analysis.
+                        Its popularity is skyrocketing, and it is becoming the de-facto standard for data science and data engineering.
+                    </p>
+                    <p>
+                        Like most free software projects, pandas is developed by volunteers world wide. Often, 
+                        This is why we are organizing a worldwide sprint, in which we plan to leave the
+                        API documentation for the Series and DataFrame classes in a perfect state.
+                    </p>
+
+                    <h4>Useful information</h4>
+
+                    <ul class="list-arrow-right">
+                        <li>
+                            Be respectful, no form of harassment or discrimination is tolerated
+                            <ul><li style="list-style-type: none;">Read the full <a href="https://pydata.org/code-of-conduct.html">Code of conduct</a></li></ul>
+                        </li>
+                        <li>If possible, arrive 15 minutes before the event, to allow time for registration</li>
+                        <li>Bring a photo id (name must match the provided for registration)</li>
+                        <li>For the sprints, bring your own laptop, with a pandas development environment set up</li>
+                        <li>Discuss on the <a href="https://gitter.im/py-sprints/europandas2019">Gitter channel</a></li>
+                        <li>
+                            Share your experience and photos in social media
+                            <ul><li style="list-style-type: none;">Use hashtag <b>#europandas2019</b></li></ul>
+                        </li>
+                        <li>Thank <a href="https://www.oakam.com">Oakam</a>, our sponsor, for making this event possible</li>
+                    </ul>
+
+                </div><!-- /.col-sm-6 -->
+
+                <div class="col-sm-6">
+
+                    <h3 class="section-title multiple-title">Who is this event for?</h3>
+
+                    <p>
+                        In short: <b>for anyone interested in making pandas and its ecosystem better</b>. This includes:
+                    </p>
+
+                    <ul class="list-arrow-right">
+                        <li>The pandas <b>core development team</b></li>
+                        <li><b>Contributors</b> to pandas</li>
+                        <li>Contributors to <b>other open source projects</b> of the ecosystem</li>
+                        <li><b>Sponsors and donors</b> of <a href="https://numfocus.org/">NumFOCUS</a> and <a href="https://pydata.org/">PyData</a> conferences</li>
+                        <li>Anyone else interested in making pandas or related open source tools better</li>
+                    </ul>
+
+                    <p>
+                        We have limited space, and while we would like to welcome everyone to the event, we will give priority to
+                        the members of the previous categories.
+                    </p>
+
+                    <figure>
+                        <img alt="" class="img-responsive" src="assets/images/about-us.jpg">
+                    </figure>
+
+                    <p>You can make pandas better, even if you can't join the sprint...</p>
+                    <div id="donate-box-outer">
+                        <div id="donate-box-inner">
+                            <p><img alt="" src="assets/images/pandas_logo_donation.png"/>
+                            <p><a class="button" href="https://www.flipcause.com/secure/cause_pdetails/MzA3OA==">MAKE A DONATION</a></p>
+                            <p><a class="footnote" href="http://pandas.pydata.org/donate.html">More info</a></p>
+                        </div>
+                    </div>
+
+                </div><!-- /.col-sm-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
+
+    <section id="schedule" class="section bg-image-1 facts text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p style="color: white; text-shadow: 1px 1px black;">Friday sessions:</p>
+
+                    <style type="text/css">
+                        #schedule th {
+                            background-color: #dadaea;
+                            text-align: center;
+                        }
+                        #schedule td {
+                            background-color: #fafaff;
+                            text-align: left;
+                        }
+                        #schedule td.center {
+                            text-align: center;
+                        }
+                    </style>
+                    <table id="schedule" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Time</th>
+                                <th scope="col">Talk</th>
+                                <th scope="col">Speaker</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4pm - 4:20pm</td>
+                                <td colspan="2" class="center">Opening notes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4:20pm - 5pm</td>
+                                <td>TBC</td>
+                                <td><a href="https://pietrobattiston.it/">Pietro Battiston</a>, pandas core developer</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5pm - 5:40pm</td>
+                                <td>TBC</td>
+                                <td><a href="https://jorisvandenbossche.github.io/">Joris Van den Bossche</a>, pandas core developer</td>
+                            </tr>
+                            <tr class="bg-secondary">
+                                <th scope="row">5:40pm - 6:20pm</td>
+                                <td colspan="2" class="center">Break</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6:20pm - 7pm</td>
+                                <td>Open source and pandas sustainability panel</td>
+                                <td>
+                                    TBC 1<br/>
+                                    TBC 2<br/>
+                                    TBC 3<br/>
+                                    <span style="margin-left: 20px; font-style: italic;">Moderated by TBC</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6:20pm - 7pm</td>
+                                <td>An update on the pandas documentation</td>
+                                <td><a href="http://datapythonista.github.io/">Marc Garcia</a>, pandas core developer</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7pm - 8pm</td>
+                                <td colspan="2" class="center">Lightning talks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p style="color: white; text-shadow: 1px 1px black;">Saturday and Sunday: 10am to 6pm</p>
+
+                </div>
+            </div><!-- row -->
+        </div><!-- container -->
+    </section>
+
+    <section id="location" class="section location">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 class="section-title">Location</h3>
+                    <address>
+                        <p>
+                            All the events will take place at Oakam's offices in Central London,
+                            located 5 minutes walk distance from Oxford circus station.
+                        </p>
+
+                        <p>
+                            <b>Oakam</b><br/>
+                            3rd floor, 31 Great Titchfield St<br/>
+                            London W1W 7PA<br/>
+                            United Kingdom
+                        </p>
+
+                        <p>
+                            Thanks <a href="https://www.oakam.com/">Oakam</a> for supporting our event and making it possible.
+                        </p>
+                        <p>
+                            <a href="https://www.oakam.com/">
+                                <img alt="" src="assets/images/partner/partner-1.png" style="height: 40px;"/>
+                            </a>
+                        </p>
+                    </address>
+                </div>
+                <div class="col-sm-9">
+					<div id="map" style="height: 450px; width: 100%;"></div>
+					<script>
+					  function initMap() {
+                        var infowindow=new google.maps.InfoWindow();
+
+						var map = new google.maps.Map(document.getElementById('map'), {
+						  zoom: 12,
+						  center: {lat: 51.5137197, lng: -0.0983099}
+						});
+
+                        for (i=0; i < chapters.length; i++) {
+                            var desc = chapters[i]['address'] + '</br>';
+                            if (chapters[i]['sponsor_image'] != '') {
+                                desc += '<br/>Thanks:<br/>';
+                                desc += '<a href="' + chapters[i]['sponsor_url'] + '"><img style="width: 120px;" alt="" src="assets/images/sponsors/' + chapters[i]['sponsor_image'] + '"/></a><br/>';
+                            }
+                            var marker = new google.maps.Marker({
+                              title: chapters[i]["title"],
+                              html: desc,
+                              position: {lat: chapters[i]["lat"],
+                                         lng: chapters[i]["lng"]},
+                              map: map
+                            });
+                            google.maps.event.addListener(
+                                marker,
+                                'click',
+                                function(){
+                                    infowindow.setContent(this.html);
+                                    infowindow.open(map,this);
+                                }
+                            );
+                        }
+
+					  }
+					</script>
+                    <script async defer with="100%" height="450px"
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+                      </script>
+<!--
+                    Development:
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDllwG8TO76Hs8sk5eCC_OLGq66tG5BjbQ&callback=initMap">
+                    Production:
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0NCzoIqGkYFdpRl-LmgWTKpxPBkqxxO0&callback=initMap">
+-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="partner" class="section partner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">With the support of</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="partner-box partner-box-big partner-box-1" href="https://www.oakam.com/"></a>
+                </div>
+                <div class="col-sm-6">
+                    <a class="partner-box partner-box-big partner-box-2" href="https://www.numfocus.org/"></a>
+                </div>
+            </div>
+            <!--
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-5" href=""></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-6" href=""></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-7" href=""></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-8" href=""></a>
+                </div>
+            </div>
+            -->
+            </div>
+    </section>
+
+    <section id="register" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Registration</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Registration will open soon.</p>
+                </div>
+            </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="site-info" style="font-size: 10px;">Template by <a href="http://technextit.com">Technext Limited</a></p>
+                    <ul class="social-block">
+                        <li><a href="https://twitter.com/pandas_dev/"><i class="ion-social-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
