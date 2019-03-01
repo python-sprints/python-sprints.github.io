@@ -1,12 +1,14 @@
 ---
 category: "london"
-title: "Data science project from scratch (gender minorities)"
+title: "!!! CANCELLED !!! Data science project from scratch (gender minorities)"
 level: "All"
 time: "18:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/259061495/
 project:
-sponsor: oakam
+sponsor:
 ---
+
+**This event has been cancelled, for reasons out of our control. Sorry for the inconvenience.**
 
 This sprint will have a new format, in which instead of working on an existing open source project,
 we will create a new one from zero. This should make it easier to understand all the different
@@ -28,7 +30,7 @@ Agenda
 ------
 
 - 6pm: Food and networking
-- 6:30pm: Oakam presentation
+- 6:30pm: Sponsor presentation
 - 6:35pm: Discussion about the project to solve and design of the API
 - 7pm: Split in groups and start coding
 - 9pm: Retrospective presentations
