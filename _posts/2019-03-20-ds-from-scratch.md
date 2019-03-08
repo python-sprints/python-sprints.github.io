@@ -3,7 +3,7 @@ category: "london"
 title: "Data science project from scratch (gender minorities)"
 level: "All"
 time: "18:00"
-rsvp_link: https://www.meetup.com/Python-Sprints/events/XXX/
+rsvp_link: https://www.meetup.com/Python-Sprints/events/259593360/
 project:
 sponsor: jpmorgan
 ---
