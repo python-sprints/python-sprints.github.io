@@ -29,7 +29,7 @@ Agenda
 
 - 6pm: Food and networking
 - 6:30pm: Sponsor presentation
-- 6:35pm: Discussion about the project to solve and design of the API
+- 6:35pm: Presentation on programming principles, API design, and the topic of the sprint
 - 7pm: Split in groups and start coding
 - 9pm: Retrospective presentations
 
