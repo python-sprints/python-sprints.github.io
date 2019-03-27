@@ -3,7 +3,7 @@ obj_id: lyst
 name: "Lyst"
 logo: static/images/sponsors/lyst.jpg
 link: https://www.lyst.com/careers/
-address: "7th Floor, The Minster Building, 21 Mincing Lane, London, EC3R 7AG
+address: "7th Floor, The Minster Building, 21 Mincing Lane, London, EC3R 7AG"
 lat: 51.5114488
 lng: -0.0820042
 ---
