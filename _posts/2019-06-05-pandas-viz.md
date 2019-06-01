@@ -49,6 +49,12 @@ In this sprint we will continue the work, by working on different tasks:
 - Porting existing libraries to the new plotting API
 - Document current pandas functionality
 
+We also can work on other pandas issues, for example:
+- https://github.com/pandas-dev/pandas/issues/26601
+- https://github.com/pandas-dev/pandas/issues/24173 / https://github.com/pandas-dev/pandas/issues/24661
+- https://github.com/pandas-dev/pandas/issues/24507
+- Feel free to propose yours
+
 As usual, we will give priority to join the sprint to the next people:
 
 - Experienced open source contributors
