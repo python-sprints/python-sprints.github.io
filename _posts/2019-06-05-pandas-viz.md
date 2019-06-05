@@ -54,6 +54,7 @@ We also can work on other pandas issues, for example:
 - Documentation warnings: <https://github.com/pandas-dev/pandas/issues/24173> / <https://github.com/pandas-dev/pandas/issues/24661>
 - PandasArray in API docs: <https://github.com/pandas-dev/pandas/issues/24507>
 - pyarrow failure: <https://github.com/pandas-dev/pandas/issues/26656>
+- Organise dependencies: <https://github.com/pandas-dev/pandas/issues/26659>
 - Feel free to propose yours
 
 As usual, we will give priority to join the sprint to the next people:
