@@ -50,9 +50,10 @@ In this sprint we will continue the work, by working on different tasks:
 - Document current pandas functionality
 
 We also can work on other pandas issues, for example:
-- https://github.com/pandas-dev/pandas/issues/26601
-- https://github.com/pandas-dev/pandas/issues/24173 / https://github.com/pandas-dev/pandas/issues/24661
-- https://github.com/pandas-dev/pandas/issues/24507
+- pytest-azurepipelines: <https://github.com/pandas-dev/pandas/issues/26601>
+- Documentation warnings: <https://github.com/pandas-dev/pandas/issues/24173> / <https://github.com/pandas-dev/pandas/issues/24661>
+- PandasArray in API docs: <https://github.com/pandas-dev/pandas/issues/24507>
+- pyarrow failure: <https://github.com/pandas-dev/pandas/issues/26656>
 - Feel free to propose yours
 
 As usual, we will give priority to join the sprint to the next people:
