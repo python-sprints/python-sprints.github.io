@@ -104,7 +104,7 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
 * Create a conda environment: ::
 
-    conda env create -n pandas_dev -f <path-to-pandas-dir>/ci/environment-dev.yaml
+    conda env create -n pandas_dev -f <path-to-pandas-dir>/environment.yaml
 
   .. note::
     **Windows users**: If you're copy-pasting the path, replace all pasted
@@ -116,7 +116,7 @@ To fetch the latest updates from the pandas repository, follow the steps in
 
 * Install pandas development dependencies: ::
 
-    conda install -c defaults -c conda-forge --file=<path-to-pandas-dir>/ci/requirements-optional-conda.txt
+    conda install -c defaults -c conda-forge --file=<path-to-pandas-dir>/requirements-dev.txt
 
 4. Compile C code in pandas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
