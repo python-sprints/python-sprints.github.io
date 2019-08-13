@@ -3,7 +3,7 @@ obj_id: deliveroo
 name: "Deliveroo"
 logo: static/images/sponsors/deliveroo.png
 link: https://deliveroo.co.uk/
-address: "1 Cousin Ln, EC4R 3XJ"
+address: "1 Cousin Ln<br/>London, EC4R 3XJ, UK"
 lat: 51.5101095
 lng: -0.0932817
 ---
