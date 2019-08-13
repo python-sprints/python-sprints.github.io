@@ -13,4 +13,4 @@ and since then they have grown their offering to over 200 cities world wide. A b
 they do is driven through great software and a fantastic data team. A lot of this is build on open source
 software and they are excited to give something back to the community.
 
-Check out their engineering blog: [https://deliveroo.engineering/](https://deliveroo.engineering/)
+Check out their engineering blog: <a href="https://deliveroo.engineering/">https://deliveroo.engineering/</a>
