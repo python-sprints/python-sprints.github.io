@@ -26,9 +26,9 @@ The **PyPastry** sprint will be lead by Doug, its author, and we will work on di
 For the **Telegram bot**, we will create a bot to help us with our new channel. Any idea is welcome,
 but some of the things we can work on are:
 
-- Implement a `/next-event` command, to get the link to the next scheduled event in `/_post`
-- Implement a `/next-event-location` to get the geolocation of the event in `/_post`
-- Implement a `/check-events` to check if there is a new event or any updates in `/_post` using git diff
+- Implement a `/next-event` command, to get the link to the next scheduled event in `/_posts`
+- Implement a `/next-event-location` to get the geolocation of the event in `/_posts`
+- Implement a `/check-events` to check if there is a new event or any updates in `/_posts` using git diff
 - Implement a `/send-telegram-message` to be able to send a message to telegram (this will need a telegram API key)
 - Implement CI to check for new events or updates to events and to send information to the telegram group
 - Implement a NLP system able to identify spam, rude or abusive messages, commercial messages like job postings...
