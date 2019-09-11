@@ -33,6 +33,7 @@ but some of the things we can work on are:
 - Implement CI to check for new events or updates to events and to send information to the telegram group
 - Implement a NLP system able to identify spam, rude or abusive messages, commercial messages like job postings...
   and automatically block people in the channel posting those (this will need a telegram API key)
+- Implement a reminder service to remind about upcoming events 5 days before then 1 day before but may need a server for this?
 - ...
 
 Agenda
