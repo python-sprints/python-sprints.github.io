@@ -13,7 +13,7 @@ In this event we will host two sprints:
 - [PyPastry](https://github.com/datapastry/pypastry/), a machine learning framework
 - A [Telegram](https://telegram.org/) bot, for our new [channel](https://t.me/py_sprints)
 
-The **PyPastry** sprint will be lead by Doug, its author, and we will work on different issues:
+The **PyPastry** sprint will be lead by Daoud, its author, and we will work on different issues:
 
 - Add new features
 - Improve the test suite
