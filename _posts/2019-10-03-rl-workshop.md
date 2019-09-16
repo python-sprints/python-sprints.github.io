@@ -3,7 +3,7 @@ category: "london"
 title: "Step into the AI Era: Deep Reinforcement Learning Workshop"
 level: "All"
 time: "18:00"
-rsvp_link: https://www.meetup.com/Python-Sprints/events/262426168/
+rsvp_link: https://www.meetup.com/Python-Sprints/events/264899357/
 project:
 sponsor: ecom
 ---
