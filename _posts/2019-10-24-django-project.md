@@ -12,7 +12,7 @@ This time we will have Django project sprint. What does it means? It means that 
 
 Like all other sprints, we will be working in groups to contribute, it will be a dojo this time so if you have a project that you are working/ want to work on, as long as it is Django related, bring it! If you have no idea/ have not work in a Django project before, you can join the others to contribute.
 
-This year in October, you will only need to make 4 pull requests to win the Hacktoberfest challenge (Free T-shirt!), make sure to sign up if you have not done so: https://hacktoberfest.digitalocean.com/
+This year in October, you will only need to make 4 pull requests to win the Hacktoberfest challenge (Free T-shirt!), make sure to sign up if you have not done so: [https://hacktoberfest.digitalocean.com/](https://hacktoberfest.digitalocean.com/)
 
 As usual, we will give priority to join the sprint to the people who:
 
