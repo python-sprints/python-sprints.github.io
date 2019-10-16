@@ -3,12 +3,12 @@ category: "london"
 title: "Open Source Beginner’s Bootcamp"
 level: "All"
 time: "18:00"
-rsvp_link: https://www.meetup.com/Python-Sprints/events/265471545/
+rsvp_link: https://www.meetup.com/Python-Sprints/events/265709344/
 project:
 sponsor: man
 ---
 
-I am sure you are excited about the [Open Source Hackathon](https://www.man.com/hackathon2019) on 2 Nov 2019. To help everyone warm up and ready to go, we have organized a beginner's bootcamp for people who have not contributed to open-source before to come and make your first pull request (PR).
+I am sure you are excited about the [Open Source Hackathon](https://www.man.com/hackathon2019) on 2nd Nov 2019. To help everyone warm up and ready to go, we have organized a beginner's bootcamp for people who have not contributed to open-source before to come and make your first pull request (PR).
 
 Though this event is designed for beginners who will be attending the hackathon, it is **not limited** to those. Anyone who would like to make the PR for the first time, even not going to the hackathon you are also welcome. For non-beginner hackathon participants, you are also welcome to help mentoring others or social with other participants and talk about what you want to contribute in the hackathon.
 
