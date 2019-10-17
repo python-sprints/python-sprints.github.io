@@ -4,7 +4,7 @@ title: "Django Project Sprint for Hacktoberfest"
 level: "All"
 time: "18:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/265471545/
-project:
+project: django
 sponsor: ecom
 ---
 
