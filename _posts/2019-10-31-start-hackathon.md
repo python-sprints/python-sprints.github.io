@@ -4,7 +4,7 @@ title: "Open Source Beginner’s Bootcamp"
 level: "All"
 time: "18:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/265709344/
-project: None
+project:
 sponsor: man
 ---
 
