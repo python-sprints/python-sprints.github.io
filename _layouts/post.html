@@ -30,7 +30,7 @@
                                 </div>
                             {% endif %}
 
-                            {% if project.name is defined %}
+                            {% if project.name is not none %}
                                 {% if project.logo %}
                                     <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
                                 {% endif %}
