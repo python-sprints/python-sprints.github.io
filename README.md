@@ -32,7 +32,7 @@ Send a pull request adding a new file `_chapters/<your-chapter-name>.md`, where
 separating words with underscore (e.g. `london_pyton_sprints`).
 
 The content of the file has a header section with some fields (started and finished with
----), and the main description of the chapter afterwards. 
+---), and the main description of the chapter afterwards.
 We are using markdown files to store your data and they can contain either markdown tags for text formatting or pure html - it is up to you how to style your content.<br>
 The image that will represent your chapter should be in jpeg format. The size the content is optimized for is: 1920 x 600 px.
 Please name it <your_chapter_name_1920x600px.jpg>.
@@ -52,10 +52,10 @@ This is the format:
         - <second-sponsor-id-to-be-listed-in-your-page>
         - <feel-free-to-add-as-many-as-you-want>
     ---
-    
+
     Here you can add any information about your group. How it started, which are the goals,
     what people can expect from it.
-    
+
     This is a good time to remind you, that no sort of discrimination (gender, religion,
     age, sexual orientation...) is tolerated in the Python sprints (or in the Python
     community in general). And as an organizer you must not allow any sort of harassment
@@ -110,13 +110,13 @@ The content of the file has a header section with some fields (started and finis
     project: <id-of-the-project-you-will-work-on>
     sponsor: <id-of-the-sponsor-for-the-event>
     ---
-    
+
     This space is the main description of the event, where you can provide further details.
-    
-    Note that you don't need to add information about the project, as the description of the
+
+    Note that you don't need to add information about the project if it already exists in the `_projects` folder, as the description of the
     project, the logo, and the environment set up instructions should be rendered automatically
-    after specifying the id of the project.
-    
+    after specifying the id of the project. If the project has not been added yet, you will need to add it before calling it here. If the event is not related to a specific project, you can leave the `<id-of-the-project-you-will-work-on>` blank.
+
     Also, by specifying the id of the sponsor, a box with its information will appear.
 
 Example event setup
@@ -131,16 +131,16 @@ Example event setup
     sponsor: harvey_nash
     ---
     The content of your event's description goes below ---.
-    
+
 You may want to copy one of the last events in `_posts` to be used as reference.
 
 How to add a sponsor
 --------------------
-If you need to add your local sponsor which is not already in the _sponsors folder you can do so easily.<br>
+If you need to add your local sponsor which is not already in the `_sponsors` folder you can do so easily.<br>
 To add a sponsor logo please copy it to the static/images/sponsors folder with a name matching the obj_id of your sponsor.
-We use png files for our sponsors. The maximum size is: 258px x 82px so please scale them down to match one of those dimensions.
+We use png files for our sponsors. The maximum size is: 258px x 82px so please scale them down to match one of those dimensions. The logo width is: 150px, if a logo having width smaller than that will be stretch to match the logo width.
 
-Create an <name_of_your_sponsor>.md file using the format below:
+Create a <name_of_your_sponsor>.md file using the format below:
 
     ---
     obj_id: <unique_identifier_of_your_sponsor>
@@ -152,7 +152,7 @@ Create an <name_of_your_sponsor>.md file using the format below:
     lng: <float-number-with-longitude-for-the-marker-in-the-map>
     ---
     Here you can place a short description of your sponsor's business etc.
-    
+
 Example sponsor setup
 ---------------------
     ---
@@ -165,6 +165,43 @@ Example sponsor setup
     lng: -0.130718
     ---
     QuantumBlack is an advanced analytics firm operating at the intersection of strategy, technology & design to improve performance outcomes for organisations. With roots in Formula One, we now work across sector with some of the world's leading organisations in advanced industries, healthcare and finance.
+
+How to add a project
+--------------------
+If you the project that you are going to work on is not already in the `_projects` folder you can do add it easily.<br>
+To add a project logo please copy it to the static/images/projects folder.
+We use png files for projects.
+
+Create a <name_of_your_project>.md file using the format below:
+
+    ---
+    obj_id: <unique_identifier_of_your_project>
+    name: "name of your project"
+    logo: <relative path to your project logo>
+    website: <website link to your project>
+    setup_html: |
+        <p>
+            <!-- (link to) instruction of how to setup in html format -->
+        </p>
+    ---
+    Here you can place a short description of your project.
+
+Example project setup
+---------------------
+    ---
+    obj_id: pandas
+    name: "Pandas"
+    logo: static/images/projects/pandas_logo_donation.png
+    website: https://pandas.pydata.org/
+    setup_html: |
+        <p>
+            Please follow the instruction in this link:
+            <a href="https://python-sprints.github.io/pandas/guide/index.html">
+                https://python-sprints.github.io/pandas/guide/index.html
+            </a>
+        </p>
+    ---
+    Pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 
 
 How does Jekyll work?
