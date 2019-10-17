@@ -31,7 +31,7 @@
                             {% endif %}
 
                             {% if project.name != "None" %}
-                                {% if project.logo %}
+                                {% if project.logo != "None" %}
                                     <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
                                 {% endif %}
                                 <p>{{ project.content }}</p>
