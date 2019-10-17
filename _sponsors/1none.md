@@ -1,9 +1,9 @@
 ---
 obj_id: 1none
-name: "None"
-logo: "None"
-link: "None"
-address: "None"
+name: ""
+logo: ""
+link: ""
+address: ""
 lat:
 lng:
 ---
