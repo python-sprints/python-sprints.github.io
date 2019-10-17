@@ -1,14 +1,9 @@
 ---
 obj_id: None
 name: "None"
-logo: static/images/projects/django-logo-positive.png
-website: https://www.djangoproject.com/
+logo: static/images/site_logo/python_sprints_logo_triangles_flat_light_text_502x100px.png
+website: https://python-sprints.github.io
 setup_html: |
-    <p>
-        Please follow the instruction in this link:
-        <a href="https://docs.djangoproject.com/en/dev/internals/contributing/">
-            https://docs.djangoproject.com/en/dev/internals/contributing/
-        </a>
-    </p>
+    <p></p>
 ---
-<boilerplate for project None>
+< boilerplate for project None >
