@@ -18,7 +18,7 @@
                             <h2>{{ page.title }}</h2>
                             <p>{{ page.content }}</p>
 
-                            {% if sponsor.name != "None" %}
+                            {% if sponsor.name != "" %}
                                 <div class="infobox post__sponsor-box">
                                     <a href="{{ sponsor.link }}">
                                         <img class="post__sponsor-img"
@@ -30,8 +30,8 @@
                                 </div>
                             {% endif %}
 
-                            {% if project.name != "None" %}
-                                {% if project.logo != "None" %}
+                            {% if project.name != "" %}
+                                {% if project.logo != "" %}
                                     <img class="post__project-logo" src="{{ site.baseurl }}/{{ project.logo }}">
                                 {% endif %}
                                 <p>{{ project.content }}</p>
