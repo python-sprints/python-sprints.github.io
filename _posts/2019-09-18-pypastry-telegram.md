@@ -4,7 +4,7 @@ title: "PyPastry and Telegram bot"
 level: "All levels"
 time: "18:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/264752369/
-project: none
+project:
 sponsor: iwoca
 ---
 
