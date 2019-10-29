@@ -5,7 +5,7 @@ level: "All"
 time: "18:00"
 rsvp_link: https://www.meetup.com/Python-Sprints/events/265471545/
 project: django
-sponsor: ecom
+sponsor:
 ---
 
 This time we will have Django project sprint. What does it means? It means that we will be working on Django or Django related projects. Projects which use Django and tutorials about Django are also included!
