@@ -1,7 +1,7 @@
 ---
 obj_id: kedro
 name: "Kedro"
-logo: static/images/projects/kedro.jpg
+logo: static/images/projects/kedro.png
 website: https://kedro.readthedocs.io/
 setup_html: |
     <p>
