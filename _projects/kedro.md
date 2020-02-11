@@ -11,4 +11,6 @@ setup_html: |
         </a>
     </p>
 ---
-Kedro is an open source development workflow tool that helps structure reproducible, scaleable, deployable, robust and versioned data pipelines. It is applicable to a wide range of projects, from single user projects running on a local environment, when you want to have an organised way of working, to enterprise-level team projects, when your team needs to work in a structured way and reduce the effort required to take machine learning models into the production environment.
+Kedro is a development workflow framework that implements software engineering best-practice for data pipelines with an eye towards productionising machine learning models. Kedro is built upon our collective best-practice (and mistakes) trying to deliver real-world ML applications that have vast amounts of dirty data.
+
+It helps structure reproducible, scalable, deployable, robust and versioned data and machine learning pipelines. It is applicable to a wide range of projects, from single user projects running on a local environment, when you want to have an organised way of working, to enterprise-level team projects, when your team needs to work in a structured way and reduce the effort required to take machine learning models into the production environment.
