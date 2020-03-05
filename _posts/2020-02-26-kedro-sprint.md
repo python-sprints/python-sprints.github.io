@@ -3,7 +3,7 @@ category: "london"
 title: "Kedro Sprint (ALL Levels)"
 level: "All"
 time: "18:30"
-meetup_link: https://www.meetup.com/Python-Sprints/events/268626187/
+rsvp_link: https://www.meetup.com/Python-Sprints/events/268626187/
 event_link:
 project: kedro
 image:
