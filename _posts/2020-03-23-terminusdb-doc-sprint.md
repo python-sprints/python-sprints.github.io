@@ -3,7 +3,7 @@ category: "london"
 title: "TerminusDB Documentation + Django DRF API Tracking"
 level: "All"
 time: "18:30"
-meetup_link: https://www.meetup.com/Python-Sprints/events/269207483/
+rsvp_link: https://www.meetup.com/Python-Sprints/events/269207483/
 event_link:
 project: terminusdb
 image:
