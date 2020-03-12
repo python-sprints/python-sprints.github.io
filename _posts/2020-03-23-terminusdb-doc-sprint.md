@@ -10,6 +10,14 @@ image:
 sponsor: decibel
 ---
 
+**IMPORTANT UPDATE: About #COVID19**
+
+As the situation evolved and we have the safety of the participants in mind, this sprint will be FULL REMOTE.
+
+Just join the Zoom (https://zoom.us/j/882305838) and chat room (https://gitter.im/py-sprints/sprint-2020-03-23) for participation.
+
+------------------
+
 We won't let the virus stop us from contribute to open-source (actually what is better than contributing when you are stying at home)?
 
 In this sprint, we are lucky to have Decibel hosting us, we will also be **streaming the presentation** by the maintainers via Zoom ([Join here](https://zoom.us/j/882305838)) and have a **chat room** at Gitter ([Join here](https://gitter.im/py-sprints/sprint-2020-03-23)) so you can either come to join us or sprint at home.
