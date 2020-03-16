@@ -14,13 +14,11 @@ sponsor: decibel
 
 As the situation evolved and we have the safety of the participants in mind, this sprint will be FULL REMOTE.
 
-Just join the Zoom (https://zoom.us/j/882305838) and chat room (https://gitter.im/py-sprints/sprint-2020-03-23) for participation.
+Just join the [Zoom](https://zoom.us/j/882305838) for participation and [Discord server](https://discord.gg/JJM5S2x) for chat and collaboration.
 
 ------------------
 
 We won't let the virus stop us from contribute to open-source (actually what is better than contributing when you are stying at home)?
-
-In this sprint, we are lucky to have Decibel hosting us, we will also be **streaming the presentation** by the maintainers via Zoom ([Join here](https://zoom.us/j/882305838)) and have a **chat room** at Gitter ([Join here](https://gitter.im/py-sprints/sprint-2020-03-23)) so you can either come to join us or sprint at home.
 
 We have 2 projects at this sprint:
 
@@ -57,22 +55,21 @@ As usual, we will give priority to join the sprint to the people who:
 
 There is **no limit** on remote participation.
 
-Agenda
+Agenda **Revised**
 ------
 
-- 6:30pm: Networking, drinks and food
-- 7:00pm: Sponsor presentation, project presentations and team creation (Zoom starts here)
-- 7:20pm: Coding
-- 8:45pm: Group presentations
-- 9pm: End of the event, or pub
+- 6:30pm: Community announcements, project presentations and team creation (Zoom streaming starts here https://zoom.us/j/882305838)
+- 7:00pm: Coding (Join Discord server for collaborating: https://discord.gg/JJM5S2x)
+- 8:45pm: Group presentations (Re-group at zoom meeting: [https://zoom.us/j/954512731](https://zoom.us/j/954512731))
+- 9pm: End of the event, no pub, stay at home for safety
 
 
-The day of the sprint
+To prepare for the sprint
 ---------------------
 
-- Bring your own laptop if you can
-- Join the [Gitter channel](https://gitter.im/py-sprints/sprint-2020-03-23) of the sprint
-- Join the [Telegram group](https://t.me/py_sprints) for the update and community news of Python Sprint
+- Register for Zoom account (optional) and familiarise yourself with Zoom.
+- Join the [Discord server](https://discord.gg/JJM5S2x) of the sprint and familiarise yourself with Discord
+- Join the [Telegram group](https://t.me/py_sprints) for the update and community news of Python Sprint (optional)
 
 Code of Conduct
 ---------------
