@@ -14,7 +14,7 @@ sponsor: decibel
 
 As the situation evolved and we have the safety of the participants in mind, this sprint will be FULL REMOTE.
 
-Just join the [Zoom](https://zoom.us/j/882305838) for participation and [Discord server](https://discord.gg/JJM5S2x) for chat and collaboration.
+Just join the [Zoom](https://zoom.us/j/882305838) for participation and [Discord server](https://discord.gg/kfsVBB6) for chat and collaboration.
 
 ------------------
 
@@ -59,7 +59,7 @@ Agenda **Revised**
 ------
 
 - 6:30pm: Community announcements, project presentations and team creation (Zoom streaming starts here https://zoom.us/j/882305838)
-- 7:00pm: Coding (Join Discord server for collaborating: https://discord.gg/JJM5S2x)
+- 7:00pm: Coding (Join Discord server for collaborating: https://discord.gg/kfsVBB6)
 - 8:45pm: Group presentations (Re-group at zoom meeting: [https://zoom.us/j/954512731](https://zoom.us/j/954512731))
 - 9pm: End of the event, no pub, stay at home for safety
 
@@ -68,7 +68,7 @@ To prepare for the sprint
 ---------------------
 
 - Register for Zoom account (optional) and familiarise yourself with Zoom.
-- Join the [Discord server](https://discord.gg/JJM5S2x) of the sprint and familiarise yourself with Discord
+- Join the [Discord server](https://discord.gg/kfsVBB6) of the sprint and familiarise yourself with Discord
 - Join the [Telegram group](https://t.me/py_sprints) for the update and community news of Python Sprint (optional)
 
 Code of Conduct
