@@ -12,7 +12,7 @@ sponsor: scigility
 
 Welcome to the first sprint of Python Sprints Zürich!
 
-In our first meetup, we'll have the opportunity to contribute to `scikit-learn`, one of the [most popular](https://www.kaggle.com/kaggle-survey-2022) open-source libraries for machine learning!
+In our first meetup, we'll have the opportunity to contribute to [`scikit-learn`](https://scikit-learn.org), one of the [most popular](https://www.kaggle.com/kaggle-survey-2022) open-source libraries for machine learning!
 
 We'll have core developers from scikit-learn leading the sprint. As always, we welcome new contributors. For beginners in open-source, we will have a beginners' table where you can make your first pull request on GitHub.
 
@@ -20,6 +20,11 @@ Please read the details below for more info on how to prepare for the event and 
 
 This event has **limited seats** and may have a **waiting list**. If you're confirmed but can't attend, please remember to release your place to someone else. Similarly, please don't show up if you're on the waiting list but haven't been confirmed. Unfortunately, we won't be able to accommodate more people than planned.
 
+Material
+--------
+
+- [Slides](https://docs.google.com/presentation/d/1R6Pruw43cYCwvGLTZh6pLSs4-8igaizrIIeiYGSMyeQ/edit)
+- [EuroSciPy 2022 - Sprint](https://github.com/scikit-learn-inria-fondation/EuroSciPy22): repository with materials and instructions
 
 Agenda
 ------
@@ -28,7 +33,6 @@ Agenda
 - 18.45: Sponsor presentation, scikit-learn presentation
 - 19.00: Coding
 - 21.30: End of the event, pub/drinks nearby for those who want to join
-
 
 How to prepare for the sprint
 -----------------------------
