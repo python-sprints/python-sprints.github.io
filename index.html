@@ -38,17 +38,14 @@
 
 <div class="upcoming-chapters-container container-fluid">
     <div class="row">
-        {% include events_array_generator.html future_events=true %}
-        {% if posts.size > 0 %}
-            {% assign upcoming_event = true %}
-            {% assign chapters_col = "col-lg-6" %}
-            {% assign posts = posts | reverse %}
-        {% else %}
-            {% assign chapters_col = "col-12" %}
-        {% endif %}
         <div class="col-lg-1 no-padding-x">
         </div>
         <div class="col-lg-6 no-padding-x">
+            {% include events_array_generator.html future_events=true %}
+            {% if posts.size > 0 %}
+                {% assign upcoming_event = true %}
+                {% assign posts = posts | reverse %}
+            {% endif %}
             <section id="events">
                 <h2>Upcoming events</h2>
                 {% if upcoming_event == true %}
@@ -58,6 +55,22 @@
                     {% endfor %}
                 {% else %}
                     <p>No upcoming events at the moment</p>
+                {% endif %}
+            </section>
+            {% include events_array_generator.html limit = 4 %}
+            {% if posts.size > 0 %}
+                {% assign recent_event = true %}
+                {% assign posts = posts %}
+            {% endif %}
+            <section id="events">
+                <h2>Recent events</h2>
+                {% if recent_event == true %}
+                    {% assign current_date = "" %}
+                    {% for post in posts %}
+                        {% include event_layout.html event=post %}
+                    {% endfor %}
+                {% else %}
+                    <p>No recent events</p>
                 {% endif %}
             </section>
         </div>
