@@ -1,7 +1,7 @@
 ---
 category: "zurich"
 title: "Zürich Python Sprints"
-meetup_link: https://www.meetup.com/Python-Sprints/
+meetup_link: https://www.meetup.com/python-sprints-zurich/
 address: Zürich, Switzerland
 country_code: ch
 image: static/images/chapters/london_python_sprints_1920x600px.jpg
